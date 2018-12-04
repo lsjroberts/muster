@@ -1,0 +1,24 @@
+.QueryEditorContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.ToggleButtons {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.ToggleButtons .btn.btn-primary {
+  background-color: #9c3a69;
+  border-color: #6d294a;
+}
+
+.ToggleButtons .btn.btn-light {
+  border-color: #6d294a;
+  color: #6d294a;
+}
+
+.reflex-layout > .reflex-element {
+  overflow: hidden !important;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@dws/muster-website",
+  "version": "6.4.1",
+  "description": "Muster Website",
+  "main": "./build/muster/index.html",
+  "private": true,
+  "scripts": {
+    "precompile-glossary": "node scripts/build-glossary.js",
+    "compile-glossary": "babel static/js/glossary.es6.js --out-file static/js/glossary.min.js",
+    "precompile-glossary:watch": "yarn precompile-glossary",
+    "compile-glossary:watch": "babel static/js/glossary.es6.js --out-file static/js/glossary.min.js --watch",
+    "examples": "docusaurus-examples",
+    "start": "yarn compile-glossary:watch & docusaurus-start",
+    "prebuild": "yarn compile-glossary",
+    "build": "docusaurus-build",
+    "publish-gh-pages": "docusaurus-publish",
+    "write-translations": "docusaurus-write-translations",
+    "new-version": "docusaurus-version $npm_package_version",
+    "rename-version": "docusaurus-rename-version"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@dws/muster-playground": "^6.4.1",
+    "docusaurus": "^1.5.1",
+    "lodash": "^4.17.11"
+  }
+}

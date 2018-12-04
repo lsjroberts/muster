@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nested component (deep) WHEN the component is rendered AND a variable is updated in the global graph SHOULD return the correct values 1`] = `
+<div>
+  <InnerValueComponent
+    value="bar"
+  >
+    <div>
+      bar
+    </div>
+  </InnerValueComponent>
+  <button
+    id="submit"
+    onClick={[Function]}
+  >
+    Update
+  </button>
+</div>
+`;
+
+exports[`Nested component (deep) WHEN the component is rendered AND a variable is updated via the component DOM SHOULD return the correct values 1`] = `
+<div>
+  <InnerValueComponent
+    value="clicked"
+  >
+    <div>
+      clicked
+    </div>
+  </InnerValueComponent>
+  <button
+    id="submit"
+    onClick={[Function]}
+  >
+    Update
+  </button>
+</div>
+`;
+
+exports[`Nested component (deep) WHEN the component is rendered AND a variable is updated via the component props SHOULD return the correct values 1`] = `
+<div>
+  <InnerValueComponent
+    value="baz"
+  >
+    <div>
+      baz
+    </div>
+  </InnerValueComponent>
+  <button
+    id="submit"
+    onClick={[Function]}
+  >
+    Update
+  </button>
+</div>
+`;
+
+exports[`Nested component (deep) WHEN the component is rendered SHOULD return the correct values 1`] = `
+<div>
+  <InnerValueComponent
+    value="foo"
+  >
+    <div>
+      foo
+    </div>
+  </InnerValueComponent>
+  <button
+    id="submit"
+    onClick={[Function]}
+  >
+    Update
+  </button>
+</div>
+`;
+
+exports[`Nested component (shallow) WHEN the component is rendered AND a variable is updated in the global graph SHOULD return the correct values 1`] = `
+<div>
+  <InnerValueComponent
+    value="bar"
+  />
+  <button
+    id="submit"
+    onClick={[Function]}
+  >
+    Update
+  </button>
+</div>
+`;
+
+exports[`Nested component (shallow) WHEN the component is rendered AND a variable is updated via the component DOM SHOULD return the correct values 1`] = `
+<div>
+  <InnerValueComponent
+    value="clicked"
+  />
+  <button
+    id="submit"
+    onClick={[Function]}
+  >
+    Update
+  </button>
+</div>
+`;
+
+exports[`Nested component (shallow) WHEN the component is rendered AND a variable is updated via the component props SHOULD return the correct values 1`] = `
+<div>
+  <InnerValueComponent
+    value="baz"
+  />
+  <button
+    id="submit"
+    onClick={[Function]}
+  >
+    Update
+  </button>
+</div>
+`;
+
+exports[`Nested component (shallow) WHEN the component is rendered SHOULD return the correct values 1`] = `
+<div>
+  <InnerValueComponent
+    value="foo"
+  />
+  <button
+    id="submit"
+    onClick={[Function]}
+  >
+    Update
+  </button>
+</div>
+`;

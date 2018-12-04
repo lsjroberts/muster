@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "ie >= 11"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/proposal-object-rest-spread"
+  ],
+  "minified": true
+}

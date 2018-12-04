@@ -1,0 +1,14 @@
+.QuerySetNodeRenderer__root {
+}
+
+.QuerySetNodeRenderer__toggle {
+  cursor: pointer;
+}
+
+.QuerySetNodeRenderer__root.QuerySetNodeRenderer--collapsed + .GraphQuerySet__edges {
+  display: none;
+}
+
+.QuerySetNodeRenderer__unsubscribed {
+  opacity: 0.5;
+}

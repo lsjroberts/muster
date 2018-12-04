@@ -1,0 +1,103 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+  - image: circleci/node:8.12
+
+jobs:
+  build:
+    <<: *defaults
+
+    steps:
+    - checkout
+
+    # Download and cache dependencies
+    - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "package.json" }}
+        # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
+
+    - run: yarn install
+
+    - save_cache:
+        paths:
+        - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
+
+    - run:
+        name: Run build
+        command: yarn build:full
+
+    - run:
+        name: Run tests
+        command: yarn verify:ci
+
+    - store_artifacts: # special step to save test results as as artifact
+        path: test-results.xml
+        prefix: tests
+    - store_artifacts:
+        path: coverage
+        prefix: coverage
+    - store_test_results: # special step to upload test results for display in Test Summary
+        path: test-results.xml
+    # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
+
+    - persist_to_workspace:
+        root: ~/repo
+        paths: .
+
+  publish:
+    <<: *defaults
+    # publish to npm
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: Authenticate with registry
+        command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+    - run:
+        name: Publish package
+        command: yarn release # TODO expects $NPM_RELEASE_REGISTRY
+
+  deploy:
+    <<: *defaults
+    # build and deploy gh-pages
+    steps:
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: Deploying to GitHub Pages
+        command: |
+          git config --global user.email "<GITHUB_USERNAME>@users.noreply.github.com"
+          git config --global user.name "<YOUR_NAME>"
+          echo "machine github.com login <GITHUB_USERNAME> password $GITHUB_TOKEN" > ~/.netrc
+          yarn build:website && cd packages/website && GIT_USER=<GIT_USER> yarn run publish-gh-pages
+
+
+workflows:
+  version: 2
+
+  build-deploy:
+    jobs:
+    - build
+    - deploy:
+        requires:
+        - build
+        filters:
+          branches:
+            only: develop
+
+  build-publish:
+    jobs:
+    - build
+    - publish:
+        requires:
+        - build
+        filters:
+          branches:
+            only: master

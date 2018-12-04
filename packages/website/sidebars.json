@@ -1,0 +1,57 @@
+{
+  "docs": {
+    "Overview": [
+      "overview"
+    ],
+    "Learn": [
+      "learn/introduction",
+      "learn/graph-structure",
+      "learn/nodes",
+      "learn/variables",
+      "learn/async-data",
+      "learn/functions",
+      "learn/collections",
+      "learn/control-flow"
+    ],
+    "Understanding Muster": [
+      "understanding-muster/data-store",
+      "understanding-muster/resolution-chains",
+      "understanding-muster/explicit-definition",
+      "understanding-muster/lifecycle-of-a-node",
+      "understanding-muster/scope",
+      "understanding-muster/crafting-muster-nodes",
+      "understanding-muster/optimisation",
+      "understanding-muster/security"
+    ],
+    "Tutorials": [
+      {
+        "type": "subcategory",
+        "label": "Muster",
+        "ids": [
+          "tutorials/muster-server",
+          "tutorials/muster-worker",
+          "tutorials/muster-cookbook",
+          "tutorials/muster-testing"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Muster React",
+        "ids": [
+          "tutorials/muster-react-tutorial",
+          "tutorials/muster-react-cookbook",
+          "tutorials/muster-react-testing"
+        ]
+      }
+    ],
+    "Resources": [
+      "resources/setup",
+      "resources/faq",
+      "resources/essential-nodes",
+      "resources/common-muster-errors",
+      "resources/thinking-in-muster",
+      "glossary",
+      "changelog"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+.OperationRenderer__root {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 2px;
+}
+
+.OperationRenderer__root::before {
+  content: '';
+  display: inline-block;
+  vertical-align: top;
+  width: 10px;
+  height: 1px;
+  padding-top: 8px;
+  margin-right: 2px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.OperationRenderer__root:last-child {
+  border-left: none;
+}
+.OperationRenderer__root:last-child::before {
+  height: 8px;
+  padding-top: 0;
+  vertical-align: top;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.OperationRenderer__label {
+  display: inline;
+}
+
+.OperationRenderer__target {
+  display: inline;
+}

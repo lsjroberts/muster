@@ -1,0 +1,14 @@
+.TreeNodeRenderer__root {
+}
+
+.TreeNodeRenderer__toggle {
+  cursor: pointer;
+}
+
+.TreeNodeRenderer__root.TreeNodeRenderer--collapsed + .GraphTree__edges {
+  display: none;
+}
+
+.TreeNodeRenderer__unsubscribed {
+  opacity: 0.5;
+}

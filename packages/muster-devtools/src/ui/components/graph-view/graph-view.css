@@ -1,0 +1,9 @@
+.GraphView__root {
+  user-select: none;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.GraphView__root code {
+  font-size: 11px;
+}

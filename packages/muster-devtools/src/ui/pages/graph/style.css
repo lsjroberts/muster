@@ -1,0 +1,7 @@
+.centered-heading {
+  color: #aaa;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+}

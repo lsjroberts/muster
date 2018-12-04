@@ -1,0 +1,52 @@
+{
+  "name": "@dws/muster-server",
+  "version": "6.4.1",
+  "description": "Muster server middlewares",
+  "module": "./esm/index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "/dist",
+    "/esm"
+  ],
+  "scripts": {
+    "clean": "del-cli ./dist ./esm",
+    "prebuild": "yarn clean",
+    "prebuild:full": "yarn clean",
+    "build": "yarn build:dist",
+    "build:full": "yarn build:dist && yarn build:esm",
+    "build:dist": "tsc",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "socket": "yarn build && node --inspect dist/examples/socket-server.js",
+    "socket:client": "node dist/examples/socket-client.js"
+  },
+  "author": "DWS Technology",
+  "license": "MIT",
+  "dependencies": {
+    "@dws/muster": "^6.4.1",
+    "@dws/muster-message-transport": "^6.4.1",
+    "isomorphic-ws": "^4.0.1"
+  },
+  "devDependencies": {
+    "@dws/muster-remote": "^6.4.1",
+    "@dws/muster-test-utils": "^6.4.1",
+    "@types/body-parser": "^1.16.5",
+    "@types/express": "^4.0.37",
+    "@types/lodash-es": "^4.14.74",
+    "@types/supertest": "^2.0.6",
+    "@types/ws": "^6.0.1",
+    "body-parser": "^1.17.2",
+    "del-cli": "^1.1.0",
+    "express": "^4.15.4",
+    "lodash": "^4.17.11",
+    "supertest": "^3.3.0",
+    "typescript": "3.1.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
