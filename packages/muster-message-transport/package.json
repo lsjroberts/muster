@@ -1,0 +1,38 @@
+{
+  "name": "@dws/muster-message-transport",
+  "version": "6.4.1",
+  "description": "Muster Message Transport",
+  "module": "./esm/index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "/dist",
+    "/esm"
+  ],
+  "scripts": {
+    "clean": "del-cli ./dist ./esm",
+    "prebuild": "yarn clean",
+    "prebuild:full": "yarn clean",
+    "build": "yarn build:dist",
+    "build:full": "yarn build:dist && yarn build:esm",
+    "build:dist": "tsc",
+    "build:esm": "tsc -p tsconfig.esm.json"
+  },
+  "author": "DWS Technology",
+  "license": "MIT",
+  "dependencies": {
+    "@dws/muster": "^6.4.1",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.14.74",
+    "typescript": "3.1.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

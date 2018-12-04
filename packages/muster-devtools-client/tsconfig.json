@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+  "exclude" : [
+    "esm",
+    "dist",
+    "node_modules",
+    "**/*.spec.ts*"
+  ],
+  "references": [
+    { "path": "../muster" },
+    { "path": "../muster-message-transport" },
+    { "path": "../muster-parser" }
+  ]
+}
+

@@ -1,0 +1,57 @@
+{
+  "version-6.0.0-docs": {
+    "Overview": [
+      "version-6.0.0-overview"
+    ],
+    "Learn": [
+      "version-6.0.0-learn/introduction",
+      "version-6.0.0-learn/graph-structure",
+      "version-6.0.0-learn/nodes",
+      "version-6.0.0-learn/variables",
+      "version-6.0.0-learn/async-data",
+      "version-6.0.0-learn/functions",
+      "version-6.0.0-learn/collections",
+      "version-6.0.0-learn/control-flow"
+    ],
+    "Understanding Muster": [
+      "version-6.0.0-understanding-muster/data-store",
+      "version-6.0.0-understanding-muster/resolution-chains",
+      "version-6.0.0-understanding-muster/explicit-definition",
+      "version-6.0.0-understanding-muster/lifecycle-of-a-node",
+      "version-6.0.0-understanding-muster/scope",
+      "version-6.0.0-understanding-muster/crafting-muster-nodes",
+      "version-6.0.0-understanding-muster/optimisation",
+      "version-6.0.0-understanding-muster/security"
+    ],
+    "Tutorials": [
+      {
+        "type": "subcategory",
+        "label": "Muster",
+        "ids": [
+          "version-6.0.0-tutorials/muster-server",
+          "version-6.0.0-tutorials/muster-worker",
+          "version-6.0.0-tutorials/muster-cookbook",
+          "version-6.0.0-tutorials/muster-testing"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Muster React",
+        "ids": [
+          "version-6.0.0-tutorials/muster-react-tutorial",
+          "version-6.0.0-tutorials/muster-react-cookbook",
+          "version-6.0.0-tutorials/muster-react-testing"
+        ]
+      }
+    ],
+    "Resources": [
+      "version-6.0.0-resources/setup",
+      "version-6.0.0-resources/faq",
+      "version-6.0.0-resources/essential-nodes",
+      "version-6.0.0-resources/common-muster-errors",
+      "version-6.0.0-resources/thinking-in-muster",
+      "version-6.0.0-glossary",
+      "version-6.0.0-changelog"
+    ]
+  }
+}

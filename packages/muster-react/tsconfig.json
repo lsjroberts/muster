@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+  "exclude" : [
+    "_bundles",
+    "esm",
+    "dist",
+    "node_modules",
+    "**/*.spec.ts*",
+    "test.d.ts"
+  ],
+  "references": [
+    { "path": "../muster" },
+    { "path": "../muster-observable" },
+    { "path": "../muster-test-utils" }
+  ]
+}

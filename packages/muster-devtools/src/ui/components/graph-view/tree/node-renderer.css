@@ -1,0 +1,17 @@
+.NodeRenderer__root {
+  margin-bottom: 10px;
+}
+
+.NodeRenderer__root .NodeRenderer__root {
+  margin-bottom: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.NodeRenderer__label {
+  display: inline;
+}
+
+.NodeRenderer__edges {
+  padding-left: 13px;
+}

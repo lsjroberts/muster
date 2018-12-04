@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": false,
+    "rootDir": "./src",
+    "sourceMap": true,
+    "noEmitOnError": false
+  },
+  "exclude" : [
+    "dist",
+    "node_modules",
+    "**/*.spec.ts*"
+  ],
+  "references": [
+    { "path": "../muster" },
+    { "path": "../muster-devtools-client" },
+    { "path": "../muster-message-transport" },
+    { "path": "../muster-observable" },
+    { "path": "../muster-react" }
+  ]
+}

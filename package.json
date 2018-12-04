@@ -1,0 +1,113 @@
+{
+  "name": "@dws/muster-base",
+  "author": "DWS Technology",
+  "description": "Graph composition of data from multiple sources",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dwstech/muster.git"
+  },
+  "scripts": {
+    "preverify": "yarn build",
+    "verify": "yarn lint && yarn test && yarn compile-doc-examples",
+    "verify:ci": "yarn lint && yarn verify:licences && yarn compile-doc-examples && yarn test:coverage",
+    "verify:licences": "license-checker --failOn UNLICENSED --onlyunknown --summary",
+    "test": "jest",
+    "test:coverage": "jest --coverage --ci",
+    "lint": "tslint \"packages/*/src/**/*.{ts,tsx}\"",
+    "lint:md": "remark packages/website/docs",
+    "start": "yarn start:website",
+    "prestart:website": "yarn copy:changelog",
+    "start:website": "lerna run start --scope @dws/muster-website --stream",
+    "start:playground": "lerna run start --scope @dws/muster-playground --stream",
+    "build": "lerna run build --ignore @dws/muster-playground --ignore @dws/muster-website",
+    "build:full": "lerna run build:full",
+    "copy:changelog": "cp ./CHANGELOG.md packages/website/docs",
+    "prebuild:website": "yarn copy:changelog && yarn build:playground && yarn generate-docs && yarn copy:playground && yarn copy:devtools",
+    "precopy:playground": "del-cli packages/website/static/playground && mkdirp packages/website/static/playground",
+    "copy:playground": "ncp packages/muster-playground/dist packages/website/static/playground",
+    "precopy:devtools": "del-cli packages/website/static/muster-devtools.zip",
+    "copy:devtools": "cd packages/muster-devtools/dist && bestzip ../../website/static/muster-devtools.zip * && cd ../../..",
+    "build:website": "lerna run build --scope @dws/muster-website",
+    "serve:website": "http-server packages/website/build -o",
+    "prebuild:playground": "yarn build:full",
+    "build:playground": "lerna run build --scope @dws/muster-playground",
+    "build:website:ci": "yarn build:website",
+    "prebuild:website:ci": "npm run install:yarn:ci",
+    "install:yarn:ci": "del-cli package-lock.json && npm install yarn --no-package-lock",
+    "postinstall:yarn:ci": "yarn",
+    "new-version": "lerna version --force-publish --no-push -m \"%v\"",
+    "release:local": "yarn build:full && yarn release",
+    "release": "./scripts/release",
+    "prepush": "./scripts/verify \"yarn verify\"",
+    "precommit": "lint-staged",
+    "pregenerate-docs": "del-cli ./docs/api ./packages/website/static/api",
+    "generate-docs": "typedoc --out packages/website/static/api --sourcefile-url-prefix \"https://github.com/dwstech/muster/blob/master/packages/\"",
+    "precompile-doc-examples": "yarn generate-docs",
+    "compile-doc-examples": "node ./scripts/docs-compiler/index.js"
+  },
+  "lint-staged": {
+    "packages/*/src/**/*.{ts,tsx,js,css}": [
+      "prettier --write",
+      "git add"
+    ],
+    "packages/website/**/*.{js,md,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-markdown-style-guide",
+      "remark-frontmatter"
+    ]
+  },
+  "jest-junit": {
+    "output": "./test-results.xml"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-dynamic-import-node": "^2.1.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "bestzip": "^2.1.2",
+    "del-cli": "^1.1.0",
+    "enzyme": "3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme-to-json": "^3.3.4",
+    "gfm-code-blocks": "^1.0.0",
+    "glob": "^7.1.3",
+    "http-server": "^0.11.1",
+    "husky": "^0.14.3",
+    "jest": "^23.6.0",
+    "jest-junit": "^5.1.0",
+    "lerna": "^3.4.3",
+    "license-checker": "^20.2.0",
+    "lint-staged": "^7.2.1",
+    "mkdirp": "^0.5.1",
+    "multimatch": "^2.0.0",
+    "ncp": "^2.0.0",
+    "prettier": "^1.15.0",
+    "remark-cli": "^5.0.0",
+    "remark-frontmatter": "^1.3.0",
+    "remark-preset-lint-markdown-style-guide": "^2.1.2",
+    "traverse": "^0.6.6",
+    "ts-jest": "^23.1.3",
+    "ts-loader": "^5.2.2",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "tslint-config-prettier": "^1.14.0",
+    "typedoc": "^0.13.0",
+    "typedoc-plugin-monorepo": "^0.1.0",
+    "typedoc-plugin-sourcefile-url": "^1.0.3",
+    "typescript": "3.1.1"
+  },
+  "resolutions": {
+    "event-stream": "3.3.4"
+  }
+}

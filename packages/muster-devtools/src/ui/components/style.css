@@ -1,0 +1,15 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.application-error {
+  bottom: 0;
+  left: 50%;
+  margin-left: -25%;
+  position: fixed;
+  width: 50%;
+}

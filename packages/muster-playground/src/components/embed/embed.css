@@ -1,0 +1,41 @@
+html,
+body,
+#app {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.App__header {
+  flex: 0;
+  flex-basis: 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.App__main {
+  flex: 1;
+  overflow: hidden;
+}
+
+.App__main > * {
+  height: 100%;
+}
+
+.ToggleButtons {
+  display: none;
+}
+
+.QueryEditor__panel {
+  padding: 0 6px;
+}
+
+.QueryEditor__panel__header {
+  font-size: 10px;
+  color: silver;
+}

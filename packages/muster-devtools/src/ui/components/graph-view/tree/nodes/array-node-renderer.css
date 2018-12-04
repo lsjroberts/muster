@@ -1,0 +1,10 @@
+.ArrayNodeRenderer__root {
+}
+
+.ArrayNodeRenderer__toggle {
+  cursor: pointer;
+}
+
+.ArrayNodeRenderer__root.ArrayNodeRenderer--collapsed + .GraphTree__edges {
+  display: none;
+}
