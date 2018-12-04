@@ -55,6 +55,7 @@ jobs:
   publish:
     <<: *defaults
     # publish to npm
+    steps:
     - attach_workspace:
         at: ~/repo
     - run:
