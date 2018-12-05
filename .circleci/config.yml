@@ -45,7 +45,7 @@ jobs:
         command: yarn compile-doc-examples
     - run:
         name: Run tests
-        command: yarn yarn test:coverage
+        command: yarn test:coverage
 
     - store_artifacts: # special step to save test results as as artifact
         path: test-results.xml
