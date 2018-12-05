@@ -114,19 +114,19 @@ workflows:
 
   build-only:
     jobs:
-    - build
-    filters:
-      branches:
-        ignore:
-        - master
-        - develop
+    - build:
+        filters:
+          branches:
+            ignore:
+            - master
+            - develop
 
   build-deploy:
     jobs:
-    - build
-      filters:
-        branches:
-          only: develop
+    - build:
+        filters:
+          branches:
+            only: develop
     - deploy:
         requires:
         - build
@@ -136,10 +136,10 @@ workflows:
 
   build-publish:
     jobs:
-    - build
-      filters:
-        branches:
-          only: master
+    - build:
+        filters:
+          branches:
+            only: master
     - publish:
         requires:
         - build
