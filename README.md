@@ -1,6 +1,6 @@
 # Muster
 
-![Muster Logo](./packages/website/static/img/muster.svg =300x300)
+<img src="packages/website/static/img/muster.svg" alt="Muster Logo" width="300" height="300" />
 
 > A universal data layer for components and services
 >
