@@ -17,7 +17,7 @@
     "verify:ci": "yarn lint && yarn verify:licences && yarn compile-doc-examples && yarn test:coverage",
     "verify:licences": "license-checker --failOn UNLICENSED --onlyunknown --summary",
     "test": "jest",
-    "test:coverage": "jest --coverage --ci",
+    "test:ci": "jest --coverage --ci --reporters=default --reporters=jest-junit --runInBand",
     "lint": "tslint \"packages/*/src/**/*.{ts,tsx}\"",
     "lint:md": "remark packages/website/docs",
     "start": "yarn start:website",
