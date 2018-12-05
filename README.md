@@ -1,15 +1,15 @@
 # Muster
 
-![Muster Logo](./packages/website/static/img/muster.svg)
+![Muster Logo](./packages/website/static/img/muster.svg =300x300)
 
-```bash
-yarn
-```
+> A universal data layer for components and services
+>
+> https://dwstech.github.io/muster
 
 This is the monorepo for muster and muster-* packages.
 
-It is managed by [Lerna](https://github.com/lerna/lerna/). Which helps to run commands across packages and manage versions.
-
+[![CircleCI](https://circleci.com/gh/dwstech/muster.svg?style=svg)](https://circleci.com/gh/dwstech/muster)
+[![Known Vulnerabilities](https://snyk.io/test/github/dwstech/muster/badge.svg?targetFile=package.json)](https://snyk.io/test/github/dwstech/muster?targetFile=package.json)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 ## Usage
@@ -29,5 +29,9 @@ import { container } from '@dws/muster-react';
 ```
 
 ### Development
+
+```bash
+yarn
+```
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
