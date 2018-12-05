@@ -147,6 +147,5 @@ workflows:
           branches:
             only: master
           # TODO filter on version tags?
-          #filters:
-          #  tags:
-          #    only: /^v.*/
+#            tags:
+#              only: /v[0-9]+(\.[0-9]+)*/
