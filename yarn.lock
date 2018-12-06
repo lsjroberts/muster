@@ -4661,7 +4661,7 @@ doctrine@0.7.2:
 
 docusaurus@~1.5.1:
   version "1.5.1"
-  resolved "http://artifactory.awmd.intranet.db.com:8081/artifactory/api/npm/npm-main/docusaurus/-/docusaurus-1.5.1.tgz#ce1dc0f3531d6812f2b4a9e9a0151d885d076d78"
+  resolved "https://registry.yarnpkg.com/docusaurus/-/docusaurus-1.5.1.tgz#ce1dc0f3531d6812f2b4a9e9a0151d885d076d78"
   integrity sha1-zh3A81MdaBLytKnpoBUdiF0HbXg=
   dependencies:
     "@babel/core" "^7.0.0"
