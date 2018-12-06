@@ -19,9 +19,7 @@
       "understanding-muster/explicit-definition",
       "understanding-muster/lifecycle-of-a-node",
       "understanding-muster/scope",
-      "understanding-muster/crafting-muster-nodes",
-      "understanding-muster/optimisation",
-      "understanding-muster/security"
+      "understanding-muster/crafting-muster-nodes"
     ],
     "Tutorials": [
       {

@@ -3,8 +3,6 @@ id: faq
 title: Frequently Asked Questions (FAQ)
 ---
 
-> This is a living document that will be updated as more questions arise
-
 ## Muster
 
 ### What is Muster?
