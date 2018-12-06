@@ -4,7 +4,7 @@
 
 > A universal data layer for components and services
 >
-> https://dwstech.github.io/muster
+> https://dwstech.github.io/muster/
 
 This is the monorepo for muster and muster-* packages.
 
