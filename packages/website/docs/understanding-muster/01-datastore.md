@@ -7,7 +7,7 @@ Let's talk about how to store data in Muster.
 
 As mentioned earlier, Muster is a library that stores the data and logic in a graph. When building your app the graph looks a bit like a tree with a root and a set of branches. The names of these branches are used to identify the nodes in the graph.
 
-You might ask yourself "So why do they claim this is a graph, when in fact it is a tree?". A fair question! The Muster "graph" is declared as a "tree" to make it easier to write it in JavaScript, and to help with understanding where nodes are located in your graph, and what path they have. The "graph" part comes in when you start making connections between these nodes.
+You might ask yourself "So why do they claim this is a graph, when in fact it is a tree?". A fair question! The Muster 'graph' is declared as a 'tree' to make it easier to write it in JavaScript, and to help with understanding where nodes are located in your graph, and what path they have. The 'graph' part comes in when you start making connections between these nodes.
 
 Let's start with a basic example of Muster graph:
 ```javascript
