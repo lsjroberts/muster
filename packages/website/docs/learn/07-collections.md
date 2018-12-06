@@ -165,7 +165,7 @@ tree({
 The root of the `query()` node can also be set to any other node to define the top-level branch to query from.
 
 
-The second argument of `query()` is a node that defines the shape of nodes to extract. Some [implicit conversion](/muster/docs/next/understanding-muster/explicit-definition#explicit-query-definitions) is performed to keep the syntax as legible as possible.
+The second argument of `query()` is a node that defines the shape of nodes to extract. Some [implicit conversion](/muster/docs/understanding-muster/explicit-definition#explicit-query-definitions) is performed to keep the syntax as legible as possible.
 
 The query we ended up creating informs Muster that we'd like to load `firstName` and `lastName` from the root of our graph fields. These fields should first resolve to a non-error node that doesn't implement `evaluate` operation.
 
