@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Explicit Definitions · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;To gain a better understanding of how Muster works &amp;quot;under the bonnet&amp;quot;, it&#x27;s important to know the implicit conversion that is performed to graphs and their nodes, and what the explicit definition of these graphs and nodes actually looks like.&lt;/p&gt;
+"/><meta name="docsearch:version" content="6.1.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Explicit Definitions · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;p&gt;To gain a better understanding of how Muster works &amp;quot;under the bonnet&amp;quot;, it&#x27;s important to know the implicit conversion that is performed to graphs and their nodes, and what the explicit definition of these graphs and nodes actually looks like.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.1.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/6.1.0/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/6.1.0/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Understanding Muster</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/03-explicit.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Explicit Definitions</h1></header><article><div><span><p>To gain a better understanding of how Muster works &quot;under the bonnet&quot;, it's important to know the implicit conversion that is performed to graphs and their nodes, and what the explicit definition of these graphs and nodes actually looks like.</p>
+<p>What this means is that there are shorthands for defining graphs and nodes that when written implicitly are converted to an explicit definition.</p>
+<h2><a class="anchor" aria-hidden="true" id="explicit-graph-definitions"></a><a href="#explicit-graph-definitions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Explicit Graph Definitions</h2>
+<p>For example, consider the following graph:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { ref, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">greeting</span>: <span class="hljs-string">'Hello, world!'</span>,
+  <span class="hljs-attr">num</span>: variable(<span class="hljs-number">42</span>),
+});
+</code></pre>
+<p>The contents of this graph may not be what they seem. There are a couple of instances of implicit shorthand in this graph.</p>
+<p>By design, Muster graphs must always store nodes, and a value <code>Hello, world!</code> isn't a node. When creating the <code>muster()</code> graph the <code>muster()</code> factory function performs some implicit conversion of the values passed into it. One of the implicit conversions supported by Muster is converting JavaScript <code>strings</code>, <code>numbers</code>, <code>boolean</code> values, etc. into <code>value()</code> nodes.</p>
+<p>Note that in the example above we're defining a branch <code>greeting: 'Hello, world!'</code>. The <code>muster()</code> factory function converts that into a <code>greeting: value('Hello, world!')</code>.</p>
+<p>So, in fact:</p>
+<ul>
+<li><code>muster({...})</code> is actually <code>muster(tree({...}))</code></li>
+<li><code>'Hello world!'</code> is actually <code>value('Hello, world!')</code></li>
+<li><code>variable(42)</code> is actually <code>variable(value(42))</code></li>
+</ul>
+<p>The resulting explicitly defined graph would look like this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { ref, tree, value, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster(
+  tree({
+    <span class="hljs-attr">greeting</span>: value(<span class="hljs-string">'Hello, world!'</span>),
+    <span class="hljs-attr">num</span>: variable(value(<span class="hljs-number">42</span>)),
+  })
+);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="explicit-collection-definitions"></a><a href="#explicit-collection-definitions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Explicit Collection Definitions</h2>
+<p>When considering collections, elements in an <code>array()</code> are also converted to nodes. Consider this graph:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">numbers</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+});
+</code></pre>
+<p>The code above relies on an implicit conversion from a JavaScript array to an <code>array()</code> node. An explicitly defined array would look like this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { array, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">numbers</span>: array([value(<span class="hljs-number">1</span>), value(<span class="hljs-number">2</span>), value(<span class="hljs-number">3</span>)]),
+});
+</code></pre>
+<p>The <code>array()</code> node hides one more secret when it comes to implicit conversion:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">fruits</span>: [
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Banana'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Apple'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Plum'</span> },
+  ],
+});
+</code></pre>
+<p>Similarly to the <code>tree()</code> node definition, any items that are objects are converted to <code>tree()</code> nodes. This means that an explicitly declared array would look like this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { array, tree, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">fruits</span>: array([
+    tree({ <span class="hljs-attr">name</span>: value(<span class="hljs-string">'Banana'</span>) }),
+    tree({ <span class="hljs-attr">name</span>: value(<span class="hljs-string">'Apple'</span>) }),
+    tree({ <span class="hljs-attr">name</span>: value(<span class="hljs-string">'Plum'</span>) }),
+  ]),
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="explicit-query-definitions"></a><a href="#explicit-query-definitions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Explicit Query Definitions</h2>
+<p>There are many times where a <code>ref()</code> node is not specific enough to return what you want from a graph, often times <code>query()</code> is necessary to selectively &quot;cherry pick&quot; results. The <code>query()</code> node also comes with a handful of implicit conversions.</p>
+<p>Let's start small and consider this query:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { query, root } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+  <span class="hljs-attr">age</span>: <span class="hljs-number">25</span>,
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(query(root(), {
+  <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>,
+}));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// { firstName: 'Bob', lastName: 'Smith' }</span>
+</code></pre>
+<p>We know from the previous sections that the graph is converted into this explicit definition:</p>
+<pre><code class="hljs css language-javascript">tree({
+  <span class="hljs-attr">firstName</span>: value(<span class="hljs-string">'Bob'</span>),
+  <span class="hljs-attr">lastName</span>: value(<span class="hljs-string">'Smith'</span>),
+  <span class="hljs-attr">age</span>: value(<span class="hljs-number">25</span>),
+})
+</code></pre>
+<p>However, the <code>query()</code> node needs to be able to identify <code>key</code> fields to extract, therefore the explicit definition of the query would be:</p>
+<pre><code class="hljs css language-javascript">query(root(), fields({
+  <span class="hljs-attr">firstName</span>: key(<span class="hljs-string">'firstName'</span>),
+  <span class="hljs-attr">lastName</span>: key(<span class="hljs-string">'lastName'</span>),
+}))
+</code></pre>
+<p><strong>It's recommended to stick to the short-hand versions of nodes as they're both faster and easier to read and write.</strong> But it is still important to understand what conversions are being performed to fully understand the world of Muster.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/6.1.0/understanding-muster/resolution-chains"><span class="arrow-prev">← </span><span>Resolution Chains</span></a><a class="docs-next button" href="/muster/docs/6.1.0/understanding-muster/lifecycle-of-a-node"><span>Lifecycle of a Node</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#explicit-graph-definitions">Explicit Graph Definitions</a></li><li><a href="#explicit-collection-definitions">Explicit Collection Definitions</a></li><li><a href="#explicit-query-definitions">Explicit Query Definitions</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

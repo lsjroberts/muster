@@ -1,0 +1,474 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>muster-worker | Muster</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">Muster</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="muster_worker.html">muster-worker</a>
+				</li>
+			</ul>
+			<h1>Package muster-worker</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<h1 id="muster-worker">Muster Worker</h1>
+					<h2 id="introduction">Introduction</h2>
+					<p>Nodes for running a Muster Graph in a standalone <code>Worker</code> thread.</p>
+					<h2 id="usage">Usage</h2>
+					<p>Create a worker script, standalone from your app, and configure your worker&#39;s graph in it. Run <code>workerConnect</code> to enable worker messaging.</p>
+					<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { workerConnect } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-worker'</span>;
+
+<p><span class="hljs-keyword">const</span> graph = muster({
+  <span class="hljs-comment">// ...</span>
+});</p>
+<p>workerConnect(graph, self);
+</code></pre></p>
+					<p>In your app, use the <code>worker</code> to create a connection to the worker&#39;s graph. You&#39;ll need to pass in the path to your deployed worker script.</p>
+					<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> muster, { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { worker } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-worker'</span>;
+
+<p><span class="hljs-keyword">const</span> clientApp = muster({
+  <span class="hljs-attr">worker</span>: worker(<span class="hljs-string">&#39;./my.worker.js&#39;</span>),
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre></p>
+					<p>For hints on how to configure <code>webpack</code> to build and deploy your worker script, see the repo&#39;s <a href="webpack.config.js">webpack config</a>.</p>
+					<h2 id="install">Install</h2>
+					<p>With <a href="https://npmjs.org/">npm</a> installed, run</p>
+					<pre><code class="lang-bash">$ <span class="hljs-built_in">npm</span> install @dws/muster-worker
+</code></pre>
+					<h2 id="license">License</h2>
+					<p>MIT</p>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported"><a href="../interfaces/muster_worker.workerconnectconfigoptions.html" class="tsd-kind-icon">Worker<wbr>Connect<wbr>Config<wbr>Options</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/muster_worker.workermiddlewareoptions.html" class="tsd-kind-icon">Worker<wbr>Middleware<wbr>Options</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/muster_worker.workeroptions.html" class="tsd-kind-icon">Worker<wbr>Options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="muster_worker.html#age" class="tsd-kind-icon">age</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="muster_worker.html#clientapp" class="tsd-kind-icon">client<wbr>App</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="muster_worker.html#ctx" class="tsd-kind-icon">ctx</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="muster_worker.html#document" class="tsd-kind-icon">document</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="muster_worker.html#graph" class="tsd-kind-icon">graph</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="muster_worker.html#subject" class="tsd-kind-icon">subject</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="muster_worker.html#getworker" class="tsd-kind-icon">get<wbr>Worker</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="muster_worker.html#worker" class="tsd-kind-icon">worker</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="muster_worker.html#workerconnect" class="tsd-kind-icon">worker<wbr>Connect</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="muster_worker.html#workermiddleware" class="tsd-kind-icon">worker<wbr>Middleware</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="age" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagLet">Let</span> age</h3>
+					<div class="tsd-signature tsd-kind-icon">age<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster-worker/src/examples/app.worker.ts#L8">muster-worker/src/examples/app.worker.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="clientapp" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> client<wbr>App</h3>
+					<div class="tsd-signature tsd-kind-icon">client<wbr>App<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Muster</span><span class="tsd-signature-symbol"> =&nbsp;muster({worker: worker(&#x27;./app.worker.js&#x27;, { log: true }),})</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster-worker/src/examples/app.ts#L4">muster-worker/src/examples/app.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="ctx" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> ctx</h3>
+					<div class="tsd-signature tsd-kind-icon">ctx<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;self as DedicatedWorkerGlobalScope</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster-worker/src/examples/app.worker.ts#L6">muster-worker/src/examples/app.worker.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="document" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> document</h3>
+					<div class="tsd-signature tsd-kind-icon">document<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster-worker/src/examples/app.ts#L9">muster-worker/src/examples/app.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="graph" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> graph</h3>
+					<div class="tsd-signature tsd-kind-icon">graph<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Muster</span><span class="tsd-signature-symbol"> =&nbsp;muster({nameStream: fromStream(subject),})</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster-worker/src/examples/app.worker.ts#L15">muster-worker/src/examples/app.worker.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="subject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> subject</h3>
+					<div class="tsd-signature tsd-kind-icon">subject<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BehaviorSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueNodeDefinition</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new BehaviorSubject(value(&#x60;Geoff is ${age}&#x60;))</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster-worker/src/examples/app.worker.ts#L9">muster-worker/src/examples/app.worker.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="getworker" class="tsd-anchor"></a>
+					<h3>get<wbr>Worker</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Worker<span class="tsd-signature-symbol">(</span>workerPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Worker</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster-worker/src/worker-middleware.ts#L19">muster-worker/src/worker-middleware.ts:19</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>workerPath: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Worker</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="worker" class="tsd-anchor"></a>
+					<h3>worker</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">worker<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/muster_worker.workeroptions.html" class="tsd-signature-type">WorkerOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeDefinition</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster-worker/src/worker-host.ts#L19">muster-worker/src/worker-host.ts:19</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a host for a Worker graph</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>path: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the path or url to the deployed Worker script</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/muster_worker.workeroptions.html" class="tsd-signature-type">WorkerOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NodeDefinition</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="workerconnect" class="tsd-anchor"></a>
+					<h3>worker<wbr>Connect</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">worker<wbr>Connect<span class="tsd-signature-symbol">(</span>app<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Muster</span>, worker<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DedicatedWorkerGlobalScope</span>, config<span class="tsd-signature-symbol">?: </span><a href="../interfaces/muster_worker.workerconnectconfigoptions.html" class="tsd-signature-type">WorkerConnectConfigOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Muster</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster-worker/src/muster-worker.ts#L21">muster-worker/src/muster-worker.ts:21</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Enable listeners for a Muster connection within a Worker scope</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>app: <span class="tsd-signature-type">Muster</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the Muster graph to connect</p>
+									</div>
+								</li>
+								<li>
+									<h5>worker: <span class="tsd-signature-type">DedicatedWorkerGlobalScope</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the Worker&#39;s global context (<code>self</code>)</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> config: <a href="../interfaces/muster_worker.workerconnectconfigoptions.html" class="tsd-signature-type">WorkerConnectConfigOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Muster</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="workermiddleware" class="tsd-anchor"></a>
+					<h3>worker<wbr>Middleware</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">worker<wbr>Middleware<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/muster_worker.workermiddlewareoptions.html" class="tsd-signature-type">WorkerMiddlewareOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeDefinition</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster-worker/src/worker-middleware.ts#L27">muster-worker/src/worker-middleware.ts:27</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Initialise a Muster Worker script and connect to it</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../interfaces/muster_worker.workermiddlewareoptions.html" class="tsd-signature-type">WorkerMiddlewareOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NodeDefinition</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster.html">muster</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_message_transport.html">muster-<wbr>message-<wbr>transport</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_observable.html">muster-<wbr>observable</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_parser.html">muster-<wbr>parser</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_react.html">muster-<wbr>react</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_remote.html">muster-<wbr>remote</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_repl.html">muster-<wbr>repl</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_server.html">muster-<wbr>server</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_test_utils.html">muster-<wbr>test-<wbr>utils</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="muster_worker.html">muster-<wbr>worker</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../interfaces/muster_worker.workerconnectconfigoptions.html" class="tsd-kind-icon">Worker<wbr>Connect<wbr>Config<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/muster_worker.workermiddlewareoptions.html" class="tsd-kind-icon">Worker<wbr>Middleware<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/muster_worker.workeroptions.html" class="tsd-kind-icon">Worker<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="muster_worker.html#age" class="tsd-kind-icon">age</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="muster_worker.html#clientapp" class="tsd-kind-icon">client<wbr>App</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="muster_worker.html#ctx" class="tsd-kind-icon">ctx</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="muster_worker.html#document" class="tsd-kind-icon">document</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="muster_worker.html#graph" class="tsd-kind-icon">graph</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="muster_worker.html#subject" class="tsd-kind-icon">subject</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="muster_worker.html#getworker" class="tsd-kind-icon">get<wbr>Worker</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="muster_worker.html#worker" class="tsd-kind-icon">worker</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="muster_worker.html#workerconnect" class="tsd-kind-icon">worker<wbr>Connect</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="muster_worker.html#workermiddleware" class="tsd-kind-icon">worker<wbr>Middleware</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

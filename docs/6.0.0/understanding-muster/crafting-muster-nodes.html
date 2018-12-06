@@ -1,0 +1,627 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Crafting Muster Nodes · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Muster comes bundled with a set of basic nodes designed to help you with most common programming tasks. However, there might come a time when the standard nodes are not enough, and you might want to create new nodes. This document serves as an introduction to the process of creating custom Muster nodes, and how to use them. The process of creating new Muster nodes might not be as easy as using them, but you can look for inspiration by browsing the source code of existing Muster nodes.&lt;/p&gt;
+"/><meta name="docsearch:version" content="6.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Crafting Muster Nodes · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;p&gt;Muster comes bundled with a set of basic nodes designed to help you with most common programming tasks. However, there might come a time when the standard nodes are not enough, and you might want to create new nodes. This document serves as an introduction to the process of creating custom Muster nodes, and how to use them. The process of creating new Muster nodes might not be as easy as using them, but you can look for inspiration by browsing the source code of existing Muster nodes.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/6.0.0/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/6.0.0/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Understanding Muster</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/understanding-muster/scope">Scope</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/6.0.0/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.0.0/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/crafting-muster-nodes.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Crafting Muster Nodes</h1></header><article><div><span><p>Muster comes bundled with a set of basic nodes designed to help you with most common programming tasks. However, there might come a time when the standard nodes are not enough, and you might want to create new nodes. This document serves as an introduction to the process of creating custom Muster nodes, and how to use them. The process of creating new Muster nodes might not be as easy as using them, but you can look for inspiration by browsing the source code of existing Muster nodes.</p>
+<h2><a class="anchor" aria-hidden="true" id="node-type-api"></a><a href="#node-type-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Node Type API</h2>
+<p>In order to create the first node you will need to import a couple functions from <code>'@dws/muster'</code>:</p>
+<ul>
+<li><code>createNodeType()</code> - A function that creates a <strong>Node Type</strong>. The node type serves as the implementation of your node. It contains the definition of all operations supported by this node. It also defines the shape of the node definition, as well as the state of the node (in case the node you make is a stateful node).</li>
+<li><code>createNodeDefinition()</code> - A function that creates a new definition of a node based on a set of properties, and the <strong>Node Type</strong> (created using <code>createNodeType()</code>). The properties passed into this function are validated against the <code>shape</code> defined on your <strong>Node Type</strong>.</li>
+</ul>
+<p>The <strong>Node Type</strong> implementation is split into following sections:</p>
+<ul>
+<li><code>shape</code> [<strong>required</strong>] An object defining shape of the <strong>node definition</strong>.</li>
+<li><code>state</code> [optional] An object defining shape of the node state. Defining this property makes the <code>getInitialState()</code> property required.</li>
+<li><code>getInitialState()</code> [optional] A function that is used to create the initial state of the node. Defining this function makes the <code>state</code> property required.</li>
+<li><code>onSubscribe()</code> [optional] A function that is called the first time given instance of a node gets subscribed to (on any operation, and only on the first one).</li>
+<li><code>onUnsubscribe()</code> [optional] A function that is called when the last node subscription is unsubscribed</li>
+<li><code>operations</code> [optional] An object defining a map of supported graph <strong>operations</strong></li>
+</ul>
+<p>Each graph operation consists of following properties:</p>
+<ul>
+<li><code>run()</code> [<strong>required</strong>] A function that is called when an operation is resolved by Muster for a given node instance. This function is supposed to return a result of the operation, which should be either a <strong>node definition</strong>, <strong>graph node</strong> (a node instance) or a <strong>graph action</strong> (a node instance with an operation to traverse).
+Arguments received by the function (in order):
+<ul>
+<li><code>node</code> - Instance of the current <strong>graph node</strong></li>
+<li><code>operation</code> - Current operation definition</li>
+<li><code>dependencies</code> - An array of resolved dependencies that were returned from the <code>getDependencies()</code> - empty if no dependencies</li>
+<li><code>contextDependencies</code> - An array of resolved context dependencies that were returned from the <code>getContextDependencies()</code> - empty if no dependencies</li>
+<li><code>state</code> - Currently set state of the node.</li>
+</ul></li>
+<li><code>getDependencies()</code> [optional] A function that returns an array of dependencies required by the <code>run()</code> function in order to perform the operation.
+Arguments received by the function (in order):
+<ul>
+<li><code>definition</code> - Current <strong>node definition</strong></li>
+<li><code>operation</code> - Current operation definition</li>
+</ul></li>
+<li><code>getContextDependencies()</code> [optional] A function that returns an array of context dependencies required by the <code>run()</code> function in order to perform the operation.
+Arguments received by the function (in order):
+<ul>
+<li><code>definition</code> - Current <strong>node definition</strong></li>
+<li><code>operation</code> - Current operation definition</li>
+</ul></li>
+<li><code>onSubscribe()</code> [optional] A function called when a given operation is subscribed for the first time. This function can manipulate the state, and data of the node instance
+Arguments received by the function (in order):
+<ul>
+<li><code>node</code> - Instance of the current <strong>graph node</strong></li>
+<li><code>operation</code> - Current operation definition</li>
+</ul></li>
+<li><code>onUnsubscribe()</code> [optional] A function called when the last operation subscription is unsubscribed.
+Arguments received by the function (in order):
+<ul>
+<li><code>node</code> - Instance of the current <strong>graph node</strong></li>
+<li><code>operation</code> - Current operation definition</li>
+</ul></li>
+<li><code>onInvalidate()</code> [optional] A function called when a given operation gets invalidated by Muster, and a node is requested to update its value.
+Arguments received by the function (in order):
+<ul>
+<li><code>node</code> - Instance of the current <strong>graph node</strong></li>
+<li><code>operation</code> - Current operation definition</li>
+</ul></li>
+</ul>
+<p>By default Muster comes bundled with a number of standard graph operations, which you can implement in your nodes:</p>
+<ul>
+<li><code>evaluate</code> - A default operation used by Muster to resolve a node. An example node implementing the <code>evaluate</code> operation is the <code>computed()</code> node to compute the value based on value of its dependencies. The <code>computed()</code> node implements the <code>evaluate</code> operation by defining both <code>getDependencies()</code> and <code>run()</code> functions.</li>
+<li><code>getChild</code> - An operation used when traversing the graph with the use of a <code>ref()</code> or a <code>get()</code> nodes. An example node implementing the <code>getChild</code> operation is the <code>tree()</code> node.</li>
+<li><code>call</code> - An operation used when calling a given node by means of the <code>call()</code> or <code>apply()</code> nodes. An example node implementing the <code>call</code> operation is the <code>action()</code> and <code>fn()</code> node.</li>
+<li><code>set</code> - An operation used when setting a value of a given node by means of <code>set()</code> node. An example node implementing the <code>set</code> operation is the <code>variable()</code> node.
+<strong>This operation requires your node type to be a stateful node.</strong> We're going to cover stateful nodes in later stages of this tutorial.</li>
+<li>and many more</li>
+</ul>
+<p>We're going to cover the process of creating custom operations in the later stages of this tutorial. For now, all you have to know that each of the operations listed above come with a corresponding operation factory function. This function can be used to create an operation definition, and then passed into the <code>traverse()</code> node.</p>
+<h2><a class="anchor" aria-hidden="true" id="how-operation-traversal-works"></a><a href="#how-operation-traversal-works" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How operation traversal works</h2>
+<p>In Muster the <code>evaluate</code> operation is considered to be a <strong>default operation</strong>. For example, when resolving the <code>ref('name')</code> node, Muster uses the <code>evaluate</code> operation to get the value of the <code>name</code> branch. In fact, internally the <code>get()</code> node (produced by the <code>ref()</code> node) resolves a <code>getChild</code>  operation, but that happens from inside of <strong>get's</strong> <code>evaluate</code> operation. The <code>evaluate</code> operation means to Muster that a given node isn't considered a value-like node, and must be <strong>evaluated</strong> before returning it to the user. However, this behaviour can also be changed, but we're going to cover in the later stages of this tutorial.</p>
+<p>The following example shows how to instruct Muster to traverse a node using a particular operation:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { setOperation, traverse, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-comment">// Create a definition of the variable node</span>
+<span class="hljs-keyword">const</span> myVariable = variable(<span class="hljs-string">'initial value'</span>);
+
+<span class="hljs-comment">// Create an empty instance of Muster graph</span>
+<span class="hljs-keyword">const</span> app = muster({});
+
+<span class="hljs-comment">// Get the current value of the variable</span>
+<span class="hljs-comment">// This implicitly traverses the `variable()` node using an `evaluate` operation</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">await</span> app.resolve(myVariable));
+
+<span class="hljs-comment">// Traverse the set operation</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Traversing the `set(updated value)` operation'</span>);
+<span class="hljs-keyword">await</span> app.resolve(traverse(myVariable, setOperation(value(<span class="hljs-string">'updated value'</span>))));
+
+<span class="hljs-comment">// Get the current value of the variable</span>
+<span class="hljs-comment">// Again, this implicitly traverses the `variable()` node using an `evaluate` operation</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">await</span> app.resolve(myVariable));
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// initial value</span>
+<span class="hljs-comment">// Traversing the `set(updated value)` operation</span>
+<span class="hljs-comment">// updated value</span>
+</code></pre>
+<p>The code above first declares the <code>myVariable</code> node, which then gets resolved (traversed using <code>evaluate</code> operation until reaching a static node). Next, we traverse the <code>set</code> operation, which works just like a <code>set</code> node. Finally, we resolve the variable again to see if the value had indeed been saved.</p>
+<h2><a class="anchor" aria-hidden="true" id="first-node"></a><a href="#first-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>First node</h2>
+<p>In this section we're going to create the most basic Muster node. The process of creating a node consists of two things:</p>
+<ul>
+<li>Declaring a <strong>node type</strong>, which serves as an implementation of the node</li>
+<li>Creating a node factory function, which can be used by the consumers of the node.</li>
+</ul>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { createNodeDefinition, createNodeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> SimpleNodeType = createNodeType(<span class="hljs-string">'simple-node'</span>, {});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">simpleNode</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> createNodeDefinition(SimpleNodeType, {});
+}
+</code></pre>
+<p>The node we've just created is the simplest node you can make in Muster - it has no operations and no data. On its own, such node can't be used to do anything useful. You could use this node as part of implementation of a different node. In Muster there's one such node <code>emptyItem()</code>. On its own it doesn't do anything, and is not even returned back to the user of the library, but it's used for flagging that a given remote collection has no items.</p>
+<p>This is an example use of that node:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> simple <span class="hljs-keyword">from</span> <span class="hljs-string">'./simple'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">myNode</span>: simple(),
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="store-data-inside-of-the-node"></a><a href="#store-data-inside-of-the-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Store data inside of the node</h2>
+<p>In order to be able to store the data in the node you must declare a shape of the properties stored in the node, as well as the type of each property. This shape is used by the hashing mechanism when computing an ID of the given node. These IDs are used for checking if two nodes are equal as we can't rely on strict equality, and deep comparison of each property is a very time consuming process. The IDs are computed inside of the <code>createNodeDefinition()</code> function based on the NodeType and the properties passed in. The node type we created in the previous example will always create a node with the same ID, as it doesn't have any properties.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { createNodeDefinition, createNodeType, types } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> UserNodeType = createNodeType(<span class="hljs-string">'user'</span>, {
+  <span class="hljs-attr">shape</span>: {
+    <span class="hljs-attr">firstName</span>: types.string,
+    <span class="hljs-attr">lastName</span>: types.string,
+  },
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">user</span>(<span class="hljs-params">firstName, lastName</span>) </span>{
+  <span class="hljs-keyword">return</span> createNodeDefinition(UserNodeType, {
+    firstName,
+    lastName,
+  });
+}
+</code></pre>
+<p>Similarly to the <strong>First node</strong> example, this node doesn't do much on its own. Resolving this node would just return the node unchanged. The node we've just created stores two pieces of data: <code>firstName</code> and <code>lastName</code>. Both of these are marked as a required string by the shape of the node type. This means that calling <code>user()</code> would return an error, as both arguments are missing.</p>
+<h2><a class="anchor" aria-hidden="true" id="implement-evaluate-operation"></a><a href="#implement-evaluate-operation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implement <em>evaluate</em> operation</h2>
+<p>As mentioned before, the <code>evaluate</code> operation is considered to be a default operation in Muster when resolving a node. In this example we're going to extend the <em>user</em> node from the previous example by implementing the evaluate operation. This operation will produce a fullName from the first and last names stored in the node.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { createNodeDefinition, createNodeType, types, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> UserNodeType = createNodeType(<span class="hljs-string">'user'</span>, {
+  <span class="hljs-attr">shape</span>: {
+    <span class="hljs-attr">firstName</span>: types.string,
+    <span class="hljs-attr">lastName</span>: types.string,
+  },
+  <span class="hljs-attr">operations</span>: {
+    <span class="hljs-attr">evaluate</span>: {
+      run(node) {
+        <span class="hljs-comment">// Get the firstName and lastName from the current node properties</span>
+        <span class="hljs-keyword">const</span> { firstName, lastName } = node.definition.properties;
+        <span class="hljs-comment">// Produce the full name, and wrap it in a value node </span>
+        <span class="hljs-keyword">return</span> value(<span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>);
+      },
+    },
+  },
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">user</span>(<span class="hljs-params">firstName, lastName</span>) </span>{
+  <span class="hljs-keyword">return</span> createNodeDefinition(UserNodeType, {
+    firstName,
+    lastName,
+  });
+}
+</code></pre>
+<p>You can then use this node like this:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> user <span class="hljs-keyword">from</span> <span class="hljs-string">'./user'</span>; <span class="hljs-comment">// This is our custom node</span>
+
+<span class="hljs-keyword">const</span> app = muster({});
+
+<span class="hljs-keyword">await</span> app.resolve(user(<span class="hljs-string">'Bob'</span>, <span class="hljs-string">'Smith'</span>)); <span class="hljs-comment">// === 'Bob Smith'</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="resolve-operation-dependencies"></a><a href="#resolve-operation-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resolve operation dependencies</h2>
+<p>The <code>user</code> node we just created works well with hard-coded first and last names. This however doesn't utilise the full power of Muster. You might have noticed that most of Muster nodes allow for both static values and for nodes. This is where the dependency mechanism comes in. In this example we're going to refactor the <code>user</code> node to support both string values as well as nodes that eventually resolve to a string value.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { createNodeDefinition, createNodeType, graphTypes, toValue, value, valueOf } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> UserNodeType = createNodeType(<span class="hljs-string">'user'</span>, {
+  <span class="hljs-comment">// Update the shape of the node to store nodeDefinitions</span>
+  shape: {
+    <span class="hljs-attr">firstName</span>: graphTypes.nodeDefinition,
+    <span class="hljs-attr">lastName</span>: graphTypes.nodeDefinition,
+  },
+  <span class="hljs-attr">operations</span>: {
+    <span class="hljs-attr">evaluate</span>: {
+      <span class="hljs-comment">// Declare the node dependencies</span>
+      getDependencies(definition) {
+        <span class="hljs-keyword">const</span> { firstName, lastName } = definition.properties;
+        <span class="hljs-keyword">return</span> [
+          { <span class="hljs-attr">target</span>: firstName },
+          { <span class="hljs-attr">target</span>: lastName },
+        ];
+      },
+      <span class="hljs-comment">// Extract resolved dependencies - these are graph nodes</span>
+      <span class="hljs-comment">// Don't expect any errors here, as by default Muster short-circuits them</span>
+      run(node, operation, [firstNameNode, lastNameNode]) {
+        <span class="hljs-comment">// Extract the value of the `firstNameNode`</span>
+        <span class="hljs-comment">// This is the same as doing: const firstName = firstNameNode.definition.properties.value;</span>
+        <span class="hljs-keyword">const</span> firstName = valueOf(firstNameNode.definition);
+        <span class="hljs-keyword">const</span> lastName = valueOf(lastNameNode.definition);
+        <span class="hljs-comment">// Produce the full name, and wrap it in a value node </span>
+        <span class="hljs-keyword">return</span> value(<span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>);
+      },
+    },
+  },
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">user</span>(<span class="hljs-params">firstName, lastName</span>) </span>{
+  <span class="hljs-keyword">return</span> createNodeDefinition(UserNodeType, {
+    <span class="hljs-comment">// Safely convert the `firstName` and `lastName` to a value() node, or leave as is in case it already is a node</span>
+    firstName: toValue(firstName),
+    <span class="hljs-attr">lastName</span>: toValue(lastName),
+  });
+}
+</code></pre>
+<p>First, we changed the shape of the node to hold only node definitions, instead of string as it was previously. Next, we updated added a <code>getDependencies()</code> function to the <code>evaluate</code> operation. This function returns an array of dependencies to be resolved by Muster. Each dependency can additionally specify resolution criteria (for example - resolve a particular dependency until it is a node that supports a <code>set</code> operation), but this has been skipped for now to make this example a bit simpler. After that we've changed the <code>run</code> method to grab the resolved dependencies. In the body of the <code>run</code> method we extract the value of first name and last name, and produce the full name. The final step was to change the factory function to safely convert the <code>firstName</code> and <code>lastName</code> arguments to <code>value()</code> nodes. The <code>toValue</code> doesn't convert existing nodes, and returns them unchanged.</p>
+<blockquote>
+<p>The <code>run</code> method is going to be called only when the dependencies resolved to a non-error node that matches our criteria. Encountering a node that doesn't match our dependency criteria will return an error.</p>
+</blockquote>
+<p>Now you can use the node in the following forms:</p>
+<pre><code class="hljs css language-js">user(<span class="hljs-string">'Bob'</span>, <span class="hljs-string">'Smith'</span>);
+user(value(<span class="hljs-string">'Bob'</span>), value(<span class="hljs-string">'Smith'</span>));
+user(ref(<span class="hljs-string">'firstName'</span>), ref(<span class="hljs-string">'lastName'</span>));
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="specify-dependency-resolution-criteria"></a><a href="#specify-dependency-resolution-criteria" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Specify dependency resolution criteria</h2>
+<p>An eagle-eyed reader might have noticed that there's a nasty bug hidden in the code above. To illustrate it take a look at a following example usages of <code>user</code> node:</p>
+<pre><code class="hljs css language-js">user(<span class="hljs-number">1</span>, <span class="hljs-string">'Smith'</span>)
+user(array([]), <span class="hljs-string">'Smith'</span>);
+</code></pre>
+<p>Both cases would result in running the <code>run</code> function with unsupported values of the dependencies. If we think about it, the only supported type of the dependency is a <code>value()</code> node that contains a string value. Anything else should be discarded, and should let developer know that a particular use is not supported.
+To do this we might declare an <code>until</code> predicate for both of our dependencies. Muster comes with a number of helper function for checking expected types of values, but you could write your own as well. For now we're going to resort to using an existing <code>untilStringValueNode</code> predicate:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { createNodeDefinition, createNodeType, graphTypes, toValue, untilStringValueNode, value, valueOf } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> UserNodeType = createNodeType(<span class="hljs-string">'user'</span>, {
+  <span class="hljs-attr">shape</span>: {
+    <span class="hljs-attr">firstName</span>: graphTypes.nodeDefinition,
+    <span class="hljs-attr">lastName</span>: graphTypes.nodeDefinition,
+  },
+  <span class="hljs-attr">operations</span>: {
+    <span class="hljs-attr">evaluate</span>: {
+      getDependencies(definition) {
+        <span class="hljs-keyword">const</span> { firstName, lastName } = definition.properties;
+        <span class="hljs-keyword">return</span> [
+          <span class="hljs-comment">// Declare an `until` predicate to be a string value node. The arguments of this function are there to improve</span>
+          <span class="hljs-comment">// error message, as in case of an error it is going to show which node returned an error and for which dependency</span>
+          { <span class="hljs-attr">target</span>: firstName, <span class="hljs-attr">until</span>: untilStringValueNode(UserNodeType, <span class="hljs-string">'firstName'</span>) },
+          { <span class="hljs-attr">target</span>: lastName, <span class="hljs-attr">until</span>: untilStringValueNode(UserNodeType, <span class="hljs-string">'lastName'</span>) },
+        ];
+      },
+      run(node, operation, [firstNameNode, lastNameNode]) {
+        <span class="hljs-keyword">const</span> firstName = valueOf(firstNameNode.definition);
+        <span class="hljs-keyword">const</span> lastName = valueOf(lastNameNode.definition);
+        <span class="hljs-keyword">return</span> value(<span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>);
+      },
+    },
+  },
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">user</span>(<span class="hljs-params">firstName, lastName</span>) </span>{
+  <span class="hljs-keyword">return</span> createNodeDefinition(UserNodeType, {
+    <span class="hljs-attr">firstName</span>: toValue(firstName),
+    <span class="hljs-attr">lastName</span>: toValue(lastName),
+  });
+}
+</code></pre>
+<p>The same <code>until</code> predicate could also be written as (without the use of <code>untilStringValueNode</code>):</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { ValueNodeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-comment">// ...</span>
+getDependencies(definition) {
+  <span class="hljs-keyword">const</span> { firstName, lastName } = definition.properties;
+  <span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// Declare an `until` predicate to be a string value node. The arguments of this function are there to improve</span>
+    <span class="hljs-comment">// error message, as in case of an error it is going to show which node returned an error and for which dependency</span>
+    {
+      <span class="hljs-attr">target</span>: firstName,
+      <span class="hljs-attr">until</span>: {
+        <span class="hljs-attr">predicate</span>: <span class="hljs-function">(<span class="hljs-params">node</span>) =&gt;</span> ValueNodeType.is(node) &amp;&amp; <span class="hljs-keyword">typeof</span> node.definition.properties.value === <span class="hljs-string">'string'</span>,
+        <span class="hljs-attr">errorMessage</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-string">'Invalid firstName. Expected value(string).'</span>
+      }
+    },
+    {
+      <span class="hljs-attr">target</span>: lastName,
+      <span class="hljs-attr">until</span>: {
+        <span class="hljs-attr">predicate</span>: <span class="hljs-function">(<span class="hljs-params">node</span>) =&gt;</span> ValueNodeType.is(node) &amp;&amp; <span class="hljs-keyword">typeof</span> node.definition.properties.value === <span class="hljs-string">'string'</span>,
+        <span class="hljs-attr">errorMessage</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-string">'Invalid lastName. Expected value(string).'</span>
+      },
+    },
+  ];
+},
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="how-does-the-dependency-resolution-works"></a><a href="#how-does-the-dependency-resolution-works" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How does the dependency resolution works</h2>
+<p>In this section we're going to take a deeper look at how Muster resolves dependencies, and how to use to our advantage when writing dependency <code>until</code> predicates.</p>
+<h3><a class="anchor" aria-hidden="true" id="without-an-until-predicate"></a><a href="#without-an-until-predicate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Without an <em>until</em> predicate</h3>
+<p>Given a following Muster graph:</p>
+<pre><code class="hljs css language-js">muster({
+  <span class="hljs-attr">productName</span>: value(<span class="hljs-string">'Test product'</span>),
+  <span class="hljs-attr">productNameRef</span>: ref(<span class="hljs-string">'productName'</span>),
+});
+</code></pre>
+<p>And a following node dependency:</p>
+<pre><code class="hljs css language-js">getDependencies() {
+  <span class="hljs-keyword">return</span> [
+    { <span class="hljs-attr">target</span>: ref(<span class="hljs-string">'productNameRef'</span>) },
+  ];
+}
+</code></pre>
+<p>The simplified dependency resolution chain looks like this:</p>
+<ul>
+<li>Does the <code>ref('productNameRef')</code> node support <code>evaluate</code> operation? <strong><em>yes</em></strong></li>
+<li>Evaluate the <code>ref('productNameRef')</code> node (received <code>ref('productName')</code>)</li>
+<li>Does the <code>ref('productName')</code> node support <code>evaluate</code> operation? <strong><em>yes</em></strong></li>
+<li>Evaluate the <code>ref('productName')</code> node (received <code>value('Test product')</code>)</li>
+<li>Does the <code>value('Test product')</code> node support <code>evaluate</code> operation? <strong><em>no</em></strong></li>
+<li><strong>END</strong></li>
+</ul>
+<p>This resolution chain is simplified because it doesn't include intermediate nodes produced by the <code>ref()</code> or by Muster.</p>
+<h3><a class="anchor" aria-hidden="true" id="with-an-until-predicate"></a><a href="#with-an-until-predicate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>With an <em>until</em> predicate</h3>
+<p>Given the same Muster graph as in the previous example
+And a following node dependency:</p>
+<pre><code class="hljs css language-js">getDependencies() {
+  <span class="hljs-keyword">return</span> [
+    { <span class="hljs-attr">target</span>: ref(<span class="hljs-string">'productNameRef'</span>), <span class="hljs-attr">until</span>: { <span class="hljs-attr">predicate</span>: <span class="hljs-function">(<span class="hljs-params">node</span>) =&gt;</span> ValueNodeType.is(node) } },
+  ];
+}
+</code></pre>
+<p>The simplified dependency resolution chain looks like this:</p>
+<ul>
+<li>Does the <code>ref('productNameRef')</code> match the <code>until.predicate</code>? <strong><em>no</em></strong></li>
+<li>Does the <code>ref('productNameRef')</code> node support <code>evaluate</code> operation? <strong><em>yes</em></strong></li>
+<li>Evaluate the <code>ref('productNameRef')</code> node (received <code>ref('productName')</code>)</li>
+<li>Does the <code>ref('productName')</code> match the <code>until.predicate</code>? <strong><em>no</em></strong></li>
+<li>Does the <code>ref('productName')</code> node support <code>evaluate</code> operation? <strong><em>yes</em></strong></li>
+<li>Evaluate the <code>ref('productName')</code> node (received <code>value('Test product')</code>)</li>
+<li>Does the <code>value('Test product')</code> match the <code>until.predicate</code>? <strong><em>yes</em></strong></li>
+<li><strong>END</strong></li>
+</ul>
+<blockquote>
+<p>With the <code>until</code> predicate specified, when the <code>Does the &lt;&lt;node&gt;&gt; node supports 'evaluate' operation?</code> check returns <code>no</code>, the dependency is marked as unmet and returns an error based on the <code>until.errorMessage</code> or a default error message.</p>
+<p>This means that returning <code>false</code> from the predicate doesn't immediately return an unmet dependency error. Nodes discarded by the predicate are evaluated (if possible) to see if their result are accepted by the predicate. Only when the node is rejected by the predicate <strong>AND</strong> does not support <code>evaluate</code> operation the dependency is marked as unmet.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="reading-operation-arguments"></a><a href="#reading-operation-arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reading operation arguments</h2>
+<p>As mentioned in the Node Type API section, every operation receives an operation definition which can contain some operation-specific arguments. In all of the previous examples we used only the <code>evaluate</code> operation, which doesn't have any operation-specific arguments. To illustrate this feature we have to use a different operation, for example the <code>call</code> operation.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { createNodeDefinition, createNodeType, isGraphNode, value, valueOf } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> AddNumbersNodeType = createNodeType(<span class="hljs-string">'add-numbers'</span>, {
+  <span class="hljs-attr">shape</span>: {},
+  <span class="hljs-attr">operations</span>: {
+    <span class="hljs-attr">call</span>: { 
+      run(node, operation) {
+        <span class="hljs-keyword">const</span> sum = operation.properties.args
+          <span class="hljs-comment">// Extract values of arguments - make sure to un-wrap graph nodes as well</span>
+          .map(<span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> isGraphNode(arg) ? valueOf(arg.definition) : valueOf(arg))
+          <span class="hljs-comment">// Sum the arguments</span>
+          .reduce(<span class="hljs-function">(<span class="hljs-params">acc, arg</span>) =&gt;</span> acc + arg, <span class="hljs-number">0</span>);
+        <span class="hljs-keyword">return</span> value(sum);
+      },
+    },
+  },
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addNumbers</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> createNodeDefinition(AddNumbersNodeType, {});
+}
+</code></pre>
+<p>You can then call the node like this:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">addNumbers</span>: addNumbers(),
+});
+
+<span class="hljs-keyword">await</span> app.resolve(call(ref(<span class="hljs-string">'addNumbers'</span>), [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]));
+<span class="hljs-comment">// === 10</span>
+</code></pre>
+<p>One thing to note about the <code>call</code> arguments is that the array might contain both node definitions as well as graph nodes. For this reason before using it you have to do a check if it is a graph node (or a node definition).</p>
+<h2><a class="anchor" aria-hidden="true" id="stateful-nodes"></a><a href="#stateful-nodes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stateful nodes</h2>
+<p>So far we've covered how to write <strong>static</strong> and <strong>stateless</strong> node types. There's a third type of a node type - <strong>stateful</strong>. This type of a node can contain a state that can be shared between different operations. For example, imagine a node that can access the result of a <code>set</code> operation from within an <code>evaluate</code> operation. This is essentially what a <code>variable()</code> node does.</p>
+<p>In order to implement a stateful node we need to declare a few things aside from the usual <code>shape</code> and <code>run</code>:</p>
+<ul>
+<li><code>state</code> - A shape of the state object. Works similarly to the <code>shape</code> property, but describes how to hash the state object.</li>
+<li><code>getInitialState()</code> - Gets initial state of the node</li>
+</ul>
+<p>These are all of the required properties of the node type. Having them enables the use of <code>onSubscribe</code> and <code>onUnsubscribe</code> methods for both node type and operation.</p>
+<p>Each stateful node has an ability to store local state in two places:</p>
+<ul>
+<li><code>setState()</code> - Sets the state of the node. This causes all of the subscribed operations' <code>run()</code> methods to be re-run. The newly set state can be accessed as the last argument of the <code>run()</code> function.</li>
+<li><code>setData()</code> - Sets the data of the node. This DOES NOT cause the <code>run()</code> to be re-run. The data is only available to the <code>onSubscribe()</code> and <code>onUnsubscribe()</code> functions. The <code>run()</code> function does not have access to the data.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="implement-a-variable-node"></a><a href="#implement-a-variable-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implement a variable node</h2>
+<p>In this section we're going to put the knowledge from the previous section to good use, and implement our own version of the <code>variable()</code> node.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { createNodeDefinition, createNodeType, graphTypes, ok, toValue } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> MyVariableNodeType = createNodeType(<span class="hljs-string">'my-variable'</span>, {
+  <span class="hljs-attr">shape</span>: {
+    <span class="hljs-attr">defaultValue</span>: graphTypes.nodeDefinition,
+  },
+  <span class="hljs-attr">state</span>: {
+    <span class="hljs-attr">currentValue</span>: graphTypes.nodeDefinition,
+  },
+  getInitialState(properties) {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">currentValue</span>: properties.defaultValue,
+    };
+  },
+  <span class="hljs-attr">operations</span>: {
+    <span class="hljs-attr">evaluate</span>: {
+      run(node, operation, dependencies, contextDependencies, state) {
+        <span class="hljs-keyword">return</span> state.currentValue;
+      },
+    },
+    <span class="hljs-attr">set</span>: {
+      run() {
+        <span class="hljs-keyword">return</span> ok();
+      },
+      onSubscribe(node, operation) {
+        <span class="hljs-comment">// Calling this.setState() will cause the `evaluate.run` to be re-run, and a new value to be returned</span>
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">currentValue</span>: operation.properties.value,
+        });
+      },
+    },
+  },
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myVariable</span>(<span class="hljs-params">defaultValue</span>) </span>{
+  <span class="hljs-keyword">return</span> createNodeDefinition(MyVariableNodeType, { <span class="hljs-attr">defaultValue</span>: toValue(defaultValue) });
+}
+</code></pre>
+<p>First, we define the shape of the node, which has the default value. Next, the state which holds the current value of the node, and which should also be a node definition. Following that, we declare an <code>evaluate</code> operation which returns the <code>currentValue</code> from the state, which is available as the last argument of the <code>run()</code> function. Then we declare the <code>set</code> operation. Running this operation should return an <code>ok()</code> node, so that Muster knows that the set worked fine. The juicy part of this comes in the <code>onSubscribe</code> function of the <code>set</code> operation. This function has access to a few stateful functions of the node:</p>
+<ul>
+<li><code>this.setState()</code></li>
+<li><code>this.getState()</code></li>
+<li><code>this.setData()</code></li>
+<li><code>this.getData()</code></li>
+</ul>
+<p>In the implementation of our <code>myVariable</code> node we only need the <code>this.setState()</code>.</p>
+<p>The final part of <code>myVariable</code> implementation is to declare the factory function. Similarly to the previous examples, we safely cast the <code>defaultValue</code> to a <code>value()</code> node.</p>
+<p>Now you can go ahead and use this simple implementation of the variable node:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: myVariable(<span class="hljs-string">'Bob'</span>),
+});
+
+app.resolve(ref(<span class="hljs-string">'name'</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">name</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>));
+
+<span class="hljs-keyword">await</span> app.resolve(set(<span class="hljs-string">'name'</span>, <span class="hljs-string">'Jane'</span>));
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Hello, Bob!</span>
+<span class="hljs-comment">// Hello, Jane!</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="lifecycle-of-a-node"></a><a href="#lifecycle-of-a-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lifecycle of a node</h2>
+<p>Before we get any further it's important for you to know the lifecycle of a node. When running Muster application, each node can hold two sets of data at a time:</p>
+<ul>
+<li><code>state</code> - A state of the node, as covered in the previous example</li>
+<li><code>data</code> - Some node data</li>
+</ul>
+<blockquote>
+<p>The <code>data</code> and the <code>state</code> is stored for as long as the node has <strong>any</strong> active subscriptions.</p>
+</blockquote>
+<p>This means that any data stored in the node will be lost after the final subscription is closed. There are ways of changing this behaviour (retain/release mechanism), but we're going to talk about them in the next section.</p>
+<p>Initially when a Muster application is started no <strong>graph nodes</strong> are created. Muster only keeps the information about <strong>node definitions</strong> (result of calling a node factory). These <strong>node definitions</strong> are then used to create <strong>graph nodes</strong> when needed.</p>
+<p>The following flow chart shows what happens when a new subscription is created for a node:
+<img src="/muster/docs/assets/subscribe-flow-chart.png" alt="Subscribe flow chart"></p>
+<p>Similarly, the following flow chart shows what happens when an operation gets unsubscribed from:
+<img src="/muster/docs/assets/unsubscribe-flow-chart.png" alt="Unsubscribe flow chart"></p>
+<h2><a class="anchor" aria-hidden="true" id="retain-release-mechanism"></a><a href="#retain-release-mechanism" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Retain/release mechanism</h2>
+<p>Sometimes you might want some more fine-grained control as to when a given graph node gets destroyed, instead of relying just on subscription mechanism. This is where the retain/release mechanism comes in. By retaining node you create an additional self-subscription. This means that when the final node subscription gets closed the node has still one subscription left, which saves the node state and data from being destroyed. To close that self-subscription you must use the release function.</p>
+<p>To illustrate the working of this mechanism let's revisit the <code>myVariable</code> node, as there was one more problem with it. Consider a following use case:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: myVariable(<span class="hljs-string">'initial'</span>),
+});
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Setting name = `Bob`'</span>);
+<span class="hljs-keyword">await</span> app.resolve(set(<span class="hljs-string">'name'</span>, <span class="hljs-string">'Bob'</span>));
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'name='</span>, <span class="hljs-keyword">await</span> app.resolve(ref(<span class="hljs-string">'name'</span>)));
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Setting name = `Bob`</span>
+<span class="hljs-comment">// name=initial</span>
+</code></pre>
+<p>This behaviour isn't exactly what we expected when implementing a custom variable node. There's a good reason why it works that way.</p>
+<p>Initially the <code>name</code> node has <code>0</code> subscriptions. Resolving the <code>set('name', 'Bob')</code> creates one subscription, which initialises the state, and then sets the <code>currentValue</code> in the <code>evaluate.onSubscribe()</code>. Once the <code>set()</code> is completed the subscription is closed because of the <code>await</code> keyword. This means that the node state is also destroyed, and when the <code>ref('name')</code> is resolved the node is resolved with a fresh state.</p>
+<p>Let's try to fix this by using <code>retain</code>/<code>release</code>:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { createNodeDefinition, createNodeType, graphTypes, ok, toValue } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> MyVariableNodeType = createNodeType(<span class="hljs-string">'my-variable'</span>, {
+  <span class="hljs-attr">shape</span>: {
+    <span class="hljs-attr">defaultValue</span>: graphTypes.nodeDefinition,
+  },
+  <span class="hljs-attr">state</span>: {
+    <span class="hljs-attr">currentValue</span>: graphTypes.nodeDefinition,
+  },
+  getInitialState(properties) {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">currentValue</span>: properties.defaultValue,
+    };
+  },
+  <span class="hljs-attr">operations</span>: {
+    <span class="hljs-attr">evaluate</span>: {
+      run(node, operation, dependencies, contextDependencies, state) {
+        <span class="hljs-keyword">return</span> state.currentValue;
+      },
+    },
+    <span class="hljs-attr">set</span>: {
+      run() {
+        <span class="hljs-keyword">return</span> ok();
+      },
+      onSubscribe(node, operation) {
+        <span class="hljs-comment">// Make sure the to run this only when the set is called for the first time</span>
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.getData().isRetained) {
+          <span class="hljs-comment">// Retain the node</span>
+          <span class="hljs-keyword">this</span>.retain();
+          <span class="hljs-comment">// Store the `isRetained` flag in the node data</span>
+          <span class="hljs-keyword">this</span>.setData({ <span class="hljs-attr">isRetained</span>: <span class="hljs-literal">true</span> });
+        }
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">currentValue</span>: operation.properties.value,
+        });
+      },
+    },
+  },
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myVariable</span>(<span class="hljs-params">defaultValue</span>) </span>{
+  <span class="hljs-keyword">return</span> createNodeDefinition(MyVariableNodeType, { <span class="hljs-attr">defaultValue</span>: toValue(defaultValue) });
+}
+</code></pre>
+<p>Note that the only thing we had to do was to call <code>this.retain()</code> when the <code>set</code> operation was subscribed for the first time.
+One final thing to do is to release the node at some point, otherwise setting it would cause a memory leak. In Muster there's a <code>reset</code> operation, which is used for resetting a node to a default value. Let's implement it for our custom variable node:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { createNodeDefinition, createNodeType, graphTypes, ok, toValue } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> MyVariableNodeType = createNodeType(<span class="hljs-string">'my-variable'</span>, {
+  <span class="hljs-attr">shape</span>: {
+    <span class="hljs-attr">defaultValue</span>: graphTypes.nodeDefinition,
+  },
+  <span class="hljs-attr">state</span>: {
+    <span class="hljs-attr">currentValue</span>: graphTypes.nodeDefinition,
+  },
+  getInitialState(properties) {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">currentValue</span>: properties.defaultValue,
+    };
+  },
+  <span class="hljs-attr">operations</span>: {
+    <span class="hljs-attr">evaluate</span>: {
+      run(node, operation, dependencies, contextDependencies, state) {
+        <span class="hljs-keyword">return</span> state.currentValue;
+      },
+    },
+    <span class="hljs-comment">// Add the `reset` operation</span>
+    reset: {
+      run() {
+        <span class="hljs-keyword">return</span> ok();
+      },
+      onSubscribe() {
+        <span class="hljs-comment">// Don't release the node if it hasn't been retained</span>
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.getData().isRetained) <span class="hljs-keyword">return</span>;
+        <span class="hljs-comment">// Reset the `isRetained` flag</span>
+        <span class="hljs-keyword">this</span>.setData({ <span class="hljs-attr">isRetained</span>: <span class="hljs-literal">false</span> });
+        <span class="hljs-comment">// Release the node</span>
+        <span class="hljs-keyword">this</span>.release();
+      },
+    },
+    <span class="hljs-attr">set</span>: {
+      run() {
+        <span class="hljs-keyword">return</span> ok();
+      },
+      onSubscribe(node, operation) {
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.getData().isRetained) {
+          <span class="hljs-keyword">this</span>.retain();
+          <span class="hljs-keyword">this</span>.setData({ <span class="hljs-attr">isRetained</span>: <span class="hljs-literal">true</span> });
+        }
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">currentValue</span>: operation.properties.value,
+        });
+      },
+    },
+  },
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myVariable</span>(<span class="hljs-params">defaultValue</span>) </span>{
+  <span class="hljs-keyword">return</span> createNodeDefinition(MyVariableNodeType, { <span class="hljs-attr">defaultValue</span>: toValue(defaultValue) });
+}
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/6.0.0/understanding-muster/scope"><span class="arrow-prev">← </span><span>Scope</span></a><a class="docs-next button" href="/muster/docs/6.0.0/understanding-muster/optimisation"><span>Optimisation*</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#node-type-api">Node Type API</a></li><li><a href="#how-operation-traversal-works">How operation traversal works</a></li><li><a href="#first-node">First node</a></li><li><a href="#store-data-inside-of-the-node">Store data inside of the node</a></li><li><a href="#implement-evaluate-operation">Implement <em>evaluate</em> operation</a></li><li><a href="#resolve-operation-dependencies">Resolve operation dependencies</a></li><li><a href="#specify-dependency-resolution-criteria">Specify dependency resolution criteria</a></li><li><a href="#how-does-the-dependency-resolution-works">How does the dependency resolution works</a><ul class="toc-headings"><li><a href="#without-an-until-predicate">Without an <em>until</em> predicate</a></li><li><a href="#with-an-until-predicate">With an <em>until</em> predicate</a></li></ul></li><li><a href="#reading-operation-arguments">Reading operation arguments</a></li><li><a href="#stateful-nodes">Stateful nodes</a></li><li><a href="#implement-a-variable-node">Implement a variable node</a></li><li><a href="#lifecycle-of-a-node">Lifecycle of a node</a></li><li><a href="#retain-release-mechanism">Retain/release mechanism</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

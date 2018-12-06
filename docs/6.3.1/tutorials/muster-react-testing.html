@@ -1,0 +1,704 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Muster React Unit Testing · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Similarly to unit testing in Muster, Muster React comes with a set of tools used for unit testing containers built with Muster React. To keep things simple, the naming of the functions used for testing is the same as in Muster:&lt;/p&gt;
+"/><meta name="docsearch:version" content="6.3.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Muster React Unit Testing · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;p&gt;Similarly to unit testing in Muster, Muster React comes with a set of tools used for unit testing containers built with Muster React. To keep things simple, the naming of the functions used for testing is the same as in Muster:&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.3.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/6.3.1/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/6.3.1/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Tutorials</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/6.3.1/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.1/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/07-muster-react-unit-testing.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Muster React Unit Testing</h1></header><article><div><span><p>Similarly to unit testing in Muster, Muster React comes with a set of tools used for unit testing containers built with Muster React. To keep things simple, the naming of the functions used for testing is the same as in Muster:</p>
+<ul>
+<li><code>runScenario()</code> - Used for defining a test suite. It allows you to define your Muster graph, as well as serves as a place to define a set of nodes to run against that graph in order to test a particular behaviour. It is also used to define a container used in this particular scenario.</li>
+<li><code>operation()</code> - Used to define an operation to run against the graph defined in the <code>runScenario()</code>, or against the container graph.</li>
+</ul>
+<p>There are a few differences between <code>runScenario()</code> and <code>operation()</code> exposed from <code>@dws/muster-react/test</code> compared to the ones from <code>@dws/muster/test</code>:</p>
+<h3><a class="anchor" aria-hidden="true" id="new-runscenario-properties"></a><a href="#new-runscenario-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New runScenario() properties</h3>
+<ul>
+<li><code>container</code> - a Muster React container to test.</li>
+<li><code>component</code> - a React component that will be used to render the UI part of the component</li>
+<li><code>shallow</code> - a property used only when <code>component</code> is set; forces a shallow render of the component</li>
+<li><code>expected</code> - a property containing expected <code>props</code>, <code>snapshot</code> and the <code>graph</code> after the initial render of the component. Can be used to check if the component's props have correct value on initial render, or even if the initial render happened.</li>
+<li><code>assert</code> - a function that allows for custom assertions. It takes one argument, which has the same shape as the <code>expected</code> property.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="new-operation-properties"></a><a href="#new-operation-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New operation() properties</h3>
+<ul>
+<li><code>input</code> - just like in normal Muster Test it allows declaring a node to be resolved against the global graph, or can be declared as a function which has one argument (a last result of resolving that component - has the same shape as an object used to compare against the <code>expected</code>).</li>
+<li><code>expected</code> - same as in the <code>runScenario()</code>, it is a property containing expected <code>props</code>, <code>snapshot</code>, <code>graph</code>, and additionally a <code>value</code>, which contains the result of the <code>input</code> operation.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="structuring-component-code"></a><a href="#structuring-component-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structuring component code</h2>
+<p>When making React applications with Muster React we recommend keeping the container code separate from the component code. React recommends keeping your components in a <code>components</code> directory, where each child of that directory is a separate component. Applications build with Muster React should follow the same directory structure, and keep the container code alongside a given component. To illustrate that let's take a look at example <code>Profile</code> component:</p>
+<h3><a class="anchor" aria-hidden="true" id="directory-structure"></a><a href="#directory-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Directory structure</h3>
+<pre><code class="hljs">- components
+  -<span class="hljs-built_in"> profile
+</span>    - index.js
+    - profile.js
+    - profile.container.js
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="components-profile-profilejs"></a><a href="#components-profile-profilejs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>components/profile/profile.js</h3>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Profile</span>(<span class="hljs-params">{ firstName, lastName }</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello {firstName} {lastName}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span>
+  );
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="components-profile-profilecontainerjs"></a><a href="#components-profile-profilecontainerjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>components/profile/profile.container.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { container } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>,
+  }
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="components-profile-indexjs"></a><a href="#components-profile-indexjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>components/profile/index.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> Profile <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile'</span>;
+<span class="hljs-keyword">import</span> ProfileContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile.container'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> ProfileContainer(Profile);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="summary"></a><a href="#summary" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h3>
+<p>Following this directory allows you to split the view from the graph, as well as enable unit testing graph separately from the view of that component. The <code>index.js</code> file combines both the container and the component into a connected component you can use in your app.</p>
+<h2><a class="anchor" aria-hidden="true" id="first-unit-test"></a><a href="#first-unit-test" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>First unit test</h2>
+<p>In this part of the tutorial we're going to build a simple unit test for the component from the previous chapter. As you might have noticed, the container isn't a very complex one. It has no dependencies on the global graph, and all of its nodes are simple <code>value()</code> nodes.</p>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-test-file"></a><a href="#creating-a-test-file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a test file</h3>
+<p>First we have to start with creating a test file, and import a few important things from <code>@dws/muster-react/test</code>. The recommendation is to name the file using a <code>&lt;component_name&gt;.container.spec.js</code> pattern, and placing it alongside the component and container code.
+In our case we save the file as <code>'components/profile/profile.container.spec.js'</code>, and begin with:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> ProfileContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile.container'</span>;
+
+describe(<span class="hljs-string">'profile'</span>, () =&gt; {
+  <span class="hljs-comment">// Test scenarios go here</span>
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="declaring-a-test-scenario"></a><a href="#declaring-a-test-scenario" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Declaring a test scenario</h3>
+<p>Now that we have our test file ready we can now proceed with the creation of a first test scenario. The scenario will test if a component gets correctly rendered with all the props and correct values for these props:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> ProfileContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile.container'</span>;
+
+describe(<span class="hljs-string">'profile'</span>, () =&gt; {
+  runScenario({
+    <span class="hljs-attr">describe</span>: <span class="hljs-string">'GIVEN a profile container'</span>,
+    <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({}),
+    <span class="hljs-attr">container</span>: ProfileContainer,
+    <span class="hljs-attr">expected</span>: {
+      <span class="hljs-attr">props</span>: { <span class="hljs-comment">// Declares an object containing expected props this test component should be rendered with</span>
+        firstName: <span class="hljs-string">'Bob'</span>,
+        <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+      },
+    },
+  });
+});
+</code></pre>
+<p>This concludes our first unit test, as there's not much more we can test in this component.</p>
+<h2><a class="anchor" aria-hidden="true" id="testing-interactive-components"></a><a href="#testing-interactive-components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing interactive components</h2>
+<p>Time to introduce some interactivity to our components. To do this we're going to need a new component. Imagine we're tasked with building a task planner (something like a ToDo list), and we need a component that will handle adding new tasks to the list of tasks. The component should render an input field, which should create a new task when user hits <code>ENTER</code> key.</p>
+<h3><a class="anchor" aria-hidden="true" id="new-taskjs"></a><a href="#new-taskjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new-task.js</h3>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+
+<span class="hljs-keyword">const</span> ENTER_KEY_CODE = <span class="hljs-number">13</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">NewTask</span>(<span class="hljs-params">{ createTask, creationError, description, setDescription }</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+      {creationError &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>An error occurred when creating a task: {creationError.toString()}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>}
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+        <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>
+        <span class="hljs-attr">onChange</span>=<span class="hljs-string">{(e)</span> =&gt;</span> setDescription(e.currentTarget.value)}
+        onKeyPress={(e) =&gt; e.keyCode === ENTER_KEY_CODE &amp;&amp; createTask()}
+        value={description}
+        /&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  );
+}
+</span></code></pre>
+<h3><a class="anchor" aria-hidden="true" id="new-taskcontainerjs"></a><a href="#new-taskcontainerjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new-task.container.js</h3>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> { action, container, fromPromise, propTypes, ref, reset, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> createNewTask <span class="hljs-keyword">from</span> <span class="hljs-string">'../../api/create-new-task'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-attr">createTask</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-comment">// Reset the creation error</span>
+      <span class="hljs-keyword">yield</span> reset(ref(<span class="hljs-string">'creationError'</span>));
+      <span class="hljs-comment">// Get current description</span>
+      <span class="hljs-keyword">const</span> description = <span class="hljs-keyword">yield</span> ref(<span class="hljs-string">'description'</span>);
+      <span class="hljs-comment">// Trim the description</span>
+      <span class="hljs-keyword">const</span> trimmedDescription = (description || <span class="hljs-string">''</span>).trim();
+      <span class="hljs-comment">// Check if the description is not empty</span>
+      <span class="hljs-keyword">if</span> (trimmedDescription.length === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">// Wait for the new task to be created</span>
+        <span class="hljs-keyword">yield</span> fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> createNewTask(trimmedDescription));
+        <span class="hljs-comment">// Clear the description field</span>
+        <span class="hljs-keyword">yield</span> reset(ref(<span class="hljs-string">'description'</span>));
+      } <span class="hljs-keyword">catch</span>(ex) {
+        <span class="hljs-comment">// Whoops, something went wrong with creating new task</span>
+        <span class="hljs-keyword">yield</span> set(<span class="hljs-string">'creationError'</span>, ex);
+      }
+    }),
+    <span class="hljs-attr">creationError</span>: variable(<span class="hljs-literal">undefined</span>),
+    <span class="hljs-attr">description</span>: variable(<span class="hljs-string">''</span>),
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">createTask</span>: propTypes.caller(),
+    <span class="hljs-attr">creationError</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">description</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">setDescription</span>: propTypes.setter(<span class="hljs-string">'description'</span>),
+  },
+});
+</code></pre>
+<p>Note that the file uses a <code>createNewTask</code> function, which is implemented outside this file. It doesn't matter what it does for the moment. It might be responsible for connecting with some API and asynchronously saving it there, or it might save the task in a file, or even just stick it in the memory. All we care is that the function should return a promise, which then gets consumed by the <code>fromPromise()</code> node. The best thing is to mock that <code>api/create-new-task</code> file, and assume that it works fine. That file should have its own set of unit tests, and testing if <code>createNewTask</code> works fine should not be a part of testing the <code>NewTaskContaine</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="indexjs"></a><a href="#indexjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>index.js</h3>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> NewTask <span class="hljs-keyword">from</span> <span class="hljs-string">'./new-task'</span>;
+<span class="hljs-keyword">import</span> NewTaskContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./new-task.container'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> NewTaskContainer(NewTask);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-test-file-1"></a><a href="#creating-a-test-file-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a test file</h3>
+<p>Similarly as with the previous unit test, let's start by importing a few things needed for the test. We will extend a list of these imports as we add more unit tests, but for now we start with just a few. Also, we will need to mock the <code>createNewTask()</code> function to make sure we can control its workings. The test file should be saved as <code>'components/new-task/new-task.container.spec.js'</code>, and look like this:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> ProfileContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile.container'</span>;
+<span class="hljs-keyword">import</span> createNewTask <span class="hljs-keyword">from</span> <span class="hljs-string">'../../api/create-new-task'</span>;
+
+<span class="hljs-comment">// Mock the createNewTask() function</span>
+jest.mock(<span class="hljs-string">'../../api/create-new-task'</span>, () =&gt; jest.fn());
+
+describe(<span class="hljs-string">'new-task'</span>, () =&gt; {
+  <span class="hljs-comment">// Test scenarios go here </span>
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="planning-test-scenarios"></a><a href="#planning-test-scenarios" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Planning test scenarios</h3>
+<p>Before starting to write the tests it's always good to figure out what scenarios we'd like to cover. The first thing that might come to mind is testing the so-called &quot;Happy path&quot;, meaning that everything went well. This however covers only a very narrow spectrum of possibilities. After covering the happy path it's always good to check the common errors that might occur. In our example one possibility is for the user to hit 'ENTER' when the description is empty. Ideally we don't want to create tasks with empty description. Similarly, we want to prevent the ability of creating a task with a description that consists only of white-space characters. Also, our code should be resilient to failures caused by the <code>createNewTask()</code> function.</p>
+<p>To summarise this, here's a list of possible test cases to test:</p>
+<ul>
+<li>The description is correct and everything worked fine (Happy path)</li>
+<li>The description is empty; should not call the <code>createNewTask()</code></li>
+<li>The description consists only of white-space characters; should not call the <code>createNewTask()</code></li>
+<li>The description is correct, but the <code>createNewTask()</code> has resolved to a rejected promise</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="test-happy-path"></a><a href="#test-happy-path" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test &quot;Happy Path&quot;</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> ProfileContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile.container'</span>;
+<span class="hljs-keyword">import</span> createNewTask <span class="hljs-keyword">from</span> <span class="hljs-string">'../../api/create-new-task'</span>;
+
+<span class="hljs-comment">// Mock the createNewTask() function</span>
+jest.mock(<span class="hljs-string">'../../api/create-new-task'</span>, () =&gt; jest.fn());
+
+describe(<span class="hljs-string">'new-task'</span>, () =&gt; {
+  describe(<span class="hljs-string">'Test successful creation of new task with non-empty description'</span>, () =&gt; {
+    runScenario({
+      <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a ProfileContainer'</span>,
+      before() {
+        <span class="hljs-comment">// Make sure the `createNewTask()` function returns a promise!</span>
+        createNewTask.mockReturnValue(<span class="hljs-built_in">Promise</span>.resolve());
+      },
+      <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({}),
+      <span class="hljs-attr">container</span>: ProfileContainer,
+      <span class="hljs-attr">expected</span>: {
+        <span class="hljs-attr">props</span>: {
+          <span class="hljs-attr">createTask</span>: expect.any(<span class="hljs-built_in">Function</span>),
+          <span class="hljs-attr">creationError</span>: <span class="hljs-literal">undefined</span>,
+          <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+          <span class="hljs-attr">setDescription</span>: expect.any(<span class="hljs-built_in">Function</span>),
+        },
+      },
+      <span class="hljs-attr">operations</span>: [
+        operation({
+          <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN the setDescription is called'</span>,
+          <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.setDescription(<span class="hljs-string">'First task'</span>),
+          <span class="hljs-attr">expected</span>: {
+            <span class="hljs-attr">props</span>: expect.objectContaining({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'First task'</span>,
+            }),
+          },
+          <span class="hljs-attr">operations</span>: [
+            operation({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then the createTask is called'</span>,
+              before() {
+                <span class="hljs-comment">// Good to do this before calling something that should affect our mock function</span>
+                jest.clearAllMocks();
+              },
+              <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.createTask(),
+              <span class="hljs-attr">expected</span>: {
+                <span class="hljs-attr">props</span>: expect.objectContaining({
+                  <span class="hljs-attr">creationError</span>: <span class="hljs-literal">undefined</span>,
+                  <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+                }),
+              },
+              assert() {
+                expect(createNewTask).toHaveBeenCalledTimes(<span class="hljs-number">1</span>);
+                expect(createNewTask).toHaveBeenCalledWith(<span class="hljs-string">'First task'</span>);
+              },
+            }),
+          ],
+        }),
+      ],
+    });
+  });
+});
+</code></pre>
+<p>The test scenario we just created start with a <code>runScenario</code>, which expects the test component to be rendered with props that contain a <code>createTask</code> property which is a function (note the use of Jest's <code>expect.any(Function)</code>), <code>creationError</code> property being undefined, <code>description</code> set to empty string, and a <code>setDescription</code> function. This should cover the case of initial render of the component. Note that the <code>runScenario()</code> starts with <code>begin()</code> which sets the return value of the <code>createNewTask()</code> mock. This ensures that the function returns a resolved promise, and the code that expects it to return promise won't throw errors.</p>
+<p>In the first child operation (<code>WHEN the setDescription is called</code>) we call the <code>setDescription</code> function that was passed as a prop to our component in the initial render with a <code>'First task'</code> string. After doing that we're expecting our component to be re-rendered with props that contain a <code>description</code> prop which is now set to <code>'First task'</code> string. To save some typing we used <code>expect.objectContaining()</code> matcher from Jest.</p>
+<p>Following that, the next operation to do (after calling the <code>setDescription</code> function) is to call the <code>createTask()</code> function. This should cause another re-render of the component with <code>creationError</code> still set as undefined and the <code>description</code> property cleared out. One more thing that remains to be tested is to check if the <code>createNewTask()</code> mock was called with correct arguments.</p>
+<p>This concludes the Happy Path part of our tests.</p>
+<h3><a class="anchor" aria-hidden="true" id="test-calling-createtask-with-empty-description"></a><a href="#test-calling-createtask-with-empty-description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test calling createTask() with empty description</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> ProfileContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile.container'</span>;
+<span class="hljs-keyword">import</span> createNewTask <span class="hljs-keyword">from</span> <span class="hljs-string">'../../api/create-new-task'</span>;
+
+<span class="hljs-comment">// Mock the createNewTask() function</span>
+jest.mock(<span class="hljs-string">'../../api/create-new-task'</span>, () =&gt; jest.fn());
+
+describe(<span class="hljs-string">'new-task'</span>, () =&gt; {
+  <span class="hljs-comment">// ...</span>
+  
+  describe(<span class="hljs-string">'Test calling `createTask()` with empty description'</span>, () =&gt; {
+    runScenario({
+      <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a ProfileContainer'</span>,
+      before() {
+        <span class="hljs-comment">// Make sure the `createNewTask()` function returns a promise!</span>
+        createNewTask.mockReturnValue(<span class="hljs-built_in">Promise</span>.resolve());
+      },
+      <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({}),
+      <span class="hljs-attr">container</span>: ProfileContainer,
+      <span class="hljs-attr">expected</span>: {
+        <span class="hljs-attr">props</span>: {
+          <span class="hljs-attr">createTask</span>: expect.any(<span class="hljs-built_in">Function</span>),
+          <span class="hljs-attr">creationError</span>: <span class="hljs-literal">undefined</span>,
+          <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+          <span class="hljs-attr">setDescription</span>: expect.any(<span class="hljs-built_in">Function</span>),
+        },
+      },
+      <span class="hljs-attr">operations</span>: [
+        operation({
+          <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then the createTask is called'</span>,
+          before() {
+            <span class="hljs-comment">// Good to do this before calling something that should affect our mock function</span>
+            jest.clearAllMocks();
+          },
+          <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.createTask(),
+          <span class="hljs-attr">expected</span>: {
+            <span class="hljs-attr">props</span>: expect.objectContaining({
+              <span class="hljs-attr">creationError</span>: <span class="hljs-literal">undefined</span>,
+              <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+            }),
+          },
+          assert() {
+            expect(createNewTask).not.toHaveBeenCalled();
+          },
+        }),
+      ],
+    });
+  });
+});
+</code></pre>
+<p>This test checks what happens when the <code>createTask()</code> function is called when the description is empty. The expected behaviour is for the description to remain empty, the <code>creationError</code> to remain undefined, and for the <code>createNewTask</code> function not to be called.</p>
+<h3><a class="anchor" aria-hidden="true" id="test-calling-createtask-with-white-space-description"></a><a href="#test-calling-createtask-with-white-space-description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test calling createTask() with white-space description</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> ProfileContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile.container'</span>;
+<span class="hljs-keyword">import</span> createNewTask <span class="hljs-keyword">from</span> <span class="hljs-string">'../../api/create-new-task'</span>;
+
+<span class="hljs-comment">// Mock the createNewTask() function</span>
+jest.mock(<span class="hljs-string">'../../api/create-new-task'</span>, () =&gt; jest.fn());
+
+describe(<span class="hljs-string">'new-task'</span>, () =&gt; {
+  <span class="hljs-comment">// ...</span>
+  describe(<span class="hljs-string">'Test calling `createTask()` with white-space description'</span>, () =&gt; {
+    runScenario({
+      <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a ProfileContainer'</span>,
+      before() {
+        <span class="hljs-comment">// Make sure the `createNewTask()` function returns a promise!</span>
+        createNewTask.mockReturnValue(<span class="hljs-built_in">Promise</span>.resolve());
+      },
+      <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({}),
+      <span class="hljs-attr">container</span>: ProfileContainer,
+      <span class="hljs-attr">expected</span>: {
+        <span class="hljs-attr">props</span>: {
+          <span class="hljs-attr">createTask</span>: expect.any(<span class="hljs-built_in">Function</span>),
+          <span class="hljs-attr">creationError</span>: <span class="hljs-literal">undefined</span>,
+          <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+          <span class="hljs-attr">setDescription</span>: expect.any(<span class="hljs-built_in">Function</span>),
+        },
+      },
+      <span class="hljs-attr">operations</span>: [
+        operation({
+          <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN the setDescription is called'</span>,
+          <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.setDescription(<span class="hljs-string">'    '</span>),
+          <span class="hljs-attr">expected</span>: {
+            <span class="hljs-attr">props</span>: expect.objectContaining({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'    '</span>,
+            }),
+          },
+          <span class="hljs-attr">operations</span>: [
+            operation({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then the createTask is called'</span>,
+              before() {
+                <span class="hljs-comment">// Good to do this before calling something that should affect our mock function</span>
+                jest.clearAllMocks();
+              },
+              <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.createTask(),
+              <span class="hljs-attr">expected</span>: {
+                <span class="hljs-attr">props</span>: expect.objectContaining({
+                  <span class="hljs-attr">creationError</span>: <span class="hljs-literal">undefined</span>,
+                  <span class="hljs-attr">description</span>: <span class="hljs-string">'    '</span>,
+                }),
+              },
+              assert() {
+                expect(createNewTask).not.toHaveBeenCalled();
+              },
+            }),
+          ],
+        }),
+      ],
+    });
+  });
+});
+</code></pre>
+<p>This test follows the same pattern as the <strong>Test &quot;Happy Path&quot;</strong> test but with one difference - it expects the <code>createNewTask()</code> function <strong>not</strong> to be called.</p>
+<h3><a class="anchor" aria-hidden="true" id="test-createnewtask-error-handling"></a><a href="#test-createnewtask-error-handling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test createNewTask() error handling</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> ProfileContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile.container'</span>;
+<span class="hljs-keyword">import</span> createNewTask <span class="hljs-keyword">from</span> <span class="hljs-string">'../../api/create-new-task'</span>;
+
+<span class="hljs-comment">// Mock the createNewTask() function</span>
+jest.mock(<span class="hljs-string">'../../api/create-new-task'</span>, () =&gt; jest.fn());
+
+describe(<span class="hljs-string">'new-task'</span>, () =&gt; {
+  <span class="hljs-comment">// ...</span>
+  describe(<span class="hljs-string">'Test handling createNewTask promise rejection'</span>, () =&gt; {
+    runScenario({
+      <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a ProfileContainer'</span>,
+      before() {
+        <span class="hljs-comment">// Make sure the `createNewTask()` function returns a promise</span>
+        createNewTask.mockReturnValue(<span class="hljs-built_in">Promise</span>.reject(<span class="hljs-string">'Some test error'</span>));
+      },
+      <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({}),
+      <span class="hljs-attr">container</span>: ProfileContainer,
+      <span class="hljs-attr">expected</span>: {
+        <span class="hljs-attr">props</span>: {
+          <span class="hljs-attr">createTask</span>: expect.any(<span class="hljs-built_in">Function</span>),
+          <span class="hljs-attr">creationError</span>: <span class="hljs-literal">undefined</span>,
+          <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+          <span class="hljs-attr">setDescription</span>: expect.any(<span class="hljs-built_in">Function</span>),
+        },
+      },
+      <span class="hljs-attr">operations</span>: [
+        operation({
+          <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN the setDescription is called'</span>,
+          <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.setDescription(<span class="hljs-string">'First task'</span>),
+          <span class="hljs-attr">expected</span>: {
+            <span class="hljs-attr">props</span>: expect.objectContaining({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'First task'</span>,
+            }),
+          },
+          <span class="hljs-attr">operations</span>: [
+            operation({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then the createTask is called'</span>,
+              before() {
+                <span class="hljs-comment">// Good to do this before calling something that should affect our mock function</span>
+                jest.clearAllMocks();
+              },
+              <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.createTask(),
+              <span class="hljs-attr">expected</span>: {
+                <span class="hljs-attr">props</span>: expect.objectContaining({
+                  <span class="hljs-attr">creationError</span>: <span class="hljs-string">'Some test error'</span>,
+                  <span class="hljs-attr">description</span>: <span class="hljs-string">'First task'</span>,
+                }),
+              },
+              assert() {
+                expect(createNewTask).toHaveBeenCalledTimes(<span class="hljs-number">1</span>);
+                expect(createNewTask).toHaveBeenCalledWith(<span class="hljs-string">'First task'</span>);
+              },
+            }),
+          ],
+        }),
+      ],
+    });
+  });
+});
+</code></pre>
+<p>This time the mock version of the <code>createNewTask()</code> returns a promise that gets rejected with a <code>'Some test error'</code> message. In the final operation (<strong>AND then the createTask is called</strong>) the expected props now expect <code>creationError</code> to equal <code>'Some test error'</code>, and the <code>description</code> to remain as before calling the <code>createTask()</code> function.</p>
+<h2><a class="anchor" aria-hidden="true" id="testing-components-with-connection-to-global-graph"></a><a href="#testing-components-with-connection-to-global-graph" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing components with connection to global graph</h2>
+<p>So far we've covered testing self-contained components that have no dependencies on the global graph. This chapter shows how to test components that depend on nodes from global graph.</p>
+<p>Let's revisit the example from the previous chapter, and instead of using an external function <code>createNewTask()</code>, let's store the tasks in a globally available <code>arrayList()</code>. This means that calling <code>createTask()</code> should now push a new item into the <code>tasks</code> node.</p>
+<h3><a class="anchor" aria-hidden="true" id="new-taskjs-1"></a><a href="#new-taskjs-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new-task.js</h3>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+
+<span class="hljs-keyword">const</span> ENTER_KEY_CODE = <span class="hljs-number">13</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">NewTask</span>(<span class="hljs-params">{ createTask, creationError, description, setDescription }</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+      {creationError &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>An error occurred when creating a task: {creationError.toString()}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>}
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+        <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>
+        <span class="hljs-attr">onChange</span>=<span class="hljs-string">{(e)</span> =&gt;</span> setDescription(e.currentTarget.value)}
+        onKeyPress={(e) =&gt; e.keyCode === ENTER_KEY_CODE &amp;&amp; createTask()}
+        value={description}
+        /&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  );
+}
+</span></code></pre>
+<blockquote>
+<p>This file remained unchanged compared to the one from the previous chapter.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="new-taskcontainerjs-1"></a><a href="#new-taskcontainerjs-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new-task.container.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { action, container, global, push, propTypes, ref, reset, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-attr">createTask</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-comment">// Get current description</span>
+      <span class="hljs-keyword">const</span> description = <span class="hljs-keyword">yield</span> ref(<span class="hljs-string">'description'</span>);
+      <span class="hljs-comment">// Trim the description</span>
+      <span class="hljs-keyword">const</span> trimmedDescription = (description || <span class="hljs-string">''</span>).trim();
+      <span class="hljs-comment">// Check if the description is not empty</span>
+      <span class="hljs-keyword">if</span> (trimmedDescription.length === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
+      <span class="hljs-comment">// Wait for the new task to be created</span>
+      <span class="hljs-keyword">yield</span> push(ref(global(<span class="hljs-string">'tasks'</span>)), description);
+      <span class="hljs-comment">// Clear the description field</span>
+      <span class="hljs-keyword">yield</span> reset(ref(<span class="hljs-string">'description'</span>));
+    }),
+    <span class="hljs-attr">description</span>: variable(<span class="hljs-string">''</span>),
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">createTask</span>: propTypes.caller(),
+    <span class="hljs-attr">description</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">setDescription</span>: propTypes.setter(<span class="hljs-string">'description'</span>),
+  },
+});
+</code></pre>
+<p>Note that the <code>creationError</code> branch along with the accompanying prop is now gone. Also, the implementation of the <code>createTask</code> action now pushes the description directly into the <code>ref(global('tasks'))</code> node, instead of using asynchronous <code>createNewTask()</code> function.</p>
+<h3><a class="anchor" aria-hidden="true" id="indexjs-1"></a><a href="#indexjs-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>index.js</h3>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> NewTask <span class="hljs-keyword">from</span> <span class="hljs-string">'./new-task'</span>;
+<span class="hljs-keyword">import</span> NewTaskContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./new-task.container'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> NewTaskContainer(NewTask);
+</code></pre>
+<blockquote>
+<p>This file remained unchanged compared to the one from the previous chapter.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-test-file-2"></a><a href="#creating-a-test-file-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a test file</h3>
+<p>This part of writing Muster-React unit tests should be already familiar to you. In this chapter however, we'll be adding a few additional muster node imports as we start adding unit tests.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> NewTaskContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./new-task.container'</span>;
+
+describe(<span class="hljs-string">'new-task'</span>, () =&gt; {
+  <span class="hljs-comment">// Test scenarios go here </span>
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="planning-test-scenarios-1"></a><a href="#planning-test-scenarios-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Planning test scenarios</h3>
+<p>Just like in the previous chapter, before starting the process of writing the tests let's think a moment about what we want to test in our test suite.
+Here's a list of tests that should give us a decent code coverage:</p>
+<ul>
+<li>The description is correct; an item should be added to the list of tasks</li>
+<li>The description is empty; should not add any new items to the list of tasks</li>
+<li>The description consists only of white-space characters; should not add any new items to the list of tasks</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="test-adding-new-task"></a><a href="#test-adding-new-task" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test adding new task</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { arrayList, entries, query } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> NewTaskContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./new-task.container'</span>;
+
+describe(<span class="hljs-string">'new-task'</span>, () =&gt; {
+  describe(<span class="hljs-string">'Test adding a new task'</span>, () =&gt; {
+    runScenario({
+      <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a NewTaskContainer and a graph with tasks arrayList'</span>,
+      <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({
+        <span class="hljs-attr">tasks</span>: arrayList([]),
+      }),
+      <span class="hljs-attr">container</span>: NewTaskContainer,
+      <span class="hljs-attr">expected</span>: {
+        <span class="hljs-attr">props</span>: {
+          <span class="hljs-attr">createTask</span>: expect.any(<span class="hljs-built_in">Function</span>),
+          <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+          <span class="hljs-attr">setDescription</span>: expect.any(<span class="hljs-built_in">Function</span>),
+        },
+      },
+      <span class="hljs-attr">operations</span>: [
+        operation({
+          <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN the setDescription is called'</span>,
+          <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.setDescription(<span class="hljs-string">'First task'</span>),
+          <span class="hljs-attr">expected</span>: {
+            <span class="hljs-attr">props</span>: expect.objectContaining({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'First task'</span>,
+            }),
+          },
+          <span class="hljs-attr">operations</span>: [
+            operation({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then the createTask is called'</span>, 
+              <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.createTask(),
+              <span class="hljs-attr">expected</span>: {
+                <span class="hljs-attr">props</span>: expect.objectContaining({
+                  <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+                }),
+              },
+              <span class="hljs-attr">operations</span>: [
+                operation({
+                  <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then a query to get tasks is resolved'</span>,
+                  <span class="hljs-attr">input</span>: query(ref(<span class="hljs-string">'tasks'</span>), entries()),
+                  <span class="hljs-attr">expected</span>: toNode([<span class="hljs-string">'First task'</span>]),
+                }),
+              ]
+            }),
+          ],
+        }),
+      ],
+    });
+  });
+});
+</code></pre>
+<p>The example above starts very similar to the tests we've done before, but with a few notable differences. The marjor difference is that now our mock Muster graph contains a <code>tasks</code> branch. This is dictated by the fact that our NewTaskContainer accesses that node inside the <code>createTask</code> action. Not declaring the <code>tasks</code> branch would result in our unit tests returning errors, which wouldn't be causes by the bad implementation of NewTaskContainer, but simply by bad unit test design. One more thing to remember is to declare the required Muster nodes with the correct type, as not doing so would also result in possible test failures. To illustrate that let's imagine if we declared the <code>tasks: variable([])</code> in our mock graph. The initial render of the component would go through without any issues. The problem would have started when we called the <code>createTask</code> action, as it expects the <code>task</code> node to support <code>push</code> operation, which <code>variable()</code> doesn't.</p>
+<p>Next two test operations are similar to what we've done before - set description and check if the props were updated, and then call a function and see if the description was cleared.</p>
+<p>The fun begins with the final operation - instead of declaring the <code>input</code> as a function that takes a previous result of the scenario, we declare it as a Muster node. This node is going to be resolved against the mock graph. We can use it to see if the code made in our container has made correct changes to the global graph after running a particular operation.</p>
+<h3><a class="anchor" aria-hidden="true" id="test-calling-createtask-with-empty-description-1"></a><a href="#test-calling-createtask-with-empty-description-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test calling createTask() with empty description</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { arrayList, entries, query } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> NewTaskContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./new-task.container'</span>;
+
+describe(<span class="hljs-string">'new-task'</span>, () =&gt; {
+  <span class="hljs-comment">// ...</span>
+  describe(<span class="hljs-string">'Test calling createTask() with empty description'</span>, () =&gt; {
+    runScenario({
+      <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a NewTaskContainer and a graph with tasks arrayList'</span>,
+      <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({
+        <span class="hljs-attr">tasks</span>: arrayList([]),
+      }),
+      <span class="hljs-attr">container</span>: NewTaskContainer,
+      <span class="hljs-attr">expected</span>: {
+        <span class="hljs-attr">props</span>: {
+          <span class="hljs-attr">createTask</span>: expect.any(<span class="hljs-built_in">Function</span>),
+          <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+          <span class="hljs-attr">setDescription</span>: expect.any(<span class="hljs-built_in">Function</span>),
+        },
+      },
+      <span class="hljs-attr">operations</span>: [
+        operation({
+          <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN then the createTask is called with empty description'</span>,
+          <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.createTask(),
+          <span class="hljs-attr">expected</span>: {
+            <span class="hljs-attr">props</span>: expect.objectContaining({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+            }),
+          },
+          <span class="hljs-attr">operations</span>: [
+            operation({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then a query to get tasks is resolved'</span>,
+              <span class="hljs-attr">input</span>: query(ref(<span class="hljs-string">'tasks'</span>), entries()),
+              <span class="hljs-attr">expected</span>: toNode([]),
+            }),
+          ]
+        }),
+      ],
+    });
+  });
+});
+</code></pre>
+<p>Similarly to the previous example, the final operation is to resolve a node against the global graph. However, instead of checking if an item has been added to the list of tasks, this test checks if the list of tasks remained empty.</p>
+<h3><a class="anchor" aria-hidden="true" id="test-calling-createtask-with-white-space-description-1"></a><a href="#test-calling-createtask-with-white-space-description-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test calling createTask() with white-space description</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { arrayList, entries, query } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-keyword">import</span> { runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react/test'</span>;
+<span class="hljs-keyword">import</span> NewTaskContainer <span class="hljs-keyword">from</span> <span class="hljs-string">'./new-task.container'</span>;
+
+describe(<span class="hljs-string">'new-task'</span>, () =&gt; {
+  describe(<span class="hljs-string">'Test calling createTask() with white-space description'</span>, () =&gt; {
+    runScenario({
+      <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a NewTaskContainer and a graph with tasks arrayList'</span>,
+      <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({
+        <span class="hljs-attr">tasks</span>: arrayList([]),
+      }),
+      <span class="hljs-attr">container</span>: NewTaskContainer,
+      <span class="hljs-attr">expected</span>: {
+        <span class="hljs-attr">props</span>: {
+          <span class="hljs-attr">createTask</span>: expect.any(<span class="hljs-built_in">Function</span>),
+          <span class="hljs-attr">description</span>: <span class="hljs-string">''</span>,
+          <span class="hljs-attr">setDescription</span>: expect.any(<span class="hljs-built_in">Function</span>),
+        },
+      },
+      <span class="hljs-attr">operations</span>: [
+        operation({
+          <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN the setDescription is called'</span>,
+          <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.setDescription(<span class="hljs-string">'    '</span>),
+          <span class="hljs-attr">expected</span>: {
+            <span class="hljs-attr">props</span>: expect.objectContaining({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'    '</span>,
+            }),
+          },
+          <span class="hljs-attr">operations</span>: [
+            operation({
+              <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then the createTask is called'</span>, 
+              <span class="hljs-attr">input</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.props.createTask(),
+              <span class="hljs-attr">expected</span>: {
+                <span class="hljs-attr">props</span>: expect.objectContaining({
+                  <span class="hljs-attr">description</span>: <span class="hljs-string">'    '</span>,
+                }),
+              },
+              <span class="hljs-attr">operations</span>: [
+                operation({
+                  <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then a query to get tasks is resolved'</span>,
+                  <span class="hljs-attr">input</span>: query(ref(<span class="hljs-string">'tasks'</span>), entries()),
+                  <span class="hljs-attr">expected</span>: toNode([]),
+                }),
+              ]
+            }),
+          ],
+        }),
+      ],
+    });
+  });
+});
+</code></pre>
+<p>The final test scenario checks what happens when a <code>createTask()</code> function is called with a description that consists only of white-space characters.</p>
+<h2><a class="anchor" aria-hidden="true" id="final-words"></a><a href="#final-words" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Final words</h2>
+<p>Armed with the knowledge covered in this tutorial you should now be able to test most of Muster-React containers. The testing framework has a few more advanced features like declaring a React context values, or setting the component renderer from a basic <code>() =&gt; null</code> into a component of your choice. You can find out more about that in Muster React API docs.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/6.3.1/tutorials/muster-react-cookbook"><span class="arrow-prev">← </span><span>Muster React Cookbook</span></a><a class="docs-next button" href="/muster/docs/6.3.1/resources/setup"><span>Setup</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#structuring-component-code">Structuring component code</a><ul class="toc-headings"><li><a href="#directory-structure">Directory structure</a></li><li><a href="#components-profile-profilejs">components/profile/profile.js</a></li><li><a href="#components-profile-profilecontainerjs">components/profile/profile.container.js</a></li><li><a href="#components-profile-indexjs">components/profile/index.js</a></li><li><a href="#summary">Summary</a></li></ul></li><li><a href="#first-unit-test">First unit test</a><ul class="toc-headings"><li><a href="#creating-a-test-file">Creating a test file</a></li><li><a href="#declaring-a-test-scenario">Declaring a test scenario</a></li></ul></li><li><a href="#testing-interactive-components">Testing interactive components</a><ul class="toc-headings"><li><a href="#new-taskjs">new-task.js</a></li><li><a href="#new-taskcontainerjs">new-task.container.js</a></li><li><a href="#indexjs">index.js</a></li><li><a href="#creating-a-test-file-1">Creating a test file</a></li><li><a href="#planning-test-scenarios">Planning test scenarios</a></li><li><a href="#test-happy-path">Test &quot;Happy Path&quot;</a></li><li><a href="#test-calling-createtask-with-empty-description">Test calling createTask() with empty description</a></li><li><a href="#test-calling-createtask-with-white-space-description">Test calling createTask() with white-space description</a></li><li><a href="#test-createnewtask-error-handling">Test createNewTask() error handling</a></li></ul></li><li><a href="#testing-components-with-connection-to-global-graph">Testing components with connection to global graph</a><ul class="toc-headings"><li><a href="#new-taskjs-1">new-task.js</a></li><li><a href="#new-taskcontainerjs-1">new-task.container.js</a></li><li><a href="#indexjs-1">index.js</a></li><li><a href="#creating-a-test-file-2">Creating a test file</a></li><li><a href="#planning-test-scenarios-1">Planning test scenarios</a></li><li><a href="#test-adding-new-task">Test adding new task</a></li><li><a href="#test-calling-createtask-with-empty-description-1">Test calling createTask() with empty description</a></li><li><a href="#test-calling-createtask-with-white-space-description-1">Test calling createTask() with white-space description</a></li></ul></li><li><a href="#final-words">Final words</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

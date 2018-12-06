@@ -1,0 +1,931 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Latest Changes · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;!--lint disable --&gt;"/><meta name="docsearch:version" content="6.4.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Latest Changes · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;!--lint disable --&gt;"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.4.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/6.4.0/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/6.4.0/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Resources</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/glossary">Glossary</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/6.4.0/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/CHANGELOG.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Latest Changes</h1></header><article><div><span><!--lint disable -->
+<h2><a class="anchor" aria-hidden="true" id="unreleased"></a><a href="#unreleased" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unreleased</h2>
+<h2><a class="anchor" aria-hidden="true" id="640-2018-11-30"></a><a href="#640-2018-11-30" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.4.0 (2018-11-30)</h2>
+<h3><a class="anchor" aria-hidden="true" id="new-features"></a><a href="#new-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🚀 New Features</h3>
+<ul>
+<li>Extended the <code>querySet()</code> API by adding a short-hand versions of operation factories:
+<pre><code class="hljs css language-javascript">querySetGetChildOperation(getChildOperation(<span class="hljs-string">'someKey'</span>));
+<span class="hljs-comment">// or</span>
+querySetGetChildOperation(<span class="hljs-string">'someKey'</span>);
+</code></pre>
+<pre><code class="hljs css language-javascript">querySetCallOperation(callOperation([value(<span class="hljs-string">'arg1'</span>), value(<span class="hljs-string">'arg2'</span>)]));
+<span class="hljs-comment">// or</span>
+querySetCallOperation([value(<span class="hljs-string">'arg1'</span>), value(<span class="hljs-string">'arg2'</span>)]);
+</code></pre>
+<pre><code class="hljs css language-javascript">querySetSetOperation(setOperation(value(<span class="hljs-string">'newValue'</span>)));
+<span class="hljs-comment">// or</span>
+querySetSetOperation(value(<span class="hljs-string">'newValue'</span>));
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="bug-fixes"></a><a href="#bug-fixes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🐛 Bug Fixes</h3>
+<ul>
+<li>Fixed a problem with <code>queryBuilder</code> incorrectly batching requests for the similar looking <code>getItems</code> requests.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="polish"></a><a href="#polish" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>💅 Polish</h3>
+<ul>
+<li>Improved the integration with Jest testing framework by adding a better handling for Muster types.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="631-2018-11-27"></a><a href="#631-2018-11-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3.1 (2018-11-27)</h2>
+<h3><a class="anchor" aria-hidden="true" id="bug-fixes-1"></a><a href="#bug-fixes-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🐛 Bug Fixes</h3>
+<ul>
+<li>Fixed a problem with <code>proxy()</code> node sometimes making empty <code>getChild</code> requests.</li>
+<li>Fixed a problem with <code>proxy()</code> node not handling correctly <code>nil()</code> collections.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="polish-1"></a><a href="#polish-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>💅 Polish</h3>
+<ul>
+<li>Locked the version of <code>event-stream</code> to <code>3.3.4</code> to make sure it doesn't cause us any problems. We were unlikely to be affected by the vulnerability as the packages that use <code>event-stream</code> weren't used on the client browser. The packages using the <code>event-stream</code> are:
+<ul>
+<li><code>muster-repl</code> -&gt; <code>blessed-contrib</code> -&gt; <code>event-stream</code> - It runs in the command line, so it should have no access to your wallets.</li>
+<li><code>npm-run-all</code> -&gt; <code>ps-tree</code> -&gt; <code>event-stream</code> - It runs at build time, also in the command line.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="630-2018-11-23"></a><a href="#630-2018-11-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3.0 (2018-11-23)</h2>
+<h3><a class="anchor" aria-hidden="true" id="new-features-1"></a><a href="#new-features-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🚀 New Features</h3>
+<ul>
+<li>Extended the <code>join()</code> node to support collections:
+<pre><code class="hljs css language-javascript">join(<span class="hljs-string">' '</span>, query(ref(<span class="hljs-string">'names'</span>), entries()))
+<span class="hljs-comment">// or</span>
+joinItems(<span class="hljs-string">' '</span>, ref(<span class="hljs-string">'names'</span>))
+</code></pre></li>
+<li>Added the <code>flow()</code> node, which imitates the <code>flow()</code> function from lodash.
+<pre><code class="hljs css language-javascript">call(flow(
+  fn(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> add(a, b)),
+  fn(<span class="hljs-function">(<span class="hljs-params">sum</span>) =&gt;</span> format(<span class="hljs-string">'The sum is ${sum}'</span>, { sum }),
+), [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]))
+<span class="hljs-comment">// === 'The sum is 3'</span>
+</code></pre></li>
+<li>Added the <code>setResult()</code> node, which resolves the value to a static node before setting it.
+The node has the same API as the <code>set()</code> node.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="bug-fixes-2"></a><a href="#bug-fixes-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🐛 Bug Fixes</h3>
+<ul>
+<li>Fixed a problem with <code>fn</code> node migration from Muster 5 to Muster 6.</li>
+<li>Added <code>muster-message-transport</code> to <code>muster-server</code> dependencies</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="620-2018-11-20"></a><a href="#620-2018-11-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.2.0 (2018-11-20)</h2>
+<h3><a class="anchor" aria-hidden="true" id="new-features-2"></a><a href="#new-features-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🚀 New Features</h3>
+<ul>
+<li>Added a new <code>createBehavior()</code> node, which can be used to implement custom behaviours:
+<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">editable</span>(<span class="hljs-params">original, fieldName</span>) </span>{
+  <span class="hljs-keyword">const</span> editableFieldName = <span class="hljs-string">`$$editable_<span class="hljs-subst">${fieldName}</span>`</span>;
+  <span class="hljs-keyword">return</span> {
+    [editableFieldName]: variable(<span class="hljs-literal">undefined</span>),
+    [fieldName]: createBehavior({
+      <span class="hljs-attr">evaluate</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> ifElse({
+        <span class="hljs-attr">if</span>: not(eq(ref(editableFieldName), <span class="hljs-literal">undefined</span>)),
+        <span class="hljs-attr">then</span>: ref(editableFieldName),
+        <span class="hljs-attr">else</span>: get(original, fieldName),
+      }),
+      <span class="hljs-attr">set</span>: <span class="hljs-function">(<span class="hljs-params">params, operation</span>) =&gt;</span> set(editableFieldName, operation.value),
+    }),
+  };
+}
+</code></pre></li>
+<li>Added a new <code>unique</code> node, to identify unique items in a collection:
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">numbers</span>: applyTransforms(
+    [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
+    [unique()],
+  ),
+});
+
+<span class="hljs-keyword">const</span> uniqueNumbers = <span class="hljs-keyword">await</span> app.resolve(query(ref(<span class="hljs-string">'numbers'</span>), entries()));
+<span class="hljs-comment">// uniqueNumbers === [1, 2, 3]</span>
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">products</span>: applyTransforms(
+    [
+        { <span class="hljs-attr">name</span>: <span class="hljs-string">'Apple'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Fruit'</span> },
+        { <span class="hljs-attr">name</span>: <span class="hljs-string">'Bicycle'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Toy'</span> },
+        { <span class="hljs-attr">name</span>: <span class="hljs-string">'Pear'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Fruit'</span> },
+        { <span class="hljs-attr">name</span>: <span class="hljs-string">'Apple'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Fruit'</span> },
+    ],
+    [
+      unique(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> get(item, <span class="hljs-string">'name'</span>)),
+    ],
+  ),
+});
+
+<span class="hljs-keyword">const</span> uniqueProducts = <span class="hljs-keyword">await</span> app.resolve(query(ref(<span class="hljs-string">'products'</span>), entries({
+  <span class="hljs-attr">name</span>: <span class="hljs-literal">true</span>,
+})));
+<span class="hljs-comment">// uniqueProducts === [{ name: 'Apple' }, { name: 'Bicycle' }, { name: 'Pear' }]</span>
+</code></pre></li>
+<li>Added a new <code>contains</code> node that allows for checking whether a value or item is in a collection.
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">numbers</span>: array([<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>]),
+});
+
+<span class="hljs-keyword">const</span> contains3 = <span class="hljs-keyword">await</span> app.resolve(contains(ref(<span class="hljs-string">'numbers'</span>), <span class="hljs-number">3</span>)));
+<span class="hljs-comment">// contains3 === true</span>
+<span class="hljs-keyword">const</span> contains5 = <span class="hljs-keyword">await</span> app.resolve(contains(ref(<span class="hljs-string">'numbers'</span>), <span class="hljs-number">5</span>)));
+<span class="hljs-comment">// contains5 === false</span>
+</code></pre>
+Or with a custom comparator:
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">products</span>: arrayList([
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Apple'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Fruit'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Bicycle'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Toy'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Pear'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Fruit'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Banana'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Fruit'</span> },
+  ]),
+});
+
+<span class="hljs-keyword">const</span> containsBananaString = <span class="hljs-keyword">await</span> app.resolve(contains(
+  ref(<span class="hljs-string">'products'</span>),
+  <span class="hljs-string">'Banana'</span>,
+  fn(<span class="hljs-function">(<span class="hljs-params">left, right</span>) =&gt;</span> eq(get(left, <span class="hljs-string">'name'</span>), right)),
+)));
+<span class="hljs-comment">// containsBananaString === true</span>
+
+<span class="hljs-keyword">const</span> containsBananaObject = <span class="hljs-keyword">await</span> app.resolve(contains(
+  ref(<span class="hljs-string">'products'</span>),
+  toNode({ <span class="hljs-attr">name</span>: <span class="hljs-string">'Banana'</span> }),
+  fn(<span class="hljs-function">(<span class="hljs-params">left, right</span>) =&gt;</span> eq(get(left, <span class="hljs-string">'name'</span>), get(right, <span class="hljs-string">'name'</span>))),
+)));
+<span class="hljs-comment">// containsBananaObject === true</span>
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="bug-fixes-3"></a><a href="#bug-fixes-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🐛 Bug Fixes</h3>
+<ul>
+<li>Fixed a problem with <code>iterate()</code> node implementation.</li>
+<li>Fixed a problem with <code>sort()</code> node returning an error when used by <code>iterate()</code>.</li>
+<li>Fixed a problem with showing error paths in the Jest output.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="polish-2"></a><a href="#polish-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>💅 Polish</h3>
+<ul>
+<li>Improved the performance of the <code>map()</code> collection transform.</li>
+<li>Simplified the implementation of the <code>sortOrder()</code> node.</li>
+<li>Simplified the implementation of the <code>extend()</code> node.</li>
+<li>Added more unit tests for collection transforms using <code>iterate()</code> node.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="610-2018-11-13"></a><a href="#610-2018-11-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.1.0 (2018-11-13)</h2>
+<h3><a class="anchor" aria-hidden="true" id="new-features-3"></a><a href="#new-features-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🚀 New Features</h3>
+<ul>
+<li>Changed the <code>valueOf()</code> to not show a warning when a node passed to it is a non-data node, but to make a Proxied Node, which can be injected back into Muster.</li>
+<li>Changed the <code>action()</code> to handle the Proxied Nodes:
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Given this graph</span>
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">user</span>: variable(nil()),
+  <span class="hljs-attr">createUser</span>: action(<span class="hljs-function">(<span class="hljs-params">name</span>) =&gt;</span> toNode({ name })),
+  <span class="hljs-attr">addUser</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params">{ name }</span>) </span>{
+    <span class="hljs-keyword">const</span> user = <span class="hljs-keyword">yield</span> call(<span class="hljs-string">'createUser'</span>, [name]);
+    <span class="hljs-keyword">yield</span> set(<span class="hljs-string">'user'</span>, user);
+  }),
+});
+<span class="hljs-comment">// A following query should work before and after calling addUser</span>
+app.resolve(query(ref(<span class="hljs-string">'user'</span>), { <span class="hljs-attr">name</span>: <span class="hljs-literal">true</span> })).subscribe(<span class="hljs-function">(<span class="hljs-params">user</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'User:'</span>, user);
+});
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Calling `addUser(Bob)`'</span>)
+<span class="hljs-keyword">await</span> app.resolve(call(<span class="hljs-string">'addUser'</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'Bob'</span> }));
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// User: { name: undefined }</span>
+<span class="hljs-comment">// Calling `addUser(Bob)`</span>
+<span class="hljs-comment">// User: { name: 'Bob' }</span>
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="bug-fixes-4"></a><a href="#bug-fixes-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🐛 Bug Fixes</h3>
+<ul>
+<li>Fixed a problem with creating a <code>ref(0)</code> returning a <code>root()</code> node, instead of <code>get(root(), 0)</code>.</li>
+<li>Fixed workers and sockets to remove listeners on unsubscribe, not dispose of themselves</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="600-2018-11-09"></a><a href="#600-2018-11-09" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.0.0 (2018-11-09)</h2>
+<h3><a class="anchor" aria-hidden="true" id="breaking-changes"></a><a href="#breaking-changes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>💥 Breaking Changes</h3>
+<ul>
+<li><p>Changed Muster <code>.resolve()</code> method so that it runs the output through the <code>valueOf</code> helper before returning it to
+subscribers. This behaviour can be overridden with the use of <code>{ raw: true }</code> option:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> app = muster({ <span class="hljs-comment">/* ... */</span> });
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(query(<span class="hljs-comment">/* ... */</span>), { <span class="hljs-attr">raw</span>: <span class="hljs-literal">true</span> }); <span class="hljs-comment">// This will resolve to a `tree()` node</span>
+</code></pre></li>
+<li><p>Changed <code>fromPromise</code> node so that the <code>setter</code> function is called with an unwrapped <code>newValue</code> (run through <code>valueOf</code>
+helper), instead of a NodeDefinition.</p></li>
+<li><p>Renamed <code>partial</code> node to <code>injectDependencies</code>.</p></li>
+<li><p>Replaced <code>items()</code> node with <code>withTransforms()</code> and <code>entries()</code> node:</p>
+<p>Before:</p>
+<pre><code class="hljs css language-javascript">query(ref(<span class="hljs-string">'users'</span>), items({ <span class="hljs-attr">postcode</span>: <span class="hljs-literal">true</span> }, [map(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> get(user, <span class="hljs-string">'address'</span>))]))
+</code></pre>
+<p>After:</p>
+<pre><code class="hljs css language-javascript">query(ref(<span class="hljs-string">'users'</span>), withTransforms([map(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> get(user, <span class="hljs-string">'address'</span>))], entries({
+  <span class="hljs-attr">postcode</span>: <span class="hljs-literal">true</span>,
+})));
+</code></pre></li>
+<li><p>Renamed mutable <code>array()</code> to <code>arrayList()</code>:</p>
+<pre><code class="hljs css language-javascript">shift(array([<span class="hljs-string">'foo'</span>, <span class="hljs-string">'bar'</span>, <span class="hljs-string">'baz'</span>]))
+</code></pre>
+<pre><code class="hljs css language-javascript">shift(arrayList([<span class="hljs-string">'foo'</span>, <span class="hljs-string">'bar'</span>, <span class="hljs-string">'baz'</span>]))
+</code></pre></li>
+<li><p>Refactored <code>proxy()</code> and <code>remote()</code> nodes to allow for streaming connections. The proxy node now builds a combined
+query containing every currently subscribed <code>placeholder()</code> node. These queries can be optimised for different types
+of connections with the help of custom middlewares.</p></li>
+<li><p>Added <code>batchRequestsMiddleware()</code> middleware (used internally by <code>remote()</code> node). This middleware is used to optimise
+a query sent to the <code>muster-express</code> by sending queries containing only the newly subscribed operations, and storing
+the values of resolved operations as long as the subscriptions for these operations are open.</p></li>
+<li><p>Changed <code>xhrMiddleware()</code> and related utility functions to handle connections as Observables, instead of Promises.</p></li>
+<li><p>Disabled <code>cacheMiddleware()</code> as right now it is not compatible with the new <code>proxy()</code> model.</p></li>
+<li><p>Changed <code>fromStreamMiddleware()</code> to allow for long lasting streaming connections with remote instances of Muster.</p></li>
+<li><p>Re-implemented the <code>ifPending()</code> node to add more flexibility with regards to the fallback values. New <code>ifPending()</code>
+node is now capable of handling any type of fallback value. It also has fuller understanding as to when a given
+sub-operation is pending.</p></li>
+<li><p>Renamed <code>eventScheduler()</code> to <code>onGlobalEvent()</code>, which now is a node.</p></li>
+<li><p>Renamed <code>timeoutScheduler()</code> to <code>onGlobalEventDebounced()</code>, which now is a node.</p></li>
+<li><p>Changed the NodeType OperationHandler API to take the GraphOperation instead of a OperationProperties.</p></li>
+<li><p>Renamed <code>takeFirst()</code> collection transform node to <code>firstItem()</code></p></li>
+<li><p>Renamed <code>takeLast()</code> collection transform node to <code>lastItem()</code></p></li>
+<li><p>Renamed <code>takeNth()</code> collection transform node to <code>nthItem()</code></p></li>
+<li><p>Renamed <code>firstItem()</code> node to <code>head()</code></p></li>
+<li><p>Changed the <code>apply()</code> node API to allow calling it only with a node definition and arguments (optionally).
+Previously available variants with <code>rootAndPath</code> and <code>path</code> are no longer supported.</p></li>
+<li><p>Changed the order of arguments in the <code>apply()</code> node signature. This makes it more similar to <code>computed()</code>
+and <code>resolve()</code> nodes.
+Before:</p>
+<pre><code class="hljs css language-javascript">apply(ref(<span class="hljs-string">'myFunction'</span>), [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+</code></pre>
+<p>After:</p>
+<pre><code class="hljs css language-javascript">apply([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], ref(<span class="hljs-string">'myFunction'</span>))
+</code></pre></li>
+<li><p>Changed Muster React's <code>createContainer()</code> function so that it now performs the validation of props loaded from the graph.
+Every property now must be typed using Muster types, or newly introduced <code>propTypes</code>:</p>
+<ul>
+<li><code>true</code> - just like before, this is a shorthand for <code>types.any</code></li>
+<li><code>propTypes.getter()</code>, <code>propTypes.getter(name)</code>, <code>propTypes.getter(type)</code>, <code>propTypes.getter(name, type)</code></li>
+<li><code>propTypes.setter()</code>, <code>propTypes.setter(name)</code>, <code>propTypes.setter(type)</code>, <code>propTypes.setter(name, type)</code></li>
+<li><code>propTypes.caller()</code>, <code>propTypes.caller(name)</code>, <code>propTypes.caller([argTypesArray])</code>, <code>propTypes.caller(name, [argTypesArray])</code></li>
+<li><code>propTypes.list()</code>, <code>propTypes.list(name)</code>, <code>propTypes.list({ fields })</code>, <code>propTypes.list(name, { fields })</code></li>
+<li><code>propTypes.defer(&lt;what to defer&gt;)</code></li>
+<li><code>propTypes.isLoading(relativePropName)</code></li>
+<li><code>propTypes.injected()</code>, <code>propTypes.injected(...path)</code></li>
+</ul>
+<p>Example container:</p>
+<pre><code class="hljs css language-javascript">createContainer({
+  <span class="hljs-attr">graph</span>: { <span class="hljs-comment">/* ... */</span> },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">time</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">user</span>: propTypes.defer({
+      <span class="hljs-attr">firstName</span>: types.string,
+      <span class="hljs-attr">lastName</span>: types.string,
+      <span class="hljs-attr">delete</span>: propTypes.caller(),        
+      <span class="hljs-attr">friends</span>: propTypes.list({
+        <span class="hljs-attr">firstName</span>: types.string,
+        <span class="hljs-attr">lastName</span>: types.string,
+      }),
+    }),
+    <span class="hljs-attr">isLoadingUser</span>: propTypes.isLoading(<span class="hljs-string">'user'</span>),
+  },
+})
+</code></pre></li>
+<li><p>Changed Muster React so that it now performs validation of data received from Muster against types specified in the props section of the container.</p></li>
+<li><p>Replaced <code>inject()</code> function with a static method exposed by the container:</p>
+<p>Before:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> Child = createContainer({...})(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> { <span class="hljs-comment">/* ... */</span> });
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Parent</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Child</span> {<span class="hljs-attr">...inject</span>(<span class="hljs-attr">props</span>)} /&gt;</span>;
+}
+</span></code></pre>
+<p>After:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> Child = createContainer({...})(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> { <span class="hljs-comment">/* ... */</span> });
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Parent</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Child</span> {<span class="hljs-attr">...Child.inject</span>(<span class="hljs-attr">props</span>)} /&gt;</span>
+}
+</span></code></pre></li>
+<li><p>Removed <code>deferAll()</code> function, which is now replaced with a correctly implemented <code>propTypes.defer()</code> that allows nested properties.</p></li>
+<li><p>Changed the way <code>query()</code> node handles errors. Instead of returning a partially resolved query, now the node responds with first encountered error.</p>
+<p>Before:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+  <span class="hljs-attr">lastName</span>: error(<span class="hljs-string">'Some error'</span>),
+});
+
+<span class="hljs-keyword">await</span> app.resolve(query(root(), {
+  <span class="hljs-attr">firstName</span>: key(<span class="hljs-string">'firstName'</span>),
+  <span class="hljs-attr">lastName</span>: key(<span class="hljs-string">'lastName'</span>),
+})); <span class="hljs-comment">// === { firstName: 'Bob', lastName: new Error('Some error') }</span>
+</code></pre>
+<p>After:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+  <span class="hljs-attr">lastName</span>: error(<span class="hljs-string">'Some error'</span>),
+});
+
+<span class="hljs-keyword">await</span> app.resolve(query(root(), {
+  <span class="hljs-attr">firstName</span>: key(<span class="hljs-string">'firstName'</span>),
+  <span class="hljs-attr">lastName</span>: key(<span class="hljs-string">'lastName'</span>),
+})); <span class="hljs-comment">// ===  new Error('Some error')</span>
+</code></pre></li>
+<li><p>Renamed <code>deferred()</code> node to <code>defer()</code>.</p></li>
+<li><p>Removed <code>muster-history</code> package - this is now fully handled by a single muster node <code>location()</code>.</p></li>
+<li><p>Removed <code>muster-navigation</code> package.</p></li>
+<li><p>Renamed <code>template()</code> node to <code>format()</code>.</p></li>
+<li><p>Removed <code>withIndex()</code> node.</p></li>
+<li><p>Removed <code>defaultValue</code> arguments from <code>placeholder()</code> and <code>itemPlaceholder()</code> nodes.</p></li>
+<li><p>Changed the value to which the <code>nil()</code> resolves to from <code>null</code> to <code>undefined</code>. This should help with using <code>defaultProps</code> in React.</p></li>
+<li><p>Refactored the <code>location()</code> node by replacing the <code>json</code> option with an <code>encoding: 'json'</code>.
+The <code>encoding</code> option now takes following values: <code>'json'</code>, <code>'base64'</code>, or a custom encoder object:</p>
+<pre><code class="hljs css language-javascript">location({
+  <span class="hljs-attr">encoding</span>: {
+    encode(value) { <span class="hljs-keyword">return</span> btoa(value); }, <span class="hljs-comment">// Return a string with an encoded value</span>
+    decode(value) { <span class="hljs-keyword">return</span> atob(value); }, <span class="hljs-comment">// Return a decoded object</span>
+  },
+})
+</code></pre></li>
+<li><p>Changed the <code>get()</code> node so that it no longer support <code>key()</code> node - this was a legacy feature.</p></li>
+<li><p>Refactored the <code>computed()</code> node to be just a thin function wrapper on top of the <code>resolve()</code> node.
+The API of the <code>computed()</code> factory remains unchanged.</p></li>
+<li><p>Changed the <code>messageListenerDecorator()</code> API to support manual disposal of the decorator.</p></li>
+<li><p>Removed the ability to create a <code>call()</code> node with a following syntax:</p>
+<pre><code class="hljs css language-javascript">call(ref(<span class="hljs-string">'user'</span>), <span class="hljs-string">'doSomething'</span>, [<span class="hljs-string">'some'</span>, <span class="hljs-string">'arguments'</span>]);
+<span class="hljs-comment">// and</span>
+call(ref(<span class="hljs-string">'user'</span>), <span class="hljs-string">'doSomethingElse'</span>)
+</code></pre></li>
+<li><p>Changed the <code>createCaller()</code> and <code>createSetter()</code> API to allow passing in an optional dispose emitter. This emitter will let Muster know that the call and set should be cancelled if it is in progress.</p></li>
+<li><p>Removed the <code>log</code> configuration option of <code>fromStreamMiddleware</code>. To log requests/responses use the <code>logMiddleware()</code>.</p></li>
+<li><p>Changed the behaviour of <code>log</code> configuration option of <code>xhrMiddleware</code>. Now it enables logging of request headers. To log requests/responses use the <code>logMiddleware()</code>.</p></li>
+<li><p>Changed the return value of the <code>query()</code> node from nested <code>tree()</code> to a plain <code>value()</code> node. The legacy behaviour of the <code>query()</code> node is now handled by the newly introduced <code>legacyQuery()</code> node. This node is used as a compatibility layer with older versions of Muster, and new code should not use the <code>legacyQuery()</code> node.</p></li>
+<li><p>Changed the name of <code>muster-express</code> package to <code>muster-server</code>.</p></li>
+<li><p>Changed the <code>musterExpress</code> to no longer be a default export from the <code>muster-server</code> package.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// How it was before the change</span>
+<span class="hljs-keyword">import</span> musterExpress <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-express'</span>;
+<span class="hljs-comment">// After the change</span>
+<span class="hljs-keyword">import</span> { musterExpress } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-server'</span>;
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="deprecations"></a><a href="#deprecations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🚨 Deprecations</h3>
+<ul>
+<li><p>Renamed <code>treeToObject</code> helper to <code>valueOf</code>. <code>treeToObject</code> now prints a deprecation warning when used.</p></li>
+<li><p>Deprecated <code>apply({ root, path }, args)</code> and <code>apply(root, path, args)</code> in favour of <code>apply(ref(...), args)</code></p></li>
+<li><p>Renamed <code>graph</code> helper to <code>toNode</code>. <code>graph</code> helper will now print a deprecation warning message.</p></li>
+<li><p>Replaced <code>objectToTree</code> helper with <code>toNode</code>. <code>objectToTree</code> helper will now print a deprecation warning message.</p></li>
+<li><p>Deprecated <code>data</code> property in the <code>createContainer()</code> in favour of <code>graph</code> property:</p>
+<p>Before:</p>
+<pre><code class="hljs css language-javascript">createContainer({
+  <span class="hljs-attr">data</span>: { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span> },
+  <span class="hljs-attr">props</span>: { <span class="hljs-attr">firstName</span>: types.string },
+})
+</code></pre>
+<p>After:</p>
+<pre><code class="hljs css language-javascript">createContainer({
+  <span class="hljs-attr">graph</span>: { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span> },
+  <span class="hljs-attr">props</span>: { <span class="hljs-attr">firstName</span>: types.string },
+})
+</code></pre></li>
+<li><p>Deprecated the <code>createContainer()</code> function in favour of a <code>container()</code> function.</p></li>
+<li><p>Deprecated <code>ref([...args])</code> in favour of <code>ref(...args)</code>.</p></li>
+<li><p>Deprecated <code>relative([...args])</code> in favour of <code>relative(...args)</code>.</p></li>
+<li><p>Deprecated <code>global([...args])</code> in favour of <code>global(...args)</code>.</p></li>
+<li><p>Deprecated the <code>collection()</code> node in favour of the <code>applyTransforms()</code> node.</p></li>
+<li><p>Deprecated the <code>getItems()</code> node in favour of the <code>applyTransforms()</code> node.</p></li>
+<li><p>Deprecated the <code>strlen()</code> node in favour of the <code>length()</code> node. The <code>strlen()</code> node now uses the <code>length()</code> node to perform the logic.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="new-features-4"></a><a href="#new-features-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🚀 New Features</h3>
+<ul>
+<li><p>Changed the <code>runScenario</code> so that tests without <code>assert</code> and <code>expected</code> now check if the <code>input</code> resolved to an error node.</p></li>
+<li><p>Added <code>choose()</code> node:</p>
+<pre><code class="hljs css language-javascript">choose([
+  when(and(ref(<span class="hljs-string">'isLoggedIn'</span>), ref(<span class="hljs-string">'isOnline'</span>)), <span class="hljs-string">'Logged in'</span>),
+  when(ref(<span class="hljs-string">'isLoggedIn'</span>), <span class="hljs-string">'Logged in (no connectivity)'</span>),
+  when(ref(<span class="hljs-string">'isOnline'</span>), <span class="hljs-string">'Log in'</span>),
+  otherwise(<span class="hljs-string">'No connectivity'</span>),
+])
+</code></pre></li>
+<li><p>Added <code>switchOn()</code> node:</p>
+<pre><code class="hljs css language-javascript">switchOn(ref(<span class="hljs-string">'lang'</span>), [
+  when(<span class="hljs-string">'en'</span>, <span class="hljs-string">'Welcome'</span>),
+  when(<span class="hljs-string">'de'</span>, <span class="hljs-string">'Willkommen'</span>),
+  when(<span class="hljs-string">'fr'</span>, <span class="hljs-string">'Bienvenue'</span>),
+  when(<span class="hljs-string">'es'</span>, <span class="hljs-string">'Bienvenido'</span>),
+  otherwise(<span class="hljs-string">'Welcome'</span>),
+])
+</code></pre></li>
+<li><p>Added <code>pattern()</code> node for pattern-matching in <code>switchOn()</code> node:</p>
+<pre><code class="hljs css language-javascript">switchOn(ref(<span class="hljs-string">'basketTotal'</span>), [
+  when(pattern(<span class="hljs-function"><span class="hljs-params">_</span> =&gt;</span> gte(_, <span class="hljs-number">75</span>)), <span class="hljs-string">'Free priority shipping!'</span>),
+  when(pattern(<span class="hljs-function"><span class="hljs-params">_</span> =&gt;</span> gte(_, <span class="hljs-number">50</span>)), <span class="hljs-string">'Free shipping'</span>),
+  when(<span class="hljs-number">0</span>, <span class="hljs-string">'Empty basket'</span>),
+  otherwise(<span class="hljs-string">'Add more items to qualify for free shipping'</span>),
+])
+</code></pre></li>
+<li><p>Added <code>fetchItems</code> node. This node is used when creating a collection with transforms that need to be run locally, and
+not sent over the wire like they are without <code>fetchItems</code> node:</p>
+<pre><code class="hljs css language-javascript">collection(
+  fetchItems(ref(<span class="hljs-string">'remote'</span>, <span class="hljs-string">'users'</span>)), <span class="hljs-comment">// Ref to a remote users collection</span>
+  [
+    map(<span class="hljs-function">(<span class="hljs-params">user</span>) =&gt;</span> tree({ <span class="hljs-attr">name</span>: get(user, <span class="hljs-string">'firstName'</span>) })), <span class="hljs-comment">// This transform will be applied locally</span>
+  ],
+)
+</code></pre></li>
+<li><p>Added <code>clamp</code> node:</p>
+<pre><code class="hljs css language-javascript">clamp(<span class="hljs-number">5.2</span>, { <span class="hljs-attr">min</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">6</span> }) <span class="hljs-comment">// === value(5.2)</span>
+clamp(<span class="hljs-number">4.9</span>, { <span class="hljs-attr">min</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">6</span> }) <span class="hljs-comment">// === value(5)</span>
+clamp(<span class="hljs-number">6.1</span>, { <span class="hljs-attr">min</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">6</span> }) <span class="hljs-comment">// === value(6)</span>
+</code></pre></li>
+<li><p>Added <code>ceil</code> node:</p>
+<pre><code class="hljs css language-javascript">ceil(<span class="hljs-number">5.2</span>) <span class="hljs-comment">// === value(6)</span>
+ceil(ref(<span class="hljs-string">'tenPointFive'</span>)) <span class="hljs-comment">// == value(11)</span>
+</code></pre></li>
+<li><p>Added <code>floor</code> node:</p>
+<pre><code class="hljs css language-javascript">floor(<span class="hljs-number">5.2</span>) <span class="hljs-comment">// === value(5)</span>
+floor(ref(<span class="hljs-string">'tenPointFive'</span>)) <span class="hljs-comment">// == value(10)</span>
+</code></pre></li>
+<li><p>Added <code>max</code> node:</p>
+<pre><code class="hljs css language-javascript">max(<span class="hljs-number">1.5</span>, <span class="hljs-number">1</span>, ref(<span class="hljs-string">'five'</span>)) <span class="hljs-comment">// === value(5)</span>
+</code></pre></li>
+<li><p>Added <code>min</code> node:</p>
+<pre><code class="hljs css language-javascript">min(<span class="hljs-number">1.5</span>, <span class="hljs-number">1</span>, ref(<span class="hljs-string">'minusFive'</span>)) <span class="hljs-comment">// === value(-5)</span>
+</code></pre></li>
+<li><p>Added <code>round</code> node:</p>
+<pre><code class="hljs css language-javascript">round(<span class="hljs-number">5.3</span>) <span class="hljs-comment">// === value(5)</span>
+round(<span class="hljs-number">5.6</span>) <span class="hljs-comment">// === value(6)</span>
+</code></pre></li>
+<li><p>Added <code>quote</code> node.</p></li>
+<li><p>Added <code>push</code>, <code>pop</code>, <code>shift</code>, <code>unshift</code>, <code>addItemAt</code>, <code>removeItemAt</code>, <code>length</code> and mutable <code>array</code> nodes.
+This enables a new syntax when pushing an item to a local in-memory collection:</p>
+<pre><code class="hljs css language-javascript">muster({
+  <span class="hljs-attr">people</span>: array([ <span class="hljs-comment">// `array` is a mutable collection. By default muster will create an immutable `items` collection.</span>
+    { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Lizzie'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Ramirez'</span> },
+    { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Charlotte'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Schneider'</span> },
+  ]),
+});
+
+<span class="hljs-comment">// Example mutable collection operations</span>
+push(ref(<span class="hljs-string">'people'</span>), toNode({ <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Genevieve'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Patrick'</span> })); <span class="hljs-comment">// === ok()</span>
+pop(ref(<span class="hljs-string">'people'</span>)); <span class="hljs-comment">// === tree({ firstName: value('Genevieve', lastName: value('Patrick') }</span>
+unshift(ref(<span class="hljs-string">'people'</span>), toNode({ <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Myrtle'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Sims'</span> })); <span class="hljs-comment">// === ok()</span>
+shift(ref(<span class="hljs-string">'people'</span>)); <span class="hljs-comment">// === tree({ firstName: value('Myrtle'), lastName: value('Sims') })</span>
+addItemAt(ref(<span class="hljs-string">'people'</span>), toNode({ <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Margot'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'James'</span> }), <span class="hljs-number">2</span>); <span class="hljs-comment">// === ok()</span>
+removeItemAt(ref(<span class="hljs-string">'people'</span>), <span class="hljs-number">2</span>); <span class="hljs-comment">// === ok()</span>
+length(ref(<span class="hljs-string">'people'</span>)); <span class="hljs-comment">// === value(2)</span>
+</code></pre></li>
+<li><p>Revamped muster-react <code>runScenario()</code> test runner</p></li>
+<li><p>Added <code>combineLatest()</code> node, which joins multiple input values into a combined <code>array()</code> output:</p>
+<pre><code class="hljs css language-javascript">muster({
+  <span class="hljs-attr">primary</span>: variable(<span class="hljs-string">'red'</span>),
+  <span class="hljs-attr">secondary</span>: variable(<span class="hljs-string">'green'</span>),
+  <span class="hljs-attr">tertiary</span>: variable(<span class="hljs-string">'blue'</span>),
+  <span class="hljs-attr">themeColors</span>: combineLatest([
+    ref(<span class="hljs-string">'primary'</span>),
+    ref(<span class="hljs-string">'secondary'</span>),
+    ref(<span class="hljs-string">'tertiary'</span>),
+  ]),
+})
+</code></pre></li>
+<li><p>Added <code>clear()</code> node, which empties mutable arrays:</p>
+<pre><code class="hljs css language-javascript">muster({
+  <span class="hljs-attr">users</span>: arrayList([<span class="hljs-string">'Alice'</span>, <span class="hljs-string">'Bob'</span>, <span class="hljs-string">'Charles'</span>]),
+})
+
+clear(ref(<span class="hljs-string">'users'</span>)) <span class="hljs-comment">// === ok()</span>
+</code></pre></li>
+<li><p>Added <code>types.recursive()</code> type matcher:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> tree = types.recursive(<span class="hljs-function">(<span class="hljs-params">ref</span>) =&gt;</span> types.shape({
+  <span class="hljs-attr">value</span>: types.string,
+  <span class="hljs-attr">children</span>: types.arrayOf(ref),
+}));
+</code></pre></li>
+<li><p>Added a <code>querySet()</code> node, which serves as a more low-level version of a query node. It comes with a number of possible
+QuerySet operations:</p>
+<ul>
+<li><code>querySetCallOperation()</code> - Instructs the <code>querySet()</code> to do a <code>call()</code> of a target node.</li>
+<li><code>querySetGetChildOperation()</code> - Instructs the <code>querySet()</code> to do a <code>getChild()</code> on a target node.</li>
+<li><code>querySetGetItemsOperation()</code> - Instructs the <code>querySet()</code> to do a <code>getItems()</code> on a target node.</li>
+<li><code>querySetOperation()</code> - Instructs the <code>querySet()</code> to run a custom graph operation.</li>
+<li><code>querySetSetOperation()</code> - Instructs the <code>querySet()</code> to do a <code>set()</code> on a target node.</li>
+</ul>
+<p>In most cases these operations can be chained to create more complex behaviour:</p>
+<pre><code class="hljs css language-javascript">query(root(), {
+  <span class="hljs-attr">user</span>: key(<span class="hljs-string">'user'</span>, {
+    <span class="hljs-attr">firstName</span>: key(<span class="hljs-string">'firstName'</span>),
+    <span class="hljs-attr">lastName</span>: key(<span class="hljs-string">'lastName'</span>),
+  }),
+});
+</code></pre>
+<p>Is similar to:</p>
+<pre><code class="hljs css language-javascript">querySet(root(), [
+  querySetGetChildOperation(getChildOperation(<span class="hljs-string">'user'</span>), [
+    querySetGetChildOperation(getChildOperation(<span class="hljs-string">'firstName'</span>), [
+      querySetOperation(resolveOperation()),
+    ]),
+    querySetGetChildOperation(getChildOperation(<span class="hljs-string">'lastName'</span>), [
+      querySetOperation(resolveOperation()),
+    ]),
+  ]),
+])
+</code></pre>
+<p>The result of resolving the above <code>querySet()</code> is non-traversable, as it resolves to a nested <code>array()</code> node.</p></li>
+<li><p>Added a <code>querySetResult()</code> node, which enables traversal of the <code>querySet()</code> result.</p></li>
+<li><p>Added a <code>takeLast()</code> node, which works similarly to <code>combineLatest()</code>, but instead of returning an array of results it
+returns a value of the last dependency, while keeping a subscription to all of the dependencies.</p>
+<pre><code class="hljs css language-javascript">muster({
+  <span class="hljs-attr">updateName</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span> *(<span class="hljs-params">name</span>) </span>{
+    <span class="hljs-keyword">yield</span> set(<span class="hljs-string">'name'</span>, name);
+  }),
+  <span class="hljs-attr">name</span>: variable(<span class="hljs-string">'Initial name'</span>),
+});
+</code></pre></li>
+<li><p>Added a <code>groupBy()</code> collection transform. This transform is used when grouping items by a given predicate. The result
+of this transform is an array of arrays containing different groups of items. Consider an example:</p>
+<pre><code class="hljs css language-javascript">muster({
+  <span class="hljs-attr">items</span>: [
+    { <span class="hljs-attr">category</span>: <span class="hljs-string">'vegetable'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'carrot'</span> },
+    { <span class="hljs-attr">category</span>: <span class="hljs-string">'fruit'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'apple'</span> },
+    { <span class="hljs-attr">category</span>: <span class="hljs-string">'fruit'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'plum'</span> },
+    { <span class="hljs-attr">category</span>: <span class="hljs-string">'vegetable'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'potato'</span> },
+    { <span class="hljs-attr">category</span>: <span class="hljs-string">'confectionery'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'chocolate'</span> },
+  ],
+  <span class="hljs-attr">groupedItems</span>: collection(
+    ref(<span class="hljs-string">'items'</span>),
+    [groupBy(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> get(item, <span class="hljs-string">'category'</span>))],
+  ),
+})
+</code></pre>
+<p>The <code>groupedItems</code> collection has following items:</p>
+<pre><code class="hljs css language-javascript">array([
+  array([
+    { <span class="hljs-attr">category</span>: <span class="hljs-string">'vegetable'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'carrot'</span> },
+    { <span class="hljs-attr">category</span>: <span class="hljs-string">'vegetable'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'potato'</span> },
+  ]),
+  array([
+    { <span class="hljs-attr">category</span>: <span class="hljs-string">'fruit'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'apple'</span> },
+    { <span class="hljs-attr">category</span>: <span class="hljs-string">'fruit'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'plum'</span> },
+  ]),
+  array([{ <span class="hljs-attr">category</span>: <span class="hljs-string">'confectionery'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'chocolate'</span> }])
+])
+</code></pre></li>
+<li><p>Added a <code>removeItem()</code> node. This node is used when removing an item from an <code>arrayList()</code>.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Given a graph:</span>
+muster({
+  <span class="hljs-attr">people</span>: arrayList([
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Sarah'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Jane'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Kate'</span> },
+  ]),
+});
+<span class="hljs-comment">// Remove `Kate` from the list of people</span>
+removeItem(ref(<span class="hljs-string">'people'</span>), ref(<span class="hljs-string">'people'</span>, last()));
+<span class="hljs-comment">// Remove `Jane` from the list of people</span>
+removeItem(ref(<span class="hljs-string">'people'</span>), head(getItems(ref(<span class="hljs-string">'people'</span>), [
+  filter(<span class="hljs-function">(<span class="hljs-params">person</span>) =&gt;</span> eq(get(person, <span class="hljs-string">'name'</span>), <span class="hljs-string">'Jane'</span>))
+])));
+</code></pre></li>
+<li><p>Added a <code>removeItems()</code> node. This node is used to remove matching items from an <code>arrayList()</code>.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Given a graph:</span>
+muster({
+  <span class="hljs-attr">tasks</span>: arrayList([
+    { <span class="hljs-attr">description</span>: <span class="hljs-string">'First task'</span>, <span class="hljs-attr">completed</span>: <span class="hljs-literal">true</span> },
+    { <span class="hljs-attr">description</span>: <span class="hljs-string">'Second task'</span>, <span class="hljs-attr">completed</span>: <span class="hljs-literal">false</span> },
+    { <span class="hljs-attr">description</span>: <span class="hljs-string">'Third task'</span>, <span class="hljs-attr">completed</span>: <span class="hljs-literal">true</span> },
+  ]),
+});
+<span class="hljs-comment">// Remove completed tasks from the list of tasks</span>
+removeItems(ref(<span class="hljs-string">'tasks'</span>), (item) =&gt; get(item, <span class="hljs-string">'completed'</span>))
+</code></pre></li>
+<li><p>Added a validation layer to every node factory which ensures that a node is created with a correct properties.</p></li>
+<li><p>Added query shape validation: query shape must specify a valid subset of the target graph shape</p>
+<pre><code class="hljs css language-javascript">muster({
+  <span class="hljs-attr">user</span>: {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">'John'</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Doe'</span>,
+  },
+});
+
+query(root, { <span class="hljs-attr">user</span>: <span class="hljs-literal">true</span> }); <span class="hljs-comment">// Throws: "Invalid query: missing child fields (path: ["user"])"</span>
+query(root, { <span class="hljs-attr">user</span>: { <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span> } }); <span class="hljs-comment">// Works correctly</span>
+</code></pre></li>
+<li><p>Added <code>withScope()</code> node. This node can used in combination with the <code>scope()</code> node to allow evaluation of arbitrary queries within a sandbox scope.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Given a graph:</span>
+muster({
+  <span class="hljs-attr">private</span>: value(<span class="hljs-string">'secret'</span>),
+  <span class="hljs-attr">sandbox</span>: scope({
+    <span class="hljs-attr">todos</span>: arrayList([]),
+    <span class="hljs-attr">addTodo</span>: fn(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> push(ref(<span class="hljs-string">'todos'</span>), item)),
+  }),
+});
+<span class="hljs-comment">// Evaluate an arbitrary expression within the sandboxed scope</span>
+<span class="hljs-keyword">const</span> query1 = call(<span class="hljs-string">'addTodo'</span>, [<span class="hljs-string">'First item'</span>]);
+withScope(ref(<span class="hljs-string">'sandbox'</span>), query1);
+<span class="hljs-comment">// The expression cannot access anything outside the sandboxed scope</span>
+<span class="hljs-keyword">const</span> query2 = call(<span class="hljs-string">'addTodo'</span>, [ref(<span class="hljs-string">'private'</span>)]);
+withScope(ref(<span class="hljs-string">'sandbox'</span>), query2); <span class="hljs-comment">// Error: "Invalid child key: "private"</span>
+</code></pre></li>
+<li><p>Added a <code>wildcard</code> operation, which can be used to implement handling for any operation type.</p></li>
+<li><p>Added <code>pow()</code> node:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">await</span> app.resolve(pow(<span class="hljs-number">5</span>, <span class="hljs-number">2</span>)); <span class="hljs-comment">// === 25</span>
+</code></pre></li>
+<li><p>Added <code>sqrt()</code> node:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">await</span> app.resolve(sqrt(<span class="hljs-number">4</span>)); <span class="hljs-comment">// === 2</span>
+</code></pre></li>
+<li><p>Added <code>isNil()</code> node:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">await</span> app.resolve(isNil(value(<span class="hljs-literal">true</span>))); <span class="hljs-comment">// === false</span>
+<span class="hljs-keyword">await</span> app.resolve(isNil(nil())); <span class="hljs-comment">// === true</span>
+</code></pre></li>
+<li><p>Changed <code>deferred()</code> node to support custom fallback values for <code>pending()</code> branches. A fallback can be defined as
+a node or a function that takes previous node and returns a new node.</p></li>
+<li><p>Added ability to specify fallback values from Muster React <code>propTypes.defer()</code>. The fallback value can be of any shape,
+but ultimately must be a node that can be run through the <code>valueOf()</code> helper (e.g. <code>value()</code>, <code>tree()</code> and <code>array()</code> nodes):</p>
+<pre><code class="hljs css language-javascript">createContainer({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-comment">// ...</span>
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">user</span>: propTypes.defer(<span class="hljs-string">'Loading...'</span>, {
+      <span class="hljs-attr">firstName</span>: types.string,
+      <span class="hljs-attr">lastName</span>: types.string,
+    }),
+  },
+})
+</code></pre></li>
+<li><p>Added ability to catch errors in specific parts of the query with the use of the <code>catchError()</code> node:</p>
+<pre><code class="hljs css language-javascript">query(root(), {
+  <span class="hljs-attr">user</span>: catchError(value(<span class="hljs-string">'Could not load user'</span>), {
+    <span class="hljs-attr">firstName</span>: key(<span class="hljs-string">'firstName'</span>),
+    <span class="hljs-attr">lastName</span>: key(<span class="hljs-string">'lastName'</span>),
+  }),
+});
+</code></pre></li>
+<li><p>Added ability to catch leaf/branch errors in the definition of the component props:</p>
+<pre><code class="hljs css language-javascript">createContainer({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-attr">user</span>: error(<span class="hljs-string">'Some error'</span>),
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">user</span>: propTypes.catchError(<span class="hljs-string">'Could not load user'</span>, {
+      <span class="hljs-attr">firstName</span>: types.string,
+      <span class="hljs-attr">lastName</span>: types.string,
+    }),
+  },
+})
+</code></pre></li>
+<li><p>Added a <code>Redbox React</code>-style error panel for components created with <code>createContainer()</code>. This panel is shown every time a component without a custom <code>renderError</code> function receives an error, and the instance of muster to which it is connected is in <code>debug: true</code> mode (which is by default set to true). To disable this behaviour either set a custom <code>renderError</code>, or set <code>debug: false</code> on the muster instance.</p></li>
+<li><p>Added <code>simpleContainer()</code> function, which can be used to create a container without a local component graph.
+Such container will load all of its props from the global application graph.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Given a global graph:</span>
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">views</span>: {
+    <span class="hljs-attr">user</span>: {
+      <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+      <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+    },
+  },
+});
+
+<span class="hljs-comment">// One can create a simple container that loads the user's first and last names</span>
+<span class="hljs-keyword">const</span> simpleContainer = simpleContainer({
+  <span class="hljs-attr">views</span>: {
+    <span class="hljs-attr">user</span>: {
+      <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>,
+    },
+  },
+});
+
+<span class="hljs-comment">// Optionally a query prefix can be defined, if all props are located within a nested path in the graph</span>
+<span class="hljs-keyword">const</span> simpleContainer = simpleContainer([<span class="hljs-string">'views'</span>, <span class="hljs-string">'user'</span>], {
+  <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>,
+});
+</code></pre></li>
+<li><p>Added ability to define custom <code>getType</code> implementations for every NodeType.</p></li>
+<li><p>Added a <code>relaxPropsValidation</code> parameter to the <code>container()</code> function. This parameter downgrades the severity of prop validation errors from error to a warning.</p></li>
+<li><p>Added ability to call actions defined on an item through a <code>proxy()</code> and a <code>remote()</code> node.</p></li>
+<li><p>Added ability to validate value of the <code>variable()</code> node using Muster types.</p></li>
+<li><p>Improved the performance of Muster collections and queries by about 27%.</p></li>
+<li><p>Implemented the <code>applyTransforms()</code> node, which replaces both <code>collection()</code> and <code>getItems()</code>.</p></li>
+<li><p>Changed the implementation of the <code>length()</code> node to allow getting a length of a value node:</p>
+<pre><code class="hljs css language-javascript">ref(<span class="hljs-string">'user'</span>, <span class="hljs-string">'firstName'</span>, length())
+<span class="hljs-comment">// or</span>
+length(ref(<span class="hljs-string">'user'</span>, <span class="hljs-string">'firstName'</span>))
+<span class="hljs-comment">// or</span>
+strlen(ref(<span class="hljs-string">'user'</span>, <span class="hljs-string">'firstName'</span>))
+</code></pre></li>
+<li><p>Added ability to serialize and de-serialize Muster type matchers.</p></li>
+<li><p>Added ability to see dynamic branch matchers, and make subscriptions to them in the Muster DevTools.</p></li>
+<li><p>Added ability to name arguments in <code>action()</code> node:</p>
+<pre><code class="hljs css language-javascript">action(<span class="hljs-function">(<span class="hljs-params">{ firstName, lastName }</span>) =&gt;</span> { <span class="hljs-comment">/* ... */</span>})
+<span class="hljs-comment">// and then call it like this</span>
+call(ref(<span class="hljs-string">'myActionWithNamedArgs'</span>), {
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Kate'</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Jonson'</span>,
+})
+<span class="hljs-comment">// or apply</span>
+apply({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Kate'</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Jonson'</span>,
+}, ref(<span class="hljs-string">'myActionWithNamedArgs'</span>))
+</code></pre></li>
+<li><p>Added ability to name arguments in <code>fn()</code> node:</p>
+<pre><code class="hljs css language-javascript">fn([<span class="hljs-string">'firstName'</span>, <span class="hljs-string">'lastName'</span>], ({ firstName, lastName }) =&gt; {<span class="hljs-comment">/* ... */</span>})
+<span class="hljs-comment">// and then call it like this</span>
+call(ref(<span class="hljs-string">'myActionWithNamedArgs'</span>), {
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Kate'</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Jonson'</span>,
+})
+<span class="hljs-comment">// or apply</span>
+apply({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Kate'</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Jonson'</span>,
+}, ref(<span class="hljs-string">'myActionWithNamedArgs'</span>))
+</code></pre></li>
+<li><p>Added a new package: <strong>muster-remote</strong>. This contains a replacement for the existing <code>remote</code> node in Muster, with added support for streaming connections using WebSockets.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { remote } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-remote'</span>;
+
+<span class="hljs-keyword">const</span> graph = {
+  <span class="hljs-attr">server</span>: remote(<span class="hljs-string">'ws://server:8999'</span>, { <span class="hljs-attr">useSockets</span>: <span class="hljs-literal">true</span> })
+};
+</code></pre></li>
+<li><p>Added support for socket streaming connections to <strong>muster-express</strong>.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> express } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> http <span class="hljs-keyword">from</span> <span class="hljs-string">'http'</span>;
+<span class="hljs-keyword">import</span> { socketConnect } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-server'</span>;
+
+<span class="hljs-keyword">const</span> graph = muster(<span class="hljs-comment">/*...*/</span>);
+
+<span class="hljs-keyword">const</span> server = http.createServer(express());
+<span class="hljs-keyword">const</span> wss = <span class="hljs-keyword">new</span> WebSocket.Server({ server });
+wss.on(<span class="hljs-string">'connection'</span>, (ws) =&gt; {
+  socketConnect(graph, ws);
+});
+
+server.listen(process.env.PORT || <span class="hljs-number">8999</span>);
+</code></pre></li>
+<li><p>Added a <code>logMiddleware()</code>. This middleware is used for enabling logging of requests/responses. By default it uses the <code>console.log</code> as a target, but can be configured to use a custom function.</p></li>
+<li><p>Added a <code>partial()</code> node, which can be used to create partially applied functions. This node works with both named and positional arguments.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">greet</span>: action(<span class="hljs-function">(<span class="hljs-params">name</span>) =&gt;</span> <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>),
+  <span class="hljs-attr">greetBob</span>: partial(ref(<span class="hljs-string">'greet'</span>), [<span class="hljs-string">'Bob'</span>]),
+});
+
+<span class="hljs-keyword">await</span> app.resolve(call(<span class="hljs-string">'greetBob'</span>));
+<span class="hljs-comment">// === 'Hello, Bob!'</span>
+
+<span class="hljs-keyword">await</span> app.resolve(call(<span class="hljs-string">'greetBob'</span>, [<span class="hljs-string">'Alice'</span>]));
+<span class="hljs-comment">// === 'Hello, Bob!'</span>
+</code></pre></li>
+<li><p>Added an <code>optimistic()</code> node, which can be used as a wrapper for a <code>settable</code> node.</p></li>
+<li><p>Added a <code>isUpdating()</code> node, which can be used to check if the target node is in process of
+optimistically setting the value of the underlying settable node.</p></li>
+<li><p>Added a new package: <strong>muster-worker</strong>. This supports creating and running a graph in a standalone worker thread.</p>
+<p><code>my.worker.js</code>:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { workerConnect } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-worker'</span>;
+
+<span class="hljs-keyword">const</span> graph = muster({
+  <span class="hljs-comment">// ...</span>
+});
+
+workerConnect(graph, self);
+</code></pre>
+<p>App:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { worker } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-worker'</span>;
+
+<span class="hljs-keyword">const</span> clientApp = muster({
+  <span class="hljs-attr">worker</span>: worker(<span class="hljs-string">'./my.worker.js'</span>),
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<p>See the package README for more details.</p></li>
+<li><p>Added ability to yield named nodes from generator <code>action()</code>:</p>
+<pre><code class="hljs css language-javascript">action(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> { first, last } = <span class="hljs-keyword">yield</span> {
+    <span class="hljs-attr">first</span>: ref(<span class="hljs-string">'firstName'</span>),
+    <span class="hljs-attr">last</span>: ref(<span class="hljs-string">'lastName'</span>),
+  };
+  <span class="hljs-comment">// Do the logic here</span>
+})
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="polish-3"></a><a href="#polish-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>💅 Polish</h3>
+<ul>
+<li>Improved the speed <code>graph-hash</code> functions.</li>
+<li>Added documentation for the <code>strlen</code> node.</li>
+<li>Improved <code>muster-payground</code> by sharing the same muster graph between the <code>Query Result</code> and <code>Muster-React Result</code> windows.</li>
+<li>Added compatibility with newer versions of React - use new lifecycle methods with a backwards compatible polyfill.</li>
+<li>Improved the way <code>valueOf()</code> handles <code>error()</code> nodes. Now it returns a <code>new Error()</code> with the correct message, stack
+and all data properties assigned to the error:
+<pre><code class="hljs css language-javascript">valueOf(error(<span class="hljs-string">'Error message'</span>, {
+  <span class="hljs-attr">code</span>: <span class="hljs-string">'error code'</span>,
+  <span class="hljs-attr">data</span>: {}
+}));
+<span class="hljs-comment">// returns</span>
+<span class="hljs-built_in">Object</span>.assign(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Error message'</span>), {
+  <span class="hljs-attr">code</span>: <span class="hljs-string">'error code'</span>,
+  <span class="hljs-attr">data</span>: {}
+});
+</code></pre></li>
+<li>Improved the way <code>action()</code> generators handle exceptions: all <code>error()</code> exceptions are first run through
+the <code>valueOf()</code> helper before passing it to the generator function.
+<pre><code class="hljs css language-javascript">muster({
+  <span class="hljs-attr">thisResolvesToError</span>: error(<span class="hljs-string">'Some error'</span>, {
+    <span class="hljs-attr">code</span>: <span class="hljs-string">'123'</span>,
+    <span class="hljs-attr">data</span>: { <span class="hljs-attr">some</span>: <span class="hljs-string">'value'</span> },
+  }),
+  <span class="hljs-attr">someAction</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">yield</span> ref(<span class="hljs-string">'thisResolvesToError'</span>);
+    } <span class="hljs-keyword">catch</span> (ex) {
+      <span class="hljs-comment">// ex === new Error('Some error')</span>
+      <span class="hljs-comment">// ex.code === '123'</span>
+      <span class="hljs-comment">// ex.data === { some: 'value' }</span>
+    }
+  })
+});
+</code></pre></li>
+<li>Increased the maximum operation count to 9,999,999 to allow for handling of larger collections of items</li>
+<li>Optimised the way <code>GraphActions</code> are added to the resolution queue in the <code>store</code>. On average this improves the performance by about 15%.</li>
+<li>Improved the implementation of <code>placeholder()</code> and <code>itemPlaceholder()</code> nodes by using wildcard operation, instead of hardcoding each operation</li>
+<li>Improved the implementation of <code>proxy()</code> node to support any type of graph operation</li>
+<li>Improved the error message shown when a Muster React component is rendered without being embedded in a Muster Provider</li>
+<li>Refactored the <code>tree()</code> node to use a custom <code>getType()</code> implementation</li>
+<li>Improved hasher performance which results in overall 30% performance boost</li>
+<li>Moved the <code>array()</code> node into the <code>collection</code> directory</li>
+<li>Improved the performance of <code>querySet()</code> node</li>
+<li>Improved performance of the <code>query()</code> node by around 25%.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="documentation"></a><a href="#documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>📝 Documentation</h3>
+<ul>
+<li>Improved the documentation of the following nodes:
+<ul>
+<li><code>location()</code></li>
+<li><code>ref()</code></li>
+<li><code>push()</code></li>
+<li><code>pop()</code></li>
+<li><code>shift()</code></li>
+<li><code>unshift()</code></li>
+<li><code>addItemAt()</code></li>
+<li><code>removeItemAt()</code></li>
+</ul></li>
+<li>Added <code>done()</code> node documentation</li>
+<li>Added <code>emptyItem()</code> node documentation</li>
+<li>Added <code>fetchItems()</code> node documentation</li>
+<li>Added <code>first()</code> node documentation</li>
+<li>Added <code>last()</code> node documentation</li>
+<li>Added <code>injectDependencies()</code> node documentation</li>
+<li>Added <code>itemPlaceholder()</code> node documentation</li>
+<li>Added <code>iteratorResult()</code> node documentation</li>
+<li>Added <code>length()</code> node documentation</li>
+<li>Added <code>nodeList()</code> node documentation</li>
+<li>Added <code>notFound()</code> node documentation</li>
+<li>Added <code>nth()</code> node documentation</li>
+<li>Added <code>skip()</code> node documentation</li>
+<li>Added <code>caller()</code> prop type documentation</li>
+<li>Added <code>setter()</code> prop type documentation</li>
+<li>Added <code>catchError()</code> prop type documentation</li>
+<li>Added <code>defer()</code> prop type documentation</li>
+<li>Added <code>getter()</code> prop type documentation</li>
+<li>Added <code>injected()</code> prop type documentation</li>
+<li>Added <code>isLoading()</code> prop type documentation</li>
+<li>Added <code>tree()</code> prop type documentation</li>
+<li>Added <code>list()</code> prop type documentation</li>
+<li>Added &quot;Crafting Muster nodes&quot; tutorial</li>
+<li>Added &quot;Common Muster errors&quot; docs page</li>
+<li>Created a modular tutorial</li>
+<li>Added a series of documents to help users understand Muster</li>
+<li>Added a series of resources including a glossary, essential nodes and a FAQ</li>
+<li>Added a section about WebSockets to the &quot;Muster on the server&quot; docs page.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="refactors"></a><a href="#refactors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🔧 Refactors</h3>
+<ul>
+<li>Refactored the <code>nil()</code> node to utilise the <code>wildcard</code> operation.</li>
+<li>Upgraded the project to TypeScript 3.1.6</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/6.4.0/glossary"><span class="arrow-prev">← </span><span>Glossary</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#unreleased">Unreleased</a></li><li><a href="#640-2018-11-30">6.4.0 (2018-11-30)</a><ul class="toc-headings"><li><a href="#new-features">🚀 New Features</a></li><li><a href="#bug-fixes">🐛 Bug Fixes</a></li><li><a href="#polish">💅 Polish</a></li></ul></li><li><a href="#631-2018-11-27">6.3.1 (2018-11-27)</a><ul class="toc-headings"><li><a href="#bug-fixes-1">🐛 Bug Fixes</a></li><li><a href="#polish-1">💅 Polish</a></li></ul></li><li><a href="#630-2018-11-23">6.3.0 (2018-11-23)</a><ul class="toc-headings"><li><a href="#new-features-1">🚀 New Features</a></li><li><a href="#bug-fixes-2">🐛 Bug Fixes</a></li></ul></li><li><a href="#620-2018-11-20">6.2.0 (2018-11-20)</a><ul class="toc-headings"><li><a href="#new-features-2">🚀 New Features</a></li><li><a href="#bug-fixes-3">🐛 Bug Fixes</a></li><li><a href="#polish-2">💅 Polish</a></li></ul></li><li><a href="#610-2018-11-13">6.1.0 (2018-11-13)</a><ul class="toc-headings"><li><a href="#new-features-3">🚀 New Features</a></li><li><a href="#bug-fixes-4">🐛 Bug Fixes</a></li></ul></li><li><a href="#600-2018-11-09">6.0.0 (2018-11-09)</a><ul class="toc-headings"><li><a href="#breaking-changes">💥 Breaking Changes</a></li><li><a href="#deprecations">🚨 Deprecations</a></li><li><a href="#new-features-4">🚀 New Features</a></li><li><a href="#polish-3">💅 Polish</a></li><li><a href="#documentation">📝 Documentation</a></li><li><a href="#refactors">🔧 Refactors</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

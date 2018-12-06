@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Control Flow · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;As with most languages, Muster has nodes that support flow of control of function calls and assignments through the use of &lt;code&gt;ifElse()&lt;/code&gt; statements and &lt;code&gt;choose()-when()&lt;/code&gt; and &lt;code&gt;switch()&lt;/code&gt; cases. These nodes allow a program to conditionally execute code in different ways.&lt;/p&gt;
+"/><meta name="docsearch:version" content="6.4.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Control Flow · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;p&gt;As with most languages, Muster has nodes that support flow of control of function calls and assignments through the use of &lt;code&gt;ifElse()&lt;/code&gt; statements and &lt;code&gt;choose()-when()&lt;/code&gt; and &lt;code&gt;switch()&lt;/code&gt; cases. These nodes allow a program to conditionally execute code in different ways.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.4.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Learn</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/collections">Collections</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/08-control-flow.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Control Flow</h1></header><article><div><span><p>As with most languages, Muster has nodes that support flow of control of function calls and assignments through the use of <code>ifElse()</code> statements and <code>choose()-when()</code> and <code>switch()</code> cases. These nodes allow a program to conditionally execute code in different ways.</p>
+<h2><a class="anchor" aria-hidden="true" id="ifelse-statements"></a><a href="#ifelse-statements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IfElse-Statements</h2>
+<p>The <code>ifElse()</code> node works in three parts when called:</p>
+<ul>
+<li>In the <code>if:</code> branch, an expression is evaluated for truthiness.</li>
+<li>If the expression resolves to being 'truthy', the code at the <code>then:</code> branch is executed.</li>
+<li>If the expression resolves to being 'falsy', the code at the <code>else:</code> branch is executed.</li>
+</ul>
+<p>For example, an <code>ifElse()</code> with a boolean expression:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { ifElse, ref, set, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">isLoggedIn</span>: variable(<span class="hljs-literal">false</span>),
+  <span class="hljs-attr">greeting</span>: ifElse({
+    <span class="hljs-attr">if</span>: ref(<span class="hljs-string">'isLoggedIn'</span>),
+    <span class="hljs-attr">then</span>: <span class="hljs-string">'Hello, logged-in user!'</span>,
+    <span class="hljs-attr">else</span>: <span class="hljs-string">'Hello, guest!'</span>,
+  }),
+});
+
+app.resolve(ref(<span class="hljs-string">'greeting'</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(result);
+});
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Logging in'</span>);
+<span class="hljs-keyword">await</span> app.resolve(set(<span class="hljs-string">'isLoggedIn'</span>, <span class="hljs-literal">true</span>));
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Hello, guest!</span>
+<span class="hljs-comment">// Logging in</span>
+<span class="hljs-comment">// Hello, logged-in user!</span>
+</code></pre>
+<p>And another example, this time evaluating 'truthiness':</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { ifElse, ref, set, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: variable(<span class="hljs-string">''</span>),
+  <span class="hljs-attr">greeting</span>: ifElse({
+    <span class="hljs-attr">if</span>: ref(<span class="hljs-string">'name'</span>),
+    <span class="hljs-attr">then</span>: format(<span class="hljs-string">`Your name is: <span class="hljs-subst">${localName}</span>`</span>,{
+      <span class="hljs-attr">localName</span>: ref(<span class="hljs-string">'name'</span>),
+    }),
+    <span class="hljs-attr">else</span>: <span class="hljs-string">'You have no name!'</span>,
+  }),
+});
+
+app.resolve(ref(<span class="hljs-string">'greeting'</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(result);
+});
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Assigning name'</span>);
+<span class="hljs-keyword">await</span> app.resolve(set(<span class="hljs-string">'name'</span>, <span class="hljs-string">'Bob'</span>));
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// You have no name!</span>
+<span class="hljs-comment">// Assigning name</span>
+<span class="hljs-comment">// Your name is Bob</span>
+</code></pre>
+<p>In this example, when the <code>name</code> <code>variable()</code> is empty, the <code>ifElse()</code> node interprets this as 'falsy', so the <code>else:</code> branch is called. When a name is assigned, it is then interpreted as 'truthy', so the <code>then:</code> branch is called.</p>
+<h2><a class="anchor" aria-hidden="true" id="switch-cases"></a><a href="#switch-cases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Switch Cases</h2>
+<p>There may be some cases where you're expecting multiple specific values when checking against some criteria. In this instance, <code>switchOn()</code> will solve this problem.</p>
+<ul>
+<li>The first argument of <code>switchOn()</code> is a <code>ref()</code> to the node that is being evaluated.</li>
+<li>The second argument of <code>switchOn()</code> is an array of one or more <code>when()</code> nodes specifying conditions and an <code>otherwise()</code> node. <code>when()</code> nodes each come with two arguments
+<ul>
+<li>The first argument of <code>when()</code> is the value being assessed.</li>
+<li>The second argument of <code>when()</code> is what is returned if the first argument resolves true.</li>
+</ul></li>
+<li>The <code>otherwise()</code> node dictates what is returned if there are no <code>when()</code> statements that resolve true.</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { otherwise, ref, set, switchOn, variable, when } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: variable(<span class="hljs-string">''</span>),
+  <span class="hljs-attr">greeting</span>: switchOn(ref(<span class="hljs-string">'name'</span>), [
+    when(<span class="hljs-string">'Hank'</span>, <span class="hljs-string">'Hi, Dad!'</span>),
+    when(<span class="hljs-string">'Peggy'</span>, <span class="hljs-string">'Hi, Mom!'</span>),
+    otherwise(<span class="hljs-string">'That`s my purse, I don`t know you!'</span>)
+  ])
+});
+
+app.resolve(ref(<span class="hljs-string">'greeting'</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(result);
+});
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Assigning name'</span>);
+<span class="hljs-keyword">await</span> app.resolve(set(<span class="hljs-string">'name'</span>, <span class="hljs-string">'Hank'</span>));
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// That's my purse, I don't know you!</span>
+<span class="hljs-comment">// Assigning name</span>
+<span class="hljs-comment">// Hi, Dad!</span>
+</code></pre>
+<p><code>switchOn()</code> can only evaluate values against one specific reference node. To perform a conditional check on the values of multiple nodes, choose <code>choose()</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="choose-when"></a><a href="#choose-when" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Choose-When</h2>
+<p><code>choose()</code> is similar to <code>switchOn()</code> except each <code>when()</code> node carries its own independent conditional statement.</p>
+<ul>
+<li>The only argument <code>choose()</code> has is an array of one or more <code>when()</code> nodes followed by an <code>otherwise()</code> node.</li>
+<li>Each <code>when()</code> node carries two arguments
+<ul>
+<li>The first argument is an expression that resolves to a 'truthy' or 'falsy' value.</li>
+<li>The second argument is what is returned if the first argument resolves to 'truthy'.</li>
+</ul></li>
+<li>If multiple <code>when()</code> nodes resolve to 'truthy', the one which occurs first will be executed.</li>
+<li>If all <code>when()</code> nodes resolve to 'falsy', the <code>otherwise()</code> node will be executed.</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { eq, choose, otherwise, ref, variable, when } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">disaster</span>: {
+    <span class="hljs-attr">monster</span>: variable(<span class="hljs-string">'Godzilla'</span>),
+    <span class="hljs-attr">tidalWave</span>: variable(<span class="hljs-literal">true</span>),
+  },
+  <span class="hljs-attr">fate</span>: choose([
+    when(eq(ref(<span class="hljs-string">'disaster'</span>,<span class="hljs-string">'monster'</span>), <span class="hljs-string">'Godzilla'</span>), <span class="hljs-string">'It`s Godzilla, We`re doomed!'</span>),
+    when(eq(ref(<span class="hljs-string">'disaster'</span>,<span class="hljs-string">'tidalWave'</span>), <span class="hljs-literal">true</span>), <span class="hljs-string">'It`s a tidal wave, We`re doomed!'</span>),
+    otherwise(<span class="hljs-string">'We`re saved!'</span>),
+  ]),
+});
+
+app.resolve(ref(<span class="hljs-string">'fate'</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">result2</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(result2);
+});
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Slaying monster'</span>);
+<span class="hljs-keyword">await</span> app.resolve(set(ref(<span class="hljs-string">'disaster'</span>, <span class="hljs-string">'monster'</span>)), <span class="hljs-string">''</span>);
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Breaking waves'</span>);
+<span class="hljs-keyword">await</span> app.resolve(set(ref(<span class="hljs-string">'disaster'</span>, <span class="hljs-string">'tidalWave'</span>)), <span class="hljs-literal">false</span>);
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// It`s Godzilla, We`re doomed!</span>
+<span class="hljs-comment">// Slaying monster</span>
+<span class="hljs-comment">// It`s a tidal wave, We`re doomed!</span>
+<span class="hljs-comment">// Breaking waves</span>
+<span class="hljs-comment">// We`re saved!</span>
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/learn/collections"><span class="arrow-prev">← </span><span>Collections</span></a><a class="docs-next button" href="/muster/docs/understanding-muster/data-store"><span>How Muster Stores Data</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#ifelse-statements">IfElse-Statements</a></li><li><a href="#switch-cases">Switch Cases</a></li><li><a href="#choose-when">Choose-When</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

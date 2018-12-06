@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Muster React Cookbook · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;The goal of this page is to collect useful snippets you can adapt and use in your apps. These snippets are for Muster-React. They&#x27;re designed in a way which should allow you to quickly adapt them to your requirements.&lt;/p&gt;
+"/><meta name="docsearch:version" content="6.4.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Muster React Cookbook · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;p&gt;The goal of this page is to collect useful snippets you can adapt and use in your apps. These snippets are for Muster-React. They&#x27;re designed in a way which should allow you to quickly adapt them to your requirements.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.4.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Tutorials</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/muster-react-cookbook.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Muster React Cookbook</h1></header><article><div><span><p>The goal of this page is to collect useful snippets you can adapt and use in your apps. These snippets are for Muster-React. They're designed in a way which should allow you to quickly adapt them to your requirements.</p>
+<h2><a class="anchor" aria-hidden="true" id="forcing-the-render-of-a-component-even-if-its-container-data-is-loading"></a><a href="#forcing-the-render-of-a-component-even-if-its-container-data-is-loading" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Forcing the render of a component even if its container data is loading</h2>
+<p>By default Muster-React tries to play it safe, and doesn't render your component when the data hasn't been fully loaded. This is done so that the component logic which depends on particular pieces of data to be present wouldn't find unexpected <code>undefined</code> in place of expected data. You can however overwrite this behaviour, and instruct Muster-React to render your component even if the data is loading. To do this you must use <code>container()</code> function (<code>simpleContainer()</code> doesn't have this feature), and set <code>renderLoading: true</code>:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> { container, fromPromise } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent</span>(<span class="hljs-params">{ user }</span>) </span>{
+  <span class="hljs-comment">// Watch out, cos user might be undefined!</span>
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+      {user &amp;&amp; (
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+          {user.firstName} {user.lastName}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      )}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span>
+  );
+}
+
+<span class="hljs-keyword">const</span> MyContainer = container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-attr">user</span>: fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> fetch(<span class="hljs-string">'https://some.api.com/user'</span>))
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">user</span>: {
+      <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+    }
+  },
+  <span class="hljs-attr">renderLoading</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+<p>Note that in the <code>MyComponent()</code> function we're explicitly checking if user is not undefined. In larger components this might be a bit cumbersome, so that's why the <code>renderLoading</code> enables one more way of enabling a loading state - it can also take a function with a single argument (last props) and is supposed to return a component to render. Armed with that knowledge let's improve that example a bit:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> { container, fromPromise } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent</span>(<span class="hljs-params">{ isLoading, user }</span>) </span>{
+  <span class="hljs-comment">// Watch out, cos user might be undefined!</span>
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+      {!isLoading <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{user.firstName} {user.lastName}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span>
+  );
+}
+
+<span class="hljs-keyword">const</span> MyContainer = container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-attr">user</span>: fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> fetch(<span class="hljs-string">'https://some.api.com/user'</span>)),
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">user</span>: {
+      <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>,
+    },
+  },
+  <span class="hljs-attr">renderLoading</span>: <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> &lt;MyComponent {...props} isLoading /&gt;,
+});
+</code></pre>
+<p>The <code>isLoading</code> property we now passed into the <code>MyComponent</code> will now inform us if any piece of data is in the process of being loaded. The downside of this approach is that it creates a dependency between the <code>MyContainer</code> and <code>MyComponent</code>, and could cause potential problems with unit testing.</p>
+<p><strong>Ideally when the component is meant to be rendered even when the data is being loaded you should use <code>propTypes.defer</code> and <code>propTypes.isLoading</code>.</strong></p>
+<blockquote>
+<p><strong>Note:</strong> The loading state of the component is not affected by the <code>propTypes.defer()</code> prop type. Any time a deferred property goes into a loading state the component remains in a fully-loaded state. This means that when deferred node switches from resolved to pending state, the <code>renderLoading</code> function is not going to get called.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="optional-prop-transforms"></a><a href="#optional-prop-transforms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Optional prop transforms</h2>
+<p>You may sometimes need to perform arbitrary logic between retrieving data from a graph and injecting it as props into your component. For just this occasion, <code>container</code> offers a second parameter after its configuration hash: the Prop Transform function.</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> container(
+  {
+    <span class="hljs-attr">graph</span>: {
+      <span class="hljs-attr">results</span>: ref(global(<span class="hljs-string">'search'</span>, <span class="hljs-string">'results'</span>)),
+      <span class="hljs-attr">loading</span>: ref(global(<span class="hljs-string">'search'</span>, <span class="hljs-string">'loading'</span>))
+    },
+    <span class="hljs-attr">props</span>: {
+      <span class="hljs-attr">results</span>: types.array,
+      <span class="hljs-attr">loading</span>: types.bool
+    }
+  },
+  (props) =&gt; {
+    <span class="hljs-comment">// property transform function</span>
+    <span class="hljs-keyword">if</span> (props.loading) {
+      <span class="hljs-keyword">return</span> {
+        ...props,
+        <span class="hljs-attr">results</span>: [] <span class="hljs-comment">// overwriting the value of the results prop</span>
+      };
+    }
+    <span class="hljs-keyword">return</span> props; <span class="hljs-comment">// returning as normal</span>
+  }
+)(SearchResultsComponent);
+</code></pre>
+<p>Here you can see an example where if for any reason the value of <code>loading</code> is truthy, the <code>results</code> prop will always be set to an empty array on injection into the target component.</p>
+<blockquote>
+<p>There are better ways to track loading state than with a separate graph key -- Muster can tell when values are &quot;pending&quot;, and Muster-React offers tools for handling loading state.</p>
+</blockquote>
+<blockquote>
+<p>Prop transform functions are a quick way to achieve specific results, but should be used cautiously - they're not the right place for complex or repeated business logic.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="additional-component-props-with-propnode"></a><a href="#additional-component-props-with-propnode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional component props with <code>PropNode</code></h2>
+<p>Typically, connected components don't take in external props -- their data requirements are satisfied by their connection to an external source (hence the name, after all). However, should the need arise (external routing framework, ephemeral data, arcane prophecy), Muster-React can help. The <code>prop</code> node lets you access an external prop from within a container's local graph.</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">import</span> { container, computed, prop } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent</span>(<span class="hljs-params">{ greeting }</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Greeting:'</span>, greeting);
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">const</span> MyConnectedComponent = container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-comment">// here's the prop node, being used as a dependency of a computed node</span>
+    greeting: computed([prop(<span class="hljs-string">'name'</span>)], (name) =&gt; <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>`</span>)
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">greeting</span>: <span class="hljs-literal">true</span>
+  }
+})(MyComponent);
+
+<span class="hljs-comment">// Somewhere in another part of the application:</span>
+&lt;MyConnectedComponent name=<span class="hljs-string">"Bob"</span> /&gt;;
+
+<span class="hljs-comment">// Console output (when rendered):</span>
+<span class="hljs-comment">// Greeting: Hello, Bob</span>
+</code></pre>
+<p>As you can see, the <code>prop</code> node can be used much the same way as a <code>ref</code> (global or otherwise), but can only (for reasons which should be obvious) be used within a container's local graph, and not the global graph.</p>
+<h2><a class="anchor" aria-hidden="true" id="rendering-a-list"></a><a href="#rendering-a-list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rendering a <code>list</code></h2>
+<p>It's pretty common to need to render out lists of items in your app. This is where the <code>list</code> prop definition comes in. There are a couple of different cases for it, so let's start with the simple one.</p>
+<h3><a class="anchor" aria-hidden="true" id="value-lists"></a><a href="#value-lists" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Value lists</h3>
+<p>If you have a set of simple values, your props require minimal configuration.</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">import</span> { container, propTypes } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent</span>(<span class="hljs-params">{ numbers }</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+      My favourite numbers are
+      {numbers.map((n) =&gt; (
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span> {n}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      ))} // pretend this is fine
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+  );
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-attr">numbers</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>],
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">numbers</span>: propTypes.list(),
+  },
+});
+</code></pre>
+<p><a href="/muster/playground/?toggles=eyJzaG93R3JhcGgiOmZhbHNlLCJzaG93UXVlcnkiOmZhbHNlLCJzaG93UXVlcnlSZXN1bHQiOmZhbHNlLCJzaG93Q29udGFpbmVyIjp0cnVlLCJzaG93VmlldyI6dHJ1ZSwic2hvd1ZpZXdSZXN1bHQiOnRydWV9&amp;view=Iih7IG51bWJlcnMgfSkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxwPk15IGZhdm91cml0ZSBudW1iZXJzIGFyZVxuICAgICAge251bWJlcnMubWFwKChuKSA9PiA8c3Bhbj4ge259PC9zcGFuPil9XG4gICAgPC9wPlxuICApO1xufSI%3D&amp;containerGraph=ImNvbnRhaW5lcih7XG4gIGdyYXBoOiB7XG4gICAgbnVtYmVyczogWzEsIDIsIDMsIDRdLCAvLyB2YWx1ZSBhcnJheSwgY29udmVydGVkIHRvIGEgYGNvbGxlY3Rpb25gXG4gIH0sXG4gIHByb3BzOiB7XG4gICAgbnVtYmVyczogcHJvcFR5cGVzLmxpc3QoKSwgLy8gbm8gcGFyYW1ldGVycyByZXF1aXJlZCBhcyBrZXkgbmFtZXMgbWF0Y2hcbiAgfSxcbn0pXG4i&amp;graph=IntcbiAgXG59Ig%3D%3D&amp;query=IiI%3D">Try this example on the Muster Playground</a></p>
+<p>In this case, the <code>list</code> declaration takes no parameters, but must match the prop name against the corresponding <code>data</code> key.</p>
+<h3><a class="anchor" aria-hidden="true" id="branch-nested-lists"></a><a href="#branch-nested-lists" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Branch/nested lists</h3>
+<p>If your list is a collection of nested objects or branches in graph parlance, you'll need to be a little more specific.</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">import</span> { container, propTypes } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent</span>(<span class="hljs-params">{ friends }</span>) </span>{
+  <span class="hljs-comment">// In this example, friends = [</span>
+  <span class="hljs-comment">//   { firstName: 'Sylvia', lastName: 'Garcia' },</span>
+  <span class="hljs-comment">//   { firstName: 'Carl', lastName: 'Francis' },</span>
+  <span class="hljs-comment">//   { firstName: 'Arthur', lastName: 'Kennedy' },</span>
+  <span class="hljs-comment">// ]</span>
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-attr">friends</span>: [
+      <span class="hljs-comment">// this array is translated to an `array()` node</span>
+      { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Sylvia'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Garcia'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">48</span> },
+      { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Carl'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Francis'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">63</span> },
+      { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Arthur'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Kennedy'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">28</span> }
+    ]
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">friends</span>: propTypes.list({
+      <span class="hljs-comment">// prop and data keys must match</span>
+      firstName: <span class="hljs-literal">true</span>, <span class="hljs-comment">// nested props are defined just as elsewhere</span>
+      lastName: <span class="hljs-literal">true</span>
+    }) <span class="hljs-comment">// we're omitting the `age` key here</span>
+  }
+})(MyComponent);
+</code></pre>
+<p><a href="/muster/playground/?toggles=eyJzaG93R3JhcGgiOmZhbHNlLCJzaG93UXVlcnkiOmZhbHNlLCJzaG93UXVlcnlSZXN1bHQiOmZhbHNlLCJzaG93Q29udGFpbmVyIjp0cnVlLCJzaG93VmlldyI6dHJ1ZSwic2hvd1ZpZXdSZXN1bHQiOnRydWV9&amp;view=Iih7IGZyaWVuZHMgfSkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxwPk15IGZhdm91cml0ZSBmcmllbmRzIGFyZVxuICAgICAge2ZyaWVuZHMubWFwKChmKSA9PiA8c3Bhbj4ge2YuZmlyc3ROYW1lfSB7Zi5sYXN0TmFtZX0sIDwvc3Bhbj4pfVxuICAgIDwvcD5cbiAgKTtcbn0i&amp;containerGraph=ImNvbnRhaW5lcih7XG4gIGdyYXBoOiB7XG4gICAgZnJpZW5kczogWyAvLyB0aGlzIGFycmF5IGlzIHRyYW5zbGF0ZWQgdG8gYSBgY29sbGVjdGlvbmBcbiAgICAgIHsgZmlyc3ROYW1lOiAnU3lsdmlhJywgbGFzdE5hbWU6ICdHYXJjaWEnLCBhZ2U6IDQ4IH0sXG4gICAgICB7IGZpcnN0TmFtZTogJ0NhcmwnLCBsYXN0TmFtZTogJ0ZyYW5jaXMnLCBhZ2U6IDYzIH0sXG4gICAgICB7IGZpcnN0TmFtZTogJ0FydGh1cicsIGxhc3ROYW1lOiAnS2VubmVkeScsIGFnZTogMjggfSxcbiAgICBdLCBcbiAgfSxcbiAgcHJvcHM6IHtcbiAgICBmcmllbmRzOiBwcm9wVHlwZXMubGlzdCh7IC8vIHByb3AgYW5kIGRhdGEga2V5cyBtdXN0IG1hdGNoXG4gICAgICBmaXJzdE5hbWU6IHRydWUsIC8vIG5lc3RlZCBwcm9wcyBhcmUgZGVmaW5lZCBqdXN0IGFzIGVsc2V3aGVyZVxuICAgICAgbGFzdE5hbWU6IHRydWUsXG4gICAgfSksIC8vIHdlJ3JlIG9taXR0aW5nIHRoZSBgYWdlYCBrZXkgaGVyZVxuICB9LFxufSlcbiI%3D&amp;graph=IntcbiAgXG59Ig%3D%3D&amp;query=IiI%3D">Try this example on the Muster Playground</a></p>
+<p>This time, the <code>list</code> prop declaration needs a bit of config. This is very similar to handling nested data (covered above) - names must match, types are optional (for gets), and you need only include the data you want.</p>
+<blockquote>
+<p>It would be straightforward move this collection data to the global graph and reference it there. It's likely that most collections you handle will be in global graphs, but you can always get them up and running locally first.</p>
+</blockquote>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/tutorials/muster-react-tutorial"><span class="arrow-prev">← </span><span>Muster React Tutorial</span></a><a class="docs-next button" href="/muster/docs/tutorials/muster-react-testing"><span>Muster React Unit Testing</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#forcing-the-render-of-a-component-even-if-its-container-data-is-loading">Forcing the render of a component even if its container data is loading</a></li><li><a href="#optional-prop-transforms">Optional prop transforms</a></li><li><a href="#additional-component-props-with-propnode">Additional component props with <code>PropNode</code></a></li><li><a href="#rendering-a-list">Rendering a <code>list</code></a><ul class="toc-headings"><li><a href="#value-lists">Value lists</a></li><li><a href="#branch-nested-lists">Branch/nested lists</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

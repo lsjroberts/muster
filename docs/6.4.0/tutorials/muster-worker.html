@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Running Muster in a Worker · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;In a very similar fashion to &lt;a href=&quot;/muster/docs/tutorials/muster-server&quot;&gt;running Muster on a server&lt;/a&gt;, you can create and run a Muster graph inside a &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Worker&quot;&gt;Web Worker&lt;/a&gt;, then connect your client app to it. Workers run in their own thread, separate from the main render thread, which can improve app performance (especially if your graph contains a lot of logic).&lt;/p&gt;
+"/><meta name="docsearch:version" content="6.4.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Running Muster in a Worker · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;p&gt;In a very similar fashion to &lt;a href=&quot;/muster/docs/tutorials/muster-server&quot;&gt;running Muster on a server&lt;/a&gt;, you can create and run a Muster graph inside a &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Worker&quot;&gt;Web Worker&lt;/a&gt;, then connect your client app to it. Workers run in their own thread, separate from the main render thread, which can improve app performance (especially if your graph contains a lot of logic).&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.4.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/6.4.0/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/6.4.0/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Tutorials</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.4.0/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/muster-worker.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Running Muster in a Worker</h1></header><article><div><span><p>In a very similar fashion to <a href="/muster/docs/tutorials/muster-server">running Muster on a server</a>, you can create and run a Muster graph inside a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker">Web Worker</a>, then connect your client app to it. Workers run in their own thread, separate from the main render thread, which can improve app performance (especially if your graph contains a lot of logic).</p>
+<p><strong>N.B.</strong> Using a worker is unlikely to make your app <strong>faster</strong>, but it can help with <strong>UI responsiveness</strong>. After all, any complex processing will still have to be performed somewhere, and if moved to a worker it will have the additional latency of cross-thread messaging on top. However, on multi-threaded systems the processing will be moved off the main (render) thread, allowing your app to remain responsive to user input and other events in the meantime.</p>
+<blockquote>
+<p>Workers are only available inside browsers - threading inside NodeJS apps is available using the experimental <a href="https://nodejs.org/api/worker_threads.html"><code>worker-threads</code></a> package and is not covered here. Likewise, Workers are not available (or required) with <code>react-native</code> - native mobile apps already separate background processing from the main render thread.</p>
+</blockquote>
+<p>We'll be using <a href="https://webpack.js.org/">Webpack 4</a> in this example to build a web app that communicates with a Worker.</p>
+<h2><a class="anchor" aria-hidden="true" id="setup"></a><a href="#setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setup</h2>
+<p>You'll need to install a few things, if you don't have them in your project already.</p>
+<pre><code class="hljs css language-bash">npm i @dws/muster @dws/muster-observable @dws/muster-worker
+<span class="hljs-comment"># or</span>
+yarn add @dws/muster @dws/muster-observable @dws/muster-worker
+</code></pre>
+<p>And the Webpack bits and bobs:</p>
+<pre><code class="hljs css language-bash">npm i webpack html-webpack-plugin
+<span class="hljs-comment"># or</span>
+yarn add webpack html-webpack-plugin
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="creating-the-worker-graph"></a><a href="#creating-the-worker-graph" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the Worker Graph</h2>
+<p>Worker graphs are created the same way as any other graph, without restrictions on nodes. All we need to do is create a standalone worker file (or bundle, or <code>entry</code>) with our graph in it.</p>
+<p><code>src/app.worker.js</code></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> muster, fromStream, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { BehaviorSubject } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-observable'</span>;
+<span class="hljs-keyword">import</span> { workerConnect } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-worker'</span>;
+
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> subject = <span class="hljs-keyword">new</span> BehaviorSubject(value(<span class="hljs-string">`Geoff is <span class="hljs-subst">${age}</span>`</span>));
+setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  subject.next(value(<span class="hljs-string">`Geoff is <span class="hljs-subst">${age++}</span>`</span>));
+}, <span class="hljs-number">5000</span>);
+
+<span class="hljs-keyword">const</span> graph = muster({
+  <span class="hljs-attr">nameStream</span>: fromStream(subject),
+  <span class="hljs-comment">// ...other graph configuration</span>
+});
+
+workerConnect(graph, self);
+</code></pre>
+<p>In the code above, we're using a <code>muster-observable</code> Subject to create a stream of periodically updating values. The call to <code>workerConnect</code> at the end of the file enables the Worker listeners when the code is executed. The <code>self</code> parameter is the Worker's global context.</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-the-web-client"></a><a href="#creating-the-web-client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the Web Client</h2>
+<p>Set up a Muster client app as you would normally. You can use Muster React or a framework of your choice, but in this example we're going to stick with basic DOM manipulation.</p>
+<p><code>src/index.js</code></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { worker } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-worker'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">worker</span>: worker(<span class="hljs-string">'./app.worker.js'</span>),
+  <span class="hljs-comment">// ...other graph configuration</span>
+});
+
+app.resolve(ref(<span class="hljs-string">'worker'</span>, <span class="hljs-string">'nameStream'</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(value);
+  <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#app'</span>).innerHTML = value;
+});
+</code></pre>
+<p>This is a very simple file that creates and queries its graph on execution. Here we use the <code>worker</code> node (the client app is officially the &quot;host&quot; for the Worker script) and give it the local path to the deployed Worker script we created above.</p>
+<blockquote>
+<p>The path to the worker must be where the worker script is deployed at runtime. This may require some additional Webpack configuration (below).</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="build-and-deploy"></a><a href="#build-and-deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build and deploy</h2>
+<p>Just about every web app these days has a build step, and this example is no exception. Here's a template Webpack config to support the assumptions we've made in the other files.</p>
+<p><code>webpack.config.js</code></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'html-webpack-plugin'</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">index</span>: path.join(__dirname, <span class="hljs-string">'src/index.js'</span>),
+    <span class="hljs-string">'app.worker'</span>: path.join(__dirname, <span class="hljs-string">'src/app.worker.js'</span>)
+  },
+  <span class="hljs-attr">plugins</span>: [
+    <span class="hljs-keyword">new</span> HtmlWebpackPlugin({
+      <span class="hljs-attr">template</span>: <span class="hljs-string">'src/index.html'</span>,
+      <span class="hljs-attr">excludeChunks</span>: [<span class="hljs-string">'app.worker'</span>]
+    }),
+  ],
+};
+</code></pre>
+<p>The two things to note here are the two <code>entry</code> points in the config - one for the app at <code>index</code>, the other for the Worker - and the <code>HtmlWebpackPlugin</code> which <code>excludes</code> the Worker chunk. This is because the Worker script will be loaded by the Muster framework, so shouldn't be included in the app load by default.</p>
+<p>The <code>'app.worker'</code> entry will create a standalone bundle file for the Worker script and its dependencies. The path of the resulting file will be the path passed into the <code>worker</code> node above.</p>
+<p>We're also going to need an html template, as referenced from the <code>HtmlWebpackPlugin</code> options.</p>
+<p><code>src/index.html</code></p>
+<pre><code class="hljs css language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Worker Test<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>How old is Geoff?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>The <code>#app</code> div is manipulated by our client app in <code>index.js</code>. This will allow us to watch Geoff age in real time.</p>
+<h2><a class="anchor" aria-hidden="true" id="running-the-app"></a><a href="#running-the-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running the app</h2>
+<p>Run <code>webpack</code> to compile the app, then inspect the contents of your <code>dist</code> folder. You should see a pair of javascript files and an <code>index.html</code>. You'll need to run a local http server to allow the app to load Worker script dynamically - just opening the resulting <code>index.html</code> as a <code>file://</code> url won't work. The quickest way to do this is with <code>http-server</code>.</p>
+<pre><code class="hljs css language-bash">npm i -D http-server
+<span class="hljs-comment"># or</span>
+yarn add -D http-server
+
+<span class="hljs-comment"># then</span>
+http-server dist
+</code></pre>
+<p>Then open the <code>localhost</code> link in a browser. You should see something like this:</p>
+<p><img src="/muster/docs/assets/worker-start.png" alt="Muster Worker init"></p>
+<p>If the Worker has installed and activated correctly, Geoff will soon begin to age at a rate of 1 year every 5 seconds. Shortly your screen should look something like this:</p>
+<p><img src="/muster/docs/assets/worker-end.png" alt="Muster Worker running"></p>
+<p>And if you open your developer tools, you should see a history of his ageing in the console:</p>
+<p><img src="/muster/docs/assets/worker-console.png" alt="Muster Worker console history"></p>
+<p>Congratulations! You have connected to an off-thread Muster Worker. Nice work.</p>
+<h2><a class="anchor" aria-hidden="true" id="collection-transforms"></a><a href="#collection-transforms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Collection transforms</h2>
+<p>One thing to bear in mind is how Muster handles collection transforms. Whether connecting to a Worker, a server via WebSockets or any other streaming connection, Muster will batch and transmit client-side transforms to be performed on collections stored on the server. This means, despite what you may expect, if you're planning to perform (for example) a lot of sorting and filtering on a data set stored on a Worker, you should <strong>keep the transforms in your client graph</strong> and pass in the reference to the worker graph as their target. Muster will determine the overall transform set and pass it to the worker to be performed there, then return the aggregated response. If all transforms are opaque to the client graph, it will not handle updates to loading state correctly.</p>
+<h3><a class="anchor" aria-hidden="true" id="wrong-way"></a><a href="#wrong-way" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wrong way</h3>
+<p>e.g. Encapsulated worker graph - <strong>do not do this!</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// app.worker.js</span>
+<span class="hljs-keyword">const</span> graph = muster({
+  <span class="hljs-attr">items</span>: fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> getData().then(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> toNode(data))),
+  <span class="hljs-attr">fromDate</span>: variable(<span class="hljs-string">'2018-01-01'</span>),
+  <span class="hljs-attr">toDate</span>: variable(<span class="hljs-string">'2018-12-31'</span>),
+  <span class="hljs-attr">selectedItems</span>: applyTransforms(ref(<span class="hljs-string">'items'</span>), [
+    filter(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span>
+      and(
+        gte(get(item, <span class="hljs-string">'date'</span>), ref(<span class="hljs-string">'fromDate'</span>)),
+        lte(get(item, <span class="hljs-string">'date'</span>), ref(<span class="hljs-string">'toDate'</span>)),
+      ),
+    ),
+  ]),
+});
+
+<span class="hljs-comment">// app.js</span>
+<span class="hljs-keyword">const</span> graph = muster({
+  <span class="hljs-attr">worker</span>: worker(<span class="hljs-string">'./app.worker.js'</span>),
+});
+
+<span class="hljs-comment">// UI example</span>
+app.resolve(ref(<span class="hljs-string">'worker'</span>, <span class="hljs-string">'selectedItems'</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">items</span>) =&gt;</span> {
+  <span class="hljs-comment">// update UI</span>
+}); 
+</code></pre>
+<p>The problem in this example is that changes to <code>fromDate</code> or <code>toDate</code> will force a recalculation of the <code>selectedItems</code> set, but this fact is opaque to the client, which can lead to loading state problems. A better approach is to keep the transforms and their underlying variables on the client and declare only the underlying items on the worker:</p>
+<h3><a class="anchor" aria-hidden="true" id="right-way"></a><a href="#right-way" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Right way</h3>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// app.worker.js</span>
+<span class="hljs-keyword">const</span> graph = muster({
+  <span class="hljs-attr">items</span>: fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> getData().then(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> toNode(data))),
+});
+
+<span class="hljs-comment">// app.js</span>
+<span class="hljs-keyword">const</span> graph = muster({
+  <span class="hljs-attr">worker</span>: worker(<span class="hljs-string">'./app.worker.js'</span>),
+  <span class="hljs-attr">fromDate</span>: variable(<span class="hljs-string">'2018-01-01'</span>),
+  <span class="hljs-attr">toDate</span>: variable(<span class="hljs-string">'2018-12-31'</span>),
+  <span class="hljs-attr">selectedItems</span>: applyTransforms(ref(<span class="hljs-string">'worker'</span>, <span class="hljs-string">'items'</span>), [
+    filter(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span>
+      and(
+        gte(get(item, <span class="hljs-string">'date'</span>), ref(<span class="hljs-string">'fromDate'</span>)),
+        lte(get(item, <span class="hljs-string">'date'</span>), ref(<span class="hljs-string">'toDate'</span>)),
+      ),
+    ),
+  ]),
+});
+
+<span class="hljs-comment">// UI example</span>
+app.resolve(ref(<span class="hljs-string">'selectedItems'</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">items</span>) =&gt;</span> {
+  <span class="hljs-comment">// update UI</span>
+}); 
+</code></pre>
+<p>In this example, the <code>fromDate</code>, <code>toDate</code> and <code>selectedItems</code> fields are kept on the client, with a reference back to the worker's <code>items</code> collection. This allows the client to maintain awareness of any changes impacting the transforms, while still <strong>ensuring that the transforms themselves are processed on the worker</strong>. You should consider this best practice!</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/6.4.0/tutorials/muster-server"><span class="arrow-prev">← </span><span>Muster on the Server</span></a><a class="docs-next button" href="/muster/docs/6.4.0/tutorials/muster-cookbook"><span>Muster Cookbook</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#setup">Setup</a></li><li><a href="#creating-the-worker-graph">Creating the Worker Graph</a></li><li><a href="#creating-the-web-client">Creating the Web Client</a></li><li><a href="#build-and-deploy">Build and deploy</a></li><li><a href="#running-the-app">Running the app</a></li><li><a href="#collection-transforms">Collection transforms</a><ul class="toc-headings"><li><a href="#wrong-way">Wrong way</a></li><li><a href="#right-way">Right way</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

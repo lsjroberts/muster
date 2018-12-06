@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Asynchronous Data · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Muster comes with a great ability to seamlessly handle synchronous and asynchronous data. Now, it&#x27;s time to introduce you to some core Muster nodes that should help you with this.&lt;/p&gt;
+"/><meta name="docsearch:version" content="6.4.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Asynchronous Data · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;p&gt;Muster comes with a great ability to seamlessly handle synchronous and asynchronous data. Now, it&#x27;s time to introduce you to some core Muster nodes that should help you with this.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.4.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Learn</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/variables">Variables</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/05-asynchronous-data.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Asynchronous Data</h1></header><article><div><span><p>Muster comes with a great ability to seamlessly handle synchronous and asynchronous data. Now, it's time to introduce you to some core Muster nodes that should help you with this.</p>
+<h2><a class="anchor" aria-hidden="true" id="promises"></a><a href="#promises" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Promises</h2>
+<p>The first node is <code>fromPromise()</code>, as it's name suggests, it helps with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a>.</p>
+<p>This node can be used to integrate libraries, whose API returns <code>Promises</code>, and to handle custom Web API requests (e.g. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">fetch</a>).</p>
+<p>Let's start with a very simple, contrived example:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { fromPromise, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">greeting</span>: fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-string">'Hello, world!'</span>)),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(ref(<span class="hljs-string">'greeting'</span>));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Hello, world!</span>
+</code></pre>
+<p>As you see, the syntax of accessing the value of an async node is no different from a sync node. One thing to note here is that the <code>fromPromise()</code> node takes an argument, which is a Promise factory. There are two main reasons for this:</p>
+<ul>
+<li>Creating a promise also begins the work that the promise is supposed to do, and we only want to do it when a node is resolved by Muster (e.g. as a dependency of another node)</li>
+<li>A Promise, once consumed can't be re-created.</li>
+</ul>
+<p>You could return <code>new Promise((resolve) =&gt; resolve('Hello, world!'))</code>, but that would make the example code unnecessarily long.</p>
+<p>Now, that covers the successful promises, but sometimes things go wrong (slow network causes a timeout, no connection, server is down, etc.), and our code must be able to handle these scenarios as well. Thankfully Muster comes with a solution for that. Take a look at this example:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { fromPromise, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">greeting</span>: fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-string">'Could not load greeting'</span>)),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(ref(<span class="hljs-string">'greeting'</span>));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Error: Could not load greeting</span>
+</code></pre>
+<p>The code above tries to get a <code>'greeting'</code>, which results in a rejected promise. Muster picks up the reason for the promise rejection, and creates an error node with that. This error then bubbles up to the output of your request.</p>
+<p>In most cases Errors in Muster are being short-circuited, and returned to the user. To illustrate this let's take a look at another example:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { computed, fromPromise, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-string">'Could not load name'</span>)),
+  <span class="hljs-attr">greeting</span>: computed([ref(<span class="hljs-string">'name'</span>)], (name) =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Computing greeting for name:'</span>, name);
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>`</span>;
+  }),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(ref(<span class="hljs-string">'greeting'</span>));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Error: Could not load name</span>
+</code></pre>
+<p>Note that the only console output entry we get is the error with its message, and not <code>&quot;Computing greeting for name:&quot;</code>.</p>
+<ul>
+<li>The <code>computed()</code> node requested its dependency (<code>ref('name')</code>) to be resolved to a static node.</li>
+<li>The <code>error()</code> node is a static node, but it's a special kind of a static node, that must be explicitly allowed by a node that depends on it.</li>
+<li>The <code>computed()</code> node does not allow <code>error()</code>, and so they get short-circuited and returned as a result of the <code>computed()</code> node.</li>
+</ul>
+<p>In some cases you might want to catch these errors in your code, and return some fallback value instead. This is where the <code>ifError()</code> node comes in handy:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { computed, fromPromise, getType, ifError, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-string">'Could not load name'</span>)),
+  <span class="hljs-attr">safeName</span>: ifError(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Caught error:'</span>, getType(err));
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'world'</span>;
+  }, ref(<span class="hljs-string">'name'</span>)),
+  <span class="hljs-attr">greeting</span>: computed([ref(<span class="hljs-string">'safeName'</span>)], (name) =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Computing greeting for name:'</span>, name);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>;
+  }),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(ref(<span class="hljs-string">'greeting'</span>));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Caught error: error('Could not load name')</span>
+<span class="hljs-comment">// Computing greeting for name: world</span>
+<span class="hljs-comment">// Hello, world!</span>
+</code></pre>
+<p>This example shows how to use the <code>ifError()</code> node to handle Muster errors, and how to return a fallback value. The first argument of this node can be either a fallback node, or like in the example above a fallback generator function. The fallback generator function can decide what to do based on the received error. It might even return received error, if it can't be handled by it.</p>
+<p>In the example above you might have noticed a use of a mystery <code>getType()</code> function. This is due to the fact that <code>err</code> is an instance of muster <code>error()</code> node, and logging it directly will not be very useful, as its structure has way more information than needed (e.g. internal type information, and a less beginner-friendly data layout). That's why Muster comes with a utility function that can convert these nodes to a human-readable format.</p>
+<p>The <code>fromPromise()</code> node has one more trick up its sleeve. The promise factory function is actually called with a single argument: an object with all path <code>param()</code> nodes available in the current execution context:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { fromPromise, match, ref, types } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  [match(types.string, <span class="hljs-string">'firstName'</span>)]: fromPromise(<span class="hljs-function">(<span class="hljs-params">params</span>) =&gt;</span>
+    <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-string">`Hello, <span class="hljs-subst">${params.firstName}</span>!`</span>),
+  ),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(ref(<span class="hljs-string">'Bob'</span>));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Hello, Bob!</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="settable-frompromise"></a><a href="#settable-frompromise" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Settable <code>fromPromise()</code></h3>
+<p>The <code>fromPromise()</code> node can also be used to handle asynchronous <code>set</code> operations. This is handled by the second argument of the <code>fromPromise()</code> node. This can be useful when implementing a node which integrates with an API that supports getting, and setting a value.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { computed, fromPromise, ok, ref, set } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">let</span> userName = <span class="hljs-string">'world'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: fromPromise(
+    <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">Promise</span>.resolve(userName),
+    (params, value) =&gt; {
+      userName = value;
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.resolve(ok());
+    },
+  ),
+  <span class="hljs-attr">greeting</span>: computed([ref(<span class="hljs-string">'name'</span>)], (name) =&gt; <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>),
+});
+
+app.resolve(ref(<span class="hljs-string">'greeting'</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(result);
+});
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Setting name...'</span>);
+<span class="hljs-keyword">await</span> app.resolve(set(<span class="hljs-string">'name'</span>, <span class="hljs-string">'Bob'</span>));
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Hello, world!</span>
+<span class="hljs-comment">// Setting name...</span>
+<span class="hljs-comment">// Hello, Bob!</span>
+</code></pre>
+<p>This simple example shows how to use a settable <code>fromPromise()</code> node. This example of course doesn't take the full advantage of it, as it doesn't do anything asynchronous, but you could easily replace both uses of <code>Promise.resolve()</code> with <code>fetch()</code>, or a call to a library of your choice.</p>
+<h2><a class="anchor" aria-hidden="true" id="streams"></a><a href="#streams" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Streams</h2>
+<p>The second node used when handling async data is <code>fromStream()</code>. Again, as the name suggests it is used when integrating streams with Muster apps. The <code>fromStream()</code> node supports streams that conform to the <a href="https://tc39.github.io/proposal-observable/">TC39 Observable</a> API.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { BehaviorSubject } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-observable'</span>;
+<span class="hljs-comment">// or</span>
+<span class="hljs-comment">// import { BehaviorSubject } from 'rxjs';</span>
+<span class="hljs-keyword">import</span> muster, { fromStream, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-comment">// This can be imported either from '@dws/muster-observable' or from 'rxjs',</span>
+<span class="hljs-comment">// as both are API-compatible.</span>
+<span class="hljs-keyword">const</span> nameSubject = <span class="hljs-keyword">new</span> BehaviorSubject(<span class="hljs-string">'world'</span>);
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: fromStream(nameSubject),
+});
+
+app.resolve(ref(<span class="hljs-string">'name'</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Name:'</span>, name);
+});
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Pushing new name to the `nameSubject` stream.'</span>);
+nameSubject.next(<span class="hljs-string">'Bob'</span>);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Name: world</span>
+<span class="hljs-comment">// Pushing new name to the `nameSubject` stream.</span>
+<span class="hljs-comment">// Name: Bob</span>
+</code></pre>
+<p>This example shows how to integrate streams with Muster, and that Muster reacts to the changes of that stream. The code uses our own implementation of <code>BehaviorSubject</code>, but you could also use streams from <code>rxjs</code>.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/learn/variables"><span class="arrow-prev">← </span><span>Variables</span></a><a class="docs-next button" href="/muster/docs/learn/functions"><span>Functions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#promises">Promises</a><ul class="toc-headings"><li><a href="#settable-frompromise">Settable <code>fromPromise()</code></a></li></ul></li><li><a href="#streams">Streams</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

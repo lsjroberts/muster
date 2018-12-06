@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Collections · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;A big part of Muster is handling collections of items. In Muster, any node can be an item in a collection, but the most common types of node used are &lt;code&gt;value()&lt;/code&gt; and &lt;code&gt;tree()&lt;/code&gt;.&lt;/p&gt;
+"/><meta name="docsearch:version" content="6.3.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Collections · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;p&gt;A big part of Muster is handling collections of items. In Muster, any node can be an item in a collection, but the most common types of node used are &lt;code&gt;value()&lt;/code&gt; and &lt;code&gt;tree()&lt;/code&gt;.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.3.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/6.3.0/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/6.3.0/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Learn</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/learn/functions">Functions</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/6.3.0/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.3.0/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/07-collections.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Collections</h1></header><article><div><span><p>A big part of Muster is handling collections of items. In Muster, any node can be an item in a collection, but the most common types of node used are <code>value()</code> and <code>tree()</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="types-of-collection"></a><a href="#types-of-collection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types of collection</h2>
+<p>Muster comes bundled with a two types of collections:</p>
+<ul>
+<li><code>array()</code> - A fixed-length collection; similar to an array in Java. Once defined, this collection can't change its size, but its items still can be set (with the use of a <code>variable()</code> and <code>set()</code> nodes)</li>
+<li><code>arrayList()</code> - A dynamic-length collection; similar to an ArrayList in Java. This collection supports a number of length-changing operations:
+<ul>
+<li><code>push()</code> - Adds a new item to the back of the collection</li>
+<li><code>pop()</code> - Removes an item from the back of the collection</li>
+<li><code>unshift()</code> - Adds a new item at the front of the collection</li>
+<li><code>shift()</code> - Removes an item from the front of the collection</li>
+<li><code>addItemAt()</code> - Adds an item at a given index of the collection</li>
+<li><code>clear()</code> - Removes all items from the collection</li>
+<li><code>removeItem()</code> - Removes a given item from the collection</li>
+<li><code>removeItemAt()</code> - Removes an item at a given index</li>
+<li><code>removeItems()</code> - Removes item that match a given predicate</li>
+</ul></li>
+</ul>
+<p>Aside from collections having different types, every collection can also be transformed using a number of transforms you might be familiar from different programming languages:</p>
+<ul>
+<li><code>map()</code></li>
+<li><code>filter()</code></li>
+<li><code>count()</code></li>
+<li><code>sort()</code></li>
+<li><code>take()</code></li>
+<li><code>slice()</code></li>
+<li><code>groupBy()</code></li>
+<li><code>skip()</code></li>
+</ul>
+<p>and a few more</p>
+<p>Only some of these transforms will be covered in this tutorial just to give you a feel for how to use them. For more information on different collection transforms please refer to Muster API docs.</p>
+<h2><a class="anchor" aria-hidden="true" id="arrays"></a><a href="#arrays" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arrays</h2>
+<p>Now, for the fun part; time to make a simple <code>array()</code> node:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">numbers</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+});
+</code></pre>
+<p>The code above relies on an implicit conversion from a JS array to an <code>array()</code> node. An explicitly defined array would look like this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { array, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">numbers</span>: array([value(<span class="hljs-number">1</span>), value(<span class="hljs-number">2</span>), value(<span class="hljs-number">3</span>)]),
+});
+</code></pre>
+<p>The <code>array()</code> node hides one more secret when it comes to implicit conversion of objects:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">fruits</span>: [
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Banana'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Apple'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Plum'</span> },
+  ],
+});
+</code></pre>
+<p>Any items that are objects are converted to <code>tree()</code> nodes. This means that an explicitly declared object array would look like this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { array, tree, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">fruits</span>: array([
+    tree({ <span class="hljs-attr">name</span>: value(<span class="hljs-string">'Banana'</span>) }),
+    tree({ <span class="hljs-attr">name</span>: value(<span class="hljs-string">'Apple'</span>) }),
+    tree({ <span class="hljs-attr">name</span>: value(<span class="hljs-string">'Plum'</span>) }),
+  ]),
+});
+</code></pre>
+<p>An introduction into loading collections in Muster is described below in the section containing the <code>query()</code> node.</p>
+<h2><a class="anchor" aria-hidden="true" id="querying-items-from-a-collection"></a><a href="#querying-items-from-a-collection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Querying items from a collection</h2>
+<p>To get data from a collection, a <code>query()</code> must be defined against it. This is because each item can be a <code>tree()</code> node, and in Muster &quot;Get me the whole tree&quot; doesn't make any sense. When getting data from a <code>tree()</code> you have to be explicit in terms of what to get from it.</p>
+<p>Let's make a simple query to get items from a collection containing primitive items (<code>value()</code> nodes):</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { entries, query, root } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">numbers</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(query(root(), {
+  <span class="hljs-attr">numbers</span>: entries(),
+}));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// [1, 2, 3]</span>
+</code></pre>
+<p>This example introduces a new Muster node - <code>entries()</code>. The only use for this node is as part of the <code>query()</code> node definition, and it is used to indicate to the <code>query()</code> node that a given node should be loaded as a collection of items.</p>
+<p>The <code>entries()</code> node has one optional argument that defines the shape of each item, but not specifying it tells the <code>query()</code> that it is supposed to expect these items to be primitive items (<code>value()</code>).</p>
+<p>The following code fragment shows how to make a <code>query()</code> against a collection containing <code>tree()</code> nodes:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { entries, query, root } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">people</span>: [
+    { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span> },
+    { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Kate'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Doe'</span> },
+    { <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Jane'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Jonson'</span> },
+  ],
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(query(root(), {
+ <span class="hljs-attr">people</span>: entries({
+   <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+ }),
+}));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// {</span>
+<span class="hljs-comment">//   people: [</span>
+<span class="hljs-comment">//     { firstName: 'Bob' },</span>
+<span class="hljs-comment">//     { firstName: 'Kate' },</span>
+<span class="hljs-comment">//     { firstName: 'Jane' },</span>
+<span class="hljs-comment">//   ]</span>
+<span class="hljs-comment">// }</span>
+</code></pre>
+<p>Note that the returned items contain only <code>firstName</code> property, as this is the only property that was requested from the item.</p>
+<h2><a class="anchor" aria-hidden="true" id="requesting-values-of-multiple-nodes-at-the-same-time"></a><a href="#requesting-values-of-multiple-nodes-at-the-same-time" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requesting values of multiple nodes at the same time</h2>
+<p>Until now, when requesting nodes we've been using the simple <code>ref()</code> node to request a single value at a time from our graph. To avoid duplicating code with several <code>ref()</code> nodes, the <code>query()</code> node comes in handy. It's a node that is used when making a query for multiple pieces of data, arranged in a tree-like structure. Let's start small:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { query, root } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+  <span class="hljs-attr">age</span>: <span class="hljs-number">25</span>,
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(query(root(), {
+  <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>,
+}));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// { firstName: 'Bob', lastName: 'Smith' }</span>
+</code></pre>
+<p>In this example, the <code>query()</code> node only requests a subset of the full Muster graph, the <code>firstName</code> and <code>lastName</code> branches.</p>
+<p>The <code>query()</code> node is constructed by first providing the root node of the query - in this case we use a <code>root()</code> node. The <code>root()</code> node serves as a kind of meta-node which always resolves to the top-most node of the application graph. In this example the <code>root()</code> node resolves to:</p>
+<pre><code class="hljs css language-javascript">tree({
+  <span class="hljs-attr">firstName</span>: value(<span class="hljs-string">'Bob'</span>),
+  <span class="hljs-attr">lastName</span>: value(<span class="hljs-string">'Smith'</span>),
+  <span class="hljs-attr">age</span>: value(<span class="hljs-number">25</span>),
+})
+</code></pre>
+<p>The root of the <code>query()</code> node can also be set to any other node to define the top-level branch to query from.</p>
+<p>The second argument of <code>query()</code> is a node that defines the shape of nodes to extract. Some <a href="/muster/docs/understanding-muster/03-explicit-definition#explicit-query-definitions">implicit conversion</a> is performed to keep the syntax as legible as possible.</p>
+<p>The query we ended up creating informs Muster that we'd like to load <code>firstName</code> and <code>lastName</code> from the root of our graph fields. These fields should first resolve to a non-error node that doesn't implement <code>evaluate</code> operation.</p>
+<p>A <code>query()</code> node can also be used when loading nested data structures from the graph:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { computed, query, ref, root } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">user</span>: {
+    <span class="hljs-attr">age</span>: <span class="hljs-number">25</span>,
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+    <span class="hljs-attr">fullName</span>: computed(
+      [ref(<span class="hljs-string">'user'</span>, <span class="hljs-string">'firstName'</span>), ref(<span class="hljs-string">'user'</span>, <span class="hljs-string">'lastName'</span>)],
+      (firstName, lastName) =&gt; <span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>,
+    ),
+  },
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(query(root(), {
+  <span class="hljs-attr">user</span>: {
+    <span class="hljs-attr">age</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">fullName</span>: <span class="hljs-literal">true</span>,
+  },
+}));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// {</span>
+<span class="hljs-comment">//   user: {</span>
+<span class="hljs-comment">//     age: 25,</span>
+<span class="hljs-comment">//     fullName: 'Bob Smith',</span>
+<span class="hljs-comment">//   },</span>
+<span class="hljs-comment">// }</span>
+</code></pre>
+<p>The query constructed requests two fields (<code>age</code> and <code>fullName</code>) from the <code>user</code> tree, which can be observed in the result received from Muster.</p>
+<p>Again, in the previous example, the <code>query()</code> node created uses a <code>root()</code> node as the root of the query, but now that there is nesting in the graph the query could be rewritten to use <code>user</code> as the starting point:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { computed, query, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">user</span>: {
+    <span class="hljs-attr">age</span>: <span class="hljs-number">25</span>,
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+    <span class="hljs-attr">fullName</span>: computed(
+      [ref(<span class="hljs-string">'user'</span>, <span class="hljs-string">'firstName'</span>), ref(<span class="hljs-string">'user'</span>, <span class="hljs-string">'lastName'</span>)],
+      (firstName, lastName) =&gt; <span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>,
+    ),
+  },
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(query(ref(<span class="hljs-string">'user'</span>), {
+  <span class="hljs-attr">age</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">fullName</span>: <span class="hljs-literal">true</span>,
+}));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// {</span>
+<span class="hljs-comment">//   age: 25,</span>
+<span class="hljs-comment">//   fullName: 'Bob Smith',</span>
+<span class="hljs-comment">// }</span>
+</code></pre>
+<p>The <code>query()</code> node created in this example sets is root as <code>ref('user')</code>, which means that the <code>fields</code> part of the query now is defined relative to the <code>user</code> branch. Also, note that the output no longer has the <code>user: {}</code> object, and that the <code>age</code> and <code>fullName</code> properties are present directly inside the top-level object.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/6.3.0/learn/functions"><span class="arrow-prev">← </span><span>Functions</span></a><a class="docs-next button" href="/muster/docs/6.3.0/learn/control-flow"><span>Control Flow</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#types-of-collection">Types of collection</a></li><li><a href="#arrays">Arrays</a></li><li><a href="#querying-items-from-a-collection">Querying items from a collection</a></li><li><a href="#requesting-values-of-multiple-nodes-at-the-same-time">Requesting values of multiple nodes at the same time</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

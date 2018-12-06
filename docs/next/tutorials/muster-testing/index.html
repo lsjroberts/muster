@@ -1,0 +1,472 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Muster Unit Testing · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;By design the Muster graphs can hold both synchronous and asynchronous nodes, which are usually tricky to test.  For this reason Muster comes bundled with a set of tools used for unit testing your application graphs/modules. These tools are built on top of the &lt;a href=&quot;https://jestjs.io/&quot;&gt;Jest&lt;/a&gt; testing framework. Similarly to building Muster graphs, the Muster Unit Tests are written in a declarative way. Muster testing framework consists of two functions exported from &lt;code&gt;&#x27;@dws/muster/test&#x27;&lt;/code&gt;:&lt;/p&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Muster Unit Testing · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;p&gt;By design the Muster graphs can hold both synchronous and asynchronous nodes, which are usually tricky to test.  For this reason Muster comes bundled with a set of tools used for unit testing your application graphs/modules. These tools are built on top of the &lt;a href=&quot;https://jestjs.io/&quot;&gt;Jest&lt;/a&gt; testing framework. Similarly to building Muster graphs, the Muster Unit Tests are written in a declarative way. Muster testing framework consists of two functions exported from &lt;code&gt;&#x27;@dws/muster/test&#x27;&lt;/code&gt;:&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/next/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/next/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Tutorials</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/next/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/next/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/next/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/next/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/next/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/next/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/next/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/next/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/tutorials/06-muster-unit-testing.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Muster Unit Testing</h1></header><article><div><span><p>By design the Muster graphs can hold both synchronous and asynchronous nodes, which are usually tricky to test.  For this reason Muster comes bundled with a set of tools used for unit testing your application graphs/modules. These tools are built on top of the <a href="https://jestjs.io/">Jest</a> testing framework. Similarly to building Muster graphs, the Muster Unit Tests are written in a declarative way. Muster testing framework consists of two functions exported from <code>'@dws/muster/test'</code>:</p>
+<ul>
+<li><code>runScenario()</code> - Used for defining a test suite. It allows you to define your Muster graph, as well as serves as a place to define a set of nodes to run against that graph in order to test a particular behaviour.</li>
+<li><code>operation()</code> - Used to define an operation to run against the graph defined in the <code>runScenario()</code>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="structuring-application-code"></a><a href="#structuring-application-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structuring application code</h2>
+<p>When making an application it is important to settle on a good directory structure, and design your code in a way that allow easy testing and adding new features. Consider a following directory structure of a React-based project:</p>
+<h3><a class="anchor" aria-hidden="true" id="directory-structure"></a><a href="#directory-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Directory structure</h3>
+<pre><code class="hljs">- &lt;project_root&gt;
+  - components <span class="hljs-comment">// React components</span>
+    - component1
+    - component2
+  <span class="hljs-comment">// Muster graph</span>
+  - muster
+    - index<span class="hljs-selector-class">.js</span> <span class="hljs-comment">// Exports an instance of Muster application with the `graph-root.js` node as the root of your graph</span>
+    - graph-root<span class="hljs-selector-class">.js</span> <span class="hljs-comment">// Contains the root of your graph as a Muster node</span>
+    - auth<span class="hljs-selector-class">.js</span> <span class="hljs-comment">// Contains some imaginary auth graph</span>
+    - profile<span class="hljs-selector-class">.js</span> <span class="hljs-comment">// Contains some imaginary profile graph</span>
+</code></pre>
+<p>The reason behind splitting the <code>index.js</code> and <code>graph-root.js</code> is to allow importing the <code>graph-root</code> in your unit tests.</p>
+<h3><a class="anchor" aria-hidden="true" id="muster-indexjs"></a><a href="#muster-indexjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/index.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> graphRoot <span class="hljs-keyword">from</span> <span class="hljs-string">'./graph-root'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> muster(graphRoot);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="muster-graph-rootjs"></a><a href="#muster-graph-rootjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/graph-root.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { ref, toNode } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> auth <span class="hljs-keyword">from</span> <span class="hljs-string">'./auth'</span>;
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> toNode({
+  auth,
+  <span class="hljs-attr">profile</span>: profile({
+    <span class="hljs-attr">isLoggedIn</span>: ref(<span class="hljs-string">'auth'</span>, <span class="hljs-string">'isLoggedIn'</span>),
+  }),
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="muster-authjs"></a><a href="#muster-authjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/auth.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { scope, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> scope({
+  <span class="hljs-attr">isLoggedIn</span>: variable(<span class="hljs-literal">false</span>),
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="muster-profilejs"></a><a href="#muster-profilejs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/profile.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { computed, createModule, error, ifElse, ref, toNode } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> createModule(
+  {
+    <span class="hljs-attr">isLoggedIn</span>: <span class="hljs-literal">true</span>,
+  },
+  ({ isLoggedIn }) =&gt; ifElse({
+    <span class="hljs-attr">if</span>: isLoggedIn,
+    <span class="hljs-attr">then</span>: toNode({
+      <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+      <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+      <span class="hljs-attr">fullName</span>: computed(
+        [ref(<span class="hljs-string">'firstName'</span>), ref(<span class="hljs-string">'lastName'</span>)],
+        (firstName, lastName) =&gt; <span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>,
+      ),
+    }),
+    <span class="hljs-attr">else</span>: error(<span class="hljs-string">'Not logged in'</span>),
+  }),
+);
+</code></pre>
+<p>This file uses a <code>createModule</code> function, which will be introduced in later stages of this tutorial, so don't worry if you don't understand what is it's purpose.</p>
+<h2><a class="anchor" aria-hidden="true" id="first-unit-test"></a><a href="#first-unit-test" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>First unit test</h2>
+<p>Now that we have directory structure out of the way let's make a first unit test. To do this we'll need an example Muster graph to test:</p>
+<h3><a class="anchor" aria-hidden="true" id="muster-graph-rootjs-1"></a><a href="#muster-graph-rootjs-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/graph-root.js</h3>
+<p>First thing to do is define an application graph. To make things simple the graph below has a single branch <code>firstName</code> with a <code>value('Bob')</code>.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { toNode } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> toNode({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="muster-graph-rootspecjs"></a><a href="#muster-graph-rootspecjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/graph-root.spec.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { ref, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { operation, runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster/test'</span>;
+<span class="hljs-keyword">import</span> graphRoot <span class="hljs-keyword">from</span> <span class="hljs-string">'./graph-root'</span>;
+
+describe(<span class="hljs-string">'Test graphRoot'</span>, () =&gt; {
+  <span class="hljs-comment">// Begin test scenario</span>
+  runScenario({
+    <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a graph with first name'</span>,
+    <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster(graphRoot), 
+    <span class="hljs-attr">operations</span>: [
+      <span class="hljs-comment">// Declare test case</span>
+      operation({
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN resolving a `ref("firstName")`'</span>,
+        <span class="hljs-attr">input</span>: ref(<span class="hljs-string">'firstName'</span>),
+        <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Bob'</span>),
+      }),
+    ],
+  });
+});
+</code></pre>
+<p>The test file begins with a bunch of Muster imports, and a statement that imports our graph to test. This imported graph root is then used in our first unit test scenario (<code>graph: () =&gt; muster(graphRoot)</code>).</p>
+<p>The definition of the Muster Unit Test scenario contains the description of the test, a function that returns a Muster instance with the graph that is going to be used for testing, and an array of operations to run against that graph. As our graph is very simple we have only one operation.</p>
+<p>The operation consists of a description of what it does, input (a Muster node to resolve against the graph), and (optionally) expected result. The result is always going to be a Muster node.</p>
+<h2><a class="anchor" aria-hidden="true" id="running-multiple-operations"></a><a href="#running-multiple-operations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running multiple operations</h2>
+<p>As mentioned before, the scenario takes an array of operations to run against the Muster graph. These operations don't interfere with each-other, as before running each top-level scenario operation the graph is re-created using the <code>graph()</code> function declared on the test scenario:</p>
+<h3><a class="anchor" aria-hidden="true" id="muster-graph-rootjs-2"></a><a href="#muster-graph-rootjs-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/graph-root.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { toNode, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> toNode({
+  <span class="hljs-attr">firstName</span>: variable(<span class="hljs-string">'Bob'</span>),
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="muster-graph-rootspecjs-1"></a><a href="#muster-graph-rootspecjs-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/graph-root.spec.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { ref, set, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { operation, runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster/test'</span>;
+<span class="hljs-keyword">import</span> graphRoot <span class="hljs-keyword">from</span> <span class="hljs-string">'./graph-root'</span>;
+
+describe(<span class="hljs-string">'Test graphRoot'</span>, () =&gt; {
+  <span class="hljs-comment">// Begin test scenario</span>
+  runScenario({
+    <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a graph with first name'</span>,
+    <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster(graphRoot), 
+    <span class="hljs-attr">operations</span>: [
+      <span class="hljs-comment">// Test setting the value of `firstName`</span>
+      operation({
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN setting the value of `firstName`'</span>,
+        <span class="hljs-attr">input</span>: set(<span class="hljs-string">'firstName'</span>, <span class="hljs-string">'Jane'</span>),
+        <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Jane'</span>),
+      }),
+      <span class="hljs-comment">// Test getting the default value of `firstName`</span>
+      operation({
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN resolving a `ref("firstName")`'</span>,
+        <span class="hljs-attr">input</span>: ref(<span class="hljs-string">'firstName'</span>),
+        <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Bob'</span>), <span class="hljs-comment">// The set() from previous operation won't affect this test</span>
+      }),
+    ],
+  });
+});
+</code></pre>
+<p>The test execution flow for this example looks like this:</p>
+<ol>
+<li>Initialise Muster graph by calling<code>graph()</code> function</li>
+<li>Run operation <strong>WHEN setting the value of <code>firstName</code>'</strong></li>
+<li>Initialise Muster graph by calling <code>graph()</code> function</li>
+<li>Run operation <strong>WHEN resolving a <code>ref(&quot;firstName&quot;)</code>'</strong></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="running-code-before-and-after-scenario-and-operation"></a><a href="#running-code-before-and-after-scenario-and-operation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running code before and after scenario and operation</h2>
+<p>Similarly to the <a href="https://jestjs.io/">Jest</a> testing framework <code>runScenario()</code> and <code>operation()</code> allow defining code blocks to be run before/after given scenario/operation. These functions can be synchronous or asynchronous (depending on your use case). These functions can be used to clean <a href="https://jestjs.io/">Jest</a> mocks, or do some test-specific logic.</p>
+<h3><a class="anchor" aria-hidden="true" id="muster-graph-rootspecjs-2"></a><a href="#muster-graph-rootspecjs-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/graph-root.spec.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { ref, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { operation, runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster/test'</span>;
+
+describe(<span class="hljs-string">'Use `before` and `after` functions'</span>, () =&gt; {
+  runScenario({
+    <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a graph with a fistName'</span>,
+    before() {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Scenario start'</span>);      
+    },
+    after() {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Scenario end'</span>);      
+    },
+    <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({
+      <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Kate'</span>,
+    }),
+    <span class="hljs-attr">operations</span>: [
+      operation({
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN getting firstName'</span>,
+        <span class="hljs-keyword">async</span> before() {
+          <span class="hljs-keyword">await</span> <span class="hljs-built_in">Promise</span>.resolve();
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Operation start'</span>);
+        },
+        after() {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Operation end'</span>);
+        },
+        <span class="hljs-attr">input</span>: ref(<span class="hljs-string">'firstName'</span>),
+        <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Kate'</span>),
+      }),
+    ],
+  });
+});
+</code></pre>
+<p>The test execution flow for this example looks like this:</p>
+<ol>
+<li>Call scenario.before, which runs <code>console.log('Scenario start')</code></li>
+<li>Initialise Muster graph by calling <code>graph()</code> function</li>
+<li>Call operation.before, which runs <code>console.log('Operation start')</code></li>
+<li>Resolve node <code>ref('firstName')</code></li>
+<li>Call operation.after, which runs <code>console.log('Operation end')</code></li>
+<li>Call scenario.after, which runs <code>console.log('Scenario end')</code></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="custom-assertions"></a><a href="#custom-assertions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom assertions</h2>
+<p>Aside from checking if a given node resolves to a specific node, the <code>operation()</code> function allows specifying custom assertion function. This function can be used for custom assertions using <a href="https://jestjs.io/">Jest</a> <code>expect()</code> function. The <code>assert()</code> function can be synchronous or asynchronous (depending on your use case). Additionally, this function receives an array of nodes to which <code>input</code> node of your <code>operation()</code> resolved to.</p>
+<h3><a class="anchor" aria-hidden="true" id="muster-graph-rootspecjs-3"></a><a href="#muster-graph-rootspecjs-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/graph-root.spec.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { action, call } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { operation, runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster/test'</span>;
+
+describe(<span class="hljs-string">'Example use of assert()'</span>, () =&gt; {
+  <span class="hljs-keyword">let</span> mockAction;
+  
+  runScenario({
+    <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a graph containing an action'</span>,
+    before() {
+      mockAction = jest.fn(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-string">'Hello world'</span>);
+    },
+    <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({
+      <span class="hljs-attr">getHelloWorld</span>: action(mockAction),
+    }),
+    <span class="hljs-attr">operations</span>: [
+      operation({
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN calling the `getHelloWorld` action'</span>,
+        before() { jest.clearAllMocks(); }, <span class="hljs-comment">// It's always good to clear Jest mocks before the test</span>
+        input: call(<span class="hljs-string">'getHelloWorld'</span>),
+        <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Hello world'</span>),
+        assert() {
+          expect(mockAction).toHaveBeenCalledTimes(<span class="hljs-number">1</span>);
+        },
+      }),
+    ],
+  });
+});
+</code></pre>
+<p>In the example above we used the <code>assert()</code> function to check if the <code>mockAction</code> function gets called when we call the <code>getHelloWorld</code> action. Note that in this operation we also clear <a href="https://jestjs.io/">Jest</a> mocks. It is a good practice to clear the mocks before a given test as other operations might interfere with this test.</p>
+<h2><a class="anchor" aria-hidden="true" id="chaining-operations"></a><a href="#chaining-operations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chaining operations</h2>
+<p>The <code>runScenario()</code> allows chaining operations, which allows testing side-effects of operations. The way you do this is by adding an <code>operations</code> property to your operation. These operations will be run after that operation, and will share the same Muster graph state. Let's revisit the previous example, and design our test scenario in a way that tests the default value, and also what happens after changing it:</p>
+<h3><a class="anchor" aria-hidden="true" id="muster-graph-rootspecjs-4"></a><a href="#muster-graph-rootspecjs-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/graph-root.spec.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { ref, set, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { operation, runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster/test'</span>;
+<span class="hljs-keyword">import</span> graphRoot <span class="hljs-keyword">from</span> <span class="hljs-string">'./graph-root'</span>;
+
+describe(<span class="hljs-string">'Test graphRoot'</span>, () =&gt; {
+  <span class="hljs-comment">// Begin test scenario</span>
+  runScenario({
+    <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a graph with first name'</span>,
+    <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster(graphRoot), 
+    <span class="hljs-attr">operations</span>: [
+      <span class="hljs-comment">// Test getting the default value of `firstName`</span>
+      operation({
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN resolving a `ref("firstName")`'</span>,
+        <span class="hljs-attr">input</span>: ref(<span class="hljs-string">'firstName'</span>),
+        <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Bob'</span>),
+        <span class="hljs-attr">operations</span>: [
+          <span class="hljs-comment">// Test setting the value of `firstName`</span>
+          operation({
+            <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then setting the value of `firstName`'</span>,
+            <span class="hljs-attr">input</span>: set(<span class="hljs-string">'firstName'</span>, <span class="hljs-string">'Jane'</span>),
+            <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Jane'</span>),
+            <span class="hljs-attr">operations</span>: [
+              <span class="hljs-comment">// Test getting the updated value of `firstName`</span>
+              operation({
+                <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then again resolving `ref("firstName")`'</span>,
+                <span class="hljs-attr">input</span>: ref(<span class="hljs-string">'firstName'</span>),
+                <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Jane'</span>),
+              }),
+            ],
+          }),
+        ],
+      }),
+    ],
+  });
+});
+</code></pre>
+<p>This particular pattern allows you checking the side-effects of your operations against the Muster graph. However, this isn't the best way of checking side effects. As you know, Muster is a library that handles the data in a reactive way. Resolving a node creates a stream that can output new values when the node or its dependencies have changed. Muster test framework takes full advantage of this fact, and allows you checking if a subscription to a particular node emitted new values.</p>
+<h2><a class="anchor" aria-hidden="true" id="reactive-testing"></a><a href="#reactive-testing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reactive testing</h2>
+<p>In all of the examples above you witnessed the <code>operations</code> property of the <code>operation()</code> defined as an array of <code>operation()</code> objects. This however isn't the only type the <code>operations</code> property can take. Optionally, this property can be defined as a function that returns an array of operations, and which has one argument: a getter for a <code>subscriber</code> object used when resolving the input against the muster graph. The <code>subscriber</code> contains two properties:</p>
+<ul>
+<li><code>next</code>, which is a mock function that was passed into the <code>app.resolve(operation.input).subscribe(subscriber.next)</code></li>
+<li><code>subscription</code>, the result of the <code>app.resolve(operation.input).subscribe(subscriber.next)</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="muster-graph-rootspecjs-5"></a><a href="#muster-graph-rootspecjs-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/graph-root.spec.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { ref, set, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { operation, runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster/test'</span>;
+<span class="hljs-keyword">import</span> graphRoot <span class="hljs-keyword">from</span> <span class="hljs-string">'./graph-root'</span>;
+
+describe(<span class="hljs-string">'Test graphRoot'</span>, () =&gt; {
+  <span class="hljs-comment">// Begin test scenario</span>
+  runScenario({
+    <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a graph with first name'</span>,
+    <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster(graphRoot), 
+    <span class="hljs-attr">operations</span>: [
+      <span class="hljs-comment">// Test getting the default value of `firstName`</span>
+      operation({
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN resolving a `ref("firstName")`'</span>,
+        <span class="hljs-attr">input</span>: ref(<span class="hljs-string">'firstName'</span>),
+        <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Bob'</span>),
+        <span class="hljs-attr">operations</span>: <span class="hljs-function">(<span class="hljs-params">getSubscriber</span>) =&gt;</span> [
+          <span class="hljs-comment">// Test setting the value of `firstName`</span>
+          operation({
+            <span class="hljs-attr">description</span>: <span class="hljs-string">'AND then setting the value of `firstName`'</span>,
+            before() {
+              <span class="hljs-comment">// Very important when dealing with mocks</span>
+              jest.clearAllMocks();
+            },
+            <span class="hljs-attr">input</span>: set(<span class="hljs-string">'firstName'</span>, <span class="hljs-string">'Jane'</span>),
+            <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Jane'</span>),
+            assert() {
+              expect(getSubscriber().next).toHaveBeenCalledTimes(<span class="hljs-number">1</span>);
+              expect(getSubscriber().next).toHaveBeenCalledWith(value(<span class="hljs-string">'Jane'</span>));
+            },
+          }),
+        ],
+      }),
+    ],
+  });
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="problem-with-cross-module-dependencies"></a><a href="#problem-with-cross-module-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Problem with cross-module dependencies</h2>
+<p>In the first section of this tutorial (<strong>Structuring application code</strong>) you witnessed the example of a recommended directory structure for Muster code alongside the example implementation of these modules. You might have noticed that the <strong>muster/profile.js</strong> file used a <code>createModule</code> function. This function will be introduced in the next section of this tutorial. For now I'm going to show you the same example without the use of it, and talk about the problems that might arise from not splitting your code into separate modules:</p>
+<h3><a class="anchor" aria-hidden="true" id="muster-profilejs-1"></a><a href="#muster-profilejs-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/profile.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { computed, error, ifElse, ref, toNode } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> ifElse({
+  <span class="hljs-attr">if</span>: ref(<span class="hljs-string">'auth'</span>, <span class="hljs-string">'isLoggedIn'</span>), <span class="hljs-comment">// Note that this ref requires a prior knowledge of the entire graph!</span>
+  then: toNode({
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+    <span class="hljs-attr">fullName</span>: computed(
+      <span class="hljs-comment">// These refs require knowledge about where in the graph this module exists</span>
+      [ref(<span class="hljs-string">'profile'</span>, <span class="hljs-string">'firstName'</span>), ref(<span class="hljs-string">'profile'</span>, <span class="hljs-string">'lastName'</span>)],
+      (firstName, lastName) =&gt; <span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>,
+    ),
+  }),
+  <span class="hljs-attr">else</span>: error(<span class="hljs-string">'Not logged in'</span>),
+});
+</code></pre>
+<p>Note that the <code>firstName</code> computed node has to specify the absolute reference to the <code>firstName</code> and <code>lastName</code> nodes. This introduces another point of failure in case we decide to refactor our graph by changing the name of the branch in which does the <strong>profile</strong> module exists. Similarly, we must specify the full path to the <code>ref('auth', 'isLoggedIn')</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="muster-profilespecjs"></a><a href="#muster-profilespecjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/profile.spec.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { ref, value, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { operation, runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster/test'</span>;
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile'</span>;
+
+describe(<span class="hljs-string">'profile'</span>, () =&gt; {
+  runScenario({
+    <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a graph containing a profile branch, and isLoggedIn = true'</span>,
+    <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({
+      <span class="hljs-attr">auth</span>: {
+        <span class="hljs-attr">isLoggedIn</span>: variable(<span class="hljs-literal">true</span>),
+      },
+      profile,
+    }),
+    <span class="hljs-attr">operations</span>: [
+      operation({
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN getting the fullName'</span>,
+        <span class="hljs-attr">input</span>: ref(<span class="hljs-string">'profile'</span>, <span class="hljs-string">'fullName'</span>),
+        <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Bob Smith'</span>),
+      }),
+    ],
+  });
+});
+</code></pre>
+<p>Note that the Muster graph must mimic the shape of the actual application graph for everything to work. We couldn't rename the <code>auth</code> branch to something else, as this would result in the failure of our test. This however can be solved with a correct use of a <code>scope</code> node and a <code>createModule</code> function, both of which are exported from <code>'@dws/muster'</code>, and which are covered in the next example.</p>
+<h2><a class="anchor" aria-hidden="true" id="using-scope-node-to-simplify-paths-in-the-modules"></a><a href="#using-scope-node-to-simplify-paths-in-the-modules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using <code>scope</code> node to simplify paths in the modules</h2>
+<p>One thing we can do to improve the quality of the code in the <code>muster/profile.js</code> from the previous example is to introduce a <code>scope()</code> node, which should help with the problem of knowing where the <code>profile</code> module is defined in the graph:</p>
+<h3><a class="anchor" aria-hidden="true" id="muster-profilejs-2"></a><a href="#muster-profilejs-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/profile.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { computed, error, ifElse, ref, scope } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> ifElse({
+  <span class="hljs-attr">if</span>: ref(<span class="hljs-string">'auth'</span>, <span class="hljs-string">'isLoggedIn'</span>), <span class="hljs-comment">// Note that this ref requires a prior knowledge of the entire graph!</span>
+  then: scope({
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+    <span class="hljs-attr">fullName</span>: computed(
+      <span class="hljs-comment">// A change from toNode to scope improved these paths</span>
+      [ref(<span class="hljs-string">'firstName'</span>), ref(<span class="hljs-string">'lastName'</span>)],
+      (firstName, lastName) =&gt; <span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>,
+    ),
+  }),
+  <span class="hljs-attr">else</span>: error(<span class="hljs-string">'Not logged in'</span>),
+});
+</code></pre>
+<p>The unit test for this example remains the same as before.</p>
+<p>Introduction of the <code>scope()</code> node definitely helped with the implementation of the <strong>profile</strong> module, but note that we still need to know where in the graph exists the node that tells us if a user is logged in. This is where the <code>createModule()</code> helper function comes in.</p>
+<h2><a class="anchor" aria-hidden="true" id="using-createmodule"></a><a href="#using-createmodule" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using <code>createModule</code></h2>
+<h3><a class="anchor" aria-hidden="true" id="muster-profilejs-3"></a><a href="#muster-profilejs-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/profile.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { computed, createModule, error, ifElse, ref, toNode } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> createModule(
+  {
+    <span class="hljs-attr">isLoggedIn</span>: <span class="hljs-literal">true</span>,
+  },
+  ({ isLoggedIn }) =&gt; ifElse({
+    <span class="hljs-attr">if</span>: isLoggedIn, <span class="hljs-comment">// isLoggedIn is a node, not a value!</span>
+    then: toNode({ <span class="hljs-comment">// Note that we don't need `scope` node, as this module gets automatically wrapped in scope() by createModule()</span>
+      firstName: <span class="hljs-string">'Bob'</span>,
+      <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+      <span class="hljs-attr">fullName</span>: computed(
+        [ref(<span class="hljs-string">'firstName'</span>), ref(<span class="hljs-string">'lastName'</span>)],
+        (firstName, lastName) =&gt; <span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>,
+      ),
+    }),
+    <span class="hljs-attr">else</span>: error(<span class="hljs-string">'Not logged in'</span>),
+  }),
+);
+</code></pre>
+<p>Now that looks much better. The module we just made is easier to test, and easier to understand. We just have to make some changes to the <strong>graph-root.js</strong> and the <strong>profile.spec.js</strong></p>
+<h3><a class="anchor" aria-hidden="true" id="muster-profilespecjs-1"></a><a href="#muster-profilespecjs-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/profile.spec.js</h3>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> muster, { ref, value, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> { operation, runScenario } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster/test'</span>;
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile'</span>;
+
+describe(<span class="hljs-string">'profile'</span>, () =&gt; {
+  runScenario({
+    <span class="hljs-attr">description</span>: <span class="hljs-string">'GIVEN a graph containing a profile branch, and isLoggedIn = true'</span>,
+    <span class="hljs-attr">graph</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> muster({
+      <span class="hljs-attr">isLoggedIn</span>: variable(<span class="hljs-literal">true</span>),
+      <span class="hljs-attr">user</span>: profile({
+        <span class="hljs-attr">isLoggedIn</span>: ref(<span class="hljs-string">'isLoggedIn'</span>),
+      }),
+    }),
+    <span class="hljs-attr">operations</span>: [
+      operation({
+        <span class="hljs-attr">description</span>: <span class="hljs-string">'WHEN getting the fullName'</span>,
+        <span class="hljs-attr">input</span>: ref(<span class="hljs-string">'user'</span>, <span class="hljs-string">'fullName'</span>),
+        <span class="hljs-attr">expected</span>: value(<span class="hljs-string">'Bob Smith'</span>),
+      }),
+    ],
+  });
+});
+</code></pre>
+<p>Note that now we're not forced to have the same graph structure as in our working application.</p>
+<h3><a class="anchor" aria-hidden="true" id="muster-graph-rootjs-3"></a><a href="#muster-graph-rootjs-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muster/graph-root.js</h3>
+<p>And finally, the changes to the root of the graph.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { ref, toNode } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+<span class="hljs-keyword">import</span> auth <span class="hljs-keyword">from</span> <span class="hljs-string">'./auth'</span>;
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> toNode({
+  auth,
+  <span class="hljs-attr">profile</span>: profile({
+    <span class="hljs-attr">isLoggedIn</span>: ref(<span class="hljs-string">'auth'</span>, <span class="hljs-string">'isLoggedIn'</span>),
+  }),
+});
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/next/tutorials/muster-cookbook"><span class="arrow-prev">← </span><span>Muster Cookbook</span></a><a class="docs-next button" href="/muster/docs/next/tutorials/muster-react-tutorial"><span>Muster React Tutorial</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#structuring-application-code">Structuring application code</a><ul class="toc-headings"><li><a href="#directory-structure">Directory structure</a></li><li><a href="#muster-indexjs">muster/index.js</a></li><li><a href="#muster-graph-rootjs">muster/graph-root.js</a></li><li><a href="#muster-authjs">muster/auth.js</a></li><li><a href="#muster-profilejs">muster/profile.js</a></li></ul></li><li><a href="#first-unit-test">First unit test</a><ul class="toc-headings"><li><a href="#muster-graph-rootjs-1">muster/graph-root.js</a></li><li><a href="#muster-graph-rootspecjs">muster/graph-root.spec.js</a></li></ul></li><li><a href="#running-multiple-operations">Running multiple operations</a><ul class="toc-headings"><li><a href="#muster-graph-rootjs-2">muster/graph-root.js</a></li><li><a href="#muster-graph-rootspecjs-1">muster/graph-root.spec.js</a></li></ul></li><li><a href="#running-code-before-and-after-scenario-and-operation">Running code before and after scenario and operation</a><ul class="toc-headings"><li><a href="#muster-graph-rootspecjs-2">muster/graph-root.spec.js</a></li></ul></li><li><a href="#custom-assertions">Custom assertions</a><ul class="toc-headings"><li><a href="#muster-graph-rootspecjs-3">muster/graph-root.spec.js</a></li></ul></li><li><a href="#chaining-operations">Chaining operations</a><ul class="toc-headings"><li><a href="#muster-graph-rootspecjs-4">muster/graph-root.spec.js</a></li></ul></li><li><a href="#reactive-testing">Reactive testing</a><ul class="toc-headings"><li><a href="#muster-graph-rootspecjs-5">muster/graph-root.spec.js</a></li></ul></li><li><a href="#problem-with-cross-module-dependencies">Problem with cross-module dependencies</a><ul class="toc-headings"><li><a href="#muster-profilejs-1">muster/profile.js</a></li><li><a href="#muster-profilespecjs">muster/profile.spec.js</a></li></ul></li><li><a href="#using-scope-node-to-simplify-paths-in-the-modules">Using <code>scope</code> node to simplify paths in the modules</a><ul class="toc-headings"><li><a href="#muster-profilejs-2">muster/profile.js</a></li></ul></li><li><a href="#using-createmodule">Using <code>createModule</code></a><ul class="toc-headings"><li><a href="#muster-profilejs-3">muster/profile.js</a></li><li><a href="#muster-profilespecjs-1">muster/profile.spec.js</a></li><li><a href="#muster-graph-rootjs-3">muster/graph-root.js</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

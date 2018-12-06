@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Functions · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;When building an application it is sometimes necessary to embed fragments of code that can be called with a set of arguments. In Muster this can be done in a number of ways:&lt;/p&gt;
+"/><meta name="docsearch:version" content="6.1.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Functions · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;p&gt;When building an application it is sometimes necessary to embed fragments of code that can be called with a set of arguments. In Muster this can be done in a number of ways:&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.1.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/6.1.0/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/6.1.0/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Learn</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/async-data">Asynchronous Data</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/6.1.0/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/06-functions.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Functions</h1></header><article><div><span><p>When building an application it is sometimes necessary to embed fragments of code that can be called with a set of arguments. In Muster this can be done in a number of ways:</p>
+<ul>
+<li>Through a <code>computed()</code> node embedded inside a branch matcher</li>
+<li>With a <code>fromPromise()</code> node</li>
+<li>With an <code>action()</code> and <code>fn()</code> nodes, which are introduced below</li>
+</ul>
+<p>There are some differences between <code>action()</code> and <code>fn()</code> nodes:</p>
+<ul>
+<li><code>action()</code> is a node whose implementation is written in JavaScript, but which can't be serialised, and sent to a remote instance of Muster</li>
+<li><code>fn()</code> is a node whose implementation is written using only Muster nodes, and which can be serialised (if all nodes used in the body support serialising), and sent to a remote instance of Muster</li>
+</ul>
+<p>In order to run a function defined by the <code>action()</code> and <code>fn()</code> nodes you must use <code>call()</code> node. Simply resolving <code>action()</code> and <code>fn()</code> nodes won't do anything, as they do not support <code>evaluate</code> operation.</p>
+<p>The <code>call()</code> node takes an argument of the function to run, and the result of the function is returned.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { action, call } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">getGreeting</span>: action(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'getGreeting called'</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'Hello, world!'</span>;
+  }),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(call(<span class="hljs-string">'getGreeting'</span>));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// getGreeting called</span>
+<span class="hljs-comment">// Hello, world!</span>
+</code></pre>
+<p>The code above shows how to define callable graph functions with the use of the <code>action()</code> node. Notice that the <code>call()</code> node takes a string.</p>
+<p>Just like most of Muster nodes it comes with its own <a href="/muster/docs/understanding-muster/03-explicit-definition">implicit conversion</a> - it converts the first argument to a <code>ref()</code> node. The explicitly defined <code>call()</code> would look like this: <code>call(ref('getGreeting'))</code>.</p>
+<p>Now, let's try to do the same using <code>fn()</code> node:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { call, fn, value } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">getGreeting</span>: fn(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> value(<span class="hljs-string">'Hello, world!'</span>)),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(call(<span class="hljs-string">'getGreeting'</span>));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Hello, world!</span>
+</code></pre>
+<p>This example produces more or less the same output as the <code>action()</code>, with a notable lack of the <code>console.log()</code> inside of the <code>fn()</code> body. This is due to the fact, that the body of that node <strong>must consist only of Muster nodes</strong>.</p>
+<p>Going back to the <code>action()</code> node, the node comes with a support for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*">generator functions (function*)</a>, which make the process of creating more complex actions much easier. Consider a following example of an <code>action()</code> without the use of <strong>generator function</strong>:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { action, call, computed, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Bob'</span>,
+  <span class="hljs-attr">getGreeting</span>: action(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>
+    computed([ref(<span class="hljs-string">'name'</span>)], (name) =&gt; <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>),
+  ),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(call(<span class="hljs-string">'getGreeting'</span>));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Hello, Bob!</span>
+</code></pre>
+<p>And a similar <code>action()</code> written with <strong>generator function</strong>:</p>
+<table>
+<thead>
+<tr><th>Side note: yield is used to cause the expression to be returned to the Muster graph for resolving.</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { action, call, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Bob'</span>,
+  <span class="hljs-attr">getGreeting</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> name = <span class="hljs-keyword">yield</span> ref(<span class="hljs-string">'name'</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>;
+  }),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(call(<span class="hljs-string">'getGreeting'</span>));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Hello, Bob!</span>
+</code></pre>
+<p>Even though both of the actions produce the same desired result, the difference in syntax allows you more freedom in the way you define functions.</p>
+<p>In the <code>action()</code> implemented with the generator function you can see the <code>yield ref('name')</code> expression.</p>
+<ul>
+<li>This causes the <code>ref('name')</code> node to be returned to the Muster graph for resolving.</li>
+<li>Once it is resolved the generator function assigns its value to the <code>name</code> variable</li>
+<li>You can use the <code>name</code> variable just like a normal JavasScript value.</li>
+</ul>
+<p>There is no limit to how many times you <code>yield</code> a node in an <code>action()</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="yielding-multiple-results"></a><a href="#yielding-multiple-results" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Yielding multiple results</h2>
+<p>Implementing <code>action()</code> as a generator function has one more benefit. You can yield multiple nodes at the same time which should help to keep your code short and understandable.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { action, call, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>,
+  <span class="hljs-attr">getFullName</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> [firstName, lastName] = <span class="hljs-keyword">yield</span> [
+      ref(<span class="hljs-string">'firstName'</span>),
+      ref(<span class="hljs-string">'lastName'</span>),
+    ];
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>;
+  }),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(call(<span class="hljs-string">'getFullName'</span>));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// Bob Smith</span>
+</code></pre>
+<p>This example shows how to yield multiple nodes from an action, and how to extract the results from the response. The <code>yield []</code> resolves to an array of values, where the order of results matches the order of yielded nodes.</p>
+<h2><a class="anchor" aria-hidden="true" id="calling-an-action-with-arguments"></a><a href="#calling-an-action-with-arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Calling an action with arguments</h2>
+<p>The <code>action()</code> and the <code>fn()</code> nodes can also be called with a number of arguments:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { action, call } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">addNumbers</span>: action(<span class="hljs-function">(<span class="hljs-params">left, right</span>) =&gt;</span> left + right),
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(call(<span class="hljs-string">'addNumbers'</span>, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]));
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// 3</span>
+</code></pre>
+<p>This example shows how to call a function with some arguments. As with most of Muster nodes, the implicit conversion will convert them to <code>value(1)</code> and <code>value(2)</code>. You can also call functions with other nodes:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { action, call, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">addNumbers</span>: action(<span class="hljs-function">(<span class="hljs-params">left, right</span>) =&gt;</span> left + right),
+  <span class="hljs-attr">five</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">two</span>: <span class="hljs-number">2</span>,
+});
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.resolve(
+  call(<span class="hljs-string">'addNumbers'</span>, [ref(<span class="hljs-string">'five'</span>), ref(<span class="hljs-string">'two'</span>)]),
+);
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-comment">// Console output:</span>
+<span class="hljs-comment">// 7</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="call-doesn-t-respond-to-changes-in-the-graph"></a><a href="#call-doesn-t-respond-to-changes-in-the-graph" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>call()</code> doesn't respond to changes in the graph</h2>
+<p>Most of Muster nodes follow the mantra of reactively responding to changes in their dependencies. The <code>call()</code> node is different. It is tasked with a goal of reproducing a one-off function call, which also means that the function won't be called again when its dependencies have changed. Take a look at this example:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { action, call, ref, set, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: variable(<span class="hljs-string">'Bob'</span>),
+  <span class="hljs-attr">changeName</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params">newName</span>) </span>{
+    <span class="hljs-keyword">const</span> name = <span class="hljs-keyword">yield</span> ref(<span class="hljs-string">'name'</span>);
+    <span class="hljs-keyword">if</span> (newName === name) <span class="hljs-keyword">return</span>;
+    <span class="hljs-keyword">yield</span> set(<span class="hljs-string">'name'</span>, newName);
+  }),
+});
+
+<span class="hljs-keyword">await</span> app.resolve(call(<span class="hljs-string">'changeName'</span>, [<span class="hljs-string">'Jane'</span>]));
+</code></pre>
+<p>This code would cause an infinite loop if <code>call()</code> node was subscribed to the changes in the nodes used by it. Thankfully the <code>call()</code> node prevents it, and you're able to run that code without worrying about your app looping until the end of times.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/6.1.0/learn/async-data"><span class="arrow-prev">← </span><span>Asynchronous Data</span></a><a class="docs-next button" href="/muster/docs/6.1.0/learn/collections"><span>Collections</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#yielding-multiple-results">Yielding multiple results</a></li><li><a href="#calling-an-action-with-arguments">Calling an action with arguments</a></li><li><a href="#call-doesn-t-respond-to-changes-in-the-graph"><code>call()</code> doesn't respond to changes in the graph</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>

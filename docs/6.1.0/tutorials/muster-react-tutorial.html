@@ -1,0 +1,947 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Muster React Tutorial · Muster</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;what-is-muster-react&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#what-is-muster-react&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What is Muster React?&lt;/h2&gt;
+"/><meta name="docsearch:version" content="6.1.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Muster React Tutorial · Muster"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dwstech.github.io/muster/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;what-is-muster-react&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#what-is-muster-react&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What is Muster React?&lt;/h2&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/muster/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129699840-1"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-129699840-1');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"/><link rel="stylesheet" href="https://unpkg.com/tippy.js@3/dist/themes/light.css"/><script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" async=""></script><script type="text/javascript" src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js" async=""></script><script type="text/javascript" src="/muster/js/code-blocks-buttons.js" async=""></script><script type="text/javascript" src="/muster/js/glossary.min.js" async=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/muster/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/muster/"><h2 class="headerTitle">Muster</h2></a><a href="/muster/versions"><h3>6.1.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/muster/docs/6.1.0/overview" target="_self">Docs</a></li><li class=""><a href="/muster/api/" target="_self">API reference</a></li><li class=""><a href="/muster/playground/" target="_self">Playground</a></li><li class="siteNavGroupActive"><a href="/muster/docs/6.1.0/resources/faq" target="_self">FAQ</a></li><li class=""><a href="/muster/help" target="_self">Help</a></li><li class=""><a href="https://github.com/dwstech/muster" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Tutorials</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/overview">Muster Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/graph-structure">Graph Data Structure</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/nodes">Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/variables">Variables</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/async-data">Asynchronous Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/functions">Functions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/collections">Collections</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/learn/control-flow">Control Flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Understanding Muster</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/data-store">How Muster Stores Data</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/resolution-chains">Resolution Chains</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/explicit-definition">Explicit Definitions</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/lifecycle-of-a-node">Lifecycle of a Node</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/scope">Scope</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/crafting-muster-nodes">Crafting Muster Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/optimisation">Optimisation*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/understanding-muster/security">Security*</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutorials</h3><ul><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster</h4><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-server">Muster on the Server</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-worker">Running Muster in a Worker</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-cookbook">Muster Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-testing">Muster Unit Testing</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Muster React</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-react-tutorial">Muster React Tutorial</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-react-cookbook">Muster React Cookbook</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/tutorials/muster-react-testing">Muster React Unit Testing</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/faq">Frequently Asked Questions (FAQ)</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/essential-nodes">Essential Nodes</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/common-muster-errors">Common Muster Errors</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/resources/thinking-in-muster">Thinking in Muster*</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/muster/docs/6.1.0/changelog">Latest Changes</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/dwstech/muster/edit/master/packages/website/docs/03-muster-react-tutorial.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Muster React Tutorial</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="what-is-muster-react"></a><a href="#what-is-muster-react" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is Muster React?</h2>
+<p>Muster React is a library used to interface between <a href="https://reactjs.org/">React</a> and Muster. It introduces a concept of container graphs that connect a React component with a Muster graph, and which can contain self-contained Muster graphs available only to a single instance of a given component, but which also have ability to connect to the <strong>global</strong> application graph.</p>
+<p>In the course of this tutorial I'm assuming that the reader has a basic knowledge about making <strong>React</strong> components, and has basic knowledge about Muster. At the time of writing this tutorial the best resource to learn muster is to follow a <strong>From zero to Muster hero</strong> tutorial, but there might be better resources if you're living in the future 🖖</p>
+<h2><a class="anchor" aria-hidden="true" id="hello-muster-react-world"></a><a href="#hello-muster-react-world" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hello, Muster React world!</h2>
+<p>Let's start by making a React component, and then converting it to a Muster React component. The component will show a <code>Hello, ${name}!</code> message, where <code>name</code> is going to be a property of the component:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent</span>(<span class="hljs-params">{ name }</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello, {name}!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
+}
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"world"</span> /&gt;</span>, document.body);
+
+// Rendered HTML:
+// <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre>
+<p>This part should be quite familiar to you, so I won't go into details.</p>
+<p>Building an application with Muster React is done in four steps:</p>
+<ol>
+<li>Declare Muster application, with the use of a familiar <code>muster({ /* graph */ })</code> syntax</li>
+<li>Wrap the top-level component in a Muster React <code>Provider</code> component, with a reference to the Muster application (called henceforth <strong>global graph</strong>).</li>
+<li>Create a component decorator, whose responsibility is to connect to the <strong>global graph</strong> to get the values from it.</li>
+<li>Run the <code>MyComponent</code> through the Muster React decorator, and use the result in your code.</li>
+</ol>
+<p>Let's start by declaring our <strong>global graph</strong>:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">import</span> muster <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+<span class="hljs-comment">// or you could do:</span>
+<span class="hljs-comment">// import muster from '@dws/muster-react';</span>
+<span class="hljs-comment">// It doesn't matter where you import 'muster' from, as it's the same function</span>
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'world'</span>
+});
+</code></pre>
+<p>The next step is to wrap the top-level component in a Muster React <code>Provider</code> component:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">import</span> { Provider } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-comment">// ...</span>
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">muster</span>=<span class="hljs-string">{app}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"world"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>,
+  document.body
+);
+</span></code></pre>
+<p>The <code>Provider</code> component has one mandatory property - <code>muster</code>. This property takes an instance of Muster application, which is going to serve as a <strong>global graph</strong>, and which will be available to every <strong>connected component</strong> that is a child of that <code>Provider</code>.</p>
+<p>Now, let's make a component decorator, which is going to be called from now on <strong>container</strong>:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">import</span> { <span class="hljs-comment">/*...*/</span> simpleContainer } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">name</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+<p>This code block creates a component decorator which connects it to the <strong>global graph</strong>. The first argument of the <code>simpleContainer()</code> takes an object describing which nodes should be loaded from the graph. Note that the name of the <code>name</code> property matches the name of the <code>name</code> branch defined in the <strong>global graph</strong>. At the same time it also defines the name of the property which is going to be sent to component's render function.
+We're going to cover this in more detail later so don't worry if it isn't 100% clear yet.</p>
+<p>The last step is to run the component through the decorator in a process called <strong>connecting component</strong>, and which produces a <strong>connected component</strong>:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">const</span> MyConnectedComponent = myContainer(MyComponent);
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">muster</span>=<span class="hljs-string">{app}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">MyConnectedComponent</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span></span>,
+  <span class="hljs-built_in">document</span>.body
+);
+</code></pre>
+<p>Notice that the <code>MyConnectedComponent</code> no longer has a <code>name</code> prop set on it. It is because that property is now loaded from the <strong>global graph</strong>.</p>
+<p>Here's a finished code:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
+<span class="hljs-keyword">import</span> muster, {
+  Provider,
+  simpleContainer
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'world'</span>
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent</span>(<span class="hljs-params">{ name }</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello, {name}!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
+}
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">name</span>: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-keyword">const</span> MyConnectedComponent = myContainer(MyComponent);
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">muster</span>=<span class="hljs-string">{app}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">MyConnectedComponent</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span></span>,
+  <span class="hljs-built_in">document</span>.body
+);
+
+<span class="hljs-comment">// Rendered HTML:</span>
+<span class="hljs-comment">// &lt;p&gt;Hello, world!&lt;/p&gt;</span>
+</code></pre>
+<p>You might have noticed that the rendered HTML hasn't changed. It's because the <code>name</code> node in the graph has a value <code>world</code>, which is the same as the value of the property used in the initial version of this example.</p>
+<h2><a class="anchor" aria-hidden="true" id="components-reacting-to-changes-in-the-graph"></a><a href="#components-reacting-to-changes-in-the-graph" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components reacting to changes in the graph</h2>
+<p>One of Muster's biggest strengths is that the nodes reactively respond to the changes in the values of their dependencies (when they're subscribed). Muster React builds on this by bringing the same behaviour to React components. This means that your component will be automatically re-rendered every time a node on which this component depends changes.</p>
+<p>To illustrate this let's take a look at a slightly modified example from previous section:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
+<span class="hljs-keyword">import</span> muster, {
+  Provider,
+  set,
+  simpleContainer,
+  variable
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">name</span>: variable(<span class="hljs-string">'world'</span>)
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent</span>(<span class="hljs-params">{ name }</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello, {name}!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
+}
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">name</span>: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-keyword">const</span> MyConnectedComponent = myContainer(MyComponent);
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">muster</span>=<span class="hljs-string">{app}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">MyConnectedComponent</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span></span>,
+  <span class="hljs-built_in">document</span>.body
+);
+
+<span class="hljs-comment">// Change the name to 'Bob'</span>
+<span class="hljs-keyword">await</span> app.resolve(set(<span class="hljs-string">'name'</span>, <span class="hljs-string">'Bob'</span>));
+
+<span class="hljs-comment">// Rendered HTML:</span>
+<span class="hljs-comment">// &lt;p&gt;Hello, world!&lt;/p&gt;</span>
+
+<span class="hljs-comment">// Rendered HTML:</span>
+<span class="hljs-comment">// &lt;p&gt;Hello, Bob!&lt;/p&gt;</span>
+</code></pre>
+<p>The example above shows that changing the value of a node on which a component depends causes it to be re-rendered with an updated value.
+The code used to set that <code>variable()</code> would be considered fine when writing pure Muster code, but in Muster React there are much better ways of setting a variable from inside the component. We're going to talk about them in later stages of this tutorial.</p>
+<h2><a class="anchor" aria-hidden="true" id="types-of-container-props"></a><a href="#types-of-container-props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types of container props</h2>
+<p>In our first <strong>container</strong> we defined the props as <code>{ name: true }</code>. This only informs Muster React that a component should make a <code>query()</code> against a <strong>global graph</strong> for a branch <code>name</code>. The query created by the container looks like this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { query, root } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+query(root(), {
+  <span class="hljs-attr">name</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+<p>However, the props definition used above doesn't provide any validation of a type of a loaded value. This is where <code>types</code> object come in - you might remember it from <strong>From zero to Muster hero</strong> tutorial, where we spoke about branch matchers:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> muster, { simpleContainer, types } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-comment">// Given a global graph</span>
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">someValue</span>: <span class="hljs-number">123</span>
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">someValue</span>: types.number
+});
+</code></pre>
+<p>The container created here explicitly specifies the type of an expected value. An error is raised if the value loaded from the graph doesn't match the expected type.</p>
+<p>You can also specify more complex matchers, where the expected value is one of many types:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">someValue</span>: types.oneOfType([types.string, types.number])
+});
+</code></pre>
+<p>The type validator used here makes sure that the <code>someValue</code> property is either a string or a number. Both of these types are allowed, but for example boolean is not allowed.</p>
+<p>As a side note, creating a container as <code>simpleContainer({ name: true })</code> is equivalent to <code>simpleContainer({ name: types.any })</code>, as both of them behave in the same way.</p>
+<h2><a class="anchor" aria-hidden="true" id="getting-nested-data"></a><a href="#getting-nested-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting nested data</h2>
+<p>Similarly to the <code>query()</code> node, a Muster React container can also request nested data from the graph:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, { simpleContainer } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">user</span>: {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Kate'</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>
+  }
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">user</span>: {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+  }
+});
+
+<span class="hljs-keyword">const</span> MyConnectedComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ user }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    Hello, {user.firstName} {user.lastName}!
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+));
+</code></pre>
+<p>This example shows how to request nested data from the graph. The query produced by the container above looks like this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { query, root } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+query(root(), {
+  <span class="hljs-attr">user</span>: {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+  }
+});
+</code></pre>
+<p>Additionally, the <code>simpleContainer()</code> function comes with an optional first argument, which defines a <code>query()</code> root node path. In all of the examples above the path was empty, and so the query root node defaulted to a <code>root()</code> node.
+Let's change the code above to make use of it:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, { simpleContainer } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">user</span>: {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Kate'</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>
+  }
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer([<span class="hljs-string">'user'</span>], {
+  <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-keyword">const</span> MyConnectedComponent = myContainer(
+  <span class="hljs-function">(<span class="hljs-params">{ firstName, lastName }</span>) =&gt;</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+      Hello, {firstName} {lastName}!
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+  )
+);
+</code></pre>
+<p>Note that the props of the <code>simpleContainer()</code> are no longer nested under <code>user</code>. Also, the render function of the <code>MyConnecteComponent</code> accesses the <code>firstName</code> and <code>lastName</code> directly, instead of through a <code>user</code> prop.
+This is because the query created by the container now looks a bit different:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { query, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster'</span>;
+
+query(ref(<span class="hljs-string">'user'</span>), {
+  <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+<p>This should explain why the props of the <code>MyConnectedComponent</code> have different shape than in the previous example.</p>
+<h2><a class="anchor" aria-hidden="true" id="setting-a-variable"></a><a href="#setting-a-variable" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting a variable</h2>
+<p>At the beginning of this tutorial I spoke about there being a better way of setting a value of a <strong>settable</strong> node with Muster React. This is where the <code>propTypes.setter()</code> function comes in. It is a kind of a matcher unique to Muster React which informs the component, that a given part of a query should be loaded as a setter function:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, { computed, propTypes, ref, simpleContainer, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">firstName</span>: variable(<span class="hljs-string">'Bob'</span>),
+  <span class="hljs-attr">greeting</span>: computed(
+    [ref(<span class="hljs-string">'firstName'</span>)],
+    (firstName) =&gt; <span class="hljs-string">`Hello, <span class="hljs-subst">${firstName}</span>!`</span>,
+  ),
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">greeting</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">setFirstName</span>: propTypes.setter(<span class="hljs-string">'firstName'</span>),
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ firstName, greeting, setFirstName }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>First name<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+        <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>
+        <span class="hljs-attr">onChange</span>=<span class="hljs-string">{(e)</span> =&gt;</span> setFirstName(e.currentTarget.value)} {/* Call the setter function */}
+        value={firstName}
+        /&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{greeting}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+));
+</span></code></pre>
+<p>In the example above we first create a Muster global graph, that contains a <code>firstName</code> variable, and a <code>computed()</code> node that generates a greeting based on the current value of the <code>firstName</code> variable.
+Next we declare the container, which requests firstName and a greeting, as well as a setter for a <code>firstName</code> node.
+Note that the name of the property <code>setFirstName</code> is different from the name of the node in the graph. That is why we need to specify a name of the node this setter refers to - this is where the string argument of the <code>propTypes.setter()</code> comes in - it defines the name of the node that the setter should target. That argument wouldn't be necessary if the props were defined like this:</p>
+<pre><code class="hljs css language-javascript">simpleContainer({
+  <span class="hljs-attr">greeting</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">firstName</span>: propTypes.setter()
+});
+</code></pre>
+<p>The problem with these props is that we're only requesting a setter function for a given <strong>settable</strong> node, but we're not getting back the current value of a given node. That's why its better to leave <code>firstName</code> property for a getter, and assign the setter to <code>setFirstName</code> property.</p>
+<blockquote>
+<p>The example above treats the setter function as a normal, synchronous JavaScript function which was fine for that particular use-case. However, the setter function actually returns a Promise, which can be used to await for the value to be saved in your application graph.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="validating-setter-arguments"></a><a href="#validating-setter-arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Validating setter arguments</h2>
+<p>Similarly to a regular property getter, the <code>propTypes.setter</code> also allows validating the type of a value passed to the setter. You can do it by creating an unnamed setter with a type validator (<code>propTypes.setter(types.string)</code>, which checks if the argument to the setter is a string), or as a setter with an alias, and a type validator (<code>propTypes.setter('variableName', types.optional(types.number))</code> which checks if the argument of the setter is a number or undefined or null).
+Let's revisit the previous example, and add setter type validation to it as well:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, { computed, propTypes, ref, simpleContainer, types, variable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">firstName</span>: variable(<span class="hljs-string">'Bob'</span>),
+  <span class="hljs-attr">greeting</span>: computed(
+    [ref(<span class="hljs-string">'firstName'</span>)],
+    (firstName) =&gt; <span class="hljs-string">`Hello, <span class="hljs-subst">${firstName}</span>!`</span>,
+  ),
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">greeting</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">setFirstName</span>: propTypes.setter(<span class="hljs-string">'firstName'</span>, types.string),
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ firstName, greeting, setFirstName }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>First name<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+        <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>
+        <span class="hljs-attr">onChange</span>=<span class="hljs-string">{(e)</span> =&gt;</span> setFirstName(e.currentTarget.value)} {/* Call the setter function */}
+        value={firstName}
+        /&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{greeting}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+));
+</span></code></pre>
+<p>In our example we shouldn't have any validation problems, as the <code>.value</code> property of the HTMLInput element is always a string, but if it wasn't we'd get an error in the browser console describing what has gone wrong.</p>
+<h2><a class="anchor" aria-hidden="true" id="calling-an-action"></a><a href="#calling-an-action" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Calling an action</h2>
+<p>Just like the <code>setter</code>, there's a also a <code>propType.caller()</code> which instructs Muster React to retrieve a caller function, which is capable of calling a <strong>callable</strong> node defined in the graph (e.g. <code>action()</code>, <code>fn()</code> nodes).</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, {
+  action,
+  propTypes,
+  simpleContainer
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">showHelloAlert</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-params">name</span>) </span>{
+    alert(<span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>);
+  })
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">showHelloAlert</span>: propTypes.caller()
+  <span class="hljs-comment">// or</span>
+  <span class="hljs-comment">// callShowHelloAlert: propTypes.caller('showHelloAlert')</span>
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ showHelloAlert }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> showHelloAlert('Bob')}&gt;
+    Show "Hello, Bob!" alert
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+));
+</code></pre>
+<p>Clicking on the button rendered by this component will result in the <code>showHelloAlert</code> action being called with a single argument: <code>name = 'Bob'</code>. Multiple arguments can be provided just like to a normal JavaScript function:
+<code>showHelloAlert('Bob', 1, 2, 3)</code>. These additional arguments will be discarded, as the action in the graph doesn't require more parameters than just the one - <code>name</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="validating-caller-arguments"></a><a href="#validating-caller-arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Validating caller arguments</h2>
+<p>The <code>caller()</code> functions can also validate the number and type of arguments provided to the caller function. To do this you just specify an array of type matchers used to validate each argument of the caller function:</p>
+<ul>
+<li><code>propTypes.caller([])</code> or <code>propTypes.caller('showHelloAlert', [])</code> - empty array informs that the caller function should take no arguments, and that it should return error when it's called with arguments.</li>
+<li><code>propTypes.caller([types.string])</code> or <code>propTypes.caller('showHelloAlert', [types.string])</code> - the caller function is expected to take only single argument - a string - and it should return error when it's called with invalid number of arguments, or arguments with incorrect type.
+Let's revisit the previous example, and add a caller function argument validation:</li>
+</ul>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, {
+  action,
+  propTypes,
+  types,
+  simpleContainer
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">showHelloAlert</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-params">name</span>) </span>{
+    alert(<span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>);
+  })
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">showHelloAlert</span>: propTypes.caller([types.string])
+  <span class="hljs-comment">// or</span>
+  <span class="hljs-comment">// callShowHelloAlert: propTypes.caller('showHelloAlert', [types.string])</span>
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ showHelloAlert }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> showHelloAlert('Bob')}&gt;
+    Show "Hello, Bob!" alert
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+));
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="getting-items-from-a-primitive-collection"></a><a href="#getting-items-from-a-primitive-collection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting items from a primitive collection</h2>
+<p>A process of loading a collection of primitive items is very similar to requesting a normal static node. All we have to do is to tag a given property in a way that lets Muster React know that we're dealing with a collection of primitives. To do this we use <code>propTypes.list()</code> prop matcher. Similarly to the <code>propTypes.setter()</code> and <code>propTypes.caller()</code>, this function allows for specifying an alias, and a type matcher - in this case the type matcher is going to be for a type of the primitive item - <code>propTypes.list(types.string)</code> defines a list matcher for a primitive collection containing only string items.
+Time for an example:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, {
+  propTypes,
+  types,
+  simpleContainer
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">femaleNames</span>: [<span class="hljs-string">'Kate'</span>, <span class="hljs-string">'Jane'</span>, <span class="hljs-string">'Jasmine'</span>]
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">femaleNames</span>: propTypes.list(types.string)
+  <span class="hljs-comment">// or</span>
+  <span class="hljs-comment">// names: propTypes.list('femaleNames', types.string),</span>
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ femaleNames }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    {femaleNames.map((name) =&gt; (
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>{name}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    ))}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+));
+</code></pre>
+<p>This brief example demonstrates how to instruct Muster React component to load a given node as a collection of primitive items. The type validation is <strong>optional</strong>, but but recommended.</p>
+<h2><a class="anchor" aria-hidden="true" id="getting-specific-fields-from-a-collection"></a><a href="#getting-specific-fields-from-a-collection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting specific fields from a collection</h2>
+<p>Sometimes your application graph might contain collections of <code>tree()</code> nodes. As you might remember from the Muster tutorial, these collections must be queried by requesting specific fields from each collection item. This can be done with the help of the <code>propTypes.list()</code> prop type. Yup, the same prop type matcher as in the previous example.
+In the case of collections with primitive items, the signature of the <code>propTypes.list()</code> allowed for three combinations:</p>
+<ul>
+<li><code>propTypes.list()</code> - untyped list of primitives</li>
+<li><code>propTypes.list(&lt;&lt;type matcher&gt;&gt;)</code> - a collection of items that are of a <code>&lt;&lt;type matcher&gt;&gt;</code> type</li>
+<li><code>propTypes.list(&lt;&lt;graph alias&gt;&gt;, &lt;&lt;type matcher&gt;&gt;)</code> - an aliased collection of items that are of a <code>&lt;&lt;type matcher&gt;&gt;</code> type
+There are two additional variants of this prop type matcher used when instructing a component to load a given prop as a collection of <code>tree()</code> nodes:</li>
+<li><code>propTypes.list({ &lt;&lt;fields matchers&gt;&gt; })</code> - a collection of <code>tree()</code> nodes, where the component requires only a given fields from the <code>&lt;&lt;fields matchers&gt;&gt;</code> object.</li>
+<li><code>propTypes.list(&lt;&lt;graph alias&gt;&gt;, { &lt;&lt;fields matchers&gt;&gt; })</code> - just like the one above, but with additional graph alias</li>
+</ul>
+<p>The example should make this a bit clearer:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, {
+  propTypes,
+  simpleContainer
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">products</span>: [
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Quiet runner 2000'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Shoes'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Smooth criminal brogue'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Shoes'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Winter jacket'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Jackets'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Waterproof jacket'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Jackets'</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'Fake mustache'</span>, <span class="hljs-attr">category</span>: <span class="hljs-string">'Accessories'</span> }
+  ]
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">products</span>: propTypes.list({
+    <span class="hljs-attr">name</span>: <span class="hljs-literal">true</span>
+  })
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ products }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    {products.map(({ name }) =&gt; (
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>{name}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    ))}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+));
+</code></pre>
+<p>The example above makes a container that makes a query against the <strong>global graph</strong> for a list of names from a collection of products. Additionally, we could change the code to add type validation for the <code>name</code> property of the product, but for simplicity I left it as <code>true</code>.</p>
+<blockquote>
+<p>You can use every matcher from <code>propTypes</code> in the definition of the <code>propTypes.list({})</code> prop type matcher. For example: When every item in the graph has an action <code>doSomething: action()</code>, you can define a list prop type matcher that gets a caller for that function:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, {
+  action,
+  propTypes,
+  ref,
+  relative,
+  simpleContainer
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">someItems</span>: [
+    {
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'Item 1'</span>,
+      <span class="hljs-attr">showAlert</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">const</span> name = <span class="hljs-keyword">yield</span> ref(relative(<span class="hljs-string">'name'</span>));
+        alert(<span class="hljs-string">`Alert for <span class="hljs-subst">${name}</span>`</span>);
+      })
+    },
+    {
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'Item 2'</span>,
+      <span class="hljs-attr">showAlert</span>: action(<span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">const</span> name = <span class="hljs-keyword">yield</span> ref(relative(<span class="hljs-string">'name'</span>));
+        alert(<span class="hljs-string">`Alert for <span class="hljs-subst">${name}</span>`</span>);
+      })
+    }
+  ]
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">someItems</span>: propTypes.list({
+    <span class="hljs-attr">name</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">showAlert</span>: propTypes.caller()
+  })
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ someItems }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    {someItems.map(({ name, showAlert }) =&gt; (
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{name}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{showAlert}</span>&gt;</span>Show alert<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    ))}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+));
+</code></pre>
+<p>You can then call the <code>showAlert()</code> function on a specific item by just clicking on a corresponding 'Show alert' button.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="handling-asynchronous-data-loading"></a><a href="#handling-asynchronous-data-loading" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handling asynchronous data loading</h2>
+<p>All of the examples we covered until now used synchronous data. However, real world applications rarely stick only to the data that's available on the device, but have to fetch it from some kind of remote data source. This means that the process of loading that data takes time. By default Muster React containers wait for all of the requested data to be fully loaded before issuing a render of your component. This ensures that the logic in the component can safely access all the data without worrying about <code>undefined</code> references.
+The downside of this approach is that there might be a significant delay between the moment when you start your application, and the first render of your component. Consider a following example:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, {
+  fromPromise,
+  simpleContainer,
+  toNode
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">user</span>: fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> setTimeout(resolve, <span class="hljs-number">5000</span>)).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>
+      toNode({
+        <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+        <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>
+      })
+    )
+  )
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">user</span>: {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+  }
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ user }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    Hello, {user.firstName} {user.lastName}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+));
+</code></pre>
+<p>Note that the <code>user</code> branch defined in the <strong>global graph</strong> has a delay of 5 seconds before it returns the user data. This means that when we render our application with <code>&lt;MyComponent /&gt;</code> we're going to see a blank screen for about 5 seconds.
+One way to improve the user experience is to use the <code>propTypes.defer()</code> prop type matcher around the <code>user</code> fields. This informs Muster React, that a given set of properties isn't necessary for correct functioning of the component, and that it can render it while they're loading. This means that by deferring <code>user</code> the MyComponent gets rendered twice:</p>
+<ul>
+<li>with <code>{ user: null }</code></li>
+<li>and then (once the data is loaded) with <code>{ user: { firstName: 'Bob', lastName: 'Smith' } }</code></li>
+</ul>
+<p>Changing the <code>user</code> to be deferred introduces one edge-case we need to handle inside our component - now the component might get rendered with <code>user = null</code>, but the current implementation of <code>MyComponent</code> wouldn't like that much. Let's revisit the code then:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, {
+  fromPromise,
+  propTypes,
+  simpleContainer,
+  toNode
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">user</span>: fromPromise(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> setTimeout(resolve, <span class="hljs-number">5000</span>)).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>
+      toNode({
+        <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+        <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>
+      })
+    )
+  )
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">user</span>: propTypes.defer({
+    <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+  })
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ user }</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (!user) {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Loading...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
+  }
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+      Hello, {user.firstName} {user.lastName}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+  );
+});
+</code></pre>
+<p>Now, that's so much better. The users should be much happier seeing a Loading label, instead of a blank screen.</p>
+<p>The <code>propTypes.defer()</code> comes with an additional feature of returning a previous value of a given node/branch when the node switches back to a <strong>pending</strong> value:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, {
+  fromPromise,
+  match,
+  propTypes,
+  ref,
+  set,
+  simpleContainer,
+  toNode,
+  types,
+  variable
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">currentUser</span>: ref(<span class="hljs-string">'users'</span>, ref(<span class="hljs-string">'currentUserId'</span>)),
+  <span class="hljs-attr">currentUserId</span>: variable(<span class="hljs-string">'1'</span>),
+  <span class="hljs-attr">users</span>: {
+    [match(types.string, <span class="hljs-string">'userId'</span>)]: fromPromise(<span class="hljs-function">(<span class="hljs-params">{ userId }</span>) =&gt;</span>
+      <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> setTimeout(resolve, <span class="hljs-number">5000</span>)).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>
+        toNode({
+          <span class="hljs-attr">firstName</span>: <span class="hljs-string">`First name of user <span class="hljs-subst">${userId}</span>`</span>,
+          <span class="hljs-attr">lastName</span>: <span class="hljs-string">`Last name of user <span class="hljs-subst">${userId}</span>`</span>
+        })
+      )
+    )
+  }
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">currentUser</span>: propTypes.defer({
+    <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+  }),
+  <span class="hljs-attr">setCurrentUserId</span>: propTypes.setter(<span class="hljs-string">'currentUserId'</span>)
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(
+  <span class="hljs-function">(<span class="hljs-params">{ currentUser, setCurrentUserId }</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (!currentUser) {
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Loading...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
+    }
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+          {currentUser.firstName} {currentUser.lastName}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setCurrentUserId('2')}&gt;
+          Set currentUserId=2
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span>
+    );
+  }
+);
+</code></pre>
+<p>The example above serves to illustrate a problem with the use of a <code>null</code> value of a <code>propTypes.defer()</code> to check if a component is loading data. At the beginning we get two renders:</p>
+<ul>
+<li><code>{ currentUser: null }</code></li>
+<li><code>{ currentUser: { firstName: 'First name of user 1', lastName: 'Last name of user 1' } }</code>
+The problem begins when a user clicks on the <code>Set currentUserId=2</code> button. The <code>currentUser</code> property doesn't go back to <code>null</code>, because the correct behaviour for the <code>propTypes.defer()</code> is to return the previous value of a given property, or <code>null</code> when there was no previous value. This means that our component is rendered with <strong>stale</strong> data for 5 seconds, and then it gets re-rendered with new properties - the loading state is completely skipped here.
+The way to improve this behaviour is to use another type of a prop type matcher: <code>propTypes.isLoading()</code>. This prop type matcher works by checking if another deferred property (with a given relative name) is loading. It resolves to either <code>true</code> when the deferred property is loading data, or to <code>false</code> when it's no longer loading data:</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">firstName</span>: propTypes.defer(<span class="hljs-literal">true</span>),
+  <span class="hljs-attr">isLoadingFirstName</span>: propTypes.isLoading(<span class="hljs-string">'firstName'</span>)
+});
+</code></pre>
+<blockquote>
+<p>The name argument used in the <code>isLoading()</code> function refers to a sibling property, and not to the name of the branch in the graph.</p>
+</blockquote>
+<p>Going back to our original example. Let's improve the experience by utilising the <code>propTypes.isLoading()</code> prop type matcher:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, {
+  fromPromise,
+  match,
+  propTypes,
+  ref,
+  set,
+  simpleContainer,
+  toNode,
+  types,
+  variable
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">currentUser</span>: ref(<span class="hljs-string">'users'</span>, ref(<span class="hljs-string">'currentUserId'</span>)),
+  <span class="hljs-attr">currentUserId</span>: variable(<span class="hljs-string">'1'</span>),
+  <span class="hljs-attr">users</span>: {
+    [match(types.string, <span class="hljs-string">'userId'</span>)]: fromPromise(<span class="hljs-function">(<span class="hljs-params">{ userId }</span>) =&gt;</span>
+      <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> setTimeout(resolve, <span class="hljs-number">5000</span>)).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>
+        toNode({
+          <span class="hljs-attr">firstName</span>: <span class="hljs-string">`First name of user <span class="hljs-subst">${userId}</span>`</span>,
+          <span class="hljs-attr">lastName</span>: <span class="hljs-string">`Last name of user <span class="hljs-subst">${userId}</span>`</span>
+        })
+      )
+    )
+  }
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">isLoading</span>: propTypes.isLoading(<span class="hljs-string">'currentUser'</span>),
+  <span class="hljs-attr">currentUser</span>: propTypes.defer({
+    <span class="hljs-attr">firstName</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+  }),
+  <span class="hljs-attr">setCurrentUserId</span>: propTypes.setter(<span class="hljs-string">'currentUserId'</span>)
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(
+  <span class="hljs-function">(<span class="hljs-params">{ currentUser, isLoading, setCurrentUserId }</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (isLoading) {
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Loading...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
+    }
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+          {currentUser.firstName} {currentUser.lastName}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setCurrentUserId('2')}&gt;
+          Set currentUserId=2
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span>
+    );
+  }
+);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="handling-errors"></a><a href="#handling-errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handling errors</h2>
+<p>All examples we covered up to this point assumed that the code we wrote never encounters an error. It's not exactly the case when building real-world apps, as most of the times it requires interfacing with some kind of a back-end. This introduces additional points of failure, e.g. a server goes offline, the network is down or has a high latency, etc.
+In these cases one can't rely on the nodes returning correct data 100% of the time. When something goes wring, an error is being returned from a node, and all manner of bad things can happen when a component doesn't handle it. In development mode, Muster React renders a red box with a caught error, which should be helpful with debugging, but in a production mode the only thing you're going to get is a blank screen.
+This section is going to cover another type of a prop type matcher - <code>propTypes.catchError()</code>. It is used to surround a given property/branch/list with something that works like a <code>try ... catch</code> block in JavaScript.
+Let's start with an example of a component that requests a node that resolves to an error:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, { error, simpleContainer } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">description</span>: error(<span class="hljs-string">'Something went wrong'</span>)
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">description</span>: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ description }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{description}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+));
+</code></pre>
+<p>Trying to render the <code>MyComponent</code> in the dev mode will only result in a red box being rendered with the <code>Something went wrong</code> error being displayed in it, instead of actually rendering the <code>MyComponent</code>.</p>
+<p>Such error can be caught with the help of the <code>propTypes.catchError()</code>:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, {
+  error,
+  propTypes,
+  simpleContainer
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">description</span>: error(<span class="hljs-string">'Something went wrong'</span>)
+});
+
+<span class="hljs-keyword">const</span> myContainer = simpleContainer({
+  <span class="hljs-attr">description</span>: propTypes.catchError(
+    <span class="hljs-string">'Could not load description'</span>,
+    <span class="hljs-literal">true</span>
+  )
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ description }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{description}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+));
+</code></pre>
+<p>This example uses a string as a fallback value for the <code>propTypes.catchError()</code>, but you can use any value you like. Additionally, the fallback for the <code>propTypes.catchError()</code> can also be defined as a fallback generator function. This function is called with <code>error</code> and <code>previousValue</code> arguments (in this order), and is supposed to return a fallback node, or original error.</p>
+<h2><a class="anchor" aria-hidden="true" id="local-container-graph-container"></a><a href="#local-container-graph-container" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Local container graph - <code>container()</code></h2>
+<p>As I mentioned in the <strong>What is Muster React</strong> section, Muster React components can have their own, isolated Muster graphs for storing local component state. The <code>simpleContainer()</code> we used in previous examples does not have this ability, as it's used for connecting directly with the <strong>global graph</strong>. This is where the <code>container()</code> comes in. It supports all the prop types we've covered before (<code>getter()</code>, <code>setter()</code>, <code>caller()</code>, etc.), but the query that is produced by these props is always run against the <strong>local graph</strong>. The <strong>local graph</strong> can use references to the <strong>global graph</strong> (with the use of <code>ref(global()))</code>.
+Let's start by making a simple <code>container()</code>:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, { container } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-comment">// Empty global graph</span>
+});
+
+<span class="hljs-keyword">const</span> myContainer = container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-comment">// Local graph</span>
+    firstName: <span class="hljs-string">'Bob'</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-comment">// container props, just like in simpleContainer()</span>
+    firstName: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+  }
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ firstName, lastName }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    {firstName} {lastName}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+));
+</code></pre>
+<p>The container created in this example declares a local graph with two branches: <code>firstName</code> and <code>lastName</code>, which are then requested in the <code>props</code> section of the container. The <code>props</code> section is what we used to declare when making containers with the use of <code>simpleContainer()</code>.
+Note that the global graph has no data now. This is because all of the data required by the container is available in its local graph. Let's change that by moving it into the global graph:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> muster, { container, global, ref } <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Bob'</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Smith'</span>
+});
+
+<span class="hljs-keyword">const</span> myContainer = container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-comment">// Local graph</span>
+    firstName: ref(global(<span class="hljs-string">'firstName'</span>)),
+    <span class="hljs-attr">lastName</span>: ref(global(<span class="hljs-string">'lastName'</span>))
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-comment">// container props, just like in simpleContainer()</span>
+    firstName: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-literal">true</span>
+  }
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ firstName, lastName }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    {firstName} {lastName}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+));
+</code></pre>
+<p>In this example you can spot a use of a <code>ref(global())</code> syntax, which tells Muster to make a reference to a global graph. In the local graph you can normally use the <code>ref()</code> nodes, but they will be referencing nodes in your local graph.
+To make a reference to the global graph from the local graph you must use the <code>ref(global())</code>.</p>
+<p>The two following examples serve to illustrate the difference between storing the data in the global graph, and storing the data in the local graph. First, let's start with an example where the data is stored in the global graph:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
+<span class="hljs-keyword">import</span> muster, {
+  container,
+  global,
+  propTypes,
+  Provider,
+  ref,
+  variable
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-attr">isChecked</span>: variable(<span class="hljs-literal">false</span>)
+});
+
+<span class="hljs-keyword">const</span> myContainer = container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-attr">isChecked</span>: ref(global(<span class="hljs-string">'isChecked'</span>))
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">isChecked</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">setIsChecked</span>: propTypes.setter(<span class="hljs-string">'isChecked'</span>)
+  }
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ isChecked, setIsChecked }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+    <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span>
+    <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setIsChecked(!isChecked)}
+    value={isChecked}
+  /&gt;
+));
+
+ReactDOM.render(
+  <span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">muster</span>=<span class="hljs-string">{app}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        First checkbox <span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Second checkbox <span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>
+);
+</span></code></pre>
+<p>The application rendered by this code behaves in a way that checking the <code>First checkbox</code> automatically marks the <code>Second checkbox</code> as checked. This might be a useful behaviour in some cases, but not for other.
+Now, let's take a look at the same example but with the <code>isChecked</code> variable located in the local graph:</p>
+<pre><code class="hljs css language-jsx harmony"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
+<span class="hljs-keyword">import</span> muster, {
+  container,
+  propTypes,
+  Provider,
+  variable
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@dws/muster-react'</span>;
+
+<span class="hljs-keyword">const</span> app = muster({
+  <span class="hljs-comment">// Empty graph</span>
+});
+
+<span class="hljs-keyword">const</span> myContainer = container({
+  <span class="hljs-attr">graph</span>: {
+    <span class="hljs-attr">isChecked</span>: variable(<span class="hljs-literal">false</span>)
+  },
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">isChecked</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">setIsChecked</span>: propTypes.setter(<span class="hljs-string">'isChecked'</span>)
+  }
+});
+
+<span class="hljs-keyword">const</span> MyComponent = myContainer(<span class="hljs-function">(<span class="hljs-params">{ isChecked, setIsChecked }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+    <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span>
+    <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setIsChecked(!isChecked)}
+    value={isChecked}
+  /&gt;
+));
+
+ReactDOM.render(
+  <span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">muster</span>=<span class="hljs-string">{app}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        First checkbox <span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Second checkbox <span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>
+);
+</span></code></pre>
+<p>The application rendered by this code disconnects the checked state of the <code>First checkbox</code> from the <code>Second checkbox</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="custom-loading-and-error-behaviour"></a><a href="#custom-loading-and-error-behaviour" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom loading and error behaviour</h2>
+<p>The <code>container()</code> function comes with two additional properties, not available in the <code>simpleContainer()</code> function:</p>
+<ul>
+<li><code>renderLoading</code> - defines a custom function called when the component's goes into a pending state. This can be triggered before the first render, or when the component's graph changes, which causes an asynchronous data load. The function takes external component props, and is expected to return a React element to render in place of the component.</li>
+<li><code>renderError</code> - similar to <code>renderLoading</code>, this function gets called whenever the props requested by the component resolve to an error. The function takes an array of errors and external component props, and is expected to return a React element to render in place of the component.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="final-words"></a><a href="#final-words" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Final words</h2>
+<p>Now you're ready to build some apps with Muster and Muster React. This tutorial covered only the basic features of Muster React, which should get you started with it, but there's a lot more features described in the Muster React API docs.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2018-12-4</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/muster/docs/6.1.0/tutorials/muster-testing"><span class="arrow-prev">← </span><span>Muster Unit Testing</span></a><a class="docs-next button" href="/muster/docs/6.1.0/tutorials/muster-react-cookbook"><span>Muster React Cookbook</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#what-is-muster-react">What is Muster React?</a></li><li><a href="#hello-muster-react-world">Hello, Muster React world!</a></li><li><a href="#components-reacting-to-changes-in-the-graph">Components reacting to changes in the graph</a></li><li><a href="#types-of-container-props">Types of container props</a></li><li><a href="#getting-nested-data">Getting nested data</a></li><li><a href="#setting-a-variable">Setting a variable</a></li><li><a href="#validating-setter-arguments">Validating setter arguments</a></li><li><a href="#calling-an-action">Calling an action</a></li><li><a href="#validating-caller-arguments">Validating caller arguments</a></li><li><a href="#getting-items-from-a-primitive-collection">Getting items from a primitive collection</a></li><li><a href="#getting-specific-fields-from-a-collection">Getting specific fields from a collection</a></li><li><a href="#handling-asynchronous-data-loading">Handling asynchronous data loading</a></li><li><a href="#handling-errors">Handling errors</a></li><li><a href="#local-container-graph-container">Local container graph - <code>container()</code></a></li><li><a href="#custom-loading-and-error-behaviour">Custom loading and error behaviour</a></li><li><a href="#final-words">Final words</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/muster/" class="nav-home"><img src="/muster/img/muster.svg" alt="Muster" width="66" height="58"/></a><div><h5>Docs</h5><a href="/muster/docs/overview.html">Overview</a><a href="/muster/docs/learn/introduction.html">Guides</a><a href="/muster/api/">API Reference</a><a href="/muster/playground/">Playground</a><a href="/muster/docs/resources/faq.html">FAQ</a></div><div><h5>Community</h5><a href="/muster/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/muster" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/muster/docs/changelog.html">Changelog</a><a href="https://github.com/dwstech/muster">GitHub</a><a class="github-button" href="https://github.com/dwstech/muster" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://www.github.com/dwstech/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/muster/img/dws-logo-global.svg" alt="DWS Technology Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 DWS Technology</section></footer></div></body></html>
