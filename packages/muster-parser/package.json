@@ -1,0 +1,37 @@
+{
+  "name": "@dws/muster-parser",
+  "version": "6.5.0",
+  "description": "Muster Parser",
+  "module": "./esm/index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "/dist",
+    "/esm"
+  ],
+  "scripts": {
+    "clean": "del-cli ./dist ./esm",
+    "prebuild": "yarn clean",
+    "prebuild:full": "yarn clean",
+    "build": "yarn build:dist",
+    "build:full": "yarn build:dist && yarn build:esm",
+    "build:dist": "tsc",
+    "build:esm": "tsc -p tsconfig.esm.json"
+  },
+  "author": "DWS Technology",
+  "license": "MIT",
+  "dependencies": {
+    "@dws/muster": "^6.5.0",
+    "@dws/muster-version": "^6.5.0"
+  },
+  "devDependencies": {
+    "typescript": "3.1.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

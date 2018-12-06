@@ -1,0 +1,4 @@
+#!/bin/bash
+set -xe
+
+lerna exec --ignore=@dws/muster-playground --ignore=@dws/muster-website -- npm publish --registry=$NPM_RELEASE_REGISTRY

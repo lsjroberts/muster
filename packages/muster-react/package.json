@@ -1,0 +1,66 @@
+{
+  "name": "@dws/muster-react",
+  "version": "6.5.0",
+  "description": "Muster React",
+  "module": "./esm/index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "/test.*",
+    "/dist",
+    "/esm",
+    "/_bundles"
+  ],
+  "scripts": {
+    "clean": "del-cli ./dist ./esm ./_bundles",
+    "prebuild": "yarn clean",
+    "prebuild:full": "yarn prebuild",
+    "build": "yarn build:dist",
+    "build:full": "yarn build:dist && yarn build:esm && yarn build:umd",
+    "build:dist": "tsc",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:amd": "tsc --outFile _bundles/muster.min.js --module amd --sourceMap true",
+    "build:umd": "webpack",
+    "postbuild:umd": "del-cli ./_bundles/dist"
+  },
+  "author": "DWS Technology",
+  "license": "MIT",
+  "dependencies": {
+    "@dws/muster": "^6.5.0",
+    "@dws/muster-observable": "^6.5.0",
+    "@dws/muster-test-utils": "^6.5.0",
+    "hoist-non-react-statics": "^2.2.0",
+    "lodash": "^4.17.11",
+    "react-lifecycles-compat": "^3.0.2"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.2",
+    "react": "^15.4.2 || ^16.0.0",
+    "react-dom": "^15.4.2 || ^16.0.0"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.14",
+    "@types/jest": "^23.3.2",
+    "@types/lodash-es": "^4.14.74",
+    "@types/node": "^10.10.0",
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.3.1",
+    "@types/react-dom": "^16.0.5",
+    "del-cli": "^1.1.0",
+    "prop-types": "^15.5.2",
+    "react": "^16.5.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.5.1",
+    "react-test-renderer": "^16.5.1",
+    "ts-loader": "^5.2.2",
+    "typescript": "3.1.1",
+    "webpack": "^4.19.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "@dws/muster",
+  "version": "6.5.0",
+  "description": "Muster Data Library",
+  "module": "esm/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "nodes.*",
+    "test.*",
+    "dist",
+    "esm",
+    "_bundles"
+  ],
+  "scripts": {
+    "clean": "del-cli ./dist ./esm ./_bundles",
+    "prebuild": "yarn clean",
+    "prebuild:full": "yarn prebuild",
+    "build": "yarn build:dist",
+    "build:full": "yarn build:dist && yarn build:esm && yarn build:umd",
+    "build:dist": "tsc",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:amd": "tsc --outFile _bundles/muster.min.js --module amd --sourceMap true",
+    "build:umd": "webpack",
+    "postbuild:umd": "del-cli ./_bundles/dist"
+  },
+  "author": "DWS Technology",
+  "license": "MIT",
+  "dependencies": {
+    "@dws/muster-observable": "^6.5.0",
+    "@dws/muster-test-utils": "^6.5.0",
+    "@dws/muster-version": "^6.5.0",
+    "es6-template-strings": "^2.0.1",
+    "history": "^4.7.2",
+    "is-plain-object": "^2.0.4",
+    "lodash": "^4.17.11",
+    "semver": "^5.5.0",
+    "string-hash": "^1.1.3",
+    "util-arity": "^1.1.0",
+    "xhr": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/history": "^4.6.2",
+    "@types/jest": "^23.3.2",
+    "@types/jest-diff": "^20.0.0",
+    "@types/jest-matcher-utils": "^21.0.1",
+    "@types/lodash-es": "^4.14.74",
+    "@types/semver": "^5.5.0",
+    "@types/string-hash": "^1.1.1",
+    "del-cli": "^1.1.0",
+    "ts-loader": "^5.2.2",
+    "typescript": "3.1.1",
+    "webpack": "^4.19.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "terms": [
+    {
+      "id": "branch",
+      "term": "branch, branches",
+      "description": "An element in the graph, may contain child branches. See Node.",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "component",
+      "term": "component, components",
+      "description": "A UI Component",
+      "action": null,
+      "scope": "React"
+    },
+    {
+      "id": "container",
+      "term": "container",
+      "description": "A connector between Muster and a UI component. Defines the data requirements for that component",
+      "action": null,
+      "scope": "React"
+    },
+    {
+      "id": "asynchronous data",
+      "term": "asynchronous, asynchronously",
+      "description": "Data that is requested and received when it is ready to supply, as opposed to synchronous or sequential data. Does not block app I/O or responsiveness.",
+      "action": null,
+      "scope": "JavaScript"
+    },
+    {
+      "id": "synchronous data",
+      "term": "synchronous, synchronously",
+      "description": "Data that is received immediately after it is requested, blocking app I/O until it is resolved.",
+      "action": null,
+      "scope": "JavaScript"
+    },
+    {
+      "id": "dependency",
+      "term": "dependency, dependencies, !project dependency",
+      "description": "Links between graph nodes.",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "explicit",
+      "term": "explicit",
+      "description": "The full definition of the use of graph nodes e.g. `array([1,2,3]) -> array([value(1),value(2),value(3)]) `",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "falsy",
+      "term": "falsy",
+      "description": "In JavaScript, a falsy value is a value that is considered false when encountered in a Boolean context. (i.e., `false`, `0`, `\"\"`, `null`, `undefined`, and `NaN`) [def from mdn]",
+      "action": null,
+      "scope": "JavaScript"
+    },
+    {
+      "id": "graph",
+      "term": "graph, !application graph, !virtual graph, !global graph",
+      "description": "A collection of arbitrary, abstract objects called 'nodes' or 'vertices' that represent points of connection. Nodes are then connected via 'paths' or 'edges', and are used within Muster to store information.",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "implicit",
+      "term": "implicit",
+      "description": "The shorthand definition of the use of graph nodes. Opposite to explicit",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "node",
+      "term": "node, nodes, !node application",
+      "description": "Short for 'Graph node'. Used to store, act on or reference data directly and indirectly in the graph.",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "callable node",
+      "term": "callable",
+      "description": "A graph node which contains functional operations that can be called (with or without args) to perform its function.",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "settable node",
+      "term": "settable",
+      "description": "A graph node which contains mutable data which can be modified by a setter.",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "static node",
+      "term": "static",
+      "description": "A graph node which contains immutable data.",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "operations (edges)",
+      "term": "operation, operations, edge, edges",
+      "description": "Actions performed by a node, usually a way of interacting between nodes in the graph.",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "properties (props)",
+      "term": "props, properties",
+      "description": "Props are used in React to pass data to a component by a parent component.",
+      "action": null,
+      "scope": "React"
+    },
+    {
+      "id": "provider",
+      "term": "provider",
+      "description": "A component which takes in a mandatory property (the Muster graph) which it then provides to each child connected component.",
+      "action": null,
+      "scope": "Muster React"
+    },
+    {
+      "id": "reactive",
+      "term": "reactive",
+      "description": "An approach to application state management that focuses on re-rendering visual components only when their underlying data changes.",
+      "action": null,
+      "scope": "Web-Development"
+    },
+    {
+      "id": "resolution chain",
+      "term": "resolution chain",
+      "description": "A process of node resolution that gets from the definition of the node to the output (aka static node)",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "subscription",
+      "term": "subscription, subscriptions",
+      "description": "The act of resolving a node, either directly or indirectly, in order to get its result.",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "tree",
+      "term": "tree",
+      "description": "Muster graphs are declared as trees as this is easier in Javascript. Trees become graphs when the nodes connect to one another.",
+      "action": null,
+      "scope": "Muster"
+    },
+    {
+      "id": "truthy",
+      "term": "truthy",
+      "description": "In JavaScript, a truthy value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy (i.e., except for `false`, `0`, `\"\"`, `null`, `undefined`, and `NaN`) [def from mdn]",
+      "action": null,
+      "scope": "JavaScript"
+    },
+    {
+      "id": "declarative",
+      "term": "declarative",
+      "description": "A style of programming where the code describes what you want to do, not necessarily how you want to do it.",
+      "action": null,
+      "scope": "Programming"
+    },
+    {
+      "id": "virtual graph",
+      "term": "virtual graph, virtual",
+      "description": "A set of definitions representing a potential set of node that don’t exist in memory until they’re invoked, such as the set of every potential set of geographic coordinates, or every possible user ID. Entities are only resolved when specific data is requested.",
+      "action": null,
+      "scope": "Muster"
+    }
+  ]
+}

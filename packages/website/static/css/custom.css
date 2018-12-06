@@ -1,0 +1,131 @@
+body {
+  font-family: $content;
+  font-size: 16px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header;
+  letter-spacing: -0.02em;
+}
+
+p > a {
+  background-color: rgba(255, 89, 178, 0.09);
+}
+
+p > a:hover {
+  border-bottom: 1px solid rgba(109, 41, 74, 0.5);
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+  .homeContainer .homeWrapper .projectLogo {
+    align-items: inherit;
+  }
+
+  .homeContainer .homeWrapper .projectLogo img {
+    max-height: 200px;
+  }
+
+  .separateOnPageNav.sideNavVisible .navPusher .docMainContainer {
+    flex-basis: 45em;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+.homeContainer {
+  min-height: 100%;
+  background-color: #271218;
+  background-image: radial-gradient(transparent, black), url('../img/muster-bg-purple.png');
+  background-size: cover;
+}
+
+.embed-container {
+  border: 10px solid #6d294a;
+  margin: 20px auto;
+  padding: 5px 5px 0;
+}
+
+.projectTitle {
+  color: white;
+  text-shadow: rgba(173, 88, 129, 0.3) 1px 1px;
+}
+
+.promoSection .button {
+  padding: 14px 18px;
+  color: #d04990;
+  margin-right: 4px;
+  text-shadow: rgba(255, 255, 255, 0.1) 1px 1px;
+}
+
+.promoSection .button.primary {
+  background-color: #d04990;
+  color: #271218;
+}
+
+.promoSection .button.primary:hover {
+  background-color: #ff52b6;
+  color: #271218;
+}
+
+.nav-home img {
+  filter: invert(100%);
+}
+
+.toc .toggleNav ul li a {
+  padding: 4px 0 4px 6px;
+}
+
+.toc .toggleNav ul li.navListItemActive a {
+  border-left: 3px solid;
+  background-color: #fdf3e4;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+code {
+  background-color: #ffeed3;
+}
+
+.tippy-content {
+  text-align: left;
+  padding: 6px;
+}
+
+.tippy-content .tippy-heading {
+  margin-top: 0;
+}
+
+.tippy-content .tippy-definition {
+  font-size: 14px;
+}
+
+.tippy-content .tippy-link {
+  font-size: 12px;
+}
+
+.scope-tag {
+  font-size: 10px;
+  background-color: #eee;
+  padding: 3px 5px;
+  border-radius: 5px;
+  float: right;
+}

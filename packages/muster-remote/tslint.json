@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "tslint-config-airbnb",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "array-type": [
+      true,
+      "generic"
+    ],
+    "import-name": false,
+    "object-shorthand-properties-first": false,
+    "ordered-imports": true,
+    "prefer-array-literal": [
+      true,
+      {
+        "allow-type-parameters": true
+      }
+    ],
+    "ter-arrow-parens": false,
+    "variable-name": [
+      true,
+      "allow-pascal-case"
+    ],
+    "align": [
+      true,
+      "parameters",
+      "statements"
+    ]
+  }
+}

@@ -1,0 +1,151 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+  - image: circleci/node:8.12
+
+jobs:
+  build:
+    <<: *defaults
+
+    steps:
+    - checkout
+
+    # Download and cache dependencies
+    - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "package.json" }}
+        # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
+
+    - run: yarn install
+
+    - save_cache:
+        paths:
+        - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
+
+    - run:
+        name: Run build
+        command: yarn build:full
+
+    - run:
+        name: Lint code
+        command: yarn lint:ci
+    - run:
+        name: Check licences
+        command: yarn verify:licences
+    - run:
+        name: Compile and check doc examples
+        command: yarn compile-doc-examples
+    - run:
+        name: Run tests
+        command: yarn test:ci
+
+    - store_artifacts: # special step to save test results as as artifact
+        path: reports
+        prefix: tests
+    - store_artifacts:
+        path: coverage
+        prefix: coverage
+    - store_test_results: # special step to upload test results for display in Test Summary
+        path: reports
+    # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
+
+    - persist_to_workspace:
+        root: ~/repo
+        paths: .
+
+  publish:
+    <<: *defaults
+    # publish to npm
+    steps:
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: Authenticate with registry # TODO expects $npm_TOKEN
+        command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+    - run:
+        name: Publish package
+        command: yarn release # TODO expects $NPM_RELEASE_REGISTRY
+
+  deploy:
+    <<: *defaults
+    # build and deploy gh-pages
+    steps:
+    - attach_workspace:
+        at: ~/repo
+
+    - run:
+        name: Copy latest changelog
+        command: yarn copy:changelog
+    - run:
+        name: Build Muster Playground
+        command: yarn build:playground:ci
+    - run:
+        name: Generate API docs
+        command: yarn generate-docs
+    - run:
+        name: Copy playground
+        command: yarn copy:playground
+    - run:
+        name: Copy devtools
+        command: yarn copy:devtools
+    - run:
+        name: Build website
+        command: yarn build:website:ci
+
+    - run:
+        name: Deploying to GitHub Pages # TODO expects $GITHUB_TOKEN
+        command: |
+          git config --global user.email "dws-dave@users.noreply.github.com"
+          git config --global user.name "David Wragg"
+          echo "machine github.com login dws-dave password $GITHUB_TOKEN" > ~/.netrc
+          cd packages/website && GIT_USER=dws-dave yarn publish-gh-pages
+
+
+workflows:
+  version: 2
+
+  build-only:
+    jobs:
+    - build:
+        filters:
+          branches:
+            ignore:
+            - master
+            - develop
+
+  build-deploy:
+    jobs:
+    - build:
+        filters:
+          branches:
+            only: develop
+    - deploy:
+        requires:
+        - build
+        filters:
+          branches:
+            only: develop
+
+  build-publish:
+    jobs:
+    - build:
+        filters:
+          branches:
+            only: master
+    - publish:
+        requires:
+        - build
+        filters:
+          branches:
+            only: master
+          # TODO filter on version tags?
+#            tags:
+#              only: /v[0-9]+(\.[0-9]+)*/

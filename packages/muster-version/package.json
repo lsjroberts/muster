@@ -1,0 +1,16 @@
+{
+  "name": "@dws/muster-version",
+  "version": "6.5.0",
+  "description": "Muster Version",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "DWS Technology",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

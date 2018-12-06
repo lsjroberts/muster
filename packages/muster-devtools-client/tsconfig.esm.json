@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2017",
+    "outDir": "./esm"
+  },
+  "references": [
+    { "path": "../muster" },
+    { "path": "../muster-message-transport" },
+    { "path": "../muster-parser" }
+  ]
+}
