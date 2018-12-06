@@ -35,17 +35,26 @@ jobs:
         command: yarn build:full
 
     - run:
+        name: Lint code
+        command: yarn lint:ci
+    - run:
+        name: Check licences
+        command: yarn verify:licences
+    - run:
+        name: Compile and check doc examples
+        command: yarn compile-doc-examples
+    - run:
         name: Run tests
-        command: yarn verify:ci
+        command: yarn test:ci
 
     - store_artifacts: # special step to save test results as as artifact
-        path: test-results.xml
+        path: reports
         prefix: tests
     - store_artifacts:
         path: coverage
         prefix: coverage
     - store_test_results: # special step to upload test results for display in Test Summary
-        path: test-results.xml
+        path: reports
     # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
 
     - persist_to_workspace:
@@ -55,10 +64,11 @@ jobs:
   publish:
     <<: *defaults
     # publish to npm
+    steps:
     - attach_workspace:
         at: ~/repo
     - run:
-        name: Authenticate with registry
+        name: Authenticate with registry # TODO expects $npm_TOKEN
         command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
     - run:
         name: Publish package
@@ -70,21 +80,53 @@ jobs:
     steps:
     - attach_workspace:
         at: ~/repo
+
     - run:
-        name: Deploying to GitHub Pages
+        name: Copy latest changelog
+        command: yarn copy:changelog
+    - run:
+        name: Build Muster Playground
+        command: lerna run build --scope @dws/muster-playground
+    - run:
+        name: Generate API docs
+        command: yarn generate-docs
+    - run:
+        name: Copy playground
+        command: yarn copy:playground
+    - run:
+        name: Copy devtools
+        command: yarn copy:devtools
+    - run:
+        name: Build website
+        command: lerna run build --scope @dws/muster-website
+
+    - run:
+        name: Deploying to GitHub Pages # TODO expects $GITHUB_TOKEN
         command: |
-          git config --global user.email "<GITHUB_USERNAME>@users.noreply.github.com"
-          git config --global user.name "<YOUR_NAME>"
-          echo "machine github.com login <GITHUB_USERNAME> password $GITHUB_TOKEN" > ~/.netrc
-          yarn build:website && cd packages/website && GIT_USER=<GIT_USER> yarn run publish-gh-pages
+          git config --global user.email "dws-dave@users.noreply.github.com"
+          git config --global user.name "David Wragg"
+          echo "machine github.com login dws-dave password $GITHUB_TOKEN" > ~/.netrc
+          cd packages/website && GIT_USER=dws-dave yarn publish-gh-pages
 
 
 workflows:
   version: 2
 
+  build-only:
+    jobs:
+    - build:
+        filters:
+          branches:
+            ignore:
+            - master
+            - develop
+
   build-deploy:
     jobs:
-    - build
+    - build:
+        filters:
+          branches:
+            only: develop
     - deploy:
         requires:
         - build
@@ -94,10 +136,16 @@ workflows:
 
   build-publish:
     jobs:
-    - build
+    - build:
+        filters:
+          branches:
+            only: master
     - publish:
         requires:
         - build
         filters:
           branches:
             only: master
+          # TODO filter on version tags?
+#            tags:
+#              only: /v[0-9]+(\.[0-9]+)*/

@@ -4,7 +4,7 @@ node_modules
 *.log*
 .idea
 coverage
-test-results.xml
+reports
 **/docs/api
 dist
 .awcache
@@ -21,3 +21,4 @@ packages/*/static/api
 packages/*/static/playground
 packages/*/static/js/*.min.js
 packages/*/static/*.zip
+yarn.lock
