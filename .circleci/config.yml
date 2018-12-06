@@ -36,7 +36,7 @@ jobs:
 
     - run:
         name: Lint code
-        command: yarn lint
+        command: yarn lint:ci
     - run:
         name: Check licences
         command: yarn verify:licences
@@ -48,13 +48,13 @@ jobs:
         command: yarn test:ci
 
     - store_artifacts: # special step to save test results as as artifact
-        path: test-results.xml
+        path: reports
         prefix: tests
     - store_artifacts:
         path: coverage
         prefix: coverage
     - store_test_results: # special step to upload test results for display in Test Summary
-        path: test-results.xml
+        path: reports
     # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
 
     - persist_to_workspace:

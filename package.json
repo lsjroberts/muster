@@ -14,11 +14,14 @@
   "scripts": {
     "preverify": "yarn build",
     "verify": "yarn lint && yarn test && yarn compile-doc-examples",
-    "verify:ci": "yarn lint && yarn verify:licences && yarn compile-doc-examples && yarn test:coverage",
+    "verify:ci": "yarn lint:ci && yarn verify:licences && yarn compile-doc-examples && yarn test:ci",
     "verify:licences": "license-checker --failOn UNLICENSED --onlyunknown --summary",
     "test": "jest",
+    "pretest:ci": "mkdirp reports",
     "test:ci": "jest --coverage --ci --reporters=default --reporters=jest-junit --runInBand",
     "lint": "tslint \"packages/*/src/**/*.{ts,tsx}\"",
+    "prelint:ci": "mkdirp reports",
+    "lint:ci": "tslint \"packages/*/src/**/*.{ts,tsx}\" -o \"reports/lint-results.xml\" -t junit",
     "lint:md": "remark packages/website/docs",
     "start": "yarn start:website",
     "prestart:website": "yarn copy:changelog",
@@ -67,7 +70,7 @@
     ]
   },
   "jest-junit": {
-    "output": "./test-results.xml"
+    "output": "./reports/test-results.xml"
   },
   "devDependencies": {
     "@types/jest": "^23.3.2",
