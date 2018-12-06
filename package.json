@@ -1,7 +1,12 @@
 {
   "name": "@dws/muster-base",
   "author": "DWS Technology",
-  "description": "Graph composition of data from multiple sources",
+  "description": "A universal data layer for components and services",
+  "keywords": [
+    "data",
+    "state-management",
+    "graphs"
+  ],
   "license": "MIT",
   "private": true,
   "workspaces": [
