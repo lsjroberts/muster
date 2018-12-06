@@ -86,7 +86,7 @@ jobs:
         command: yarn copy:changelog
     - run:
         name: Build Muster Playground
-        command: lerna run build --scope @dws/muster-playground
+        command: yarn build:playground:ci
     - run:
         name: Generate API docs
         command: yarn generate-docs
@@ -98,7 +98,7 @@ jobs:
         command: yarn copy:devtools
     - run:
         name: Build website
-        command: lerna run build --scope @dws/muster-website
+        command: yarn build:website:ci
 
     - run:
         name: Deploying to GitHub Pages # TODO expects $GITHUB_TOKEN
