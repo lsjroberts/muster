@@ -46,7 +46,7 @@
     "build:playground": "lerna run build --scope @dws/muster-playground",
     "build:playground:ci": "lerna run build --scope @dws/muster-playground",
     "build:website:ci": "lerna run build --scope @dws/muster-website",
-    "new-version": "lerna version --force-publish --no-push -m \"%v\"",
+    "new-version": "lerna version --force-publish --no-push",
     "release:local": "yarn build:full && yarn release",
     "release": "./scripts/release",
     "prepush": "./scripts/verify \"yarn verify\"",

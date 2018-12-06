@@ -1,6 +1,6 @@
 {
   "name": "@dws/muster-devtools",
-  "version": "6.4.1",
+  "version": "6.5.0",
   "description": "Muster Devtools",
   "main": "./dist/index.js",
   "scripts": {
@@ -15,12 +15,12 @@
   "author": "DWS Technology",
   "license": "MIT",
   "dependencies": {
-    "@dws/muster": "^6.4.1",
-    "@dws/muster-devtools-client": "^6.4.1",
-    "@dws/muster-message-transport": "^6.4.1",
-    "@dws/muster-observable": "^6.4.1",
-    "@dws/muster-react": "^6.4.1",
-    "@dws/muster-version": "^6.4.1",
+    "@dws/muster": "^6.5.0",
+    "@dws/muster-devtools-client": "^6.5.0",
+    "@dws/muster-message-transport": "^6.5.0",
+    "@dws/muster-observable": "^6.5.0",
+    "@dws/muster-react": "^6.5.0",
+    "@dws/muster-version": "^6.5.0",
     "bootstrap": "^4.1.1",
     "classnames": "^2.2.5",
     "jquery": "^3.3.1",

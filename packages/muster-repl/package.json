@@ -1,6 +1,6 @@
 {
   "name": "@dws/muster-repl",
-  "version": "6.4.1",
+  "version": "6.5.0",
   "description": "Muster REPL",
   "module": "./esm/index.js",
   "main": "./dist/index.js",
@@ -29,8 +29,8 @@
   "author": "DWS Technology",
   "license": "MIT",
   "dependencies": {
-    "@dws/muster": "^6.4.1",
-    "@dws/muster-observable": "^6.4.1",
+    "@dws/muster": "^6.5.0",
+    "@dws/muster-observable": "^6.5.0",
     "blessed": "^0.1.81",
     "blessed-contrib": "^4.8.6",
     "chalk": "^2.3.0",
