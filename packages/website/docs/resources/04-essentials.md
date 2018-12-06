@@ -124,7 +124,7 @@ value({ hello: 'world' }); // Create a value node storing an object
 ## Callable Functions
 ### [fn](/muster/api/modules/muster.html#fn)
 
-fn is a type of a NodeDefinition used for representing executable functions implemented with muster NodeDefinitions. These functions are safely serializable and can be executed on a remote muster instances.
+fn is a type of NodeDefinition used for representing executable functions implemented with muster NodeDefinitions. These functions are safely serializable and can be executed on a remote muster instances.
 
 The fn can be executed with the help of call and apply.
 Create a simple fn
@@ -195,7 +195,7 @@ console.log(fullName);
 // Calling action
 // Rosalind Franklin
 ```
-This example shows how to return values from an action. As with the computed, the value returned from the action function is converted to a value if is not already a NodeDefinition.
+This example shows how to return values from an action. As with the computed node, the value returned from the action function is converted to a value if is not already a NodeDefinition.
 ### [Call](/muster/api/modules/muster.html#call)
 
 Call is a node which is used when calling a NodeDefinition that implements a call method, e.g. action, fn or placeholder.
@@ -223,8 +223,116 @@ console.log(result);
 
 ```
 
+## Resolution Functions
+### [Series](/muster/api/modules/muster.html#series)
+`series([arg 1, arg 2, ..., arg n])` is a resolvable node that takes a list of statements to be executed, with the last being a `return` statement. The statements are executed in sequence.
+#### Resolving a series
+This example shows how to use the series node to execute a series of nodes.
+```javascript
+import muster, { series, set, value, variable } from '@dws/muster';
+
+const app = muster({
+  name: variable('initial name'),
+  description: variable('initial description'),
+});
+
+const result = await app.resolve(series([
+  set('name', 'updated name'),
+  set('description', 'updated description'),
+  value(true),
+]));
+// result === true
+```
+In the above example:
+
+ - `name` is set to `'updated name'`
+ - `description` is now set to `'updated description'`
+ - `true` is returned as it is the value found at the end of the `series()` node.
+
+#### Failing an operation in the series
+This example shows what gets returned in the event of an error being returned by a node in the series.
+import muster, { computed, error, ref, series } from '@dws/muster';
+```javascript
+import muster, { computed, ref, series } from '@dws/muster';
+const app = muster({
+  first: computed([], () => {
+    console.log('Computing first');
+    return 1;
+  }),
+  second: computed([], () => {
+    console.log('Computing second');
+    throw new Error('Boom!');
+  }),
+  third: computed([], () => {
+    console.log('Computing third');
+    return 3;
+  }),
+});
+
+const result = await app.resolve(series([
+  ref('first'),
+  ref('second'),
+  ref('third'),
+]));
+// result === 'Boom!'
+
+// Console output:
+// Computing first
+// Computing second
+```
+In the above example, the final `ref()` node in the series is not called because `ref('second')` throws an `Error()`, which breaks out of the sequence and its value `'Boom!'` is returned.
+
+### [Parallel](/muster/api/modules/muster.html#parallel)
+`parallel([arg 1, arg 2, ..., arg n])` is a resolvable node used to perform a set of operations as a single combined operation.
+
+#### Updating multiple nodes at the same time
+This example shows how to use the parallel node to call multiple `set()` operations to update three nodes at once.
+```javascript
+import muster, { parallel, set, variable } from '@dws/muster';
+
+const app = muster({
+  firstName: variable('Bob'),
+  lastName: variable('Jones'),
+  age: variable(39),
+});
+
+await app.resolve(parallel([
+  set('firstName', 'Jane'),
+  set('lastName', 'Doe'),
+  set('age', 24),
+]));
+```
+After the above example is executed:
+
+- `firstName` is set to `'Jane'`
+- `lastName` is set to `'Doe'`
+- `age` is set to `24`
+
+#### Requesting the values of multiple nodes at the same time
+This example shows how to use the parallel node to call multiple `ref()` operations to get the values of three nodes at once.
+```javascript
+import muster, { entries, parallel, query, ref, variable } from '@dws/muster';
+
+const app = muster({
+  firstValue: 'Items',
+  secondValue: 'in',
+  thirdValue: 'parallel',
+  parallelRef: parallel([
+    ref(firstValue),
+    ref(secondValue),
+    ref(thirdValue)
+  ])
+});
+
+await app.resolve(query(ref('parallelRef'), entries()));
+
+// Console output:
+// ["Items", "in", "parallel"]
+```
+As can be seen from the above example, the `parallel()` node returns its many values in the form of an array.
+
 ## Logic
-### [AND](http://localhost:3000/muster/api/modules/muster.html#and) (&&)
+### [AND](/muster/api/modules/muster.html#and) (&&)
 `and(arg 1, ..., arg n)` is a logical node that takes one-or-more arguments and resolves to `true` if and only if all arguments are truthy, `false` otherwise.
 ```javascript
 import muster, { computed, or } from '@dws/muster';
@@ -239,7 +347,7 @@ await app.resolve(and(false, false, 'hello world')) // === false
 await app.resolve(and(computed([], () => true), false)) // === false
 await app.resolve(and(computed([], () => true), true)) // === false
 ```
-### [OR](http://localhost:3000/muster/api/modules/muster.html#or) (||)
+### [OR](/muster/api/modules/muster.html#or) (||)
 `or(arg 1, ..., arg n)` is a logical node that takes one-or-more arguments and resolves to `true` if any of its arguments are truthy, `false` otherwise.
 ```javascript
 import muster, { computed, or } from '@dws/muster';
@@ -254,7 +362,7 @@ await app.resolve(or(false, false, 'hello world')) // === true
 await app.resolve(or(computed([], () => true), false)) // === true
 await app.resolve(or(computed([], () => false), false)) // === false
 ```
-### [NOT](http://localhost:3000/muster/api/modules/muster.html#not) (!)
+### [NOT](/muster/api/modules/muster.html#not) (!)
 `not(arg)` is a logical node that takes one argument and resolves to the inverse `boolean` value of its input. Inputs are evaluated for truthiness.
 ```javascript
 import muster, { computed, not, value } from '@dws/muster';
@@ -269,7 +377,7 @@ await app.resolve(not(not(true))) // === true
 await app.resolve(not(computed([], () => false))) // === true
 await app.resolve(not(computed([], () => true))) // === false
 ```
-### [Eq](http://localhost:3000/muster/api/modules/muster.html#eq) (===)
+### [Eq](/muster/api/modules/muster.html#eq) (===)
 `eq(arg1, arg2)` is a logical node that takes two arguments and resolves to `true` if they are equal, `false` otherwise. `eq()` is the Muster equivalent to the strict equality operator (`===`) in JavaScript.
 ```javascript
 import muster, { computed, eq } from '@dws/muster';
@@ -284,10 +392,10 @@ await app.resolve(eq('test 1', 'test 2')) //=== false
 ```
 ### Inequality
 Muster has many nodes for evaluating inequalities, depending on the type of comparison that needs to be compared:
-- `gt(arg 1, arg 2)` - [Greater than](http://localhost:3000/muster/api/modules/muster.html#gt) - Resolves to `true` if and only if arg 1 > arg 2.
-- `gte(arg 1, arg 2)` - [Greater than or equal to](http://localhost:3000/muster/api/modules/muster.html#gte) - Resolves to `true` if and only if arg 1 >= arg 2.
-- `lt(arg 1, arg 2)` - [Less than](http://localhost:3000/muster/api/modules/muster.html#lt) - Resolves to `true` if and only if arg 1 < arg 2.
-- `lte(arg 1, arg 2)` - [Less than or equal to](http://localhost:3000/muster/api/modules/muster.html#lte) - Resolves to `true` if and only if arg 1 <= arg 2.
+- `gt(arg 1, arg 2)` - [Greater than](/muster/api/modules/muster.html#gt) - Resolves to `true` if and only if arg 1 > arg 2.
+- `gte(arg 1, arg 2)` - [Greater than or equal to](/muster/api/modules/muster.html#gte) - Resolves to `true` if and only if arg 1 >= arg 2.
+- `lt(arg 1, arg 2)` - [Less than](/muster/api/modules/muster.html#lt) - Resolves to `true` if and only if arg 1 < arg 2.
+- `lte(arg 1, arg 2)` - [Less than or equal to](/muster/api/modules/muster.html#lte) - Resolves to `true` if and only if arg 1 <= arg 2.
 ```javascript
 import muster, { gt, gte, lt, lte } from '@dws/muster';
 
@@ -312,7 +420,7 @@ await app.resolve(lte(2,1)) // === false
 
 ## Arithmetic
 
-### Add
+### [Add](/muster/api/modules/muster.html#add)
 Creates a new instance of an add which is a type of NodeDefinition used to compute the sum of multiple number-based values. The add takes any number of operands. It will throw an error if the number of operands is below 2 as it doesn't make sense to do the sum operation with a single operand.
 
 The below example shows how to compute the sum of 5 and 3 using the add node:
@@ -331,7 +439,7 @@ const result = await app.resolve(
 // result === 8
 ```
 
-### Subtract
+### [Subtract](/muster/api/modules/muster.html#subtract)
 Creates a new instance of a subtract node, which is a type of NodeDefinition used to compute the difference between multiple number-based values. The subtract node takes any number of operands. It will throw an error if the number of operands is below 2 as it doesn't make sense to do the subtraction operation with a single operand.
 
 Subtract works in much the same way as 'Add' as shown in the example below:
@@ -397,8 +505,8 @@ const bookTitles = await app.resolve(
 // ];
 ```
 This example shows how to retrieve given fields from every item of the collection. Here, each collection item is a tree. This means that in order to get the value of an item, we have to make a query to specific fields of that branch. The query we made in this example requests the title of each book, but ignores the author and year.
-### ArrayList
-Creates a new instance of a arrayList node, which is a type of a NodeDefinition used when creating a mutable in-memory array. This array allows for a following operations:
+### [ArrayList](/muster/api/modules/muster.html#arraylist)
+Creates a new instance of a arrayList node, which is a type of NodeDefinition used when creating a mutable in-memory array. This array allows for a following operations:
 
 - [push(item)](/muster/api/modules/muster.html#push-1)
 - [pop()](/muster/api/modules/muster.html#pop)
@@ -443,7 +551,7 @@ This example shows how to create a simple mutable array and use a few operations
 
 ### Collection Transforms
 As well as collections being a data store, it is also possible to perform transformations on the collection. Below are some of the more common transforms.
-### Filter
+### [Filter](/muster/api/modules/muster.html#filter)
 Creates a new instance of a filter node, which is a type of collection node transform used to filter the items returned from a collection using a given predicate. The predicates are constructed from muster logic nodes.
 
 ```javascript
@@ -508,7 +616,7 @@ const booksBetween1930and2000 = await app.resolve(query(ref('books'), entries({
 // ]
 ```
 This example shows how to create complex queries with an and node. These nodes can be nested indefinitely.
-### Sort
+### [Sort](/muster/api/modules/muster.html#sort)
 Creates a new instance of a sort node, which is a type of collection transform used to sort the output of a collection. The sort order takes an array of sortOrders which define the ordering of the sort. The items of the order array are assuming a descending order of priority, with the first item having the highest priority and the last one having the lowest.
 
 Sort order can be defined with the help of two helper functions:
@@ -631,9 +739,9 @@ const numbers = await app.resolve(query(ref('numbersAsBranches'), entries({
 This example shows how to use a map transform to change the shape of items. It converts each item from a simple value to a tree with a branch named number containing the item's original value.
 ## Browser
 
-### Location
+### [Location](/muster/api/modules/muster.html#location)
 
-Creates a new instance of a location node, which is a type of a NodeDefinition used when accessing browser location. This node allows for reading/writing to the address bar, and can be used to implement custom routing mechanism. The path can be encoded using following formats:
+Creates a new instance of a location node, which is a type of NodeDefinition used when accessing browser location. This node allows for reading/writing to the address bar, and can be used to implement custom routing mechanism. The path can be encoded using following formats:
 
 - slash: #/home
 - noslash: #home

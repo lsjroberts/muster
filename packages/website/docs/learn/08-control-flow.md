@@ -74,25 +74,25 @@ There may be some cases where you're expecting multiple specific values when che
 import muster, { otherwise, ref, set, switchOn, variable, when } from '@dws/muster';
 
 const app = muster({
-  name: variable(''),
-  greeting: switchOn(ref('name'), [
-    when('Hank', 'Hi, Dad!'),
-    when('Peggy', 'Hi, Mom!'),
-    otherwise('That`s my purse, I don`t know you!')
+  cake: variable(''),
+  comment: switchOn(ref('cake'), [
+    when('Birthday Cake', 'Happy birthday to me!'),
+    when('Cupcake', 'You call this a cake?'),
+    otherwise('The cake is a lie.')
   ])
 });
 
-app.resolve(ref('greeting')).subscribe((result) => {
+app.resolve(ref('comment')).subscribe((result) => {
   console.log(result);
 });
 
-console.log('Assigning name');
-await app.resolve(set('name', 'Hank'));
+console.log('Assigning cake');
+await app.resolve(set('cake', 'Cupcake'));
 
 // Console output:
-// That's my purse, I don't know you!
-// Assigning name
-// Hi, Dad!
+// The cake is a lie.
+// Assigning cake
+// You call this a cake?
 ```
 `switchOn()` can only evaluate values against one specific reference node. To perform a conditional check on the values of multiple nodes, choose `choose()`.
 ## Choose-When
