@@ -1,23 +1,4 @@
 #!/bin/bash
 set -xe
 
-if [[ $PARAM_DISABLE_ALL_CHECKS == 'true' ]]; then
-  echo 'disableAllChecks turned on, skipping test step.'
-else
-  npm run verify:ci
-fi
-
-if [[ $PARAM_BUILD_ONLY == 'true' ]]; then
-  echo 'buildOnly turned on, skipping publish.'
-  exit 0
-fi
-
-#VERSION=$(cat lerna.json \
-#  | grep version \
-#  | head -1 \
-#  | awk -F: '{ print $2 }' \
-#  | sed 's/[",\t ]//g')
-
-# --npm-tag=next
-# lerna publish $VERSION --from-git --no-git-tag-version --force-publish=* --yes --registry=$NPM_RELEASE_REGISTRY --no-verify-registry --no-verify-access --no-git-reset
 lerna exec --ignore=@dws/muster-playground --ignore=@dws/muster-website -- npm publish --registry=$NPM_RELEASE_REGISTRY
