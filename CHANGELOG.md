@@ -7,6 +7,11 @@ title: Latest Changes
 
 ## Unreleased
 
+### 📝 Documentation
+
+- Added `parallel()` and `series()` node definitions to the `Essential Nodes` page.
+- Added a link to github issues on the `Help` page.
+
 ## 6.4.1 (2018-12-03)
 
 ### 🐛 Bug Fixes

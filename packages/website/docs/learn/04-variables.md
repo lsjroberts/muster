@@ -29,9 +29,9 @@ Muster's resilience means that not only `value()` nodes can be stored in `variab
 ## Setters
 To modify a `variable()` in Muster, it's necessary to use a specific node - `set()`.
 
-- `set()` takes two arguments.
-- Arg 1 - A reference to a node to be modified.
-- Arg 2 - A target value to set it to.
+- `set()` takes two arguments:
+  * Arg 1 - A reference to a node to be modified.
+  * Arg 2 - A target value to set it to.
 ```javascript
 import muster, { ref, set, variable } from '@dws/muster';
 
