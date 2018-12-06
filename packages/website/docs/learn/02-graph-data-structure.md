@@ -15,7 +15,7 @@ const app = muster({
 });
 ```
 
-- The code above creates a muster application app.
+- The code above creates a muster application `app`.
 - The call to the muster() takes a definition of your Muster graph.
 - In the case above we used a JavaScript object with a `greeting` property, and a `'Hello world'` value.
 - This creates a Muster graph, with a single branch called `greeting` and a value `'Hello world'`

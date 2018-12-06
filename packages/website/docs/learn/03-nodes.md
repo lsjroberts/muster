@@ -3,7 +3,7 @@ id: nodes
 title: Nodes
 ---
 
-Graph nodes (**nodes** for short) are a core concept in Muster, they allow you to define & modify data as well as implement logic and more complex data structures (such as collections). By design, the Muster graph must always store nodes, and only store nodes. Even in the previous examples nodes were used [implicitly, but they can be defined explicitly][1].
+Graph nodes (**nodes** for short) are a core concept in Muster, they allow you to define & modify data as well as implement logic and more complex data structures (such as collections). By design, the Muster graph must always store nodes, and only store nodes. Even in the previous examples nodes were used implicitly, [but they can be defined explicitly][1].
 
 The first (and probably most useful) node is `ref()`. This node creates links within the graph and to the output; it serves as a way to locate and return a graph node based on its path in the graph. The example below adds an implementation of `ref()`:
 

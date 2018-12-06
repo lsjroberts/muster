@@ -65,7 +65,7 @@
     },
     {
       "id": "implicit",
-      "term": "implicit",
+      "term": "implicit, implicitly",
       "description": "The shorthand definition of the use of graph nodes. Opposite to explicit",
       "action": null,
       "scope": "Muster"

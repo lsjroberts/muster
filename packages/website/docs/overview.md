@@ -22,11 +22,15 @@ The below code snippet introduces you to what a Muster graph can look like, and 
     name: ref('user'),
   }),
 }
+```
 
-// Ask for what you want
+```javascript
+// Request a node
 ref('welcome')
+```
 
-// Get live update
+```javascript
+// Get the output
 "Hello, world!"
 ```
 
@@ -36,8 +40,8 @@ ref('welcome')
 ## Data Graph
 
 Muster organises your data into a graph of nodes.
+
 ```javascript
-// Define graph
 {
   en: {
     greeting: 'Hello',
@@ -48,11 +52,13 @@ Muster organises your data into a graph of nodes.
     name: 'Welt',
   },
 }
+```
 
-// Request data
+```javascript
 ref('en', 'greeting');
+```
 
-// Data returned
+```javascript
 "Hello"
 ```
 
