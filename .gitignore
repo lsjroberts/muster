@@ -21,3 +21,4 @@ packages/*/static/api
 packages/*/static/playground
 packages/*/static/js/*.min.js
 packages/*/static/*.zip
+yarn.lock
