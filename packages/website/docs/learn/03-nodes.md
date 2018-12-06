@@ -64,4 +64,4 @@ console.log(lastIsFirst);
 In this example, we show how nodes can be combined as their outputs are used as parameters for other nodes. Although it is a very basic example, this practice can be extended to combine multiple nodes so long as their outputs are suitable inputs for the outer node.
 
 
-[1]: /muster/docs/next/understanding-muster/03-explicit-definition
+[1]: /muster/docs/understanding-muster/03-explicit-definition

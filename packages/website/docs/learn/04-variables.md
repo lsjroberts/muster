@@ -168,5 +168,5 @@ await app.resolve(set('greeting', 'Goodbye, world!'));
 // Setting `greeting`...
 // Goodbye, world!
 ```
-[1]: /muster/docs/next/understanding-muster/03-explicit-definition
-[2]: /muster/docs/next/resources/04-essentials
+[1]: /muster/docs/understanding-muster/03-explicit-definition
+[2]: /muster/docs/resources/04-essentials
