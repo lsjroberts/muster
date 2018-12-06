@@ -8,6 +8,7 @@ module.exports = {
     '!**/node_modules/**',
     '!**/test/**',
     '!**/*.d.ts',
+    '!**/examples/**',
   ],
   moduleFileExtensions: ['js', 'json', 'ts', 'tsx'],
   moduleNameMapper: {
@@ -32,4 +33,11 @@ module.exports = {
     '^.+\\.js$': 'babel-jest',
     '^.+\\.tsx?$': 'ts-jest',
   },
+  globals: {
+    'ts-jest': {
+      diagnostics: {
+        warnOnly: true
+      }
+    }
+  }
 };

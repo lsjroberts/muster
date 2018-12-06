@@ -4,8 +4,7 @@ node_modules
 *.log*
 .idea
 coverage
-reports/test-results.xml
-reports/lint-results.xml
+reports
 **/docs/api
 dist
 .awcache
