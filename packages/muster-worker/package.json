@@ -1,6 +1,6 @@
 {
   "name": "@dws/muster-worker",
-  "version": "6.4.1",
+  "version": "6.5.0",
   "description": "Muster Worker",
   "module": "./esm/index.js",
   "main": "./dist/index.js",
@@ -26,8 +26,8 @@
   "author": "DWS Technology",
   "license": "MIT",
   "dependencies": {
-    "@dws/muster": "^6.4.1",
-    "@dws/muster-message-transport": "^6.4.1",
+    "@dws/muster": "^6.5.0",
+    "@dws/muster-message-transport": "^6.5.0",
     "lodash": "^4.17.11"
   },
   "devDependencies": {

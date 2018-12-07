@@ -1,6 +1,6 @@
 {
   "name": "@dws/muster",
-  "version": "6.4.1",
+  "version": "6.5.0",
   "description": "Muster Data Library",
   "module": "esm/index.js",
   "main": "dist/index.js",
@@ -31,9 +31,9 @@
   "author": "DWS Technology",
   "license": "MIT",
   "dependencies": {
-    "@dws/muster-observable": "^6.4.1",
-    "@dws/muster-test-utils": "^6.4.1",
-    "@dws/muster-version": "^6.4.1",
+    "@dws/muster-observable": "^6.5.0",
+    "@dws/muster-test-utils": "^6.5.0",
+    "@dws/muster-version": "^6.5.0",
     "es6-template-strings": "^2.0.1",
     "history": "^4.7.2",
     "is-plain-object": "^2.0.4",
