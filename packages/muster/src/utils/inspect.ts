@@ -119,9 +119,8 @@ const nodeTypes = mapValues(getMusterNodeTypesMap(), (nodeType) => ({
 
 export function inspect(store: Store): SerializedStore {
   const actionCaches = Array.from(store.actions.values());
-  const cachedActions = flatMap(
-    actionCaches,
-    (actionCache) => (actionCache.cacheable ? [actionCache.instance] : actionCache.instances),
+  const cachedActions = flatMap(actionCaches, (actionCache) =>
+    actionCache.cacheable ? [actionCache.instance] : actionCache.instances,
   );
   const actions = actionCaches.map(({ action }) => action);
   const actionResults = flatMap(actionCaches, (actionCache) =>
@@ -198,6 +197,8 @@ export function sanitizeMetadata(value: any): any {
   if (isGraphAction(value)) return sanitizeGraphAction(value);
   if (isNodeDefinition(value)) return sanitizeNodeDefinition(value);
   if (isMatcher(value)) return sanitizeMusterType(value);
+  if (typeof value === 'function') return undefined;
+  if (typeof value === 'symbol') return value.toString();
   return value;
 }
 
@@ -221,7 +222,6 @@ function sanitizeNodeProperties<
 >(node: NodeDefinition<T, P, S, D, V>): V {
   const nodeType = node.type;
   if (nodeType.serialize === false) {
-    // throw new Error(`Unable to serialize ${nodeType.name} node`);
     return {} as V;
   }
   if (nodeType.serialize) {
@@ -230,16 +230,15 @@ function sanitizeNodeProperties<
   return mapValues(node.properties, (value, key) => {
     if (isSanitizable(value)) return sanitizeMetadata(value);
     if (Array.isArray(value)) {
-      return value.map(
-        (child: any) => (isSanitizable(child) ? sanitizeMetadata(child) : sanitizeObject(child)),
+      return value.map((child: any) =>
+        isSanitizable(child) ? sanitizeMetadata(child) : sanitizeObject(child),
       );
     }
     if (typeof value === 'function') {
-      // throw new Error(`Unable to serialize ${nodeType.name} node: ${key} is a function`);
       return undefined;
     }
+    if (typeof value === 'symbol') return value.toString();
     if (isGraphNode(value)) {
-      // throw new Error(`Unable to serialize ${nodeType.name} node: ${key} is a scoped node`);
       return undefined;
     }
     return sanitizeObject(value);
@@ -261,7 +260,6 @@ function sanitizeGraphOperationProperties<
 >(operation: GraphOperation<T, P, S>): S {
   const operationType = operation.type;
   if (operationType.serialize === false) {
-    // throw new Error(`Unable to serialize ${operationType.name} operation`);
     return {} as S;
   }
   if (operationType.serialize) {
@@ -270,16 +268,14 @@ function sanitizeGraphOperationProperties<
   return mapValues(operation.properties, (value, key) => {
     if (isSanitizable(value)) return sanitizeMetadata(value);
     if (Array.isArray(value)) {
-      return value.map(
-        (child: any) => (isSanitizable(child) ? sanitizeMetadata(child) : sanitizeObject(child)),
+      return value.map((child: any) =>
+        isSanitizable(child) ? sanitizeMetadata(child) : sanitizeObject(child),
       );
     }
     if (typeof value === 'function') {
-      // throw new Error(`Unable to serialize ${operationType.name} operation: ${key} is a function`);
       return undefined;
     }
     if (isGraphNode(value)) {
-      // throw new Error(`Unable to serialize ${operationType.name} operation: ${key} is a scoped node`);
       return undefined;
     }
     return sanitizeObject(value);
@@ -319,6 +315,11 @@ function sanitizeObject(value: any, visited: Set<object> = new Set()): any {
   if (visited.has(value)) {
     return '[Circular]';
   }
+  if (isSanitizable(value)) {
+    return sanitizeMetadata(value);
+  }
+  if (typeof value === 'function') return undefined;
+  if (typeof value === 'symbol') return value.toString();
   if (typeof value !== 'object' || value === null) return value;
   const nextVisited = new Set(visited.add(value));
   if (Array.isArray(value)) {

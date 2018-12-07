@@ -7,6 +7,10 @@ title: Latest Changes
 
 ## Unreleased
 
+### 🐛 Bug Fixes
+
+- Fixed a problem with serialising Graph Metadata for the purpose of using it in Muster DevTools.
+
 ## 6.5.0 (2018-12-06)
 
 ### 🚀 New Features
