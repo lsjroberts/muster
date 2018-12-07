@@ -1,6 +1,7 @@
 ---
-id: variables
+id: version-6.5.0-variables
 title: Variables
+original_id: variables
 ---
 
 So far, the graphs in this tutorial have all had immutable state. The `variable()` node can be used to store a mutable state in the graph, allowing branches to be modified at runtime.

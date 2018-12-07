@@ -1,6 +1,7 @@
 ---
-id: nodes
+id: version-6.5.0-nodes
 title: Nodes
+original_id: nodes
 ---
 
 Graph nodes (**nodes** for short) are a core concept in Muster, they allow you to define & modify data as well as implement logic and more complex data structures (such as collections). By design, the Muster graph must always store nodes, and only store nodes. Even in the previous examples nodes were used implicitly, [but they can be defined explicitly][1].

@@ -41,18 +41,21 @@ jobs:
         name: Check licences
         command: yarn verify:licences
     - run:
-        name: Compile and check doc examples
+        name: Compile and check API doc examples
         command: yarn compile-doc-examples
     - run:
         name: Run tests
         command: yarn test:ci
+    - run:
+        name: Report coverage
+        command: yarn report-coverage
 
     - store_artifacts: # special step to save test results as as artifact
         path: reports
         prefix: tests
-    - store_artifacts:
-        path: coverage
-        prefix: coverage
+    #    - store_artifacts:
+    #        path: coverage
+    #        prefix: coverage
     - store_test_results: # special step to upload test results for display in Test Summary
         path: reports
     # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
@@ -87,9 +90,6 @@ jobs:
     - run:
         name: Build Muster Playground
         command: yarn build:playground:ci
-    - run:
-        name: Generate API docs
-        command: yarn generate-docs
     - run:
         name: Copy playground
         command: yarn copy:playground

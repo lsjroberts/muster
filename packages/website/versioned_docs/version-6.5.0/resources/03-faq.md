@@ -1,6 +1,7 @@
 ---
-id: faq
+id: version-6.5.0-faq
 title: Frequently Asked Questions (FAQ)
+original_id: faq
 ---
 
 ## Muster
