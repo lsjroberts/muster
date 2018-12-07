@@ -42,7 +42,7 @@ const app = muster({
   name: variable(''),
   greeting: ifElse({
     if: ref('name'),
-    then: format(`Your name is: ${localName}`,{
+    then: format('Your name is: ${localName}', {
       localName: ref('name'),
     }),
     else: 'You have no name!',
