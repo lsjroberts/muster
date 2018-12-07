@@ -24,7 +24,9 @@
     "build:full": "yarn build:dist && yarn build:esm",
     "build:dist": "tsc",
     "build:esm": "tsc -p tsconfig.esm.json",
-    "start": "node dist/index"
+    "start": "node dist/index",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "DWS Technology",
   "license": "MIT",
@@ -37,7 +39,8 @@
     "cli-highlight": "^2.0.0",
     "lodash": "^4.17.11",
     "mz": "^2.7.0",
-    "untildify": "^3.0.2"
+    "untildify": "^3.0.2",
+    "snyk": "^1.116.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.2",
@@ -49,5 +52,6 @@
   },
   "engines": {
     "node": ">=8.0.0"
-  }
+  },
+  "snyk": true
 }
