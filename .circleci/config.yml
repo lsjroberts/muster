@@ -41,7 +41,7 @@ jobs:
         name: Check licences
         command: yarn verify:licences
     - run:
-        name: Compile and check doc examples
+        name: Compile and check API doc examples
         command: yarn compile-doc-examples
     - run:
         name: Run tests
@@ -87,9 +87,6 @@ jobs:
     - run:
         name: Build Muster Playground
         command: yarn build:playground:ci
-    - run:
-        name: Generate API docs
-        command: yarn generate-docs
     - run:
         name: Copy playground
         command: yarn copy:playground
