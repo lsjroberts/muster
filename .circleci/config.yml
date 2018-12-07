@@ -46,13 +46,16 @@ jobs:
     - run:
         name: Run tests
         command: yarn test:ci
+    - run:
+        name: Report coverage
+        command: yarn report-coverage
 
     - store_artifacts: # special step to save test results as as artifact
         path: reports
         prefix: tests
-    - store_artifacts:
-        path: coverage
-        prefix: coverage
+    #    - store_artifacts:
+    #        path: coverage
+    #        prefix: coverage
     - store_test_results: # special step to upload test results for display in Test Summary
         path: reports
     # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
