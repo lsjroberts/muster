@@ -118,6 +118,14 @@ const siteConfig = {
   gaTrackingId: 'UA-129699840-1',
   gaGtag: true,
 
+  algolia: {
+    apiKey: '4f4b66eff796f1e1d48be066f0ac4cae',
+    indexName: 'muster',
+    algoliaOptions: {
+      facetFilters: ['language:LANGUAGE', 'version:VERSION'],
+    }, // Optional, if provided by Algolia
+  },
+
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   repoUrl,
