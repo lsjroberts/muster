@@ -16,7 +16,9 @@
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "new-version": "docusaurus-version $npm_package_version",
-    "rename-version": "docusaurus-rename-version"
+    "rename-version": "docusaurus-rename-version",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -26,5 +28,9 @@
     "@dws/muster-playground": "^6.5.0",
     "docusaurus": "~1.5.1",
     "lodash": "^4.17.11"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.116.0"
   }
 }
