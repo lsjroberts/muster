@@ -68,11 +68,11 @@ jobs:
     - attach_workspace:
         at: ~/repo
     - run:
-        name: Authenticate with registry # TODO expects $npm_TOKEN
-        command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+        name: Authenticate with registry # expects $npm_TOKEN
+        command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" >> ~/.npmrc
     - run:
         name: Publish package
-        command: yarn release # TODO expects $NPM_RELEASE_REGISTRY
+        command: yarn release # expects $NPM_RELEASE_REGISTRY
 
   deploy:
     <<: *defaults
@@ -86,7 +86,7 @@ jobs:
         command: yarn copy:changelog
     - run:
         name: Build Muster Playground
-        command: lerna run build --scope @dws/muster-playground
+        command: yarn build:playground:ci
     - run:
         name: Generate API docs
         command: yarn generate-docs
@@ -98,10 +98,10 @@ jobs:
         command: yarn copy:devtools
     - run:
         name: Build website
-        command: lerna run build --scope @dws/muster-website
+        command: yarn build:website:ci
 
     - run:
-        name: Deploying to GitHub Pages # TODO expects $GITHUB_TOKEN
+        name: Deploying to GitHub Pages # expects $GITHUB_TOKEN
         command: |
           git config --global user.email "dws-dave@users.noreply.github.com"
           git config --global user.name "David Wragg"
@@ -146,6 +146,6 @@ workflows:
         filters:
           branches:
             only: master
-          # TODO filter on version tags?
-#            tags:
-#              only: /v[0-9]+(\.[0-9]+)*/
+          tags:
+            only: /v[0-9]+(\.[0-9]+)*/
+

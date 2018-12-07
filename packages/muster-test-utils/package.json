@@ -1,6 +1,6 @@
 {
   "name": "@dws/muster-test-utils",
-  "version": "6.4.1",
+  "version": "6.5.0",
   "description": "Muster Test Utils",
   "module": "./esm/index.js",
   "main": "./dist/index.js",

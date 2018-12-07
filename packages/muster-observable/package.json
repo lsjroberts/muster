@@ -1,6 +1,6 @@
 {
   "name": "@dws/muster-observable",
-  "version": "6.4.1",
+  "version": "6.5.0",
   "description": "Muster Observable",
   "module": "./esm/index.js",
   "main": "./dist/index.js",
