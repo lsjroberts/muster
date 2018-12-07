@@ -1,32 +1,36 @@
 .AppHeader {
   background: #6d294a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
   box-shadow: 0 2px 5px 0 #aeb1b4;
   padding: 0 1.5rem;
   height: 56px;
-  overflow: hidden;
-  position: relative;
+  color: #fff;
 }
 
 .AppHeader__title {
-  white-space: nowrap;
-}
-
-.AppHeader__title__title {
-  position: relative;
-  margin-top: calc(1rem - 6px);
-  color: #fff;
+  flex: 1;
+  line-height: 1;
+  text-align: center;
 }
 
 .AppHeader__title__subtitle {
-  margin-top: -6px;
   color: #d04990;
 }
 
-.AppHeader__logo {
-  float: right;
-  margin-right: 0;
-  color: #fff;
+.AppHeader__version {
+  flex: 1;
   font-size: 14px;
-  margin-top: 1rem;
+  text-align: right;
+}
+
+.AppHeader__examples {
+  flex: 1;
+}
+
+.AppHeader__examples__select {
+  margin-left: 1em;
 }
