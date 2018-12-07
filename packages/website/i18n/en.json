@@ -237,6 +237,44 @@
       },
       "version-6.4.1-crafting-muster-nodes": {
         "title": "Crafting Muster Nodes"
+      },
+      "version-6.5.0-changelog": {
+        "title": "Latest Changes"
+      },
+      "version-6.5.0-graph-structure": {
+        "title": "Graph Data Structure"
+      },
+      "version-6.5.0-nodes": {
+        "title": "Nodes"
+      },
+      "version-6.5.0-variables": {
+        "title": "Variables"
+      },
+      "version-6.5.0-queries": {
+        "title": "Queries"
+      },
+      "version-6.5.0-collections": {
+        "title": "Collections"
+      },
+      "version-6.5.0-control-flow": {
+        "title": "Control Flow"
+      },
+      "version-6.5.0-overview": {
+        "title": "Muster",
+        "sidebar_label": "Muster Overview"
+      },
+      "version-6.5.0-faq": {
+        "title": "Frequently Asked Questions (FAQ)"
+      },
+      "version-6.5.0-essential-nodes": {
+        "title": "Essential Nodes"
+      },
+      "version-6.5.0-thinking-in-muster": {
+        "title": "Thinking in Muster",
+        "sidebar_label": "Thinking in Muster*"
+      },
+      "version-6.5.0-data-store": {
+        "title": "How Muster Stores Data"
       }
     },
     "links": {
