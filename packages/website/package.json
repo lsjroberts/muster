@@ -1,6 +1,6 @@
 {
   "name": "@dws/muster-website",
-  "version": "6.4.1",
+  "version": "6.5.0",
   "description": "Muster Website",
   "main": "./build/muster/index.html",
   "private": true,
@@ -23,8 +23,8 @@
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
-    "@dws/muster-playground": "^6.4.1",
-    "docusaurus": "^1.5.1",
+    "@dws/muster-playground": "^6.5.0",
+    "docusaurus": "~1.5.1",
     "lodash": "^4.17.11"
   }
 }
