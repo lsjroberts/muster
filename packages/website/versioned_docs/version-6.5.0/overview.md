@@ -1,7 +1,8 @@
 ---
-id: overview
+id: version-6.5.0-overview
 title: Muster
 sidebar_label: Muster Overview
+original_id: overview
 ---
 
 ### A universal, graph-structured data layer for front-end components and back-end services

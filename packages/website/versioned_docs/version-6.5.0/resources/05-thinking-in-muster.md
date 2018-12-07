@@ -1,7 +1,8 @@
 ---
-id: thinking-in-muster
+id: version-6.5.0-thinking-in-muster
 title: Thinking in Muster
 sidebar_label: Thinking in Muster*
+original_id: thinking-in-muster
 ---
 
 ## Input required from others

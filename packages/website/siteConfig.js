@@ -8,17 +8,8 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-// List of projects/orgs using your project for the users page.
-const users = [
-  {
-    caption: 'DWS Technology',
-    // You will need to prepend the image path with your baseUrl
-    // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-    image: '/img/dws-logo-global.svg',
-    infoLink: 'https://www.dws.com',
-    pinned: true,
-  },
-];
+// List of projects/orgs using Muster for the users page.
+const users = require('./userList');
 
 const url = 'https://dwstech.github.io';
 const baseUrl = '/muster/';
@@ -29,7 +20,7 @@ const siteConfig = {
   tagline: 'A universal data layer for components and services',
   url, // Your website URL
   baseUrl, // Base URL for your project */
-  editUrl: `${repoUrl}/edit/master/packages/website/docs/`,
+  editUrl: `${repoUrl}/edit/develop/packages/website/docs/`,
 
   customDocsPath: 'website/docs',
 
@@ -126,6 +117,14 @@ const siteConfig = {
   // twitterImage: 'img/muster-logo.png',
   gaTrackingId: 'UA-129699840-1',
   gaGtag: true,
+
+  algolia: {
+    apiKey: '4f4b66eff796f1e1d48be066f0ac4cae',
+    indexName: 'muster',
+    algoliaOptions: {
+      facetFilters: ['language:LANGUAGE', 'version:VERSION'],
+    }, // Optional, if provided by Algolia
+  },
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...

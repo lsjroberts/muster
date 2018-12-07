@@ -1,6 +1,7 @@
 ---
-id: graph-structure
+id: version-6.5.0-graph-structure
 title: Graph Data Structure
+original_id: graph-structure
 ---
 
 ## Storing data in Muster
