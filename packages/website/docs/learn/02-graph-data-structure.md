@@ -6,7 +6,7 @@ title: Graph Data Structure
 ## Storing data in Muster
 Muster stores the data and the logic in a graph where the names of the branches identify the path to the nodes. The graph resembles a tree with a root and a set of branches. The names of these branches are used to identify the nodes in the graph.
 
-Let's start with a basic example of Muster graph:
+Let's start with a basic example of a Muster graph:
 ```javascript
 import muster from '@dws/muster';
 
