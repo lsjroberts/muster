@@ -1,0 +1,24 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/muster-devtools-client/package.json",
+        "packages/muster-devtools/package.json",
+        "packages/muster-message-transport/package.json",
+        "packages/muster-observable/package.json",
+        "packages/muster-parser/package.json",
+        "packages/muster-playground/package.json",
+        "packages/muster-react/package.json",
+        "packages/muster-remote/package.json",
+        "packages/muster-repl/package.json",
+        "packages/muster-server/package.json",
+        "packages/muster-test-utils/package.json",
+        "packages/muster-version/package.json",
+        "packages/muster-worker/package.json",
+        "packages/muster/package.json",
+        "packages/website/package.json"
+      ]
+    }
+  }
+}
