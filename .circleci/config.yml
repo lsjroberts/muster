@@ -31,8 +31,11 @@ jobs:
         key: v1-dependencies-{{ checksum "package.json" }}
 
     - run:
-        name: Run build
+        name: Build published packages
         command: yarn build:full
+    - run:
+        name: Build Muster Playground
+        command: yarn build:playground:ci
 
     - run:
         name: Lint code
@@ -87,9 +90,6 @@ jobs:
     - run:
         name: Copy latest changelog
         command: yarn copy:changelog
-    - run:
-        name: Build Muster Playground
-        command: yarn build:playground:ci
     - run:
         name: Copy playground
         command: yarn copy:playground

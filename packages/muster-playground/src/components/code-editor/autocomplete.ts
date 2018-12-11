@@ -8,7 +8,6 @@ const musterExports = uniq(Object.keys(types));
 const generateParamSignatures = (params: Array<any>) =>
   params.map((param) => ({ label: param, documentation: param }));
 
-// eslint-disable-next-line complexity
 const iterateInput = (input: string | undefined) => {
   if (!input) return {};
   const stack = [];
@@ -81,7 +80,6 @@ const provideSignatureHelp = (
 };
 
 export const registerLanguage = (monaco: typeof monacoEditor, getRefs: () => Array<string>) => {
-  /* eslint-disable no-useless-escape */
   monaco.languages.register({ id: 'muster' });
   const text = musterExports.map((name) => {
     const definition = (types as any)[name];
@@ -182,14 +180,13 @@ export const registerLanguage = (monaco: typeof monacoEditor, getRefs: () => Arr
       });
       const match = textUntilPosition.match(/.*ref\('$/);
 
-      if (!match) return text;
+      if (!match) return text as any;
       return getRefs().map((ref) => ({
         label: ref,
         kind: monaco.languages.CompletionItemKind.Value,
       }));
     },
   });
-  /* eslint-enable no-useless-escape */
 };
 
 export const isLanguageRegistered = (monaco: typeof monacoEditor) =>

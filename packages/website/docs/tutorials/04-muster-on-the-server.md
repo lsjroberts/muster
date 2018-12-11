@@ -265,10 +265,10 @@ clientApp.resolve(ref('server', 'greeting')).subscribe((greeting) => {
 });
 
 console.log('Changing name to "Kate"');
-await clientApp.resolve(set('name', 'Kate'));
+await clientApp.resolve(set(ref('server', 'name'), 'Kate'));
 
 console.log('Changing name to "Diana"');
-await clientApp.resolve(set('name', 'Diana'));
+await clientApp.resolve(set(ref('server', 'name'), 'Diana'));
 
 // Console output:
 // Hello, Jane!

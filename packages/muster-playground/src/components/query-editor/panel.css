@@ -7,6 +7,7 @@
   flex-shrink: 1;
   box-sizing: border-box;
   padding: 0 12px;
+  overflow: hidden;
 }
 
 .QueryEditor__panel__header {
