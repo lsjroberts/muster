@@ -33,7 +33,7 @@
     "@dws/muster": "^6.5.0",
     "@dws/muster-observable": "^6.5.0",
     "@dws/muster-test-utils": "^6.5.0",
-    "hoist-non-react-statics": "^2.2.0",
+    "hoist-non-react-statics": "^3.2.1",
     "lodash": "^4.17.11",
     "react-lifecycles-compat": "^3.0.2"
   },

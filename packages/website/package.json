@@ -26,7 +26,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@dws/muster-playground": "^6.5.0",
-    "docusaurus": "~1.5.1",
+    "docusaurus": "~1.6.2",
     "lodash": "^4.17.11"
   },
   "snyk": true,
