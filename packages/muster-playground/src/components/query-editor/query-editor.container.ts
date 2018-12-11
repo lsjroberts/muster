@@ -30,10 +30,10 @@ import QueryEditor from './query-editor';
 export const DEFAULT_GRAPH_DEFINITION = `{
   greeting: 'Hello',
   user: 'world',
-  welcome: computed([
-    ref('greeting'),
-    ref('user'),
-  ], (greeting, user) => \`$\{greeting}, $\{user}!\`)
+  welcome: format('\${salutation}, \${name}!', {
+    salutation: ref('greeting'),
+    name: ref('user'),
+  }),
 }`;
 export const DEFAULT_QUERY_DEFINITION = "ref('welcome')";
 export const DEFAULT_CONTAINER_DEFINITION = `{
