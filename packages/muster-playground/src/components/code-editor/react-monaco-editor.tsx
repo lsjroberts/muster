@@ -146,7 +146,7 @@ class MonacoEditor extends React.Component<MonacoEditorProps> {
 
     if (prevProps.language !== this.props.language) {
       MonacoEditor.monaco.editor.setModelLanguage(
-        this.editor.getModel(),
+        this.editor.getModel()!,
         this.props.language || '',
       );
     }
