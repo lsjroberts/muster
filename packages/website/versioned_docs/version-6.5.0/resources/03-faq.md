@@ -61,7 +61,7 @@ Splitting the `index.js` and `graph-root.js` allow you to import `graph-root` in
 
 ### How can I find details and examples of how each node should be used?
 
-Check out the [API documentation](/muster/api). It's pretty exhaustive.
+Check out the [API documentation](/muster/api/latest). It's pretty exhaustive.
 
 ### Is there somewhere online I can experiment with Muster and see the results?
 

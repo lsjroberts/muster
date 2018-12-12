@@ -1,0 +1,670 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>StatelessGraphNode | Muster</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">Muster</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/muster.html">muster</a>
+				</li>
+				<li>
+					<a href="muster.statelessgraphnode.html">StatelessGraphNode</a>
+				</li>
+			</ul>
+			<h1>Interface StatelessGraphNode&lt;T, P, V, N&gt;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/muster.html#nodename" class="tsd-signature-type">NodeName</a></h4>
+					</li>
+					<li>
+						<h4>P<span class="tsd-signature-symbol">: </span><a href="../modules/muster.html#nodeproperties" class="tsd-signature-type">NodeProperties</a></h4>
+					</li>
+					<li>
+						<h4>V<span class="tsd-signature-symbol">: </span><a href="../modules/muster.html#serializednodeproperties" class="tsd-signature-type">SerializedNodeProperties</a></h4>
+					</li>
+					<li>
+						<h4>N<span class="tsd-signature-symbol">: </span><a href="muster.statelessnodetype.html" class="tsd-signature-type">StatelessNodeType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="muster.graphnode.html" class="tsd-signature-type">GraphNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">N</span><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">StatelessGraphNode</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="muster.resolvenode.html" class="tsd-signature-type">ResolveNode</a>
+									</li>
+									<li>
+										<a href="muster.applynode.html" class="tsd-signature-type">ApplyNode</a>
+									</li>
+									<li>
+										<a href="muster.nilnode.html" class="tsd-signature-type">NilNode</a>
+									</li>
+									<li>
+										<a href="muster.traversenode.html" class="tsd-signature-type">TraverseNode</a>
+									</li>
+									<li>
+										<a href="muster.nodelistnode.html" class="tsd-signature-type">NodeListNode</a>
+									</li>
+									<li>
+										<a href="muster.arraynode.html" class="tsd-signature-type">ArrayNode</a>
+									</li>
+									<li>
+										<a href="muster.graphnodenode.html" class="tsd-signature-type">GraphNodeNode</a>
+									</li>
+									<li>
+										<a href="muster.treenode.html" class="tsd-signature-type">TreeNode</a>
+									</li>
+									<li>
+										<a href="muster.actionnode.html" class="tsd-signature-type">ActionNode</a>
+									</li>
+									<li>
+										<a href="muster.paramnode.html" class="tsd-signature-type">ParamNode</a>
+									</li>
+									<li>
+										<a href="muster.applytransformsnode.html" class="tsd-signature-type">ApplyTransformsNode</a>
+									</li>
+									<li>
+										<a href="muster.withcontextnode.html" class="tsd-signature-type">WithContextNode</a>
+									</li>
+									<li>
+										<a href="muster.reducenode.html" class="tsd-signature-type">ReduceNode</a>
+									</li>
+									<li>
+										<a href="muster.firstitemnode.html" class="tsd-signature-type">FirstItemNode</a>
+									</li>
+									<li>
+										<a href="muster.headnode.html" class="tsd-signature-type">HeadNode</a>
+									</li>
+									<li>
+										<a href="muster.getlengthnode.html" class="tsd-signature-type">GetLengthNode</a>
+									</li>
+									<li>
+										<a href="muster.operationcomposernode.html" class="tsd-signature-type">OperationComposerNode</a>
+									</li>
+									<li>
+										<a href="muster.combinedreducernode.html" class="tsd-signature-type">CombinedReducerNode</a>
+									</li>
+									<li>
+										<a href="muster.transducenode.html" class="tsd-signature-type">TransduceNode</a>
+									</li>
+									<li>
+										<a href="muster.countnode.html" class="tsd-signature-type">CountNode</a>
+									</li>
+									<li>
+										<a href="muster.lastitemnode.html" class="tsd-signature-type">LastItemNode</a>
+									</li>
+									<li>
+										<a href="muster.nthitemnode.html" class="tsd-signature-type">NthItemNode</a>
+									</li>
+									<li>
+										<a href="muster.getnode.html" class="tsd-signature-type">GetNode</a>
+									</li>
+									<li>
+										<a href="muster.rootnode.html" class="tsd-signature-type">RootNode</a>
+									</li>
+									<li>
+										<a href="muster.contextnode.html" class="tsd-signature-type">ContextNode</a>
+									</li>
+									<li>
+										<a href="muster.parentnode.html" class="tsd-signature-type">ParentNode</a>
+									</li>
+									<li>
+										<a href="muster.addnode.html" class="tsd-signature-type">AddNode</a>
+									</li>
+									<li>
+										<a href="muster.ceilnode.html" class="tsd-signature-type">CeilNode</a>
+									</li>
+									<li>
+										<a href="muster.clampnode.html" class="tsd-signature-type">ClampNode</a>
+									</li>
+									<li>
+										<a href="muster.fnnode.html" class="tsd-signature-type">FnNode</a>
+									</li>
+									<li>
+										<a href="muster.setnode.html" class="tsd-signature-type">SetNode</a>
+									</li>
+									<li>
+										<a href="muster.updatenode.html" class="tsd-signature-type">UpdateNode</a>
+									</li>
+									<li>
+										<a href="muster.subtractnode.html" class="tsd-signature-type">SubtractNode</a>
+									</li>
+									<li>
+										<a href="muster.dividenode.html" class="tsd-signature-type">DivideNode</a>
+									</li>
+									<li>
+										<a href="muster.floornode.html" class="tsd-signature-type">FloorNode</a>
+									</li>
+									<li>
+										<a href="muster.maxnode.html" class="tsd-signature-type">MaxNode</a>
+									</li>
+									<li>
+										<a href="muster.minnode.html" class="tsd-signature-type">MinNode</a>
+									</li>
+									<li>
+										<a href="muster.modnode.html" class="tsd-signature-type">ModNode</a>
+									</li>
+									<li>
+										<a href="muster.multiplynode.html" class="tsd-signature-type">MultiplyNode</a>
+									</li>
+									<li>
+										<a href="muster.pownode.html" class="tsd-signature-type">PowNode</a>
+									</li>
+									<li>
+										<a href="muster.roundnode.html" class="tsd-signature-type">RoundNode</a>
+									</li>
+									<li>
+										<a href="muster.sqrtnode.html" class="tsd-signature-type">SqrtNode</a>
+									</li>
+									<li>
+										<a href="muster.dispatchnode.html" class="tsd-signature-type">DispatchNode</a>
+									</li>
+									<li>
+										<a href="muster.seriesnode.html" class="tsd-signature-type">SeriesNode</a>
+									</li>
+									<li>
+										<a href="muster.itemwithidnode.html" class="tsd-signature-type">ItemWithIdNode</a>
+									</li>
+									<li>
+										<a href="muster.arrayreducernode.html" class="tsd-signature-type">ArrayReducerNode</a>
+									</li>
+									<li>
+										<a href="muster.clearnode.html" class="tsd-signature-type">ClearNode</a>
+									</li>
+									<li>
+										<a href="muster.eqnode.html" class="tsd-signature-type">EqNode</a>
+									</li>
+									<li>
+										<a href="muster.containsnode.html" class="tsd-signature-type">ContainsNode</a>
+									</li>
+									<li>
+										<a href="muster.iteratenode.html" class="tsd-signature-type">IterateNode</a>
+									</li>
+									<li>
+										<a href="muster.filternode.html" class="tsd-signature-type">FilterNode</a>
+									</li>
+									<li>
+										<a href="muster.fuzzytraversenode.html" class="tsd-signature-type">FuzzyTraverseNode</a>
+									</li>
+									<li>
+										<a href="muster.mapnode.html" class="tsd-signature-type">MapNode</a>
+									</li>
+									<li>
+										<a href="muster.skipnode.html" class="tsd-signature-type">SkipNode</a>
+									</li>
+									<li>
+										<a href="muster.slicenode.html" class="tsd-signature-type">SliceNode</a>
+									</li>
+									<li>
+										<a href="muster.sortordernode.html" class="tsd-signature-type">SortOrderNode</a>
+									</li>
+									<li>
+										<a href="muster.sortnode.html" class="tsd-signature-type">SortNode</a>
+									</li>
+									<li>
+										<a href="muster.takenode.html" class="tsd-signature-type">TakeNode</a>
+									</li>
+									<li>
+										<a href="muster.identitynode.html" class="tsd-signature-type">IdentityNode</a>
+									</li>
+									<li>
+										<a href="muster.uniquenode.html" class="tsd-signature-type">UniqueNode</a>
+									</li>
+									<li>
+										<a href="muster.gtnode.html" class="tsd-signature-type">GtNode</a>
+									</li>
+									<li>
+										<a href="muster.groupbynode.html" class="tsd-signature-type">GroupByNode</a>
+									</li>
+									<li>
+										<a href="muster.combinelatestnode.html" class="tsd-signature-type">CombineLatestNode</a>
+									</li>
+									<li>
+										<a href="muster.createbehaviornode.html" class="tsd-signature-type">CreateBehaviorNode</a>
+									</li>
+									<li>
+										<a href="muster.debugnode.html" class="tsd-signature-type">DebugNode</a>
+									</li>
+									<li>
+										<a href="muster.extendnode.html" class="tsd-signature-type">ExtendNode</a>
+									</li>
+									<li>
+										<a href="muster.flownode.html" class="tsd-signature-type">FlowNode</a>
+									</li>
+									<li>
+										<a href="muster.querysetcalloperationnode.html" class="tsd-signature-type">QuerySetCallOperationNode</a>
+									</li>
+									<li>
+										<a href="muster.querysetsetoperationnode.html" class="tsd-signature-type">QuerySetSetOperationNode</a>
+									</li>
+									<li>
+										<a href="muster.querysetnode.html" class="tsd-signature-type">QuerySetNode</a>
+									</li>
+									<li>
+										<a href="muster.ifpendingnode.html" class="tsd-signature-type">IfPendingNode</a>
+									</li>
+									<li>
+										<a href="muster.injectdependenciesnode.html" class="tsd-signature-type">InjectDependenciesNode</a>
+									</li>
+									<li>
+										<a href="muster.isnilnode.html" class="tsd-signature-type">IsNilNode</a>
+									</li>
+									<li>
+										<a href="muster.isupdatingnode.html" class="tsd-signature-type">IsUpdatingNode</a>
+									</li>
+									<li>
+										<a href="muster.legacyquerynode.html" class="tsd-signature-type">LegacyQueryNode</a>
+									</li>
+									<li>
+										<a href="muster.lognode.html" class="tsd-signature-type">LogNode</a>
+									</li>
+									<li>
+										<a href="muster.parallelnode.html" class="tsd-signature-type">ParallelNode</a>
+									</li>
+									<li>
+										<a href="muster.partialnode.html" class="tsd-signature-type">PartialNode</a>
+									</li>
+									<li>
+										<a href="muster.propertynode.html" class="tsd-signature-type">PropertyNode</a>
+									</li>
+									<li>
+										<a href="muster.resetnode.html" class="tsd-signature-type">ResetNode</a>
+									</li>
+									<li>
+										<a href="muster.setresultnode.html" class="tsd-signature-type">SetResultNode</a>
+									</li>
+									<li>
+										<a href="muster.withscopenode.html" class="tsd-signature-type">WithScopeNode</a>
+									</li>
+									<li>
+										<a href="muster.andnode.html" class="tsd-signature-type">AndNode</a>
+									</li>
+									<li>
+										<a href="muster.choosenode.html" class="tsd-signature-type">ChooseNode</a>
+									</li>
+									<li>
+										<a href="muster.gtenode.html" class="tsd-signature-type">GteNode</a>
+									</li>
+									<li>
+										<a href="muster.ifelsenode.html" class="tsd-signature-type">IfElseNode</a>
+									</li>
+									<li>
+										<a href="muster.ltnode.html" class="tsd-signature-type">LtNode</a>
+									</li>
+									<li>
+										<a href="muster.ltenode.html" class="tsd-signature-type">LteNode</a>
+									</li>
+									<li>
+										<a href="muster.notnode.html" class="tsd-signature-type">NotNode</a>
+									</li>
+									<li>
+										<a href="muster.ornode.html" class="tsd-signature-type">OrNode</a>
+									</li>
+									<li>
+										<a href="muster.switchonnode.html" class="tsd-signature-type">SwitchOnNode</a>
+									</li>
+									<li>
+										<a href="muster.combinedmiddlewarenode.html" class="tsd-signature-type">CombinedMiddlewareNode</a>
+									</li>
+									<li>
+										<a href="muster.fromstreammiddlewarenode.html" class="tsd-signature-type">FromStreamMiddlewareNode</a>
+									</li>
+									<li>
+										<a href="muster.mockresponsemiddlewarenode.html" class="tsd-signature-type">MockResponseMiddlewareNode</a>
+									</li>
+									<li>
+										<a href="muster.transformresponsemiddlewarenode.html" class="tsd-signature-type">TransformResponseMiddlewareNode</a>
+									</li>
+									<li>
+										<a href="muster.xhrmiddlewarenode.html" class="tsd-signature-type">XhrMiddlewareNode</a>
+									</li>
+									<li>
+										<a href="muster.proxynode.html" class="tsd-signature-type">ProxyNode</a>
+									</li>
+									<li>
+										<a href="muster.charatnode.html" class="tsd-signature-type">CharAtNode</a>
+									</li>
+									<li>
+										<a href="muster.endswithnode.html" class="tsd-signature-type">EndsWithNode</a>
+									</li>
+									<li>
+										<a href="muster.frombase64node.html" class="tsd-signature-type">FromBase64Node</a>
+									</li>
+									<li>
+										<a href="muster.includesnode.html" class="tsd-signature-type">IncludesNode</a>
+									</li>
+									<li>
+										<a href="muster.joinnode.html" class="tsd-signature-type">JoinNode</a>
+									</li>
+									<li>
+										<a href="muster.lowercasenode.html" class="tsd-signature-type">LowerCaseNode</a>
+									</li>
+									<li>
+										<a href="muster.matchpatternnode.html" class="tsd-signature-type">MatchPatternNode</a>
+									</li>
+									<li>
+										<a href="muster.formatnode.html" class="tsd-signature-type">FormatNode</a>
+									</li>
+									<li>
+										<a href="muster.parsefloatnode.html" class="tsd-signature-type">ParseFloatNode</a>
+									</li>
+									<li>
+										<a href="muster.parseintnode.html" class="tsd-signature-type">ParseIntNode</a>
+									</li>
+									<li>
+										<a href="muster.replacenode.html" class="tsd-signature-type">ReplaceNode</a>
+									</li>
+									<li>
+										<a href="muster.sentencecasenode.html" class="tsd-signature-type">SentenceCaseNode</a>
+									</li>
+									<li>
+										<a href="muster.splitnode.html" class="tsd-signature-type">SplitNode</a>
+									</li>
+									<li>
+										<a href="muster.startcasenode.html" class="tsd-signature-type">StartCaseNode</a>
+									</li>
+									<li>
+										<a href="muster.startswithnode.html" class="tsd-signature-type">StartsWithNode</a>
+									</li>
+									<li>
+										<a href="muster.substringnode.html" class="tsd-signature-type">SubstringNode</a>
+									</li>
+									<li>
+										<a href="muster.testnode.html" class="tsd-signature-type">TestNode</a>
+									</li>
+									<li>
+										<a href="muster.tobase64node.html" class="tsd-signature-type">ToBase64Node</a>
+									</li>
+									<li>
+										<a href="muster.tostringnode.html" class="tsd-signature-type">ToStringNode</a>
+									</li>
+									<li>
+										<a href="muster.trimnode.html" class="tsd-signature-type">TrimNode</a>
+									</li>
+									<li>
+										<a href="muster.truncatenode.html" class="tsd-signature-type">TruncateNode</a>
+									</li>
+									<li>
+										<a href="muster.uppercasenode.html" class="tsd-signature-type">UpperCaseNode</a>
+									</li>
+									<li>
+										<a href="muster.logmiddlewarenode.html" class="tsd-signature-type">LogMiddlewareNode</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="muster.statelessgraphnode.html#__computed" class="tsd-kind-icon">__computed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="muster.statelessgraphnode.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="muster.statelessgraphnode.html#definition" class="tsd-kind-icon">definition</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="muster.statelessgraphnode.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="muster.statelessgraphnode.html#scope" class="tsd-kind-icon">scope</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="__computed" class="tsd-anchor"></a>
+					<h3>__computed</h3>
+					<div class="tsd-signature tsd-kind-icon">__computed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="muster.graphnode.html">GraphNode</a>.<a href="muster.graphnode.html#__computed">__computed</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster/src/types/graph.ts#L326">muster/src/types/graph.ts:326</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="context" class="tsd-anchor"></a>
+					<h3>context</h3>
+					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <a href="muster.context.html" class="tsd-signature-type">Context</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="muster.graphnode.html">GraphNode</a>.<a href="muster.graphnode.html#context">context</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster/src/types/graph.ts#L330">muster/src/types/graph.ts:330</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="definition" class="tsd-anchor"></a>
+					<h3>definition</h3>
+					<div class="tsd-signature tsd-kind-icon">definition<span class="tsd-signature-symbol">:</span> <a href="muster.nodedefinition.html" class="tsd-signature-type">NodeDefinition</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">N</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="muster.graphnode.html">GraphNode</a>.<a href="muster.graphnode.html#definition">definition</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster/src/types/graph.ts#L328">muster/src/types/graph.ts:328</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="muster.graphnode.html">GraphNode</a>.<a href="muster.graphnode.html#id">id</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster/src/types/graph.ts#L327">muster/src/types/graph.ts:327</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="scope" class="tsd-anchor"></a>
+					<h3>scope</h3>
+					<div class="tsd-signature tsd-kind-icon">scope<span class="tsd-signature-symbol">:</span> <a href="muster.scope.html" class="tsd-signature-type">Scope</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="muster.graphnode.html">GraphNode</a>.<a href="muster.graphnode.html#scope">scope</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/master/packages/muster/src/types/graph.ts#L329">muster/src/types/graph.ts:329</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/muster.html">muster</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/muster_message_transport.html">muster-<wbr>message-<wbr>transport</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/muster_observable.html">muster-<wbr>observable</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/muster_parser.html">muster-<wbr>parser</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/muster_react.html">muster-<wbr>react</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/muster_remote.html">muster-<wbr>remote</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/muster_repl.html">muster-<wbr>repl</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/muster_server.html">muster-<wbr>server</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/muster_test_utils.html">muster-<wbr>test-<wbr>utils</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/muster_worker.html">muster-<wbr>worker</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="muster.statelessgraphnode.html" class="tsd-kind-icon">Stateless<wbr>Graph<wbr>Node</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="muster.statelessgraphnode.html#__computed" class="tsd-kind-icon">__computed</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="muster.statelessgraphnode.html#context" class="tsd-kind-icon">context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="muster.statelessgraphnode.html#definition" class="tsd-kind-icon">definition</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="muster.statelessgraphnode.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="muster.statelessgraphnode.html#scope" class="tsd-kind-icon">scope</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

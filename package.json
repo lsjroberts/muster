@@ -1,6 +1,7 @@
 {
   "name": "@dws/muster-base",
   "author": "DWS Technology",
+  "version": "6.5.0",
   "description": "A universal data layer for components and services",
   "keywords": [
     "data",
@@ -52,8 +53,10 @@
     "release": "./scripts/release",
     "prepush": "./scripts/verify \"yarn verify\"",
     "precommit": "lint-staged",
-    "pregenerate-docs": "del-cli ./docs/api ./packages/website/static/api",
-    "generate-docs": "typedoc --out packages/website/static/api --sourcefile-url-prefix \"https://github.com/dwstech/muster/blob/master/packages/\"",
+    "generate-docs": "typedoc --out packages/website/static/api/latest --sourcefile-url-prefix \"https://github.com/dwstech/muster/blob/develop/packages/\"",
+    "pregenerate-docs": "del-cli ./docs/api ./packages/website/static/api/latest",
+    "preversion-docs": "del-cli ./docs/api './packages/website/static/api/'$npm_package_version",
+    "version-docs": "typedoc --out 'packages/website/static/api/'$npm_package_version --sourcefile-url-prefix \"https://github.com/dwstech/muster/blob/master/packages/\"",
     "precompile-doc-examples": "yarn generate-docs",
     "compile-doc-examples": "node ./scripts/docs-compiler/index.js"
   },

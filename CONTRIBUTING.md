@@ -83,9 +83,10 @@ You'll then need to add the Release header to the changelog, in the format:
 ## x.x.x (yyyy-mm-dd)
 ```
 
-Finally, you'll need to version, and build the website.
+Finally, you'll need to version the API docs then version and build the website.
 
 ```bash
+yarn version-docs # creates a version of the api docs under /api/$version
 yarn copy:changelog # copies the updated changelog into the website dir
 cd packages/website
 yarn new-version
