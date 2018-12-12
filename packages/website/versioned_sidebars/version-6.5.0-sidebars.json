@@ -23,8 +23,25 @@
       "version-6.5.0-understanding-muster/crafting-muster-nodes"
     ],
     "Tutorials": [
-      "version-6.5.0-[object Object]",
-      "version-6.5.0-[object Object]"
+      {
+        "type": "subcategory",
+        "label": "Muster",
+        "ids": [
+          "version-6.5.0-tutorials/muster-server",
+          "version-6.5.0-tutorials/muster-worker",
+          "version-6.5.0-tutorials/muster-cookbook",
+          "version-6.5.0-tutorials/muster-testing"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Muster React",
+        "ids": [
+          "version-6.5.0-tutorials/muster-react-tutorial",
+          "version-6.5.0-tutorials/muster-react-cookbook",
+          "version-6.5.0-tutorials/muster-react-testing"
+        ]
+      }
     ],
     "Resources": [
       "version-6.5.0-resources/setup",
