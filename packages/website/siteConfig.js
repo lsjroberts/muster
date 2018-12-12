@@ -101,7 +101,7 @@ const siteConfig = {
       async: true,
     },
   ],
-  separateCss: ['static/api/latest/assets/css'],
+  separateCss: ['static/api/'],
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Roboto+Slab',
     'https://unpkg.com/tippy.js@3/dist/themes/light.css',
