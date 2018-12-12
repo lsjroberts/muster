@@ -26,4 +26,4 @@ The following pages will take you through how Muster works and how to use it. El
 - [Latest changes](/muster/docs/changelog)
 - [Common Muster Errors](/muster/docs/resources/common-muster-errors)
 
-In addition, the library offers extensive reference [API documentation](/muster/api). 
+In addition, the library offers extensive reference [API documentation](/muster/api/latest). 

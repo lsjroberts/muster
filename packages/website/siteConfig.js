@@ -31,7 +31,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'overview', label: 'Docs' },
-    { href: `${baseUrl || '/'}api/`, label: 'API reference' },
+    { href: `${baseUrl || '/'}api/latest/`, label: 'API reference' },
     { href: `${baseUrl || '/'}playground/`, label: 'Playground' },
     { doc: 'resources/faq', label: 'FAQ' },
     { page: 'help', label: 'Help' },
@@ -101,7 +101,7 @@ const siteConfig = {
       async: true,
     },
   ],
-  separateCss: ['static/api/assets/css'],
+  separateCss: ['static/api/latest/assets/css'],
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Roboto+Slab',
     'https://unpkg.com/tippy.js@3/dist/themes/light.css',

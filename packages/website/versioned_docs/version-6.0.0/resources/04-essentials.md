@@ -6,7 +6,7 @@ original_id: essential-nodes
 
 ## Core Muster nodes
 
-### [Ref](/muster/api/modules/muster.html#ref)
+### [Ref](/muster/api/latest/modules/muster.html#ref)
 A helper function used for locating nodes in the muster graph.
 
 After a value, this is the most useful node in the whole of muster. It can be used in the dependencies of a computed, to link parts of the graph, as an output of a computed, etc.
@@ -28,7 +28,7 @@ console.log(result);
 
 ```
 
-### [Variable](/muster/api/modules/muster.html#variable)
+### [Variable](/muster/api/latest/modules/muster.html#variable)
 Creates a new instance of a variable node, which is a node that can store values. Its read and write process is synchronous. Each variable node has an initial value that defines both the node's starting value and its fallback when reset. See the reset and "Resetting variables" example to learn more about resetting variables.
 
 The example below utilises another node (set) which will be introduced below.
@@ -55,7 +55,7 @@ await app.resolve(set('name', 'John'));
 // Name: John
 ```
 
-### [Set](/muster/api/modules/muster.html#set)
+### [Set](/muster/api/latest/modules/muster.html#set)
 Set is a node which allows for setting values of certain nodes, e.g. variable, fromPromise and placeholder.
 
 The output of a set is the same as a value property.
@@ -113,7 +113,7 @@ console.log('End');
 ```
 This example demonstrates that a set waits for the target value to be updated before returning a result.
 
-### [Value](/muster/api/modules/muster.html#value)
+### [Value](/muster/api/latest/modules/muster.html#value)
 The value node is used for storing raw data and for sending data to other nodes.
 ```javascript
 import { value } from '@dws/muster';
@@ -123,7 +123,7 @@ value(123);                // Create a value node storing a number
 value({ hello: 'world' }); // Create a value node storing an object
 ```
 ## Callable Functions
-### [fn](/muster/api/modules/muster.html#fn)
+### [fn](/muster/api/latest/modules/muster.html#fn)
 
 fn is a type of a NodeDefinition used for representing executable functions implemented with muster NodeDefinitions. These functions are safely serializable and can be executed on a remote muster instances.
 
@@ -149,7 +149,7 @@ await app.resolve(call('addFive', [3]));
 ```
 This example shows how to call an fn. See the call documentation to learn more about calling callable nodes.
 
-### [Action](/muster/api/modules/muster.html#action-2)
+### [Action](/muster/api/latest/modules/muster.html#action-2)
 Action is a type of NodeDefinition that allows for defining reusable fragments of code which can interact with the graph. The action on its own is treated as a data-node - just like a value or an array but it can be used as a target for a call or apply nodes.
 
 The action can return three types of values:
@@ -197,7 +197,7 @@ console.log(fullName);
 // Rosalind Franklin
 ```
 This example shows how to return values from an action. As with the computed, the value returned from the action function is converted to a value if is not already a NodeDefinition.
-### [Call](/muster/api/modules/muster.html#call)
+### [Call](/muster/api/latest/modules/muster.html#call)
 
 Call is a node which is used when calling a NodeDefinition that implements a call method, e.g. action, fn or placeholder.
 
@@ -225,7 +225,7 @@ console.log(result);
 ```
 
 ## Logic
-### [AND](http://localhost:3000/muster/api/modules/muster.html#and) (&&)
+### [AND](/muster/api/latest/modules/muster.html#and) (&&)
 `and(arg 1, ..., arg n)` is a logical node that takes one-or-more arguments and resolves to `true` if and only if all arguments are truthy, `false` otherwise.
 ```javascript
 import muster, { computed, or } from '@dws/muster';
@@ -240,7 +240,7 @@ await app.resolve(and(false, false, 'hello world')) // === false
 await app.resolve(and(computed([], () => true), false)) // === false
 await app.resolve(and(computed([], () => true), true)) // === false
 ```
-### [OR](http://localhost:3000/muster/api/modules/muster.html#or) (||)
+### [OR](/muster/api/latest/modules/muster.html#or) (||)
 `or(arg 1, ..., arg n)` is a logical node that takes one-or-more arguments and resolves to `true` if any of its arguments are truthy, `false` otherwise.
 ```javascript
 import muster, { computed, or } from '@dws/muster';
@@ -255,7 +255,7 @@ await app.resolve(or(false, false, 'hello world')) // === true
 await app.resolve(or(computed([], () => true), false)) // === true
 await app.resolve(or(computed([], () => false), false)) // === false
 ```
-### [NOT](http://localhost:3000/muster/api/modules/muster.html#not) (!)
+### [NOT](/muster/api/latest/modules/muster.html#not) (!)
 `not(arg)` is a logical node that takes one argument and resolves to the inverse `boolean` value of its input. Inputs are evaluated for truthiness.
 ```javascript
 import muster, { computed, not, value } from '@dws/muster';
@@ -270,7 +270,7 @@ await app.resolve(not(not(true))) // === true
 await app.resolve(not(computed([], () => false))) // === true
 await app.resolve(not(computed([], () => true))) // === false
 ```
-### [Eq](http://localhost:3000/muster/api/modules/muster.html#eq) (===)
+### [Eq](/muster/api/latest/modules/muster.html#eq) (===)
 `eq(arg1, arg2)` is a logical node that takes two arguments and resolves to `true` if they are equal, `false` otherwise. `eq()` is the Muster equivalent to the strict equality operator (`===`) in JavaScript.
 ```javascript
 import muster, { computed, eq } from '@dws/muster';
@@ -285,10 +285,10 @@ await app.resolve(eq('test 1', 'test 2')) //=== false
 ```
 ### Inequality
 Muster has many nodes for evaluating inequalities, depending on the type of comparison that needs to be compared:
-- `gt(arg 1, arg 2)` - [Greater than](http://localhost:3000/muster/api/modules/muster.html#gt) - Resolves to `true` if and only if arg 1 > arg 2.
-- `gte(arg 1, arg 2)` - [Greater than or equal to](http://localhost:3000/muster/api/modules/muster.html#gte) - Resolves to `true` if and only if arg 1 >= arg 2.
-- `lt(arg 1, arg 2)` - [Less than](http://localhost:3000/muster/api/modules/muster.html#lt) - Resolves to `true` if and only if arg 1 < arg 2.
-- `lte(arg 1, arg 2)` - [Less than or equal to](http://localhost:3000/muster/api/modules/muster.html#lte) - Resolves to `true` if and only if arg 1 <= arg 2.
+- `gt(arg 1, arg 2)` - [Greater than](/muster/api/latest/modules/muster.html#gt) - Resolves to `true` if and only if arg 1 > arg 2.
+- `gte(arg 1, arg 2)` - [Greater than or equal to](/muster/api/latest/modules/muster.html#gte) - Resolves to `true` if and only if arg 1 >= arg 2.
+- `lt(arg 1, arg 2)` - [Less than](/muster/api/latest/modules/muster.html#lt) - Resolves to `true` if and only if arg 1 < arg 2.
+- `lte(arg 1, arg 2)` - [Less than or equal to](/muster/api/latest/modules/muster.html#lte) - Resolves to `true` if and only if arg 1 <= arg 2.
 ```javascript
 import muster, { gt, gte, lt, lte } from '@dws/muster';
 
@@ -401,14 +401,14 @@ This example shows how to retrieve given fields from every item of the collectio
 ### ArrayList
 Creates a new instance of a arrayList node, which is a type of a NodeDefinition used when creating a mutable in-memory array. This array allows for a following operations:
 
-- [push(item)](/muster/api/modules/muster.html#push-1)
-- [pop()](/muster/api/modules/muster.html#pop)
-- [shift()](/muster/api/modules/muster.html#shift)
-- [unshift(item)](/muster/api/modules/muster.html#unshift-1)
-- [addItemAt(item, index)](/muster/api/modules/muster.html#additemat)
-- [removeItemAt(index)](/muster/api/modules/muster.html#removeitemat)
-- [length()](/muster/api/modules/muster.html#length-1)
-- [clear()](/muster/api/modules/muster.html#clear)
+- [push(item)](/muster/api/latest/modules/muster.html#push-1)
+- [pop()](/muster/api/latest/modules/muster.html#pop)
+- [shift()](/muster/api/latest/modules/muster.html#shift)
+- [unshift(item)](/muster/api/latest/modules/muster.html#unshift-1)
+- [addItemAt(item, index)](/muster/api/latest/modules/muster.html#additemat)
+- [removeItemAt(index)](/muster/api/latest/modules/muster.html#removeitemat)
+- [length()](/muster/api/latest/modules/muster.html#length-1)
+- [clear()](/muster/api/latest/modules/muster.html#clear)
 
 When modified in any way this array retains the state for as long as the parent scope exists, or until a reset operation is executed on the array. This behaviour resembles the behaviour of a variable node.
 
@@ -514,8 +514,8 @@ Creates a new instance of a sort node, which is a type of collection transform u
 
 Sort order can be defined with the help of two helper functions:
 
-- [ascending](/muster/api/modules/muster.html#ascending)
-- [descending](/muster/api/modules/muster.html#descending)
+- [ascending](/muster/api/latest/modules/muster.html#ascending)
+- [descending](/muster/api/latest/modules/muster.html#descending)
 
 #### Sorting numbers
 

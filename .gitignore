@@ -17,7 +17,7 @@ jest.config.json
 packages/*/esm
 packages/*/_bundles
 packages/*/build
-packages/*/static/api
+packages/*/static/api/latest
 packages/*/static/playground
 packages/*/static/js/*.min.js
 packages/*/static/*.zip
