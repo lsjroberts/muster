@@ -89,7 +89,7 @@ class HomeSplash extends React.Component {
             <Button className="primary" href={docUrl('learn/introduction.html', language)}>
               Get Started
             </Button>
-            <Button href={relativeUrl('api/')}>API Docs</Button>
+            <Button href={relativeUrl('api/latest/')}>API Docs</Button>
           </PromoSection>
         </div>
         <div className="embed-container">
