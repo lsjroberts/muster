@@ -149,7 +149,7 @@
 					<div class="tsd-signature tsd-kind-icon">Dispose<wbr>Listener<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/index.ts#L12">muster-message-transport/src/index.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/index.ts#L12">packages/muster-message-transport/src/index.ts:12</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -174,7 +174,7 @@
 					<div class="tsd-signature tsd-kind-icon">Message<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/index.ts#L11">muster-message-transport/src/index.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/index.ts#L11">packages/muster-message-transport/src/index.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -205,7 +205,7 @@
 					<div class="tsd-signature tsd-kind-icon">Subscriptions<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/message-listener-decorator.ts#L22">muster-message-transport/src/message-listener-decorator.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/message-listener-decorator.ts#L22">packages/muster-message-transport/src/message-listener-decorator.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -218,7 +218,7 @@
 					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>SANITIZER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">sanitize</span><span class="tsd-signature-symbol"> =&nbsp;sanitize</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/message-listener-decorator.ts#L20">muster-message-transport/src/message-listener-decorator.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/message-listener-decorator.ts#L20">packages/muster-message-transport/src/message-listener-decorator.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -228,7 +228,7 @@
 					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>SANITIZER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">sanitize</span><span class="tsd-signature-symbol"> =&nbsp;sanitize</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/message-transport-middleware.ts#L28">muster-message-transport/src/message-transport-middleware.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/message-transport-middleware.ts#L28">packages/muster-message-transport/src/message-transport-middleware.ts:28</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -238,7 +238,7 @@
 					<div class="tsd-signature tsd-kind-icon">Message<wbr>Transport<wbr>Middleware<wbr>Node<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StatefulNodeType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"message-transport-middleware"</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/muster_message_transport.messagetransportmiddlewarenodeproperties.html" class="tsd-signature-type">MessageTransportMiddlewareNodeProperties</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/muster_message_transport.messagetransportmiddlewarestate.html" class="tsd-signature-type">MessageTransportMiddlewareState</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/muster_message_transport.messagetransportmiddlewaredata.html" class="tsd-signature-type">MessageTransportMiddlewareData</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;createNodeType&lt;&#x27;message-transport-middleware&#x27;,MessageTransportMiddlewareNodeProperties,MessageTransportMiddlewareState,MessageTransportMiddlewareData&gt;(&#x27;message-transport-middleware&#x27;, {shape: {listen: types.func,send: types.func,sanitize: types.optional(types.func),},state: {result: types.objectOf(graphTypes.nodeDefinition),},getInitialState() {return {result: {},};},operations: {request: {run(node: MessageTransportMiddlewareNode,operation: RequestOperation,dependencies: never,contextDependencies: never,state: MessageTransportMiddlewareState,): NodeDefinition {return state.result[operation.id] || pending();},onSubscribe(this: NodeExecutionContext&lt;MessageTransportMiddlewareState, MessageTransportMiddlewareData&gt;,node: MessageTransportMiddlewareNode,operation: RequestOperation,): void {const { listen, send, sanitize &#x3D; DEFAULT_SANITIZER } &#x3D; node.definition.properties;const requestId &#x3D; operation.id;const callback &#x3D; (message: Message&lt;any&gt;) &#x3D;&gt; {// Check the type of messageif (!message ||(typeof message &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; message.name !&#x3D;&#x3D; SubscriptionResultMessageName)) {return;}const subscriptionResultMessage &#x3D; message as SubscriptionResultMessage;// Make sure the response is for the correct requestif (subscriptionResultMessage.requestId !&#x3D;&#x3D; requestId) return;const response &#x3D; deserialize(getMusterNodeTypesMap(),getMusterOperationTypesMap(),subscriptionResultMessage.response,);this.setState((state) &#x3D;&gt; ({...state,result: {...state.result,[requestId]: response,},}));};this.setData((data) &#x3D;&gt; ({...data,subscriptions: {...data.subscriptions,[requestId]: listen(callback),},}));const serializedQuery &#x3D; sanitize(operation.properties.query);send(subscribe(requestId, serializedQuery));},onUnsubscribe(this: NodeExecutionContext&lt;MessageTransportMiddlewareState, MessageTransportMiddlewareData&gt;,node: MessageTransportMiddlewareNode,operation: RequestOperation,): void {const { send } &#x3D; node.definition.properties;const requestId &#x3D; operation.id;this.setData((data) &#x3D;&gt; {const unsubscribeListener &#x3D; data.subscriptions[requestId];unsubscribeListener &amp;&amp; unsubscribeListener();return {...data,subscriptions: omit(data.subscriptions, requestId),};});this.setState((state) &#x3D;&gt; ({...state,result: omit(state.result, requestId),}));send(unsubscribe(requestId));},},},})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/message-transport-middleware.ts#L64">muster-message-transport/src/message-transport-middleware.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/message-transport-middleware.ts#L64">packages/muster-message-transport/src/message-transport-middleware.ts:64</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -248,7 +248,7 @@
 					<div class="tsd-signature tsd-kind-icon">Subscribe<wbr>Message<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"muster-message-transport-subscribe"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;muster-message-transport-subscribe&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/messages/subscribe.ts#L4">muster-message-transport/src/messages/subscribe.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/messages/subscribe.ts#L4">packages/muster-message-transport/src/messages/subscribe.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -258,7 +258,7 @@
 					<div class="tsd-signature tsd-kind-icon">Subscription<wbr>Result<wbr>Message<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"muster-message-transport-subscription-result"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;muster-message-transport-subscription-result&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/messages/subscription-result.ts#L4">muster-message-transport/src/messages/subscription-result.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/messages/subscription-result.ts#L4">packages/muster-message-transport/src/messages/subscription-result.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -268,7 +268,7 @@
 					<div class="tsd-signature tsd-kind-icon">Unsubscribe<wbr>Message<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"muster-message-transport-unsubscribe"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;muster-message-transport-unsubscribe&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/messages/unsubscribe.ts#L3">muster-message-transport/src/messages/unsubscribe.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/messages/unsubscribe.ts#L3">packages/muster-message-transport/src/messages/unsubscribe.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -285,7 +285,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/message-listener-decorator.ts#L29">muster-message-transport/src/message-listener-decorator.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/message-listener-decorator.ts#L29">packages/muster-message-transport/src/message-listener-decorator.ts:29</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -311,7 +311,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/message-transport-middleware.ts#L165">muster-message-transport/src/message-transport-middleware.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/message-transport-middleware.ts#L165">packages/muster-message-transport/src/message-transport-middleware.ts:165</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -334,7 +334,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/message-listener-decorator.ts#L99">muster-message-transport/src/message-listener-decorator.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/message-listener-decorator.ts#L99">packages/muster-message-transport/src/message-listener-decorator.ts:99</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -357,7 +357,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/message-listener-decorator.ts#L67">muster-message-transport/src/message-listener-decorator.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/message-listener-decorator.ts#L67">packages/muster-message-transport/src/message-listener-decorator.ts:67</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -389,7 +389,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/messages/subscribe.ts#L11">muster-message-transport/src/messages/subscribe.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/messages/subscribe.ts#L11">packages/muster-message-transport/src/messages/subscribe.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -415,7 +415,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/messages/subscription-result.ts#L12">muster-message-transport/src/messages/subscription-result.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/messages/subscription-result.ts#L12">packages/muster-message-transport/src/messages/subscription-result.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -441,7 +441,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/messages/unsubscribe.ts#L9">muster-message-transport/src/messages/unsubscribe.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/messages/unsubscribe.ts#L9">packages/muster-message-transport/src/messages/unsubscribe.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -464,7 +464,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-message-transport/src/message-listener-decorator.ts#L92">muster-message-transport/src/message-listener-decorator.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-message-transport/src/message-listener-decorator.ts#L92">packages/muster-message-transport/src/message-listener-decorator.ts:92</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -488,35 +488,8 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="muster.html">muster</a>
-					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="muster_message_transport.html">muster-<wbr>message-<wbr>transport</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="muster_observable.html">muster-<wbr>observable</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="muster_parser.html">muster-<wbr>parser</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="muster_react.html">muster-<wbr>react</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="muster_remote.html">muster-<wbr>remote</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="muster_repl.html">muster-<wbr>repl</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="muster_server.html">muster-<wbr>server</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="muster_test_utils.html">muster-<wbr>test-<wbr>utils</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="muster_worker.html">muster-<wbr>worker</a>
 					</li>
 				</ul>
 			</nav>
