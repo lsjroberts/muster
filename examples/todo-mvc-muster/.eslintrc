@@ -1,0 +1,22 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/flowtype", "prettier/react"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "no-use-before-define": "off",
+    "func-names": "off",
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "required": {
+          "every": ["id"]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": "off"
+  }
+}

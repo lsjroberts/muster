@@ -1,0 +1,10 @@
+node_modules
+.tmp
+.DS_Store
+*.log
+.idea
+.vscode
+coverage
+test-results.xml
+dist
+docs/api
