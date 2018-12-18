@@ -144,7 +144,7 @@
 					<div class="tsd-signature tsd-kind-icon">Node<wbr>Types<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="muster.html#nodetype" class="tsd-signature-type">NodeType</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-express.ts#L50">packages/muster-server/src/muster-express.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-express.ts#L50">muster-server/src/muster-express.ts:50</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -157,7 +157,7 @@
 					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>WHITELISTED_<wbr>NODE_<wbr>TYPES<span class="tsd-signature-symbol">:</span> <a href="muster_server.html#nodetypesarray" class="tsd-signature-type">NodeTypesArray</a><span class="tsd-signature-symbol"> =&nbsp;[...ArithmeticNodeTypes,...KeysNodeTypes,...TransformsNodeTypes,...LogicNodeTypes,...StringNodeTypes,FirstItemNodeType,CallNodeType,CombineLatestNodeType,ContextNodeType,FieldsNodeType,FnNodeType,GetNodeType,HeadNodeType,KeyNodeType,EntriesNodeType,LegacyQueryNodeType,QueryNodeType,QuerySetCallOperationNodeType,QuerySetGetChildOperationNodeType,QuerySetGetItemsOperationNodeType,QuerySetNodeType,QuerySetOperationNodeType,QuerySetResultNodeType,QuerySetSetOperationNodeType,ParallelNodeType,RootNodeType,SeriesNodeType,SetNodeType,ValueNodeType,WithTransformsNodeType,]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-express.ts#L52">packages/muster-server/src/muster-express.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-express.ts#L52">muster-server/src/muster-express.ts:52</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -167,7 +167,7 @@
 					<div class="tsd-signature tsd-kind-icon">HEADERS_<wbr>PARAM_<wbr>NAME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"$$headers"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;$$headers&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/nodes/header.ts#L16">packages/muster-server/src/nodes/header.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/nodes/header.ts#L16">muster-server/src/nodes/header.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -177,7 +177,7 @@
 					<div class="tsd-signature tsd-kind-icon">Header<wbr>Node<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StatelessNodeType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"http-header"</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/muster_server.headernodeproperties.html" class="tsd-signature-type">HeaderNodeProperties</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;createNodeType&lt;&#x27;http-header&#x27;, HeaderNodeProperties&gt;(&#x27;http-header&#x27;, {shape: {name: types.string,},operations: {evaluate: {run(node: HeaderNode): NodeDefinition {if (!(HEADERS_PARAM_NAME in node.context.values)) {throw new Error(&#x27;No headers middleware detected.&#x27;);}const headers: GraphNode &#x3D; node.context.values[HEADERS_PARAM_NAME];if (!ValueNodeType.is(headers)) {throw incorrectNodeType(ValueNodeType, headers);}const name &#x3D; node.definition.properties.name;if (!(name in headers.definition.properties.value)) {console.warn(&#x60;Header &#x27;${name}&#x27; not found in the request headers&#x60;);}return value(headers.definition.properties.value[name]);},},},})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/nodes/header.ts#L27">packages/muster-server/src/nodes/header.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/nodes/header.ts#L27">muster-server/src/nodes/header.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -187,7 +187,7 @@
 					<div class="tsd-signature tsd-kind-icon">SESSION_<wbr>PARAM_<wbr>NAME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"$$session"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;$$session&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/nodes/session.ts#L13">packages/muster-server/src/nodes/session.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/nodes/session.ts#L13">muster-server/src/nodes/session.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -197,7 +197,7 @@
 					<div class="tsd-signature tsd-kind-icon">Session<wbr>Node<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StatelessNodeType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"session"</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/muster_server.sessionnodeproperties.html" class="tsd-signature-type">SessionNodeProperties</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;createNodeType&lt;&#x27;session&#x27;,SessionNodeProperties&gt;(&#x27;session&#x27;, {shape: {},operations: {evaluate: {run(node: SessionNode): GraphNode {if (!(SESSION_PARAM_NAME in node.context.values)) {throw new Error(&#x27;No session middleware detected&#x27;);}return node.context.values[SESSION_PARAM_NAME];},},},})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/nodes/session.ts#L22">packages/muster-server/src/nodes/session.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/nodes/session.ts#L22">muster-server/src/nodes/session.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -207,7 +207,7 @@
 					<div class="tsd-signature tsd-kind-icon">age<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/examples/socket-server.ts#L9">packages/muster-server/src/examples/socket-server.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/examples/socket-server.ts#L9">muster-server/src/examples/socket-server.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -217,7 +217,7 @@
 					<div class="tsd-signature tsd-kind-icon">body<wbr>Parser<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;body-parser&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/examples/simple-server.ts#L2">packages/muster-server/src/examples/simple-server.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/examples/simple-server.ts#L2">muster-server/src/examples/simple-server.ts:2</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -227,7 +227,7 @@
 					<div class="tsd-signature tsd-kind-icon">client<wbr>App<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Muster</span><span class="tsd-signature-symbol"> =&nbsp;muster({server: remote(&#x60;http://localhost:${port}/&#x60;, { useSockets: true }),})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/examples/socket-client.ts#L5">packages/muster-server/src/examples/socket-client.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/examples/socket-client.ts#L5">muster-server/src/examples/socket-client.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -237,7 +237,7 @@
 					<div class="tsd-signature tsd-kind-icon">graph<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Muster</span><span class="tsd-signature-symbol"> =&nbsp;muster({name: &#x27;Test name&#x27;,ageStream: fromStream(subject),})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/examples/socket-server.ts#L16">packages/muster-server/src/examples/socket-server.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/examples/socket-server.ts#L16">muster-server/src/examples/socket-server.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -247,7 +247,7 @@
 					<div class="tsd-signature tsd-kind-icon">next<wbr>Request<wbr>Number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-express.ts#L95">packages/muster-server/src/muster-express.ts:95</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-express.ts#L95">muster-server/src/muster-express.ts:95</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -257,7 +257,7 @@
 					<div class="tsd-signature tsd-kind-icon">port<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;process.env.PORT || &#x27;8999&#x27;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/examples/socket-client.ts#L4">packages/muster-server/src/examples/socket-client.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/examples/socket-client.ts#L4">muster-server/src/examples/socket-client.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -267,7 +267,7 @@
 					<div class="tsd-signature tsd-kind-icon">server<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Server</span><span class="tsd-signature-symbol"> =&nbsp;http.createServer()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/examples/socket-server.ts#L21">packages/muster-server/src/examples/socket-server.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/examples/socket-server.ts#L21">muster-server/src/examples/socket-server.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -277,7 +277,7 @@
 					<div class="tsd-signature tsd-kind-icon">subject<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BehaviorSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueNodeDefinition</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new BehaviorSubject(value(&#x60;Geoff is ${age}&#x60;))</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/examples/socket-server.ts#L10">packages/muster-server/src/examples/socket-server.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/examples/socket-server.ts#L10">muster-server/src/examples/socket-server.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -287,7 +287,7 @@
 					<div class="tsd-signature tsd-kind-icon">wss<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Server</span><span class="tsd-signature-symbol"> =&nbsp;new WebSocket.Server({ server })</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/examples/socket-server.ts#L22">packages/muster-server/src/examples/socket-server.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/examples/socket-server.ts#L22">muster-server/src/examples/socket-server.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -304,7 +304,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/nodes/header.ts#L54">packages/muster-server/src/nodes/header.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/nodes/header.ts#L54">muster-server/src/nodes/header.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -327,7 +327,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/nodes/header.ts#L64">packages/muster-server/src/nodes/header.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/nodes/header.ts#L64">muster-server/src/nodes/header.ts:64</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestHandler</span></h4>
@@ -344,7 +344,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/nodes/header.ts#L60">packages/muster-server/src/nodes/header.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/nodes/header.ts#L60">muster-server/src/nodes/header.ts:60</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -367,7 +367,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/nodes/session.ts#L43">packages/muster-server/src/nodes/session.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/nodes/session.ts#L43">muster-server/src/nodes/session.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -390,7 +390,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-express.ts#L97">packages/muster-server/src/muster-express.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-express.ts#L97">muster-server/src/muster-express.ts:97</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -416,7 +416,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/nodes/session.ts#L39">packages/muster-server/src/nodes/session.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/nodes/session.ts#L39">muster-server/src/nodes/session.ts:39</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/muster_server.sessionnodedefinition.html" class="tsd-signature-type">SessionNodeDefinition</a></h4>
@@ -433,7 +433,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/nodes/session.ts#L47">packages/muster-server/src/nodes/session.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/nodes/session.ts#L47">muster-server/src/nodes/session.ts:47</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestHandler</span></h4>
@@ -450,7 +450,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-sockets.ts#L13">packages/muster-server/src/muster-sockets.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-sockets.ts#L13">muster-server/src/muster-sockets.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -478,7 +478,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-sockets.ts#L8">packages/muster-server/src/muster-sockets.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-sockets.ts#L8">muster-server/src/muster-sockets.ts:8</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -487,7 +487,7 @@
 						<div class="tsd-signature tsd-kind-icon">enable<wbr>Request<wbr>Logging<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-sockets.ts#L9">packages/muster-server/src/muster-sockets.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-sockets.ts#L9">muster-server/src/muster-sockets.ts:9</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -497,7 +497,7 @@
 						<div class="tsd-signature tsd-kind-icon">whitelisted<wbr>Node<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">StaticNodeType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">StatelessNodeType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">GraphOperation</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">OperationType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">StatefulNodeType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">GraphOperation</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">OperationType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;DEFAULT_WHITELISTED_NODE_TYPES</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-sockets.ts#L10">packages/muster-server/src/muster-sockets.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-sockets.ts#L10">muster-server/src/muster-sockets.ts:10</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -508,7 +508,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-express.ts#L90">packages/muster-server/src/muster-express.ts:90</a></li>
+							<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-express.ts#L90">muster-server/src/muster-express.ts:90</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -517,7 +517,7 @@
 						<div class="tsd-signature tsd-kind-icon">enable<wbr>Request<wbr>Logging<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-express.ts#L91">packages/muster-server/src/muster-express.ts:91</a></li>
+								<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-express.ts#L91">muster-server/src/muster-express.ts:91</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -527,7 +527,7 @@
 						<div class="tsd-signature tsd-kind-icon">whitelisted<wbr>Node<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">StaticNodeType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">StatelessNodeType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">GraphOperation</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">OperationType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">StatefulNodeType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">GraphOperation</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">OperationType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;DEFAULT_WHITELISTED_NODE_TYPES</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/packages/muster-server/src/muster-express.ts#L92">packages/muster-server/src/muster-express.ts:92</a></li>
+								<li>Defined in <a href="https://github.com/dwstech/muster/blob/develop/packages/muster-server/src/muster-express.ts#L92">muster-server/src/muster-express.ts:92</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -540,8 +540,35 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster.html">muster</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_message_transport.html">muster-<wbr>message-<wbr>transport</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_observable.html">muster-<wbr>observable</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_parser.html">muster-<wbr>parser</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_react.html">muster-<wbr>react</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_remote.html">muster-<wbr>remote</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_repl.html">muster-<wbr>repl</a>
+					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="muster_server.html">muster-<wbr>server</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_test_utils.html">muster-<wbr>test-<wbr>utils</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="muster_worker.html">muster-<wbr>worker</a>
 					</li>
 				</ul>
 			</nav>
