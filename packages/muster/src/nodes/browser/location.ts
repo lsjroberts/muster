@@ -42,11 +42,11 @@ export { LocationParamsEncoder } from './location-common';
  */
 export interface LocationNode
   extends StatefulGraphNode<
-      'location',
-      LocationNodeProperties,
-      LocationNodeState,
-      LocationNodeData
-    > {}
+    'location',
+    LocationNodeProperties,
+    LocationNodeState,
+    LocationNodeData
+  > {}
 
 /**
  * A definition of the [[location]] node.
@@ -101,7 +101,7 @@ export const LocationNodeType: StatefulNodeType<
   getInitialState(properties: LocationNodeProperties): LocationNodeState {
     const history = (properties.hash
       ? createHashHistory({ hashType: properties.hash })
-      : createBrowserHistory()) as HistoryWithId;
+      : createBrowserHistory({ forceRefresh: false })) as HistoryWithId;
     history.id = uniqueId('history_');
     return {
       currentValue: computeCurrentValue(history.location, properties.paramsEncoder),

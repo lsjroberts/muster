@@ -33,6 +33,44 @@ describe('location()', () => {
   });
 
   runScenario({
+    description: 'GIVEN a location node created without a hash',
+    graph: () =>
+      muster({
+        url: location(),
+      }),
+    operations: [
+      operation({
+        description: 'WHEN a location gets resolved',
+        input: ref('url'),
+        assert() {
+          expect(history.createHashHistory).not.toHaveBeenCalled();
+          expect(history.createBrowserHistory).toHaveBeenCalledTimes(1);
+          expect(history.createBrowserHistory).toHaveBeenCalledWith({ forceRefresh: false });
+        },
+      }),
+    ],
+  });
+
+  runScenario({
+    description: 'GIVEN a location node created without a hash',
+    graph: () =>
+      muster({
+        url: location({ hash: 'slash' }),
+      }),
+    operations: [
+      operation({
+        description: 'WHEN a location gets resolved',
+        input: ref('url'),
+        assert() {
+          expect(history.createBrowserHistory).not.toHaveBeenCalled();
+          expect(history.createHashHistory).toHaveBeenCalledTimes(1);
+          expect(history.createHashHistory).toHaveBeenCalledWith({ hashType: 'slash' });
+        },
+      }),
+    ],
+  });
+
+  runScenario({
     description: 'GIVEN an url node in a muster graph',
     graph: () =>
       muster({
