@@ -84,7 +84,7 @@ Yes! See our guide to [Running Muster in a Worker](/muster/docs/tutorials/muster
 
 ### Where can I find some example projects that use Muster?
 
-There's a whole repo of them at [muster-examples](https://github.com/dwstech/muster-examples). Most notable among them are probably [TodoMVC](https://github.com/dwstech/muster-examples/blob/master/todo-mvc-muster) and the [RealWorld app](https://github.com/dwstech/muster-examples/blob/master/muster-react-realworld-example-app).
+There's a whole repo of them at [muster-examples](https://github.com/dwstech/muster-examples). Most notable among them are probably [TodoMVC](https://github.com/dwstech/muster-examples/tree/master/todo-mvc) and the [RealWorld app](https://github.com/dwstech/muster-examples/tree/master/realworld-app).
 
 ---
 

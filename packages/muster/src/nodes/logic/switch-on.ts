@@ -126,8 +126,8 @@ function isValueNodeOrCallableNode(node: GraphNode): node is ValueNode<any> | Ca
  * way to the [[ifElse]] node, but allows for a more concise definition when defining
  * more than one condition.
  *
- * The conditions are defined with the help of [[case]] and [[otherwise]]
- * nodes. Each [[switchOn]] can define any number of [[case]] cases,
+ * The conditions are defined with the help of [[when]] and [[otherwise]]
+ * nodes. Each [[switchOn]] can define any number of [[when]] cases,
  * and MUST define exactly one [[otherwise]] node.
  *
  * @example **Simple switchOn node**
