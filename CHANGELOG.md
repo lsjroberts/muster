@@ -12,6 +12,8 @@ title: Latest Changes
 - Fixed a problem with serialising Graph Metadata for the purpose of using it in Muster DevTools.
 - Fixed a problem with an incorrect Licence link.
 - Fixed a bug in a "Muster on the server" example.
+- Fixed a bug in a `location()` node - using browser history caused a reload every time the location
+  got changed. 
 
 ## 6.5.0 (2018-12-06)
 
